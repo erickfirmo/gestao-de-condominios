@@ -1,1 +1,1 @@
-# gestao-de-condominio
+# gestao-de-condominios
