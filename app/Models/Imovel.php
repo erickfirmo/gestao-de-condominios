@@ -13,7 +13,6 @@ class Imovel extends Model
         'bloco',
         'andar',
         'descricao',
-        'comentarios',
-        'animais',
+        'observacoes',
     ];
 }
