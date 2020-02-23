@@ -11,7 +11,7 @@ class Morador extends Model
     public $fillable = [
         'nome',
         'genero',
-        'comentarios',
+        'observacoes',
         'proprietario',
         'imovel_id',
     ];
