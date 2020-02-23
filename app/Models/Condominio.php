@@ -11,8 +11,14 @@ class Condominio extends Model
     public $fillable = [
         'nome',
         'descricao',
-        'comentarios',
-        'endereco_id',
-        'conta_id',
+        'cep',
+        'logradouro',
+        'numero',
+        'bairro',
+        'cidade',
+        'uf_id',
+        'complemento',
+        'observacoes',
+        'empresa_id',
     ];
 }
