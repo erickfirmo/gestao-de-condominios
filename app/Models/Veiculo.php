@@ -11,8 +11,9 @@ class Veiculo extends Model
     public $fillable = [
         'modelo',
         'tipo',
+        'cor',
+        'descricao',
         'placa',
-        'imovel_id',
-        'morador_responsavel_id',
+        'morador_id',
     ];
 }
