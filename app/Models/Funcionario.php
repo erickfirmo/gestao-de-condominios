@@ -15,11 +15,11 @@ class Funcionario extends Model
         'servico_temporario',
         'duracao',
         'inicio',
-        'finalizacao_do_servico',
+        'finalizacao',
         'foto',
         'telefone_1',
         'telefone_2',
-        'jornada_de_trabalho',
+        'jornada_semanal',
         'carga_horaria',
     ];
 }
