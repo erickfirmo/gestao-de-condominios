@@ -9,9 +9,9 @@ class Vaga extends Model
     public $table = 'vagas';
 
     public $fillable = [
-        'identificacao',
+        'numeracao',
         'andar',
-        'comentarios',
+        'observacoes',
         'morador_id',
     ];
 }
