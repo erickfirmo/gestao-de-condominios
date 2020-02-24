@@ -10,11 +10,13 @@ class Ocorrencia extends Model
 
     public $fillable = [
         'descricao',
-        'ocorrencia',
         'status',
-        'horario',
+        'data',
+        'hora',
         'gravidade',
         'user_id',
+        'morador_id',
         'condominio_id',
+
     ];
 }
