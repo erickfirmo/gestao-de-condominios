@@ -27,4 +27,8 @@ class Condominio extends Model
         return $this->belongsTo(Uf::class, 'uf_id');
     }
 
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
 }
