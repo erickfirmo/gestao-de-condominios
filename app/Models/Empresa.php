@@ -17,4 +17,9 @@ class Empresa extends Model
         'telefone_2',
         'responsavel_para_contato'
     ];
+    
+    public function condominios()
+    {
+        return $this->hasMany(Condominio::class, 'empresa_id', 'id');
+    }
 }
