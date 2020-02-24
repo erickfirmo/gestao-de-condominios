@@ -11,4 +11,9 @@ class Uf extends Model
     public $fillable = [
         'uf'
     ];
+
+    public function condominios()
+    {
+        return $this->hasMany(Condominio::class, 'uf_id', 'id');
+    }
 }
