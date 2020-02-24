@@ -21,4 +21,14 @@ class Condominio extends Model
         'observacoes',
         'empresa_id',
     ];
+
+    public function uf()
+    {
+        return $this->belongsTo(Uf::class, 'uf_id');
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
 }
