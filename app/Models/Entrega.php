@@ -9,7 +9,7 @@ class Entrega extends Model
     public $table = 'entregas';
 
     public $fillable = [
-        'entregador',
+        'nome_do_entregador',
         'receptor',
         'tipo',
         'descricao',

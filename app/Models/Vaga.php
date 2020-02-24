@@ -11,7 +11,7 @@ class Vaga extends Model
     public $fillable = [
         'identificacao',
         'andar',
-        'comentarios',
+        'observacoes',
         'morador_id',
     ];
 }
