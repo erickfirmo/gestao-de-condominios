@@ -9,12 +9,12 @@ class Reserva extends Model
     public $table = 'reservas';
 
     public $fillable = [
-        'area_comum_id',
-        'morador_id',
-        'user_id',
         'observacoes',
         'inicio',
         'termino',
         'status',
+        'area_comum_id',
+        'morador_id',
+        'user_id',
     ];
 }
