@@ -14,6 +14,6 @@ class AreaComum extends Model
         'fechamento',
         'status',
         'descricao',
-        'comentarios',
+        'observacoes',
     ];
 }
