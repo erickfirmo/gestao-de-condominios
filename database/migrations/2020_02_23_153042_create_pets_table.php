@@ -20,7 +20,7 @@ class CreatePetsTable extends Migration
             $table->string('raca', 30);
             $table->string('cor', 30);
             $table->string('descricao', 200);
-            $trable->unsignedBigInteger('morador_id');
+            $table->unsignedBigInteger('morador_id');
             $table->timestamps();
 
             $table->foreign('morador_id')
