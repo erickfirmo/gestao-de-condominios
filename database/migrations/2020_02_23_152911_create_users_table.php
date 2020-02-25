@@ -20,6 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('foto_de_perfil');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->unsignedBigInteger('funcionario_id');
+            $table->foreign('funcionario_id')
+                ->references('id')
+                ->on('funcionarios');
+
             $table->rememberToken();
             $table->timestamps();
         });
