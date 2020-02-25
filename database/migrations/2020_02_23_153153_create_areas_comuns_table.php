@@ -18,7 +18,7 @@ class CreateAreasComunsTable extends Migration
             $table->string('nome', 40);
             $table->string('abertura', 20);
             $table->string('fechamento', 20);
-            $table->enum('status', 20);
+            $table->string('status', 20);
             $table->string('descricao', 200);
             $table->string('observacoes', 400);
 
