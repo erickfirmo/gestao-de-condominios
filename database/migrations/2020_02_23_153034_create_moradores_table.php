@@ -19,12 +19,13 @@ class CreateMoradoresTable extends Migration
             $table->enum('genero', ['masc', 'fem', 'nd']);
             $table->string('observacoes', 400);
             $table->boolean('proprietario');
-            $table->unsignedInteger('imovel_id');
-            $table->timestamps();
 
+            $table->unsignedInteger('imovel_id');
             $table->foreign('imovel_id')
                 ->references('id')
                 ->on('imoveis');
+
+            $table->timestamps();
         });
     }
 
