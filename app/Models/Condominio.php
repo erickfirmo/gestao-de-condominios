@@ -31,4 +31,9 @@ class Condominio extends Model
     {
         return $this->belongsTo(Empresa::class, 'empresa_id');
     }
+
+    public function areas_comuns()
+    {
+        return $this->hasMany(AreaComum::class, 'condominio_id', 'id');
+    }
 }
