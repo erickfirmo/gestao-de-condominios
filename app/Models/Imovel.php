@@ -21,4 +21,9 @@ class Imovel extends Model
     {
         $this->belongsTo(Condominio::class, 'condominio_id');
     }
+
+    public function moradores()
+    {
+        return $this->hasMany(Morador::class, 'imovel_id', 'id');
+    }
 }
