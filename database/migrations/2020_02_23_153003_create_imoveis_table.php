@@ -20,6 +20,12 @@ class CreateImoveisTable extends Migration
             $table->string('andar', 3);
             $table->string('descricao', 200);
             $table->string('observacoes', 200);
+
+            $table->unsignedBigInteger('condominio_id');
+            $table->foreign('condominio_id')
+                ->references('id')
+                ->on('condominios');
+
             $table->timestamps();
         });
     }
