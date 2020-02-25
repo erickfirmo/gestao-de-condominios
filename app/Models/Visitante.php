@@ -13,6 +13,7 @@ class Visitante extends Model
         'chegada',
         'saida',
         'transporte',
+        'prestador_de_servico',
         'morador_id',
     ];
 
