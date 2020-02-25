@@ -19,7 +19,7 @@ class CreateCondominiosTable extends Migration
             $table->string('descricao', 280);
             $table->string('cep');
             $table->string('logradouro', 80);
-            $table->integer('numero', 8);
+            $table->unsignedInteger('numero');
             $table->string('bairro', 40);
             $table->string('cidade', 40);
             $table->unsignedBigInteger('uf_id');
