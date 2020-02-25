@@ -12,6 +12,7 @@ class Pet extends Model
         'nome',
         'especie',
         'raca',
+        'cor',
         'descricao',
         'morador_id',
     ]; 
