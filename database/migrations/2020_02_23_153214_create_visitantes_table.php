@@ -20,9 +20,9 @@ class CreateVisitantesTable extends Migration
             $table->string('chegada');
             $table->string('saida');
             $table->string('transporte');
-            $table->unsignedBigInteger('morador_responsavel_id');
+            $table->unsignedBigInteger('morador_id');
 
-            $table->foreign('morador_responsavel_id')
+            $table->foreign('morador_id')
                 ->references('id')
                 ->on('moradores');
 
