@@ -22,4 +22,9 @@ class Funcionario extends Model
         'jornada_semanal',
         'carga_horaria',
     ];
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'funcionario_id');
+    }
 }
