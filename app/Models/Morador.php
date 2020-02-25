@@ -15,4 +15,9 @@ class Morador extends Model
         'proprietario',
         'imovel_id',
     ];
+
+    public function imovel()
+    {
+        return $this->belongsTo(Imovel::class, 'imovel_id');
+    }
 }
