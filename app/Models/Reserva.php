@@ -22,4 +22,9 @@ class Reserva extends Model
     {
         return $this->belongsTo(AreaComum::class, 'area_comum_id');
     }
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
