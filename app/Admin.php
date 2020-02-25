@@ -21,7 +21,11 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'foto_de_perfil', 'password',
+        'name',
+        'email',
+        'foto_de_perfil',
+        'password',
+        'funcionario_id',
     ];
 
     /**
@@ -36,5 +40,10 @@ class Admin extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
+    }
+
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 }
