@@ -13,6 +13,11 @@ class Visitante extends Model
         'chegada',
         'saida',
         'transporte',
-        'morador_responsavel_id',
+        'morador_id',
     ];
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
