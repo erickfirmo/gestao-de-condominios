@@ -20,7 +20,7 @@ class CreateMoradoresTable extends Migration
             $table->string('observacoes', 400);
             $table->boolean('proprietario');
 
-            $table->unsignedInteger('imovel_id');
+            $table->unsignedBigInteger('imovel_id');
             $table->foreign('imovel_id')
                 ->references('id')
                 ->on('imoveis');
