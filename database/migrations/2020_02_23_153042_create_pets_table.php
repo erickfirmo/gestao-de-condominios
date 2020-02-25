@@ -18,6 +18,7 @@ class CreatePetsTable extends Migration
             $table->string('nome', 30);
             $table->string('especie', 30);
             $table->string('raca', 30);
+            $table->string('cor', 30);
             $table->string('descricao', 200);
             $trable->unsignedBigInteger('morador_id');
             $table->timestamps();
