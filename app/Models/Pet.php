@@ -14,5 +14,10 @@ class Pet extends Model
         'raca',
         'descricao',
         'morador_id',
-    ];  
+    ]; 
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
