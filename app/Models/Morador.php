@@ -30,4 +30,9 @@ class Morador extends Model
     {
         return $this->hasMany(Pet::class, 'morador_id', 'id');
     }
+
+    public function visitantes()
+    {
+        return $this->hasMany(Pet::class, 'morador_id', 'id');
+    }
 }
