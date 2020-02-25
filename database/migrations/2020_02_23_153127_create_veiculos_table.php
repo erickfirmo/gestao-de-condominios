@@ -17,7 +17,7 @@ class CreateVeiculosTable extends Migration
             $table->bigIncrements('id');
             $table->string('modelo', 40);
             $table->enum('tipo', ['Carro', 'Motocicleta', 'Van', 'Mini Van', 'Micro-Ônibus', 'Outros']);
-            $tabçe->string('cor', 20);
+            $table->string('cor', 20);
             $table->string('descricao', 200);
             $table->string('placa', 7)->unique();
             $table->unsignedBigInteger('morador_id');
