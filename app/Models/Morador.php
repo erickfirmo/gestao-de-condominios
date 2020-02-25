@@ -50,4 +50,9 @@ class Morador extends Model
     {
         return $this->hasMany(Veiculo::class, 'morador_id', 'id');
     }
+
+    public function vaga()
+    {
+        return $this->hasMany(Vaga::class, 'morador_id', 'id');
+    }
 }
