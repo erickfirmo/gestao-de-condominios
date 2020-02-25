@@ -15,5 +15,11 @@ class AreaComum extends Model
         'status',
         'descricao',
         'observacoes',
+        'condominio_id'
     ];
+
+    public function condominio()
+    {
+        return $this->belongsTo(Condominio::class, 'condominio_id');
+    }
 }
