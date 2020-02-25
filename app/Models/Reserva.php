@@ -17,4 +17,9 @@ class Reserva extends Model
         'morador_id',
         'user_id',
     ];
+
+    public function area_comum()
+    {
+        return $this->belongsTo(AreaComum::class, 'area_comum_id');
+    }
 }
