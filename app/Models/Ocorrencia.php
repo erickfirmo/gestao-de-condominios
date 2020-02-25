@@ -19,4 +19,9 @@ class Ocorrencia extends Model
         'condominio_id',
 
     ];
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
