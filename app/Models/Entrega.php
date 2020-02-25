@@ -17,4 +17,9 @@ class Entrega extends Model
         'morador_id',
         'imovel_id',
     ];
+    
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
