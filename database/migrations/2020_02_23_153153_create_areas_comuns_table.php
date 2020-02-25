@@ -21,6 +21,12 @@ class CreateAreasComunsTable extends Migration
             $table->enum('status', 20);
             $table->string('descricao', 200);
             $table->string('observacoes', 400);
+
+            $table->unsignedBigInteger('condominio_id');
+            $table->foreign('condominio_id')
+                ->references('id')
+                ->on('condominios');
+
             $table->timestamps();
         });
     }
