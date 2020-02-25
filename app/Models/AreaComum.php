@@ -22,4 +22,9 @@ class AreaComum extends Model
     {
         return $this->belongsTo(Condominio::class, 'condominio_id');
     }
+
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class, 'area_comum_id', 'id');
+    }
 }
