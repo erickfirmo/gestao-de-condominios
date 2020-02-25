@@ -25,4 +25,9 @@ class Morador extends Model
     {
         return $this->hasMany(Reserva::class, 'morador_id', 'id');
     }
+
+    public function pets()
+    {
+        return $this->hasMany(Pet::class, 'morador_id', 'id');
+    }
 }
