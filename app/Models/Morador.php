@@ -40,4 +40,9 @@ class Morador extends Model
     {
         return $this->hasMany(Entrega::class, 'morador_id', 'id');
     }
+
+    public function ocorrencias()
+    {
+        return $this->hasMany(Ocorrencia::class, 'morador_id', 'id');
+    }
 }
