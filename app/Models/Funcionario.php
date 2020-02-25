@@ -23,6 +23,11 @@ class Funcionario extends Model
         'carga_horaria',
     ];
 
+    public function admin()
+    {
+        return $this->hasOne(Admin::class, 'funcionario_id');
+    }
+
     public function user()
     {
         return $this->hasOne(User::class, 'funcionario_id');
