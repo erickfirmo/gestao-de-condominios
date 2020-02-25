@@ -20,4 +20,9 @@ class Morador extends Model
     {
         return $this->belongsTo(Imovel::class, 'imovel_id');
     }
+
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class, 'morador_id', 'id');
+    }
 }
