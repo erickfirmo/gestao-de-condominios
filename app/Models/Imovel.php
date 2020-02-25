@@ -14,5 +14,11 @@ class Imovel extends Model
         'andar',
         'descricao',
         'observacoes',
+        'condominio_id'
     ];
+
+    public function condominio()
+    {
+        $this->belongsTo(Condominio::class, 'condominio_id');
+    }
 }
