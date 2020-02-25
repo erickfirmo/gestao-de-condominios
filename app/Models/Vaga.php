@@ -14,4 +14,9 @@ class Vaga extends Model
         'observacoes',
         'morador_id',
     ];
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
