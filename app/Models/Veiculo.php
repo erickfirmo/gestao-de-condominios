@@ -16,4 +16,9 @@ class Veiculo extends Model
         'placa',
         'morador_id',
     ];
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
