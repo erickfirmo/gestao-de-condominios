@@ -19,7 +19,7 @@ class CreateOcorrenciasTable extends Migration
             $table->string('status', 20);
             $table->string('data', 20);
             $table->string('hora', 20);
-            $table->string('gravidade');
+            $table->enum('gravidade', ['baixa', 'media', 'alta']);
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
