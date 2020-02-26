@@ -32,4 +32,17 @@ class Funcionario extends Model
     {
         return $this->hasOne(User::class, 'funcionario_id');
     }
+<<<<<<< Updated upstream
+=======
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'funcionario_id');
+    }
+
+    public function condominios()
+    {
+        return $this->belongsToMany(FuncionarioDoCondominio::class);
+    }
+>>>>>>> Stashed changes
 }
