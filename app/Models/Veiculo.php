@@ -15,10 +15,16 @@ class Veiculo extends Model
         'descricao',
         'placa',
         'morador_id',
+        'funcionario_id',
     ];
 
     public function morador()
     {
         return $this->belongsTo(Morador::class, 'morador_id');
+    }
+
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 }
