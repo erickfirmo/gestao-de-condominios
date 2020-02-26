@@ -21,6 +21,7 @@ class Funcionario extends Model
         'telefone_2',
         'jornada_semanal',
         'carga_horaria',
+        'empresa_id',
     ];
 
     public function admin()
@@ -31,5 +32,10 @@ class Funcionario extends Model
     public function user()
     {
         return $this->hasOne(User::class, 'funcionario_id');
+    }
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'funcionario_id');
     }
 }
