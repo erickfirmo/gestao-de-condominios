@@ -32,6 +32,13 @@ class Condominio extends Model
         return $this->belongsTo(Empresa::class, 'empresa_id');
     }
 
+    public function funcionarios()
+    {
+        return $this->belongsToMany(Funcionario::class)
+            ->using(FuncionarioDoCondominio::class)
+            ->withPivot('created_at', 'update_at');
+    }
+
     public function areas_comuns()
     {
         return $this->hasMany(AreaComum::class, 'condominio_id', 'id');
