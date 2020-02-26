@@ -21,6 +21,7 @@ class Funcionario extends Model
         'telefone_2',
         'jornada_semanal',
         'carga_horaria',
+        'empresa_id',
     ];
 
     public function admin()
@@ -32,17 +33,23 @@ class Funcionario extends Model
     {
         return $this->hasOne(User::class, 'funcionario_id');
     }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> fd6e6400daf35c195fd54ee7d519a7ea9e995bec
 
     public function empresa()
     {
         return $this->belongsTo(Empresa::class, 'funcionario_id');
     }
+<<<<<<< HEAD
 
     public function condominios()
     {
         return $this->belongsToMany(FuncionarioDoCondominio::class);
     }
 >>>>>>> Stashed changes
+=======
+>>>>>>> fd6e6400daf35c195fd54ee7d519a7ea9e995bec
 }
