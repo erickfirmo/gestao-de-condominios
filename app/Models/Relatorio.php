@@ -11,6 +11,11 @@ class Relatorio extends Model
     public $fillable = [
         'descricao',
         'tipo',
-        'user_id',
+        'funcionario_id',
     ];
+
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
+    }
 }
