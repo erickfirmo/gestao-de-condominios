@@ -24,6 +24,11 @@ class Funcionario extends Model
         'empresa_id',
     ];
 
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'funcionario_id');
+    }
+
     public function admin()
     {
         return $this->hasOne(Admin::class, 'funcionario_id');
@@ -34,9 +39,8 @@ class Funcionario extends Model
         return $this->hasOne(User::class, 'funcionario_id');
     }
 
-    public function empresa()
+    public function pet()
     {
-        return $this->belongsTo(Empresa::class, 'funcionario_id');
+        return $this->hasMany(Pet::class, 'funcionario_id');
     }
-
 }
