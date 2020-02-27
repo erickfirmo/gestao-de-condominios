@@ -17,4 +17,9 @@ class Plano extends Model
         'max_parcelas',
         'descricao',
     ];
+
+    public function contratos()
+    {
+        return $this->hasMany(Contrato::class, 'plano_id', 'id');
+    }
 }
