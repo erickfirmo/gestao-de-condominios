@@ -16,6 +16,11 @@ class Morador extends Model
         'imovel_id',
     ];
 
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
+    }
+
     public function imovel()
     {
         return $this->belongsTo(Imovel::class, 'imovel_id');
