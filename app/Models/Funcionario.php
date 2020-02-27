@@ -61,7 +61,7 @@ class Funcionario extends Model
 
     public function vagas()
     {
-        return $this->hasMany(Vagas::class, 'funcionario_id');
+        return $this->hasMany(Vaga::class, 'funcionario_id');
     }
 
     public function veiculos()
