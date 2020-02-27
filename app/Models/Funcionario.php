@@ -39,7 +39,7 @@ class Funcionario extends Model
         return $this->hasOne(User::class, 'funcionario_id');
     }
 
-    public function pet()
+    public function pets()
     {
         return $this->hasMany(Pet::class, 'funcionario_id');
     }
