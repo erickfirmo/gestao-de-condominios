@@ -48,4 +48,9 @@ class Funcionario extends Model
     {
         return $this->hasMany(Visitante::class, 'funcionario_id');
     }
+
+    public function entregas()
+    {
+        return $this->hasMany(Entrega::class, 'funcionario_id');
+    }
 }
