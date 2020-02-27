@@ -11,6 +11,7 @@ class Contrato extends Model
     public $fillable = [
         'parcelas',
         'total_liquido',
+        'observacoes',
         'empresa_id',
         'plano_id',
     ];
