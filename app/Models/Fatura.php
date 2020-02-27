@@ -12,4 +12,9 @@ class Fatura extends Model
         'total_a_pagar',
         'contrato_id',
     ];
+
+    public function contrato()
+    {
+        return $this->belongsTo(Contrato::class, 'contrato_id');
+    }
 }
