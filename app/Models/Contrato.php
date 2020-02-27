@@ -19,4 +19,9 @@ class Contrato extends Model
     {
         return $this->belongsTo(Empresa::class, 'empresa_id');
     }
+
+    public function plano()
+    {
+        return $this->belongsTo(Empresa::class, 'plano_id');
+    }
 }
