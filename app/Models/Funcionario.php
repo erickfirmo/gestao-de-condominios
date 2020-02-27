@@ -43,4 +43,9 @@ class Funcionario extends Model
     {
         return $this->hasMany(Pet::class, 'funcionario_id');
     }
+
+    public function visitantes()
+    {
+        return $this->hasMany(Visitante::class, 'funcionario_id');
+    }
 }
