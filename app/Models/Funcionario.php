@@ -58,4 +58,9 @@ class Funcionario extends Model
     {
         return $this->hasMany(Ocorrencia::class, 'funcionario_id');
     }
+
+    public function vagas()
+    {
+        return $this->hasMany(Vagas::class, 'funcionario_id');
+    }
 }
