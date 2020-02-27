@@ -68,4 +68,11 @@ class Funcionario extends Model
     {
         return $this->hasMany(Veiculo::class, 'funcionario_id');
     }
+
+    public function condominios()
+    {
+        return $this->belongsToMany(Condominio::class)
+            ->using(FuncionarioDoCondominio::class)
+            ->withPivot('created_at', 'update_at');
+    }
 }
