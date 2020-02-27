@@ -24,4 +24,9 @@ class Contrato extends Model
     {
         return $this->belongsTo(Empresa::class, 'plano_id');
     }
+
+    public function faturas()
+    {
+        return $this->hasMany(Fatura::class, 'contrato_id', 'id');
+    }
 }
