@@ -19,11 +19,17 @@ class CreatePrestadoresDeServicosTable extends Migration
             $table->string('chegada', 20);
             $table->string('saida', 20);
             $table->string('identidade', 11);
-            $table->unsignedBigInteger('morador_id');
 
+            $table->unsignedBigInteger('morador_id');
             $table->foreign('morador_id')
                 ->references('id')
                 ->on('moradores');
+            $table->timestamps();
+
+            $table->unsignedBigInteger('funcionario_id');
+            $table->foreign('funcionario_id')
+                ->references('id')
+                ->on('funcionarios');
             $table->timestamps();
         });
     }
