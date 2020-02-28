@@ -12,6 +12,7 @@ class PrestadorDeServico extends Model
         'nome',
         'chegada',
         'saida',
+        'identidade',
         'morador_id',
         'funcionario_id',
     ];
