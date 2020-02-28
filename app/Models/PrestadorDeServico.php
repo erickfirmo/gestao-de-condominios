@@ -20,4 +20,9 @@ class PrestadorDeServico extends Model
     {
         return $this->belongsTo(Morador::class, 'morador_id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
