@@ -24,12 +24,7 @@ class CreateEntregasTable extends Migration
             $table->foreign('morador_id')
                 ->references('id')
                 ->on('moradores');
-
-            $table->unsignedBigInteger('imovel_id');
-            $table->foreign('imovel_id')
-                ->references('id')
-                ->on('imoveis');
-
+                
             $table->timestamps();
         });
     }
