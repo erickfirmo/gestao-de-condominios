@@ -25,4 +25,9 @@ class Vaga extends Model
     {
         return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
