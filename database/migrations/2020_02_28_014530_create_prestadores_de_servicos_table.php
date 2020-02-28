@@ -25,12 +25,6 @@ class CreatePrestadoresDeServicosTable extends Migration
                 ->references('id')
                 ->on('moradores');
             $table->timestamps();
-
-            $table->unsignedBigInteger('funcionario_id');
-            $table->foreign('funcionario_id')
-                ->references('id')
-                ->on('funcionarios');
-            $table->timestamps();
         });
     }
 
