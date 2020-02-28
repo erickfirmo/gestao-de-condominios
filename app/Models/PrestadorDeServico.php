@@ -14,6 +14,10 @@ class PrestadorDeServico extends Model
         'saida',
         'identidade',
         'morador_id',
-        'funcionario_id',
     ];
+
+    public function morador()
+    {
+        return $this->belongsTo(Morador::class, 'morador_id');
+    }
 }
