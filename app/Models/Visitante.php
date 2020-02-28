@@ -15,7 +15,6 @@ class Visitante extends Model
         'transporte',
         'prestador_de_servico',
         'morador_id',
-        'funcionario_id',
     ];
 
     public function morador()
@@ -23,8 +22,4 @@ class Visitante extends Model
         return $this->belongsTo(Morador::class, 'morador_id');
     }
 
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
-    }
 }
