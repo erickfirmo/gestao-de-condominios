@@ -24,11 +24,6 @@ class Funcionario extends Model
         'empresa_id',
     ];
 
-    public function empresa()
-    {
-        return $this->belongsTo(Empresa::class, 'funcionario_id');
-    }
-
     public function admin()
     {
         return $this->hasOne(Admin::class, 'funcionario_id');
@@ -38,41 +33,5 @@ class Funcionario extends Model
     {
         return $this->hasOne(User::class, 'funcionario_id');
     }
-
-    public function pets()
-    {
-        return $this->hasMany(Pet::class, 'funcionario_id');
-    }
-
-    public function visitantes()
-    {
-        return $this->hasMany(Visitante::class, 'funcionario_id');
-    }
-
-    public function entregas()
-    {
-        return $this->hasMany(Entrega::class, 'funcionario_id');
-    }
-
-    public function ocorrencias()
-    {
-        return $this->hasMany(Ocorrencia::class, 'funcionario_id');
-    }
-
-    public function vagas()
-    {
-        return $this->hasMany(Vaga::class, 'funcionario_id');
-    }
-
-    public function veiculos()
-    {
-        return $this->hasMany(Veiculo::class, 'funcionario_id');
-    }
-
-    public function condominios()
-    {
-        return $this->belongsToMany(Condominio::class)
-            ->using(FuncionarioDoCondominio::class)
-            ->withPivot('created_at', 'update_at');
-    }
+    
 }
