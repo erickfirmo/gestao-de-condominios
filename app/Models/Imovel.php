@@ -26,4 +26,9 @@ class Imovel extends Model
     {
         return $this->hasMany(Morador::class, 'imovel_id', 'id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
