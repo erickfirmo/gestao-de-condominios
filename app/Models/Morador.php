@@ -60,4 +60,9 @@ class Morador extends Model
     {
         return $this->hasMany(Vaga::class, 'morador_id', 'id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
