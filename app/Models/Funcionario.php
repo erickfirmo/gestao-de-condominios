@@ -33,5 +33,10 @@ class Funcionario extends Model
     {
         return $this->hasOne(User::class, 'funcionario_id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
     
 }
