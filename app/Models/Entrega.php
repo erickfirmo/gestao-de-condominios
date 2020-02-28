@@ -15,7 +15,6 @@ class Entrega extends Model
         'descricao',
         'status',
         'morador_id',
-        'imovel_id',
     ];
     
     public function morador()
