@@ -32,4 +32,9 @@ class Empresa extends Model
     {
         return $this->hasMany(Contrato::class, 'empresa_id', 'id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
