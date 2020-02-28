@@ -48,4 +48,9 @@ class Condominio extends Model
     {
         return $this->hasMany(Imovel::class, 'condominio_id', 'id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
