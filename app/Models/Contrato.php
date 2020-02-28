@@ -30,4 +30,9 @@ class Contrato extends Model
     {
         return $this->hasMany(Fatura::class, 'contrato_id', 'id');
     }
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
