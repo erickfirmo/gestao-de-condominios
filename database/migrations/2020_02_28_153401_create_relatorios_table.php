@@ -16,12 +16,15 @@ class CreateRelatoriosTable extends Migration
         Schema::create('relatorios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descricao', 200);
-            $table->string('tipo', 30);
+            $table->string('operacao', 30);
 
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')
+            $table->unsignedBigInteger('funcionario_id');
+            $table->foreign('funcionario_id')
                 ->references('id')
-                ->on('users');
+                ->on('funcionarios');
+
+            $table->unsignedBigInteger('parent_id');
+            $table->string('parent_table', 30);
 
             $table->timestamps();
         });
