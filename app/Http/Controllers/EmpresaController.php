@@ -35,7 +35,27 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
+        //validation
+
+        $razao_social = $request->input('razao_social');
+        $nome_fantasia = $request->input('nome_fantasia');
+        $cnpj = $request->input('cnpj');
+        $email = $request->input('email');
+        $telefone_1 = $request->input('telefone_1');
+        $telefone_2 = $request->input('telefone_2');
+        $responsavel_para_contato = $request->input('responsavel_para_contato');
         
+        $empresa = new Empresa;
+        $empresa->razao_social = $razao_social;
+        $empresa->nome_fantasia = $nome_fantasia;
+        $empresa->cnpj = $cnpj;
+        $empresa->email = $email;
+        $empresa->telefone_1 = $telefone_1;
+        $empresa->telefone_2 = $telefone_2;
+        $empresa->responsavel_para_contato = $responsavel_para_contato;
+        $empresa->save();
+
+        //return status
     }
 
     /**
