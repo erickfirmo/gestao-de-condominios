@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empresa;
 
 class EmpresaController extends Controller
 {
@@ -13,7 +14,7 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(['empresas' => Empresa::all()]);
     }
 
     /**
@@ -34,7 +35,7 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
