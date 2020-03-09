@@ -6,15 +6,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-require_once 'auth/user.php';
-require_once 'auth/admin.php';
-require_once 'auth/superadmin.php';
-
-
-Route::prefix('superadmin')->name('superadmin.')->group(function () {
-    Route::resource('empresas', 'EmpresaController');
-        
-});
 
 
 Route::prefix('admin')->name('admin.')->namespace('')->group(function () {
