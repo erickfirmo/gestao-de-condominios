@@ -53,9 +53,9 @@ class EmpresaController extends Controller
         $empresa->telefone_1 = $telefone_1;
         $empresa->telefone_2 = $telefone_2;
         $empresa->responsavel_para_contato = $responsavel_para_contato;
-        $empresa->save();
+        $saved = $empresa->save();
 
-        //return status
+        return !$saved ? response('Error', 500) : response()->json([200 => 'Ok']);
     }
 
     /**
