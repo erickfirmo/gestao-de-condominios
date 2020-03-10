@@ -66,6 +66,7 @@ class RegisterController extends Controller
             'foto_de_perfil' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:superadmins'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'api_token' => ['required', 'string', 'min:60', 'max:60'],
         ]);
     }
 
@@ -82,6 +83,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'foto_de_perfil' => $data['foto_de_perfil'],
             'password' => Hash::make($data['password']),
+            'api_token' => Str::random(60),
+
         ]);
     }
 }
