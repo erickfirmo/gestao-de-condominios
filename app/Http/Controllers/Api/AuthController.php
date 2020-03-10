@@ -9,7 +9,7 @@ use App\User;
 
 class AuthController extends Controller
 {
-    public function register (Request $request) {
+    public function register(Request $request) {
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
@@ -31,4 +31,28 @@ class AuthController extends Controller
         return response($response, 200);
     
     }
+
+    public function login(Request $request) {
+
+        $user = User::where('email', $request->email)->first();
+    
+        if ($user) {
+    
+            if (Hash::check($request->password, $user->password)) {
+                $token = $user->createToken('Laravel Password Grant Client')->accessToken;
+                $response = ['token' => $token];
+                return response($response, 200);
+            } else {
+                $response = "Password missmatch";
+                return response($response, 422);
+            }
+    
+        } else {
+            $response = 'User does not exist';
+            return response($response, 422);
+        }
+    
+    }
+
+
 }
