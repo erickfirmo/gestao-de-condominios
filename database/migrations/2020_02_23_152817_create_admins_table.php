@@ -25,6 +25,11 @@ class CreateAdminsTable extends Migration
                 ->references('id')
                 ->on('funcionarios');
 
+            $table->string('api_token', 80)
+                ->unique()
+                ->nullable()
+                ->default(null);
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
