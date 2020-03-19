@@ -17,7 +17,7 @@
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('admin.empresas.index') }}">Empresas</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('superadmin.empresas.index') }}">Empresas</a></li>
                         <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
                     </ul>
                 </div>
@@ -34,13 +34,13 @@
                 <!-- Panel Start -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Nova Empresas</h3>
+                        <h3 class="panel-title">Nova Empresa</h3>
                     </div>
 
                     <div class="panel-content">
                     @include('admin.partials._alert')
                     
-                        <form action="{{ route('admin.empresas.store') }}" method="POST">
+                        <form action="{{ route('superadmin.empresas.store') }}" method="POST">
                             @csrf
                             <!-- Form Group Start -->
                             <div class="form-group row">
@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('admin.examples.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('superadmin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
