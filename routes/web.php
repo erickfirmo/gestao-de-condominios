@@ -14,24 +14,29 @@ require_once 'auth/superadmin.php';
 
 
 Route::prefix('superadmin')->name('superadmin.')->group(function () {
-    // cadastros
-    
-    
-    Route::prefix('cadastros')->name('cadastros.')->group(function () {
-        // empresas
-        Route::resource('empresas', 'EmpresaController');
-        // condominios
-        Route::resource('condominios', 'CondominioController');
-        // imoveis
-        Route::resource('imoveis', 'ImovelController');
-        // moradores
-        Route::resource('moradores', 'MoradorController');
-        // areas comuns
-        Route::resource('areas-comuns', 'AreaComumController');
-        // reservas
-        Route::resource('reservas', 'ReservaController');
+    ##cadastros
+    // empresas
+    Route::resource('empresas', 'EmpresaController');
+    // condominios
+    Route::resource('condominios', 'CondominioController');
+    // imoveis
+    Route::resource('imoveis', 'ImovelController');
+    // moradores
+    Route::resource('moradores', 'MoradorController');
+    // areas comuns
+    Route::resource('areas-comuns', 'AreaComumController');
+    // reservas
+    Route::resource('reservas', 'ReservaController');
+    // pets
+    Route::resource('pets', 'PetController');
 
-    });
+    ##portarias
+
+
+
+
+
+    ##usuarios/acessos
 
     // usuarios
 
