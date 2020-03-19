@@ -13,13 +13,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Page Title Start -->
-                    <h2 class="page--title h5">Examples</h2>
+                    <h2 class="page--title h5">Empresas</h2>
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('admin.examples.index') }}">Examples</a></li>
-                                <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
-                            </ul>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.empresas.index') }}">Empresas</a></li>
+                        <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -34,19 +34,19 @@
                 <!-- Panel Start -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Novo Cadastro</h3>
+                        <h3 class="panel-title">Nova Empresas</h3>
                     </div>
 
                     <div class="panel-content">
                     @include('admin.partials._alert')
                     
-                        <form action="{{ route('admin.examples.store') }}" method="POST">
+                        <form action="{{ route('admin.empresas.store') }}" method="POST">
                             @csrf
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="20" value="{{ old('nome') }}">
+                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="20" value="{{ old('razao_social') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
