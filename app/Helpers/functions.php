@@ -2,21 +2,15 @@
 
 
 
-if(!function_exists('classActivePath'))
+if(!function_exists('classActiveUrl'))
 {
-    function classActivePath($path, $activeClass, $n)
+    function classActiveUrl($path, $activeClass)
     {
         if($n != 0) {
             $i = 0;
-            $final_path = '';
             $explode_path = explode('/', $_SERVER['REQUEST_URI']);
-            while ($i != $n)
-            {
-                $i++;
-                if(isset($explode_path[$i]))
-                    $final_path .= '/'.$explode_path[$i];
-            }
-            if($path == $final_path)
+        
+            if($path == $explode_path[1])
                 echo " $activeClass";
     
         } else {
