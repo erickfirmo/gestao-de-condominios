@@ -29,6 +29,9 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('reservas', 'ReservaController');
     // pets
     Route::resource('pets', 'PetController');
+    // veiculos
+    Route::resource('veiculos', 'VeiculoController');
+
 
     ##portarias
 
