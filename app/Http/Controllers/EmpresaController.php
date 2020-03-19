@@ -24,7 +24,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastros.empresas.create');
     }
 
     /**
