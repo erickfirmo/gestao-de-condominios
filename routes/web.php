@@ -22,7 +22,13 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
         Route::resource('empresas', 'EmpresaController');
         // condominios
         Route::resource('condominios', 'CondominioController');
-            
+        // imoveis
+        Route::resource('imoveis', 'ImovelController');
+        // moradores
+        Route::resource('moradores', 'MoradorController');
+        // areas comuns
+        Route::resource('areas-comuns', 'AreaComumController');
+
     });
 
     // usuarios
