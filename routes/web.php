@@ -26,10 +26,10 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('moradores', 'MoradorController');
     // areas comuns
     Route::resource('areas-comuns', 'AreaComumController');
-    // reservas
-    Route::resource('reservas', 'ReservaController');
     // pets
     Route::resource('pets', 'PetController');
+    // reservas
+    Route::resource('reservas', 'ReservaController');
 
     ##estacionamento/garagem
     // veiculos
@@ -46,14 +46,14 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
 
     ##usuarios/acessos
-
     // usuarios
+    Route::resource('acessos/users', 'Acessos/UserController');
+    // administradores
+    Route::resource('acessos/admins', 'Acessos/AdminController');
 
-
-    // financeiros
-
-
-    // portarias
+    ##financeiro
+    // receita
+    Route::resource('financeiro/receitas', 'Financeiro/ReceitaController');
 
         
 });
