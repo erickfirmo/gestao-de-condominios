@@ -2,8 +2,8 @@
 
 @section('content')
 
-@include('admin.partials._navbar')
-@include('admin.partials._sidebar')
+@include('superadmin.partials._navbar')
+@include('superadmin.partials._sidebar')
 
 <!-- Main Container Start -->
 <main class="main--container">
