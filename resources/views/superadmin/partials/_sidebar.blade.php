@@ -84,8 +84,7 @@
                             <li><a href="{{ route('superadmin.condominios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="{{ route('superadmin.condominios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
-                    </li>    
-                                   
+                    </li>          
                 </ul>
 
                 <ul>
@@ -100,8 +99,7 @@
                             <li><a href="{{ route('superadmin.imoveis.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="{{ route('superadmin.imoveis.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
-                    </li>    
-                                   
+                    </li>          
                 </ul>
 
                 <ul>
@@ -114,7 +112,23 @@
                                 
                         <ul>
                             <li><a href="{{ route('superadmin.moradores.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.imoveis.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.moradores.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>    
+                                   
+                </ul>
+
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Funcionários</span>
+                        </a>
+
+                                
+                        <ul>
+                            <li><a href="{{ route('superadmin.funcionarios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.funcionarios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>    
                                    
@@ -145,7 +159,6 @@
                         <i class="fas fa-user"></i>
                             <span>Visitantes</span>
                         </a>
-
                         <ul>
                             <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
@@ -159,6 +172,35 @@
                         <i class="fas fa-user"></i>
                             <span>Prestadores de Serviços</span>
                         </a>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">GARAGEM</a>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Vagas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Veículos</span>
+                        </a>
 
                         <ul>
                             <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
@@ -170,7 +212,6 @@
 
             <li>
                 <a href="#">USUÁRIOS</a>
-
                 <ul>
                     <li>
                         <a href="#">
@@ -184,7 +225,6 @@
                         </ul>
                     </li>                   
                 </ul>
-
                 <ul>
                     <li>
                         <a href="#">
@@ -200,6 +240,120 @@
                 </ul>
             </li>
 
+
+            <li>
+                <a href="#">FINANCEIRO</a>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Receitas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Despesas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Faturas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Boletos</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </li>
+
+            
+            <li>
+                <a href="#">OUTROS</a>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Áreas Comuns</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Reservas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Ocorrências</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Relatórios</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </li>
+            
         </ul>
     </div>
     <!-- Sidebar Navigation End -->
