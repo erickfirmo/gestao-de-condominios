@@ -35,7 +35,7 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     // veiculos
     Route::resource('veiculos', 'VeiculoController');
     // vagas
-    Route::resource('veiculos', 'VeiculoController');
+    Route::resource('vagas', 'VagaController');
 
 
 
