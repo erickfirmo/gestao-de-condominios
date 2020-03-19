@@ -14,6 +14,7 @@ require_once 'auth/superadmin.php';
 
 
 Route::prefix('superadmin')->name('superadmin.')->group(function () {
+
     ##cadastros
     // empresas
     Route::resource('empresas', 'EmpresaController');
@@ -29,11 +30,12 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('reservas', 'ReservaController');
     // pets
     Route::resource('pets', 'PetController');
+
+    ##estacionamento/garagem
     // veiculos
     Route::resource('veiculos', 'VeiculoController');
-
-
-    ##portarias
+    // vagas
+    Route::resource('veiculos', 'VeiculoController');
 
 
 
