@@ -42,7 +42,15 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //validation
+        $request->validate([
+            'razao_social',
+            'nome_fantasia',
+            'cnpj',
+            'email',
+            'telefone_1',
+            'telefone_2',
+            'responsavel_para_contato',
+        ]);
 
         $razao_social = $request->input('razao_social');
         $nome_fantasia = $request->input('nome_fantasia');
@@ -62,7 +70,8 @@ class EmpresaController extends Controller
         $empresa->responsavel_para_contato = $responsavel_para_contato;
         $saved = $empresa->save();
 
-        return !$saved ? response('Error', 500) : response()->json([200 => 'Ok']);
+        return view('cadastros.empresas.edit', compact('empresa'))
+            ->with('success', 'Empresa cadastrada com sucesso!');
     }
 
     /**
