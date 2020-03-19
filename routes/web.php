@@ -6,12 +6,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-
 require_once 'auth/user.php';
 require_once 'auth/admin.php';
 require_once 'auth/superadmin.php';
-
 
 Route::prefix('superadmin')->name('superadmin.')->group(function () {
 
@@ -24,6 +21,8 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('imoveis', 'ImovelController');
     // moradores
     Route::resource('moradores', 'MoradorController');
+    // funcionarios
+    Route::resource('funcionarios', 'FuncionarioController');
     // areas comuns
     Route::resource('areas-comuns', 'AreaComumController');
     // pets
@@ -59,7 +58,7 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     // faturas
     Route::resource('financeiro/faturas', 'Financeiro/FaturaController');
     // boletos
-    Route::resource('financeiro/despesas', 'Financeiro/BoletoController');
+    Route::resource('financeiro/boletos', 'Financeiro/BoletoController');
         
 });
 
@@ -70,6 +69,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('imoveis', 'ImovelController');
     // moradores
     Route::resource('moradores', 'MoradorController');
+    // funcionarios
+    Route::resource('funcionarios', 'FuncionarioController');
     // areas comuns
     Route::resource('areas-comuns', 'AreaComumController');
     // pets
@@ -111,6 +112,8 @@ Route::prefix('user')->name('user.')->group(function () {
     Route::resource('imoveis', 'ImovelController');
     // moradores
     Route::resource('moradores', 'MoradorController');
+    // funcionarios
+    Route::resource('funcionarios', 'FuncionarioController');
     // areas comuns
     Route::resource('areas-comuns', 'AreaComumController');
     // pets
