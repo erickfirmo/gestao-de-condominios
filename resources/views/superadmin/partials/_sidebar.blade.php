@@ -56,12 +56,12 @@
             <li>
                         <a href="javascript:void(0)">
                             <i class="fas fa-university"></i>
-                            <span>Examples</span> 
+                            <span>Cadastros</span> 
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('admin.examples.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('admin.examples.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.empresas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.empresas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>
 
