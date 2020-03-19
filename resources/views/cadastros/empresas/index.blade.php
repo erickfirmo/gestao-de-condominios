@@ -35,7 +35,15 @@
                             <!--<a href="#" class="btn btn-sm btn-outline-info">Manage Orders</a>-->
                         
                             </h3>
-                            <p>{{ count($empresas) == 1 ? count($empresas).' Empresa encontrada' : count($empresas).' Empresas encontradas' }}</p>
+                            <p>
+                                {{
+                                    countMessage($empresas, [
+                                        'zero' => 'Nenhuma empresa encontrada',
+                                        'one' => '1 empresa encontrada',
+                                        'many' => '[X] empresas encontradas'
+                                    ])
+                                }}
+                            </p>
                         </div>
 
                         <div class="actions">
