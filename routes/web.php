@@ -15,8 +15,15 @@ require_once 'auth/superadmin.php';
 
 Route::prefix('superadmin')->name('superadmin.')->group(function () {
     // cadastros
-    Route::resource('empresas', 'EmpresaController');
-    Route::resource('condominios', 'CondominioController');
+    
+    
+    Route::prefix('cadastros')->name('cadastros.')->group(function () {
+        // empresas
+        Route::resource('empresas', 'EmpresaController');
+        // condominios
+        Route::resource('condominios', 'CondominioController');
+            
+    });
 
     // usuarios
 
@@ -32,8 +39,6 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // cadastros
-    Route::resource('empresas', 'EmpresaController');
-    Route::resource('condominios', 'CondominioController');
 
     // usuarios
 
@@ -49,11 +54,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // users
 Route::prefix('user')->name('user.')->group(function () {
     // cadastros
-    Route::prefix('user')->name('user.')->group(function () {
-        // moradores
-        Route::resource('moradores', 'MoradorController');
-            
-    });
 
     // usuarios
 
