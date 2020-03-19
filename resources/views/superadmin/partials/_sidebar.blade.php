@@ -55,7 +55,6 @@
 
             <li>
                 <a href="javascript:void(0)">
-                    <i class="fas fa-university"></i>
                     <span>Cadastros</span> 
                 </a>
 
