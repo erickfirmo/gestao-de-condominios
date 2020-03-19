@@ -7,14 +7,21 @@ use App\Models\Empresa;
 
 class EmpresaController extends Controller
 {
-    /**
+    public function __construct()
+    {
+        return $this->middleware('auth:superadmin');
+    }   
+
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('cadastros.empresas.index');
+        return view('cadastros.empresas.index', [
+            'empresas' => Empresa::all()
+        ]);
     }
 
     /**
