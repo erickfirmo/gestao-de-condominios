@@ -19,12 +19,7 @@ class CreateSuperadminsTable extends Migration
             $table->string('email')->unique();
             $table->string('foto_de_perfil');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-
-            $table->string('api_token', 80)
-                ->unique()
-                ->nullable()
-                ->default(null);
+            $table->string('password');;
                 
             $table->rememberToken();
             $table->timestamps();
