@@ -14,7 +14,7 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return response()->json(['empresas' => Empresa::all()]);
+        return view('cadastros.empresas.index');
     }
 
     /**
