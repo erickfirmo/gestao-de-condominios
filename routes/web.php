@@ -37,6 +37,10 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     // vagas
     Route::resource('vagas', 'VagaController');
 
+    ##portarias
+    Route::resource('entregas', 'EntregaController');
+
+
 
 
 
