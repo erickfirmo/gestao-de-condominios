@@ -38,12 +38,12 @@
                             <p>{{ count($empresas) == 1 ? count($empresas).' Empresa encontrada' : count($empresas).' Empresas encontradas' }}</p>
                         </div>
 
-                        <!--<div class="actions">
+                        <div class="actions">
                             <form action="#" class="search">
-                                <input type="text" class="form-control" placeholder="Order ID or Customer Name..." required>
+                                <input type="text" class="form-control" placeholder="Buscar..." required>
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
-                        </div>-->
+                        </div>
                     </div>
                     <!-- Records Header End -->
                 </div>
