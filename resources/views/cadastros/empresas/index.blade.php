@@ -16,7 +16,7 @@
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('admin.examples.index') }}">Empresas</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('superadmin.empresas.index') }}">Empresas</a></li>
                                 <li class="breadcrumb-item active"><span>Todas</span></li>
                             </ul>
                         </div>
@@ -31,7 +31,7 @@
                     <!-- Records Header Start -->
                     <div class="records--header">
                         <div class="title fa-university">
-                            <h3 class="h3">Examples
+                            <h3 class="h3">Empresas
                             <!--<a href="#" class="btn btn-sm btn-outline-info">Manage Orders</a>-->
                         
                             </h3>
