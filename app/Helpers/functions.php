@@ -25,3 +25,17 @@ if(!function_exists('classActivePath'))
         }
     }
 }
+
+if(!function_exists('countMessage'))
+{
+    function countMessage($obj_array, $messages)
+    {
+        if(count($obj_array) == 0)
+            return $messages['zero'];
+        else if(count($obj_array) == 1)
+            return $messages['one'];
+        else if (count($obj_array))
+            return replace('[X]', count($obj_array), $messages['many']);
+        
+    }
+}
