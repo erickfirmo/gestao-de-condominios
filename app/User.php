@@ -2,14 +2,19 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable implements MustVerifyEmail
+use App\Notifications\User\ResetPasswordNotification;
+
+
+class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
+
+    protected $guard = 'user';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +22,11 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'foto_de_perfil',
+        'password',
+        'funcionario_id',
     ];
 
     /**
@@ -29,12 +38,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
+
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
+    }
 }

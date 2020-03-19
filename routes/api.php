@@ -13,6 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('register', 'API\RegisterController@register');
-Route::post('login', 'API\RegisterController@login');
-   
+require_once 'auth/user.php';
+require_once 'auth/admin.php';
+require_once 'auth/superadmin.php';
+
+
+Route::prefix('superadmin')->name('superadmin.')->group(function () {
+    Route::resource('empresas', 'EmpresaController');
+        
+});
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
