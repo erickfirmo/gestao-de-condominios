@@ -28,6 +28,8 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
         Route::resource('moradores', 'MoradorController');
         // areas comuns
         Route::resource('areas-comuns', 'AreaComumController');
+        // reservas
+        Route::resource('reservas', 'ReservaController');
 
     });
 
