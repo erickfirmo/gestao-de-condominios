@@ -203,8 +203,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.veiculos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.veiculos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
