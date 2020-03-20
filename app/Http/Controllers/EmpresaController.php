@@ -45,7 +45,7 @@ class EmpresaController extends Controller
         $request->validate([
             'razao_social' => 'required|min:1|max:60|unique:empresas',
             'nome_fantasia' => 'required|min:1|max:60',
-            'cnpj' => 'required|digits:18',
+            'cnpj' => 'required|digits:18|unique:empresas',
             'email' => 'required|min:3|max:40|',
             'telefone_1' => 'required|min:8|max:20',
             'telefone_2' => 'min:8|max:20',
@@ -68,7 +68,7 @@ class EmpresaController extends Controller
         $empresa->telefone_1 = $telefone_1;
         $empresa->telefone_2 = $telefone_2;
         $empresa->responsavel_para_contato = $responsavel_para_contato;
-        $saved = $empresa->save();
+        $empresa->save();
 
         return view('cadastros.empresas.edit', compact('empresa'))
             ->with('success', 'Empresa cadastrada com sucesso!');
@@ -129,7 +129,7 @@ class EmpresaController extends Controller
             'responsavel_para_contato' => $request->responsavel_para_contato,
         ]);
 
-        return redirect()->route('admin.empresas.edit', compact('empresa'))
+        return redirect()->route('superadmin.empresas.edit', compact('empresa'))
             ->with('success', 'Dados da empresa atualizados com sucesso!');
     }
 
@@ -141,6 +141,9 @@ class EmpresaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Empresa::findOrFail($id)->delete();
+
+        return redirect()->route('superadmin.empresas.index')
+            ->with('success', 'Empresa removida com sucesso!');
     }
 }
