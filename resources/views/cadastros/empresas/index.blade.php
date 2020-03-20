@@ -67,22 +67,38 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Razão Social</th>
+                                    <th>Nome Fantasia</th>
+                                    <th>Cnpj</th>
+                                    <th>Email</th>
+                                    <th>Telefone 1</th>
+                                    <th>Telefone 2</th>
+                                    <th>Responsável</th>
+
+
+
                                     <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($empresas as $empresas)
+                                @foreach($empresas as $empresa)
 
                                 <tr id="{{ 'empresa-'.$empresa->id }}">
                                     <td>{{ $empresa->id }}</td>
                                     <td>{{ $empresa->razao_social }}</td>
+                                    <td>{{ $empresa->nome_fantasia }}</td>
+                                    <td>{{ $empresa->cnpj }}</td>
+                                    <td>{{ $empresa->email }}</td>
+                                    <td>{{ $empresa->telefone_1 }}</td>
+                                    <td>{{ $empresa->telefone_2 }}</td>
+                                    <td>{{ $empresa->responvel_para_contato }}</td>
+
                                     <td>
                                         <div class="dropleft">
                                             <a href="#" class="btn-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
 
                                             <div class="dropdown-menu">
-                                                <a href="{{ route('admin.empresas.edit', $empresa->id ) }}" class="dropdown-item">Editar</a>
-                                                <form action="{{ route('admin.empresas.destroy', $empresa->id) }}" method="POST">
+                                                <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="dropdown-item">Editar</a>
+                                                <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST">
                                                     @csrf
                                                     {{method_field('DELETE')}}
                                                     <button class="dropdown-item btn-remove">Excluir</button>
