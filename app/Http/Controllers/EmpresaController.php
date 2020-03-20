@@ -93,7 +93,9 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.empresas.edit', [ 'empresa' => Empresa::find($id) ]);
+        return view('cadastros.empresas.edit', [
+            'empresa' => Empresa::find($id)
+        ]);
     }
 
     /**
