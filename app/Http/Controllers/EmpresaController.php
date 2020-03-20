@@ -82,7 +82,9 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('cadastros.empresas.show', [
+            'empresa' => Empresa::find($id)
+        ]);
     }
 
     /**
