@@ -45,7 +45,7 @@
             <li>
                 <ul>
                     <li class="active">
-                        <a href="#">
+                        <a href="{{ route('superadmin.home' ) }}">
                             <i class="fa fa-home"></i>
                             <span>Dashboard</span>
                         </a>
