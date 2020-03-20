@@ -27,8 +27,6 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
     Route::resource('areas-comuns', 'AreaComumController');
     // pets
     Route::resource('pets', 'PetController');
-    // reservas
-    Route::resource('reservas', 'ReservaController');
 
     ##estacionamento/garagem
     // veiculos
@@ -46,21 +44,32 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
 
     ##usuarios/acessos
     // usuarios
-    Route::resource('acessos/users', 'Acessos/UserController');
+    Route::resource('acessos/users', 'User\Auth\EditController');
     // administradores
-    Route::resource('acessos/admins', 'Acessos/AdminController');
+    Route::resource('acessos/admins', 'Admin\Auth\EditController');
 
     ##financeiro
     // receita
-    Route::resource('financeiro/receitas', 'Financeiro/ReceitaController');
+    Route::resource('financeiro/receitas', 'ReceitaController');
     // despesas
-    Route::resource('financeiro/despesas', 'Financeiro/DespesaController');
+    Route::resource('financeiro/despesas', 'DespesaController');
     // faturas
-    Route::resource('financeiro/faturas', 'Financeiro/FaturaController');
+    Route::resource('financeiro/faturas', 'FaturaController');
     // boletos
-    Route::resource('financeiro/boletos', 'Financeiro/BoletoController');
+    Route::resource('financeiro/boletos', 'BoletoController');
+
+    ##outros
+    // reservas
+    Route::resource('reservas', 'ReservaController');
+    // ocorrencias
+    Route::resource('ocorrencias', 'OcorrenciaController');
+    // reservas
+    Route::resource('relatorios', 'RelatorioController');
         
 });
+
+
+
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -94,15 +103,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     ##usuarios/acessos
     // usuarios
-    Route::resource('acessos/users', 'Acessos/UserController');
+    Route::resource('acessos/users', 'User\Auth\EditController');
     // administradores
-    Route::resource('acessos/admins', 'Acessos/AdminController');
-
-    ##financeiro
-    // faturas
-    Route::resource('financeiro/faturas', 'Financeiro/FaturaController');
+    Route::resource('acessos/admins', 'Admin\Auth\EditController');
         
 });
+
+
+
+
 
 // users
 Route::prefix('user')->name('user.')->group(function () {
