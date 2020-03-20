@@ -62,7 +62,7 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">CNPJ</span>
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Cnpj</span>
                                 <div class="col-md-10">
                                     <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ old('cnpj') }}">
                                 </div>
