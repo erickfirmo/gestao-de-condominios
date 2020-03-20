@@ -31,28 +31,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CMontserrat:400,500">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/jquery-ui.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/perfect-scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/morris.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/jquery-jvectormap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/horizontal-timeline.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/weather-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/dropzone.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/ion.rangeSlider.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/ion.rangeSlider.skinFlat.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/datatables.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/fullcalendar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/summernote-bs4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/summernote-bs4-overrides.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/perfect-scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/morris.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/jquery-jvectormap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/horizontal-timeline.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/weather-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/ion.rangeSlider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/ion.rangeSlider.skinFlat.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/datatables.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fullcalendar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/assets/css/summernote-bs4-overrides.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
     
     <!-- Page Level Stylesheets -->
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/sweetalert.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/dadmin/assets/css/sweetalert-overrides.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert-overrides.css') }}">
 
 </head>
 <body>
@@ -65,30 +65,30 @@
 
 <!-- Scripts -->
 
-<script src="{{ asset('vendor/dadmin/assets/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/raphael.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/morris.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/select2.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery-jvectormap.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery-jvectormap-world-mill.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/horizontal-timeline.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/jquery.steps.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/dropzone.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/ion.rangeSlider.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/datatables.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/main.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/morris.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/select2.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery-jvectormap.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery-jvectormap-world-mill.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/horizontal-timeline.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery.steps.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/dropzone.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/ion.rangeSlider.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/main.js') }}"></script>
 
-<script src="{{ asset('assets/js/summernote-bs4.min.js') }}"></script>
-<script src="{{ asset('assets/js/summernote-bs4-init.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4-init.js') }}"></script>
 
 <!-- Page Level Scripts -->
-<script src="{{ asset('vendor/dadmin/assets/js/sweetalert.min.js') }}"></script>
-<script src="{{ asset('vendor/dadmin/assets/js/sweetalert-init.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
 
 @stack('js')
 
