@@ -64,7 +64,16 @@
                             <div class="form-group row">
                                     <span class="label-text col-md-2 col-form-label text-md-right">CNPJ</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="30" value="{{ old('cnpj') }}">
+                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ old('cnpj') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
+                                <div class="col-md-10">
+                                    <input type="email" name="email" class="form-control" id="email" maxlenght="30" value="{{ old('email') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
