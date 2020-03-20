@@ -43,9 +43,9 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'razao_social',
-            'nome_fantasia',
-            'cnpj',
+            'razao_social' => 'required|min:1|max:60|unique:empresas',
+            'nome_fantasia' => 'required|min:1|max:60',
+            'cnpj' => '',
             'email',
             'telefone_1',
             'telefone_2',
