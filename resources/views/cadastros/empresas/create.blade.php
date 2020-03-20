@@ -73,10 +73,20 @@
                             <div class="form-group row">
                                     <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
                                 <div class="col-md-10">
-                                    <input type="email" name="email" class="form-control" id="email" maxlenght="30" value="{{ old('email') }}">
+                                    <input type="email" name="email" class="form-control" id="email" maxlenght="40" value="{{ old('email') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="20" value="{{ old('telefone_1') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
 
 
                             
