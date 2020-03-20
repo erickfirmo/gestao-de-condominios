@@ -180,7 +180,8 @@ return [
         Ixudra\Curl\CurlServiceProvider::class,
         /* Excel */
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
+        /* Collective */
+        Collective\Html\HtmlServiceProvider::class
 
     ],
 
@@ -236,6 +237,9 @@ return [
         'Curl'          => Ixudra\Curl\Facades\Curl::class,
         /* Excel */
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        /* Collective */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,  
     ],
 
 ];
