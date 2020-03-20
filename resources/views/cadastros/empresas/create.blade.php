@@ -87,6 +87,15 @@
                             </div>
                             <!-- Form Group End -->
 
+                             <!-- Form Group Start -->
+                             <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="20" value="{{ old('telefone_2') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
 
 
                             
