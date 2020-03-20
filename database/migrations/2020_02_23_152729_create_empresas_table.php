@@ -20,7 +20,7 @@ class CreateEmpresasTable extends Migration
             $table->string('cnpj')->unique();
             $table->string('email')->unique();
             $table->string('telefone_1', 20);
-            $table->string('telefone_2', 20);
+            $table->string('telefone_2', 20)->nullable();
             $table->string('responsavel_para_contato', 50);
             $table->timestamps();
         });
