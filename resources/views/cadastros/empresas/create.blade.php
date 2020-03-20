@@ -46,7 +46,16 @@
                             <div class="form-group row">
                                     <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="20" value="{{ old('razao_social') }}">
+                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="60" value="{{ old('razao_social') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Nome Fantasia</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="nome_fantasia" class="form-control" id="nome_fantasia" maxlenght="30" value="{{ old('nome_fantasia') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
