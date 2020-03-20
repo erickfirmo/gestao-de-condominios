@@ -87,7 +87,6 @@
                             </div>
                             <!-- Form Group End -->
 
-                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                     <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
@@ -105,9 +104,6 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
-
-
                             
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
@@ -126,6 +122,11 @@
 
     @include('admin.partials._footer')
 </main>
+
+@push('js')
+    <script src="{{ asset('js/table-filter.js') }}"></script>
+@endpush
+
 <!-- Main Container End -->
 @endsection
 
