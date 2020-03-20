@@ -83,7 +83,7 @@ class EmpresaController extends Controller
     public function show($id)
     {
         return view('cadastros.empresas.show', [
-            'empresa' => Empresa::find($id)
+            'empresa' => Empresa::findOrFail($id)
         ]);
     }
 
@@ -96,7 +96,7 @@ class EmpresaController extends Controller
     public function edit($id)
     {
         return view('cadastros.empresas.edit', [
-            'empresa' => Empresa::find($id)
+            'empresa' => Empresa::findOrFail($id)
         ]);
     }
 
@@ -109,7 +109,18 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empresa = Empresa::findOrFail($id)->update([
+            'razao_social' => $request->razao_social,
+            'nome_fantasia' => $request->nome_fantasia,
+            'cnpj' => $request->cnpj,
+            'email' => $request->email,
+            'telefone_1' => $request->telefone_1,
+            'telefone_2' => $request->telefone_2,
+            'responsavel_para_contato' => $request->responsavel_para_contato,
+        ]);
+
+        return redirect()->route('admin.empresas.edit', compact('empresa'))
+            ->with('success', 'Dados da empresa atualizados com sucesso!');
     }
 
     /**
