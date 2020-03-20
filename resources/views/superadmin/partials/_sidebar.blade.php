@@ -290,8 +290,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.financeiro.boletos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.financeiro.boletos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -308,8 +308,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.areas-comuns.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.areas-comuns.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -321,8 +321,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.reservas.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.reservas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -334,8 +334,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.ocorrencias.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.ocorrencias.index') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
