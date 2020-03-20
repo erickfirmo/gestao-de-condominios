@@ -99,9 +99,9 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Responsavel para Contato</span>
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Responsavel</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="20" value="{{ old('responsavel_para_contato') }}">
+                                    <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="50" value="{{ old('responsavel_para_contato') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
