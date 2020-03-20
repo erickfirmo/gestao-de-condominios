@@ -17,8 +17,8 @@ class CreateEmpresasTable extends Migration
             $table->bigIncrements('id');
             $table->string('razao_social', 60)->unique();
             $table->string('nome_fantasia', 60);
-            $table->string('cnpj')->unique();
-            $table->string('email')->unique();
+            $table->string('cnpj', 18)->unique();
+            $table->string('email', 40)->unique();
             $table->string('telefone_1', 20);
             $table->string('telefone_2', 20)->nullable();
             $table->string('responsavel_para_contato', 50);
