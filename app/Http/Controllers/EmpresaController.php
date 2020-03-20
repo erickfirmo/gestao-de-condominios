@@ -47,9 +47,9 @@ class EmpresaController extends Controller
             'nome_fantasia' => 'required|min:1|max:60',
             'cnpj' => 'required|digits:18',
             'email' => 'required|min:3|max:40|',
-            'telefone_1' => 'required|digits:18',
-            'telefone_2' => 'required|digits:18',
-            'responsavel_para_contato' => 'required|digits:18',
+            'telefone_1' => 'required|min:8|max:20',
+            'telefone_2' => 'min:8|max:20',
+            'responsavel_para_contato' => 'required|min:1|max:50',
         ]);
 
         $razao_social = $request->input('razao_social');
