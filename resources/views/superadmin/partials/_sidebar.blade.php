@@ -251,8 +251,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.financeiro.receitas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.financeiro.receitas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.receitas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.receitas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -264,8 +264,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.financeiro.despesas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.financeiro.despesas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.despesas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.despesas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -277,8 +277,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.financeiro.faturas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.financeiro.faturas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.faturas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.faturas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -290,8 +290,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.financeiro.boletos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.financeiro.boletos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('superadmin.boletos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('superadmin.boletos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
