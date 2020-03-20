@@ -45,7 +45,7 @@ class EmpresaController extends Controller
         $request->validate([
             'razao_social' => 'required|min:1|max:60|unique:empresas',
             'nome_fantasia' => 'required|min:1|max:60',
-            'cnpj' => '',
+            'cnpj' => 'required|digits:18',
             'email',
             'telefone_1',
             'telefone_2',
