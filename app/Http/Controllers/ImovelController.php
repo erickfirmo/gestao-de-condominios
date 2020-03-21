@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Condominio;
 use App\Models\Imovel;
 
 class ImovelController extends Controller
@@ -31,7 +32,9 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('cadastros.imoveis.create');
+        return view('cadastros.imoveis.create', [
+            'condominios' => Condominio::all()
+        ]);
     }
 
     /**
@@ -46,10 +49,21 @@ class ImovelController extends Controller
             'e' => 'required|min:1|max:60|unique:es',
         ]);
 
-        $e = $request->input('e');
+        $numero = $request->input('numero');
+        $bloco = $request->input('bloco');
+        $andar = $request->input('andar');
+        $descricao = $request->input('descricao');
+        $observacoes = $request->input('observacoes');
+        $condominio_id = $request->input('condominio_id');
         
         $imovel = new Imovel;
-        $imovel->e = $e;
+        $imovel->numero = $numero;
+        $imovel->bloco = $bloco;
+        $imovel->andar = $andar;
+        $imovel->descricao = $descricao;
+        $imovel->observacoes = $observacoes;
+        $imovel->condominio_id = $condominio_id;
+
         $imovel->save();
 
         return redirect()->route('superadmin.imoveis.edit', compact('imovel'))
@@ -78,7 +92,8 @@ class ImovelController extends Controller
     public function edit($id)
     {
         return view('cadastros.imoveis.edit', [
-            'imovel' => Imovel::findOrFail($id)
+            'imovel' => Imovel::findOrFail($id),
+            'condominios' => Condominio::all()
         ]);
     }
 
@@ -114,6 +129,6 @@ class ImovelController extends Controller
         Imovel::findOrFail($id)->delete();
 
         return redirect()->route('superadmin.imoveis.index')
-            ->with('success', 'Imóvel removida com sucesso!');
+            ->with('success', 'Imóvel removido com sucesso!');
     }
 }
