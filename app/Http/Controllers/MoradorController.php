@@ -108,11 +108,19 @@ class MoradorController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'e' => 'required|min:1|max:20',
+            'nome' => 'required|min:2|max:80',
+            'genero' => 'required|min:2|max:4',
+            'observacoes' => 'max:400',
+            'proprietario' => 'required',
+            'imovel_id' => 'required|min:1|max:20'
         ]);
 
         $morador = Morador::findOrFail($id)->update([
-            'e' => $request->e,
+            'nome' => $request->nome,
+            'genero' => $request->genero,
+            'observacoes' => $request->observacoes,
+            'proprietario' => $request->proprietario,
+            'imovel_id' => $request->imovel_id
         ]);
 
         return redirect()->route('superadmin.moradores.edit', compact('morador'))
