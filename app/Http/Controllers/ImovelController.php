@@ -46,7 +46,12 @@ class ImovelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'e' => 'required|min:1|max:60|unique:es',
+            'numero' => 'required|min:1|max:20',
+            'bloco' => 'required|min:1|max:10',
+            'andar' => 'required|min:1|max:3',
+            'descricao' => 'max:200',
+            'observacoes' => 'max:200',
+            'condominio_id' => 'required|min:1|max:20',
         ]);
 
         $numero = $request->input('numero');
