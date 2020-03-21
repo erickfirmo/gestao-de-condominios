@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Condominio;
+use App\Models\Empresa;
 
 class CondominioController extends Controller
 {
@@ -31,7 +32,9 @@ class CondominioController extends Controller
      */
     public function create()
     {
-        return view('cadastros.condominios.create');
+        return view('cadastros.condominios.create', [
+            'empresas' => Empresa::all()
+        ]);
     }
 
     /**
@@ -68,7 +71,6 @@ class CondominioController extends Controller
         $observacoes = $request->input('observacoes');
         $empresa_id = $request->input('empresa_id');
 
-        
         $condominio = new Condominio;
         $condominio->nome = $nome;
         $condominio->descricao = $descricao;
@@ -109,7 +111,8 @@ class CondominioController extends Controller
     public function edit($id)
     {
         return view('cadastros.condominios.edit', [
-            'condominio' => Condominio::findOrFail($id)
+            'condominio' => Condominio::findOrFail($id),
+            'empresas' => Empresa::all()
         ]);
     }
 
