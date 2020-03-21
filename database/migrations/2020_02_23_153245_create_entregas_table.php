@@ -23,7 +23,8 @@ class CreateEntregasTable extends Migration
             $table->unsignedBigInteger('morador_id');
             $table->foreign('morador_id')
                 ->references('id')
-                ->on('moradores');
+                ->on('moradores')
+                ->onDelete('cascade');;
                 
             $table->timestamps();
         });
