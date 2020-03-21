@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="panel-content">
-                    @include('admin.partials._alert')
+                    @include('superadmin.partials._alert')
                     
                         <form action="{{ route('superadmin.empresas.store') }}" method="POST">
                             @csrf
