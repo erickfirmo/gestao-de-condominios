@@ -46,7 +46,11 @@ class MoradorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'e' => 'required|min:1|max:20',
+            'nome' => 'required|min:2|max:80',
+            'genero' => 'required|min:2|max:4',
+            'observacoes' => 'max:400',
+            'proprietario' => 'required',
+            'imovel_id' => 'required|min:1|max:20'
         ]);
 
         $e = $request->input('e');
