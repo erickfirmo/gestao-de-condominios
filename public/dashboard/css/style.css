@@ -4,3 +4,7 @@
 .custom-file-label::after {
     content: "Procurar";
 }
+
+.text-error {
+    color: #e16123;
+}
