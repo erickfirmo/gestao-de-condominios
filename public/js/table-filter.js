@@ -1,7 +1,7 @@
-function tableFilter(table_id) {
-    let filter, table, tr, td, i, txtValue;
-    filter = this.value.toUpperCase();
-    table = document.getElementById(table_id);
+function tableFilter(table_class, input) {
+    var filter, table, tr, td, i, txtValue;
+    filter = input.value.toUpperCase();
+    table = document.getElementsByClassName(table_class)[0];
     tr = table.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td")[0];
