@@ -9,12 +9,10 @@ function tableFilter(table_class, input) {
             if (tds[j]) {
                 txtValue = tds[j].textContent || tds[j].innerText;
                 if(has_data != 'y')
-                {
                     has_data = txtValue.toUpperCase().indexOf(filter) > -1 ? 'y' : 'n';
-                }
             }
         }
-            tr[i].style.display = (has_data == 'y') ? "" : "none";
-            has_data = false;
+        tr[i].style.display = (has_data == 'y') ? "" : "none";
+        has_data = false;
     }
 }
