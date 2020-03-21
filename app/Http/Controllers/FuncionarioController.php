@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Condominio;
 use App\Models\Funcionario;
+use App\Models\FuncionarioDoCondominio;
+
 
 class FuncionarioController extends Controller
 {
@@ -47,6 +49,9 @@ class FuncionarioController extends Controller
     {
         $request->validate([
             'nome' => 'required|min:2|max:80',
+            'nome' => 'required|min:2|max:80',
+
+
         ]);
 
         $nome = $request->input('nome');
