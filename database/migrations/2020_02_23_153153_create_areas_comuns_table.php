@@ -25,7 +25,8 @@ class CreateAreasComunsTable extends Migration
             $table->unsignedBigInteger('condominio_id');
             $table->foreign('condominio_id')
                 ->references('id')
-                ->on('condominios');
+                ->on('condominios')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
