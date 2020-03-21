@@ -7,11 +7,12 @@ function tableFilter(table_class, input) {
         td = tr[i].getElementsByTagName("td")[0];
         if (td) {
             txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue.indexOf('No data available in table') > -1) {
                 tr[i].style.display = "";
             } else {
                 tr[i].style.display = "none";
             }
+
         }
     }
 }
