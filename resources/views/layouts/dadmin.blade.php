@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fullcalendar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/summernote-bs4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('themes/assets/css/summernote-bs4-overrides.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/summernote-bs4-overrides.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
     
     <!-- Page Level Stylesheets -->
@@ -83,8 +83,8 @@
 <script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/main.js') }}"></script>
 
-<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4.min.js') }}"></script>
-<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4-init.js') }}"></script>
+<script src="{{ asset('assets/js/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('assets/js/summernote-bs4-init.js') }}"></script>
 
 <!-- Page Level Scripts -->
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
