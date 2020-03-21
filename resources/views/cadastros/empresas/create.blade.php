@@ -123,10 +123,6 @@
     @include('admin.partials._footer')
 </main>
 
-@push('js')
-    <script src="{{ asset('js/table-filter.js') }}"></script>
-@endpush
-
 <!-- Main Container End -->
 @endsection
 
