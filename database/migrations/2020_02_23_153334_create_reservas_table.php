@@ -23,17 +23,20 @@ class CreateReservasTable extends Migration
             $table->unsignedBigInteger('area_comum_id');
             $table->foreign('area_comum_id')
                 ->references('id')
-                ->on('areas_comuns');
+                ->on('areas_comuns')
+                ->onDelete('cascade');
             
             $table->unsignedBigInteger('morador_id');
             $table->foreign('morador_id')
                 ->references('id')
-                ->on('moradores');
+                ->on('moradores')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
