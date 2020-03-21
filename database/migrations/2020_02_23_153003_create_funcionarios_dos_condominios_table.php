@@ -18,6 +18,17 @@ class CreateFuncionariosDosCondominiosTable extends Migration
             $table->unsignedBigInteger('funcionario_id');
             $table->unsignedBigInteger('condominio_id');
             $table->timestamps();
+
+            $table->foreign('funcionario_id')
+            ->references('id')
+            ->on('funcionarios')
+            ->onDelete('cascade');
+
+            $table->foreign('condominio_id')
+            ->references('id')
+            ->on('condominios')
+            ->onDelete('cascade');
+            
         });
     }
 
