@@ -23,7 +23,8 @@ class CreateMoradoresTable extends Migration
             $table->unsignedBigInteger('imovel_id');
             $table->foreign('imovel_id')
                 ->references('id')
-                ->on('imoveis');
+                ->on('imoveis')
+                ->onDelete('cascade');
 
             $table->timestamps();
         });
