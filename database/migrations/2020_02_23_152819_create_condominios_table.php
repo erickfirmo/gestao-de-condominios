@@ -16,15 +16,15 @@ class CreateCondominiosTable extends Migration
         Schema::create('condominios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 60)->unique();
-            $table->string('descricao', 280);
-            $table->string('cep');
+            $table->string('descricao', 280)->nullable();
+            $table->string('cep', 9);
             $table->string('logradouro', 80);
             $table->unsignedInteger('numero');
             $table->string('bairro', 40);
             $table->string('cidade', 40);
             $table->unsignedBigInteger('uf_id');
-            $table->string('complemento', 120);
-            $table->string('observacoes', 200);
+            $table->string('complemento', 120)->nullable();
+            $table->string('observacoes', 200)->nullable();
             $table->unsignedBigInteger('empresa_id');
 
             $table->foreign('uf_id')
