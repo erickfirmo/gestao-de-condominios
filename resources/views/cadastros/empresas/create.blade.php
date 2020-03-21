@@ -120,7 +120,7 @@
         </div>
     </section>
 
-    @include('admin.partials._footer')
+    @include('superadmin.partials._footer')
 </main>
 
 <!-- Main Container End -->
