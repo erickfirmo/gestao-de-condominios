@@ -25,7 +25,8 @@ class CreatePetsTable extends Migration
 
             $table->foreign('morador_id')
                 ->references('id')
-                ->on('moradores');
+                ->on('moradores')
+                ->onDelete('cascade');
         });
     }
 
