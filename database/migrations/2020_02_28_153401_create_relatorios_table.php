@@ -21,7 +21,8 @@ class CreateRelatoriosTable extends Migration
             $table->unsignedBigInteger('funcionario_id');
             $table->foreign('funcionario_id')
                 ->references('id')
-                ->on('funcionarios');
+                ->on('funcionarios')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('parent_id');
             $table->string('parent_table', 30);
