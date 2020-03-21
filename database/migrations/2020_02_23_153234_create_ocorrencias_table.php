@@ -24,17 +24,20 @@ class CreateOcorrenciasTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('condominio_id');
             $table->foreign('condominio_id')
                 ->references('id')
-                ->on('condominios');
+                ->on('condominios')
+                ->onDelete('cascade');
                 
             $table->unsignedBigInteger('morador_id');
             $table->foreign('morador_id')
                 ->references('id')
-                ->on('moradores');
+                ->on('moradores')
+                ->onDelete('cascade');
 
 
             $table->timestamps();
