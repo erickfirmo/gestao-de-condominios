@@ -53,10 +53,18 @@ class MoradorController extends Controller
             'imovel_id' => 'required|min:1|max:20'
         ]);
 
-        $e = $request->input('e');
+        $nome = $request->input('nome');
+        $genero = $request->input('genero');
+        $observacoes = $request->input('observacoes');
+        $proprietario = $request->input('proprietario');
+        $imovel_id = $request->input('imovel_id');
 
         $morador = new Morador;
-        $morador->e = $e;
+        $morador->nome = $nome;
+        $morador->genero = $genero;
+        $morador->observacoes = $observacoes;
+        $morador->proprietario = $proprietario;
+        $morador->imovel_id = $imovel_id;
 
         $morador->save();
 
