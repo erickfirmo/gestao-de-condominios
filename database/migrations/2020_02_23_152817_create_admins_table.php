@@ -23,7 +23,8 @@ class CreateAdminsTable extends Migration
             $table->unsignedBigInteger('funcionario_id');
             $table->foreign('funcionario_id')
                 ->references('id')
-                ->on('funcionarios');
+                ->on('funcionarios')
+                ->onDelete('cascade');
 
             $table->string('password');
             $table->rememberToken();
