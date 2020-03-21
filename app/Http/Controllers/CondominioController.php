@@ -43,16 +43,16 @@ class CondominioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required|min:1|max:60|unique:condominios',
-            'descricao' => 'required|min:1|max:60',
-            'cep' => 'required|digits:18',
-            'logradouro' => 'required|min:3|max:40|',
-            'numero' => 'required|min:8|max:20',
-            'bairro' => 'min:8|max:20',
-            'cidade' => 'required|min:1|max:50',
-            'uf_id' => 'required|min:1|max:50',
-            'complemento' => 'required|min:1|max:50',
-            'observacoes' => 'required|min:1|max:50',
+            'nome' => 'required|min:2|max:60|unique:condominios',
+            'descricao' => 'min:1|max:280',
+            'cep' => 'required|min:8|max:9',
+            'logradouro' => 'required|min:2|max:80',
+            'numero' => 'required|min:1|max:10',
+            'bairro' => 'min:2|max:20',
+            'cidade' => 'required|min:2|max:40',
+            'uf_id' => 'required|digits:2',
+            'complemento' => 'max:120',
+            'observacoes' => 'max:200',
             'empresa_id' => 'required|min:1|max:50',
         ]);
 
@@ -123,27 +123,35 @@ class CondominioController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'razao_social' => 'required|min:1|max:60|unique:condominios,razao_social,'.$id,
-            'nome_fantasia' => 'required|min:1|max:60',
-            'cnpj' => 'required|unique:condominios,cnpj,'.$id,
-            'email' => 'required|min:3|max:40|',
-            'telefone_1' => 'required|min:8|max:20',
-            'telefone_2' => 'min:8|max:20',
-            'responsavel_para_contato' => 'required|min:1|max:50',
+            'nome' => 'required|min:1|max:60|unique:condominios',
+            'descricao' => 'required|min:1|max:60',
+            'cep' => 'required|digits:18',
+            'logradouro' => 'required|min:3|max:40|',
+            'numero' => 'required|min:8|max:20',
+            'bairro' => 'min:8|max:20',
+            'cidade' => 'required|min:1|max:50',
+            'uf_id' => 'required|min:1|max:50',
+            'complemento' => 'required|min:1|max:50',
+            'observacoes' => 'required|min:1|max:50',
+            'empresa_id' => 'required|min:1|max:50',
         ]);
 
         $condominio = Condominio::findOrFail($id)->update([
-            'razao_social' => $request->razao_social,
-            'nome_fantasia' => $request->nome_fantasia,
-            'cnpj' => $request->cnpj,
-            'email' => $request->email,
-            'telefone_1' => $request->telefone_1,
-            'telefone_2' => $request->telefone_2,
-            'responsavel_para_contato' => $request->responsavel_para_contato,
+            'nome' => $request->nome,
+            'descricao' => $request->descricao,
+            'cep' => $request->cep,
+            'logradouro' => $request->logradouro,
+            'numero' => $request->numero,
+            'bairro' => $request->bairro,
+            'cidade' => $request->cidade,
+            'uf_id' => $request->uf_id,
+            'complemento' => $request->complemento,
+            'observacoes' => $request->observacoes,
+            'empresa_id' => $request->empresa_id
         ]);
 
         return redirect()->route('superadmin.condominios.edit', compact('condominio'))
-            ->with('success', 'Dados da condominio atualizados com sucesso!');
+            ->with('success', 'Dados do condomínio atualizados com sucesso!');
     }
 
     /**
@@ -157,6 +165,6 @@ class CondominioController extends Controller
         Condominio::findOrFail($id)->delete();
 
         return redirect()->route('superadmin.condominios.index')
-            ->with('success', 'Condominio removida com sucesso!');
+            ->with('success', 'Condomínio removido com sucesso!');
     }
 }
