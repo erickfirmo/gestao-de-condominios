@@ -1,5 +1,5 @@
 function tableFilter(table_class, input) {
-    var filter, table, tr, tds, has_data, i, txtValue;
+    let filter, table, tr, tds, has_data, i, txtValue;
     filter = input.value.toUpperCase();
     table = document.getElementsByClassName(table_class)[0];
     tr = table.getElementsByTagName("tr");
