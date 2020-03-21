@@ -13,10 +13,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Page Title Start -->
-                    <h2 class="page--title h5">Examples</h2>
+                    <h2 class="page--title h5">Empresas</h2>
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ route('superadmin.empresas.index') }}">Empresas</a></li>
                         <li class="breadcrumb-item active"><span>Editar</span></li>
                     </ul>
                 </div>
@@ -25,6 +26,7 @@
     </section>
     <!-- Page Header End -->
 
+
     <!-- Main Content Start -->
     <section class="main--content">
         <div class="row gutter-20">
@@ -32,29 +34,81 @@
                 <!-- Panel Start -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Editar</h3>
+                        <h3 class="panel-title">Editar Empresa</h3>
                     </div>
 
                     <div class="panel-content">
                     @include('admin.partials._alert')
                     
-                        <form action="{{ route('admin.examples.update', $example) }}" method="POST">
+                        <form action="{{ route('superadmin.empresas.edit', $empresa->id) }}" method="POST">
                             @csrf
-                            {{method_field('PUT')}}
-
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="20" value="{{ $example->nome }}">
+                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="60" value="{{ old('razao_social') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Nome Fantasia</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="nome_fantasia" class="form-control" id="nome_fantasia" maxlenght="60" value="{{ old('nome_fantasia') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Cnpj</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ old('cnpj') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
+                                <div class="col-md-10">
+                                    <input type="email" name="email" class="form-control" id="email" maxlenght="40" value="{{ old('email') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="20" value="{{ old('telefone_1') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="20" value="{{ old('telefone_2') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Responsavel</span>
+                                <div class="col-md-10">
+                                    <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="50" value="{{ old('responsavel_para_contato') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+                            
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                <a href="{{ route('admin.examples.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('superadmin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
@@ -66,8 +120,9 @@
         </div>
     </section>
 
-    @include('admin.partials._footer')
+    @include('superadmin.partials._footer')
 </main>
+
 <!-- Main Container End -->
 @endsection
 
