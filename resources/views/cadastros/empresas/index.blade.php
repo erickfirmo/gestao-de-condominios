@@ -46,9 +46,9 @@
                             </p>
                         </div>
 
-                        <div class="actions">
-                            <form action="#" class="search">
-                                <input type="text" class="form-control" placeholder="Buscar..." required>
+                        <div class="actions row">
+                            <form class="search">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('empresas-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -62,7 +62,7 @@
                 <div class="panel">
 
                     <div class="records--list" data-title="Lista de Empresas">
-                        <table id="recordsListView">
+                        <table id="recordsListView" class="empresas-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -118,6 +118,9 @@
 </main>
 <!-- Main Container End -->
 
+@push('js')
+    <script src="{{ asset('js/table-filter.js') }}"></script>
+@endpush
 
 @endsection
 
