@@ -123,16 +123,16 @@ class CondominioController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nome' => 'required|min:1|max:60|unique:condominios',
-            'descricao' => 'required|min:1|max:60',
-            'cep' => 'required|digits:18',
-            'logradouro' => 'required|min:3|max:40|',
-            'numero' => 'required|min:8|max:20',
-            'bairro' => 'min:8|max:20',
-            'cidade' => 'required|min:1|max:50',
-            'uf_id' => 'required|min:1|max:50',
-            'complemento' => 'required|min:1|max:50',
-            'observacoes' => 'required|min:1|max:50',
+            'nome' => 'required|min:2|max:60|unique:condominios,nome,'.$id,
+            'descricao' => 'min:1|max:280',
+            'cep' => 'required|min:8|max:9',
+            'logradouro' => 'required|min:2|max:80',
+            'numero' => 'required|min:1|max:10',
+            'bairro' => 'min:2|max:20',
+            'cidade' => 'required|min:2|max:40',
+            'uf_id' => 'required|digits:2',
+            'complemento' => 'max:120',
+            'observacoes' => 'max:200',
             'empresa_id' => 'required|min:1|max:50',
         ]);
 
