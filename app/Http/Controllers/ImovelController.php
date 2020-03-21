@@ -112,11 +112,21 @@ class ImovelController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'e' => 'required|min:1|max:60|unique:es,e,'.$id,
+            'numero' => 'required|min:1|max:20',
+            'bloco' => 'required|min:1|max:10',
+            'andar' => 'required|min:1|max:3',
+            'descricao' => 'max:200',
+            'observacoes' => 'max:200',
+            'condominio_id' => 'required|min:1|max:20',
         ]);
 
         $imovel = Imovel::findOrFail($id)->update([
-            'e' => $request->e,
+            'numero' => $request->numero,
+            'bloco' => $request->bloco,
+            'andar' => $request->andar,
+            'descricao' => $request->descricao,
+            'observacoes' => $request->observacoes,
+            'condominio_id' => $request->condominio_id,
         ]);
 
         return redirect()->route('superadmin.imoveis.edit', compact('imovel'))
