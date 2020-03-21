@@ -65,7 +65,6 @@ class MoradorController extends Controller
         $morador->observacoes = $observacoes;
         $morador->proprietario = $proprietario;
         $morador->imovel_id = $imovel_id;
-
         $morador->save();
 
         return redirect()->route('superadmin.moradores.edit', compact('morador'))
@@ -95,6 +94,7 @@ class MoradorController extends Controller
     {
         return view('cadastros.moradores.edit', [
             'morador' => Morador::findOrFail($id),
+            'imoveis' => Imovel::all()
         ]);
     }
 
