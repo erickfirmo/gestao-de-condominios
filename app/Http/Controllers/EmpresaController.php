@@ -70,7 +70,7 @@ class EmpresaController extends Controller
         $empresa->responsavel_para_contato = $responsavel_para_contato;
         $empresa->save();
 
-        return view('cadastros.empresas.edit', compact('empresa'))
+        return redirect()->route('superadmin.empresas.edit', compact('empresa'))
             ->with('success', 'Empresa cadastrada com sucesso!');
     }
 
