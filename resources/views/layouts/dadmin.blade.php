@@ -57,6 +57,7 @@
 </head>
 <body>
 
+
 <!-- Wrapper Start -->
 <div class="wrapper">
     @yield('content')
@@ -70,6 +71,8 @@
 <script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
+
+@include('partials.validation-js');
 <script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/morris.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/select2.min.js') }}"></script>
@@ -90,11 +93,11 @@
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
 
+
+<script src="{{ asset('js/validation.js') }}"></script>
+
+
 @stack('js')
-
-
-
-
 
 <!-- Page Level Scripts -->
 
