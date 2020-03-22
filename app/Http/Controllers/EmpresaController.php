@@ -48,7 +48,7 @@ class EmpresaController extends Controller
             'cnpj' => 'required|digits:18|unique:empresas',
             'email' => 'required|min:3|max:40|',
             'telefone_1' => 'required|min:8|max:20',
-            'telefone_2' => 'min:8|max:20',
+            'telefone_2' => 'max:20',
             'responsavel_para_contato' => 'required|min:1|max:50',
         ]);
 
