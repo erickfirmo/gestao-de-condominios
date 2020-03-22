@@ -7,4 +7,6 @@
 
 .text-error {
     color: #e16123;
+    font-size: .8em;
+    font-weight: 900;
 }
