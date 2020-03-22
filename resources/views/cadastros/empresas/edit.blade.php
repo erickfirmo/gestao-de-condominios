@@ -26,7 +26,6 @@
     </section>
     <!-- Page Header End -->
 
-
     <!-- Main Content Start -->
     <section class="main--content">
         <div class="row gutter-20">
@@ -38,71 +37,75 @@
                     </div>
 
                     <div class="panel-content">
-                    @include('superadmin.partials._alert')
-
-
-                        <form action="{{ route('superadmin.empresas.edit', $empresa->id) }}" method="POST">
+                    
+                        <form action="{{ route('superadmin.empresas.update', $empresa->id) }}" method="POST">
                             @csrf
                             {{ method_field('PUT') }}
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="60" value="{{ $empresa->razao_social }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="60" value="{{ old('razao_social') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Nome Fantasia</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Nome Fantasia</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="nome_fantasia" class="form-control" id="nome_fantasia" maxlenght="60" value="{{ $empresa->nome_fantasia }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="nome_fantasia" class="form-control" id="nome_fantasia" maxlenght="60" value="{{ old('nome_fantasia') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Cnpj</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Cnpj</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ $empresa->cnpj }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ old('cnpj') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
                                 <div class="col-md-10">
-                                    <input type="email" name="email" class="form-control" id="email" maxlenght="40" value="{{ $empresa->email }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="email" name="email" class="form-control" id="email" maxlenght="40" value="{{ old('email') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="20" value="{{ $empresa->telefone_1 }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="20" value="{{ old('telefone_1') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="20" value="{{ $empresa->telefone_2 }}">
+                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="20" value="{{ old('telefone_2') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Responsavel</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Responsável</span>
                                 <div class="col-md-10">
-                                    <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="50" value="{{ $empresa->responsavel_para_contato }}">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="50" value="{{ old('responsavel_para_contato') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
