@@ -1,15 +1,15 @@
 <!-- Sidebar Start -->
 <aside class="sidebar" data-trigger="scrollbar">
     <!-- Sidebar Profile Start -->
-    <!-- <div class="sidebar--profile">
+    <div class="sidebar--profile">
         <div class="profile--img">
             <a href="#" class="logo" style="text-align:center;">
-                <img src="#" alt="Logo">
+                <img src="{{ Auth::user()->foto_de_perfil != '#' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Perfil">
             </a>
         </div>
 
         <div class="profile--name">
-            <a href="#" class="btn-link">Comunicação e Marketing</a>
+            <a href="#" class="btn-link">Gestão de Condomínios</a>
         </div>
 
         <div class="profile--nav">
@@ -36,7 +36,7 @@
                 </li>
             </ul>
         </div>
-    </div> -->
+    </div>
     <!-- Sidebar Profile End -->
 
     <!-- Sidebar Navigation Start -->
