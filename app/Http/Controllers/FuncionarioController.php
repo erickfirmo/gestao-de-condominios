@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Condominio;
 use App\Models\Funcionario;
-use App\Models\FuncionarioDoCondominio;
-
 
 class FuncionarioController extends Controller
 {
@@ -59,7 +57,7 @@ class FuncionarioController extends Controller
         $funcionario = new Funcionario;
         $funcionario->nome = $nome;
         $funcionario->save();
-
+        
         return redirect()->route('superadmin.funcionarios.edit', compact('funcionario'))
             ->with('success', 'Funcionario cadastrado com sucesso!');
     }
