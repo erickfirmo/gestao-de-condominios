@@ -39,7 +39,7 @@
                                 {{
                                     countMessage($empresas, [
                                         'zero' => 'Nenhuma empresa encontrada',
-                                        'one' => '[X] empresa encontrada',
+                                        'one' => '1 empresa encontrada',
                                         'many' => '[X] empresas encontradas'
                                     ])
                                 }}
