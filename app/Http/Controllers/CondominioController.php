@@ -58,7 +58,7 @@ class CondominioController extends Controller
             'observacoes' => 'max:200',
             'empresa_id' => 'required|min:1|max:50',
         ]);
-
+            
         $nome = $request->input('nome');
         $descricao = $request->input('descricao');
         $cep = $request->input('cep');
