@@ -25,11 +25,17 @@ if(!function_exists('countMessage'))
     function countMessage($obj_array, $messages)
     {
         $obj_lenght = count($obj_array);
-        if($obj_lenght == 0)
-            return $messages['zero'];
-        else if($obj_lenght == 1)
-            return replace('[X]', $obj_lenght, $messages['one']);
-        else if ($obj_lenght > 1)
-            return replace('[X]', $obj_lenght, $messages['many']);
+        // return replace('[X]', $obj_lenght, $messages['many']);
+        switch(count($obj_array)) {
+            case 0:
+                return $messages['zero'];
+                break;
+            case 1:
+                return $messages['one'];
+                break;
+            default:
+                return replace('[X]', $obj_lenght, $messages['many']);
+                break;
+        }
     }
 }
