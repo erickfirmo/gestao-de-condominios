@@ -67,11 +67,12 @@
 <!-- Scripts -->
 
 <script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
+
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
-
+<script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
 @include('partials.validation-js');
 <script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/morris.min.js') }}"></script>
@@ -83,19 +84,13 @@
 <script src="{{ asset('themes/dadmin/assets/js/jquery.steps.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/dropzone.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/ion.rangeSlider.min.js') }}"></script>
-<script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/main.js') }}"></script>
-
 <script src="{{ asset('assets/js/summernote-bs4.min.js') }}"></script>
 <script src="{{ asset('assets/js/summernote-bs4-init.js') }}"></script>
-
 <!-- Page Level Scripts -->
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
-
-
 <script src="{{ asset('js/validation.js') }}"></script>
-
 
 @stack('js')
 
