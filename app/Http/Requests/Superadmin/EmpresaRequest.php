@@ -34,10 +34,11 @@ class EmpresaRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    public function attributes()
     {
         return [
-            //
+            'razao_social' => 'razão social',
         ];
     }
+    
 }
