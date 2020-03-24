@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EmpresaRequest;
 use App\Models\Empresa;
 
 class EmpresaController extends Controller
@@ -37,10 +38,10 @@ class EmpresaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\EmpresaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EmpresaRequest $request)
     {
         $request->validate([
             'razao_social' => 'required|min:1|max:60|unique:empresas',
@@ -103,11 +104,11 @@ class EmpresaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\EmpresaRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmpresaRequest $request, $id)
     {
         $request->validate([
             'razao_social' => 'required|min:1|max:60|unique:empresas,razao_social,'.$id,
