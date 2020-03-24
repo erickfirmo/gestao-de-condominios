@@ -13,7 +13,7 @@ class EmpresaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -38,7 +38,8 @@ class EmpresaRequest extends FormRequest
     {
         return [
             'razao_social' => 'razão social',
+            'responsavel_para_contato' => 'responsável para contato',
         ];
     }
-    
+
 }
