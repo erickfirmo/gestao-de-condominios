@@ -1,7 +1,8 @@
 <?php
 
-namespace Superadmin\App\Http\Controllers;
+namespace App\Http\Controllers\Superadmin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Superadmin\EmpresaRequest;
 use App\Models\Empresa;
@@ -43,15 +44,7 @@ class EmpresaController extends Controller
      */
     public function store(EmpresaRequest $request)
     {
-        $request->validate([
-            'razao_social' => 'required|min:1|max:60|unique:empresas',
-            'nome_fantasia' => 'required|min:1|max:60',
-            'cnpj' => 'required|digits:18|unique:empresas',
-            'email' => 'required|min:3|max:40|',
-            'telefone_1' => 'required|min:8|max:20',
-            'telefone_2' => 'max:20',
-            'responsavel_para_contato' => 'required|min:1|max:50',
-        ]);
+        $request->validated();
 
         $razao_social = $request->input('razao_social');
         $nome_fantasia = $request->input('nome_fantasia');
