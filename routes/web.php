@@ -10,7 +10,7 @@ require_once 'auth/user.php';
 require_once 'auth/admin.php';
 require_once 'auth/superadmin.php';
 
-Route::prefix('superadmin')->name('superadmin.')->group(function () {
+Route::prefix('superadmin')->name('superadmin.')->namespace('Superadmin')->group(function () {
 
     ##cadastros
     // empresas
