@@ -6,9 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BaseRequest extends FormRequest
 {
-    public function checkRules()
+    public function setMethodRules($method_rules)
     {
-        return true;
+        return $this->$method_rules;
+    }
+
+    public function customValidate()
+    {
+        
     }
 
 }
