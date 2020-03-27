@@ -34,6 +34,10 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Empresa</h3>
+                        <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form" style="float:right">
+                            {{method_field('DELETE')}}
+                            <a href="#"><button class="btn btn-rounded btn-danger">Deletar Empresa</button></a>
+                        </form>
                     </div>
 
                     <div class="panel-content">
@@ -114,7 +118,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('superadmin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('superadmin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Voltar</button></a>
                                 </div>
                             </div>
 
