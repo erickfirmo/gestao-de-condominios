@@ -88,18 +88,19 @@
                                     <td>{{ $empresa->responsavel_para_contato }}</td>
 
                                     <td>
-                                        <div class="dropleft">
-                                            <a href="#" class="btn-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                        <button class="d-inline mr-2 btn-action">
+                                            <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                        </button>
 
-                                            <div class="dropdown-menu">
-                                                <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="dropdown-item">Editar</a>
-                                                <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
-                                                    @csrf
-                                                    {{method_field('DELETE')}}
-                                                    <button class="dropdown-item btn-remove">Excluir</button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        
+
+                                        <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                            <button class="d-inline btn-action">
+                                                <a href="#" class="btn-link"><i class="fa fa-trash"></i></a>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach
