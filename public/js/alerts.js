@@ -19,7 +19,7 @@ $('.remove-form').on('submit', function(event) {
       showCancelButton: true,
       confirmButtonText: 'Sim, deletar!',
       cancelButtonText: 'Cancelar',
-      confirmButtonColor: 'red'
+      confirmButtonColor: '#ff4040'
 
     }).then((result) => {
 
@@ -28,8 +28,8 @@ $('.remove-form').on('submit', function(event) {
       } else if (result.dismiss === Swal.DismissReason.cancel) {
 
         Swal.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
+          'Cancelado',
+          'Nada foi alterado!',
           'error'
         )
       }
