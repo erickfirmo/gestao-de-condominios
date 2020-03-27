@@ -19,6 +19,10 @@
     margin: 0 auto;
 }
 
+form.remove-form {
+    display: inline;
+}
+
 .records--list .dataTable tbody tr td {
     min-width: 80px;
     width: 30px;
