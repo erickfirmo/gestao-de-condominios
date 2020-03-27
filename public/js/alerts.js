@@ -1,4 +1,4 @@
-Swal.fire({
+/*Swal.fire({
     title: 'Are you sure?',
     text: 'You will not be able to recover this imaginary file!',
     icon: 'warning',
@@ -15,7 +15,7 @@ Swal.fire({
         'Your imaginary file has been deleted.',
         'success'
       )
-      
+
     } else if (result.dismiss === Swal.DismissReason.cancel) {
 
 
@@ -27,3 +27,15 @@ Swal.fire({
       )
     }
 });
+
+
+$('.remove-form').on('submit', function() {
+    $.post($(this).data('token'),
+    {
+        name: "Donald Duck",
+        city: "Duckburg"
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+});*/

@@ -31,10 +31,11 @@ if(!function_exists('countMessage'))
                 return $messages['zero'];
                 break;
             case 1:
-                return $messages['one'];
+                return str_replace('[X]', $obj_lenght, $messages['one']);
+
                 break;
             default:
-                return replace('[X]', $obj_lenght, $messages['many']);
+                return str_replace('[X]', $obj_lenght, $messages['many']);
                 break;
         }
     }
