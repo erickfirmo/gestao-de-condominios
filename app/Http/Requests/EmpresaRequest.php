@@ -23,11 +23,12 @@ class EmpresaRequest extends FormRequest
      */
     public function rules()
     {
+
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'razao_social' => 'required|min:1|max:60|unique:empresas,razao_social,'.$id,
+                'razao_social' => 'required|min:1|max:60|unique:empresas,razao_social,'.$this->route('id'),
                 'nome_fantasia' => 'required|min:1|max:60',
-                'cnpj' => 'required|unique:empresas,cnpj,'.$id,
+                'cnpj' => 'required|unique:empresas,cnpj,'.$this->route('id'),
                 'email' => 'required|min:3|max:40|',
                 'telefone_1' => 'required|min:8|max:20',
                 'telefone_2' => 'min:8|max:20',
