@@ -37,8 +37,9 @@
                     </div>
 
                     <div class="panel-content">
-                    
-                        <form action="{{ route('superadmin.empresas.update', $empresa->id) }}" method="POST">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+                        <form action="{{ route('superadmin.empresas.update', $empresa->id) }}" method="POST" class="main-form d-none">
                             @csrf
                             {{ method_field('PUT') }}
                             <!-- Form Group Start -->
