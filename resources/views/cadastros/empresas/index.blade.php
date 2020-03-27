@@ -56,9 +56,6 @@
                     <!-- Records Header End -->
                 </div>
 
-                @include('admin.partials._alert')
-
-
                 <div class="panel">
 
                     <div class="records--list" data-title="Lista de Empresas">
