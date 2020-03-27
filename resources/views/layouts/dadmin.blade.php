@@ -30,6 +30,9 @@
     <!-- ==== Google Font ==== -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CMontserrat:400,500">
 
+
+    @include('javascript._validation');
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fontawesome-all.min.css') }}">
@@ -54,6 +57,7 @@
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert-overrides.css') }}">
 
+
 </head>
 <body>
 
@@ -67,12 +71,12 @@
 <!-- Scripts -->
 
 @include('javascript._vars');
+
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
-@include('javascript._validation');
 <script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>
