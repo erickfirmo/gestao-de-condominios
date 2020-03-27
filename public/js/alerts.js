@@ -1,41 +1,38 @@
-/*Swal.fire({
-    title: 'Are you sure?',
-    text: 'You will not be able to recover this imaginary file!',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, keep it'
-  }).then((result) => {
+/*
+*/
 
-
-
-    if (result.value) {
-      Swal.fire(
-        'Deleted!',
-        'Your imaginary file has been deleted.',
+if(success_response) {
+    Swal.fire(
+        'Sucesso!',
+        success_response,
         'success'
-      )
+    );
+}
 
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
+$('.remove-form').on('submit', function(event) {
+    event.preventDefault();
 
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Você não poderá recuperar essas informaçoes!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, deletar!',
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#ff4040'
 
+    }).then((result) => {
 
-      Swal.fire(
-        'Cancelled',
-        'Your imaginary file is safe :)',
-        'error'
-      )
-    }
+      if (result.value) {
+        $(this).submit();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+
+        Swal.fire(
+          'Cancelado',
+          'Nada foi alterado!',
+          'error'
+        )
+      }
+    });
 });
 
-
-$('.remove-form').on('submit', function() {
-    $.post($(this).data('token'),
-    {
-        name: "Donald Duck",
-        city: "Duckburg"
-    },
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    });
-});*/

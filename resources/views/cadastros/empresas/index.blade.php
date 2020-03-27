@@ -30,9 +30,11 @@
                 <div class="panel">
                     <!-- Records Header Start -->
                     <div class="records--header">
+
+
                         <div class="title fa-university">
                             <h3 class="h3">Empresas
-                            <!--<a href="#" class="btn btn-sm btn-outline-info">Manage Orders</a>-->
+                            <a href="{{ route('superadmin.empresas.create') }}" class="btn btn-sm btn-outline-info">Adicionar Empresa</a>
                         
                             </h3>
                             <p>
@@ -56,19 +58,17 @@
                     <!-- Records Header End -->
                 </div>
 
-                @include('admin.partials._alert')
-
-
                 <div class="panel">
 
                     <div class="records--list" data-title="Lista de Empresas">
+                        
                         <table id="recordsListView" class="empresas-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Razão Social</th>
                                     <th>Nome Fantasia</th>
-                                    <th>Cnpj</th>
+                                    <!--<th>Cnpj</th>-->
                                     <th>Email</th>
                                     <th>Telefone(s)</th>
                                     <th>Responsável</th>
@@ -85,24 +85,25 @@
                                     <td>{{ $empresa->id }}</td>
                                     <td>{{ $empresa->razao_social }}</td>
                                     <td>{{ $empresa->nome_fantasia }}</td>
-                                    <td>{{ $empresa->cnpj }}</td>
+                                    <!--<td>{$empresa->cnpj}</td>-->
                                     <td>{{ $empresa->email }}</td>
                                     <td>{{ $empresa->telefone_1.($empresa->telefone_2 ? ', '.$empresa->telefone_2 : '') }}</td>
                                     <td>{{ $empresa->responsavel_para_contato }}</td>
 
                                     <td>
-                                        <div class="dropleft">
-                                            <a href="#" class="btn-link" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+                                        <button class="d-inline mr-2 btn-action">
+                                            <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                        </button>
 
-                                            <div class="dropdown-menu">
-                                                <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="dropdown-item">Editar</a>
-                                                <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
-                                                    @csrf
-                                                    {{method_field('DELETE')}}
-                                                    <button class="dropdown-item btn-remove">Excluir</button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        
+
+                                        <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
+                                            @csrf
+                                            {{method_field('DELETE')}}
+                                            <button class="d-inline btn-action">
+                                                <a href="#" class="btn-link"><i class="fa fa-trash"></i></a>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

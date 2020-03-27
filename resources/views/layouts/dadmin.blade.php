@@ -30,6 +30,8 @@
     <!-- ==== Google Font ==== -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CMontserrat:400,500">
 
+
+
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fontawesome-all.min.css') }}">
@@ -54,9 +56,9 @@
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/sweetalert-overrides.css') }}">
 
+
 </head>
 <body>
-
 
 <!-- Wrapper Start -->
 <div class="wrapper">
@@ -66,13 +68,14 @@
 
 <!-- Scripts -->
 
-@include('javascript._vars');
+@include('javascript._vars')
+@include('javascript._validation')
+
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
-@include('javascript._validation');
 <script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>

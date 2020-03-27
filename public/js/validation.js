@@ -1,14 +1,20 @@
 Object.keys(errors_response).forEach(function(name) {
-    $('input[name="'+name+'"]').addClass('error');
-    $('input[name="'+name+'"]').prev().text(errors_response[name]);
-
+    let elem = document.getElementsByName(name)[0];
+    elem.className += ' error';
+    elem.previousElementSibling.innerText = errors_response[name];
 });
 
-$('.error').on('keyup', function() {
+$('.error').onkeyup = function() {
     if($(this).val() != '') {
         $(this).removeClass('error');
         $(this).prev().text('');
     }
-});
+};
 
+//show form after load
+setTimeout(function() {
+    
+    $('.show-onload').removeClass('d-none');
+    $('.lds-ring').addClass('d-none')
+}, 0);
 
