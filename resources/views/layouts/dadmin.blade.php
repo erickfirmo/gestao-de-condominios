@@ -66,8 +66,9 @@
 
 <!-- Scripts -->
 
-<script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 
+<script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
@@ -91,6 +92,8 @@
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
 <script src="{{ asset('js/validation.js') }}"></script>
+<script src="{{ asset('js/alerts.js') }}"></script>
+
 
 @stack('js')
 
