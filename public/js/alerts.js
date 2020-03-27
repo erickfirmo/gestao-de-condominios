@@ -1,4 +1,4 @@
-Swal.fire({
+/*Swal.fire({
     title: 'Are you sure?',
     text: 'You will not be able to recover this imaginary file!',
     icon: 'warning',
@@ -38,4 +38,4 @@ $('.remove-form').on('submit', function() {
     function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
     });
-});
+});*/
