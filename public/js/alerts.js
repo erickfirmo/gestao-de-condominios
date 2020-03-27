@@ -15,7 +15,7 @@ Swal.fire({
         'Your imaginary file has been deleted.',
         'success'
       )
-      
+
     } else if (result.dismiss === Swal.DismissReason.cancel) {
 
 
@@ -26,4 +26,9 @@ Swal.fire({
         'error'
       )
     }
+});
+
+
+$('.remove-form').on('submit', function() {
+    
 });
