@@ -11,6 +11,19 @@
     font-weight: 900;
 }
 
+.btn-action {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 4px 10px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.records--list .dataTable tbody tr td {
+    min-width: 80px;
+    width: 30px;
+}
+
 /* load animation */
 
 .lds-ring {
