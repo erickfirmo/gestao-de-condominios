@@ -4,9 +4,16 @@ Object.keys(errors_response).forEach(function(name) {
     elem.previousElementSibling.innerText = errors_response[name];
 });
 
-document.getElementsByClassName('error').onkeyup = function() {
-    if(this.value != '') {
-        this.classList.remove('error');
-        this.innerText = '';
+$('.error').onkeyup = function() {
+    if($(this).val() != '') {
+        $(this).removeClass('error');
+        $(this).prev().text('');
     }
 };
+
+//show form after load
+setTimeout(function() {
+    $('.lds-ring').addClass('d-none')
+    $('.main-form').removeClass('d-none');
+}, 100);
+
