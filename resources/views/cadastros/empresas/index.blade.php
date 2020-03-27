@@ -96,7 +96,7 @@
 
                                             <div class="dropdown-menu">
                                                 <a href="{{ route('superadmin.empresas.edit', $empresa->id ) }}" class="dropdown-item">Editar</a>
-                                                <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST">
+                                                <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
                                                     @csrf
                                                     {{method_field('DELETE')}}
                                                     <button class="dropdown-item btn-remove">Excluir</button>
