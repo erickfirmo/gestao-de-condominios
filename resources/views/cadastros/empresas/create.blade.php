@@ -7,6 +7,7 @@
 
 <!-- Main Container Start -->
 <main class="main--container">
+
     <!-- Page Header Start -->
     <section class="page--header">
         <div class="container-fluid">
@@ -28,6 +29,7 @@
 
     <!-- Main Content Start -->
     <section class="main--content">
+    
         <div class="row gutter-20">
             <div class="col-md-12">
                 <!-- Panel Start -->
@@ -37,8 +39,10 @@
                     </div>
 
                     <div class="panel-content">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
                     
-                        <form action="{{ route('superadmin.empresas.store') }}" method="POST">
+                        <form action="{{ route('superadmin.empresas.store') }}" method="POST" class="main-form d-none">
                             @csrf
                             <!-- Form Group Start -->
                             <div class="form-group row">
