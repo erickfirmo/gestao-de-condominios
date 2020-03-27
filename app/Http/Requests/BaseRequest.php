@@ -6,8 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BaseRequest extends FormRequest
 {
-    public function customValidated($method_rules)
+    public function customValidated($method)
     {
+        $this->setRules($method_rules);
         return $this->validated();
     }
 
@@ -18,7 +19,7 @@ class BaseRequest extends FormRequest
      */
     public function setRules($method)
     {
-        $this->rules = $method;
+        $this->rules = $this->$method.'_rules';
     }
 
     /**
@@ -26,7 +27,7 @@ class BaseRequest extends FormRequest
      *
      * @return array
      */
-    public function getRules($method)
+    public function getRules()
     {
         return $this->rules;
     }
