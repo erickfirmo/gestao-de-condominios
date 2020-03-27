@@ -28,3 +28,12 @@
     }
 });
 */
+
+if(success_response) {
+    Swal.fire(
+        'Sucesso!',
+        success_response,
+        'success'
+    );
+}
+
