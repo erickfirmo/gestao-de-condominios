@@ -39,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:superadmin');
+        $this->middleware('auth:admin');
     }
 
 
