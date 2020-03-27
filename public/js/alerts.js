@@ -1,32 +1,4 @@
-/*Swal.fire({
-    title: 'Are you sure?',
-    text: 'You will not be able to recover this imaginary file!',
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, delete it!',
-    cancelButtonText: 'No, keep it'
-  }).then((result) => {
-
-
-
-    if (result.value) {
-      Swal.fire(
-        'Deleted!',
-        'Your imaginary file has been deleted.',
-        'success'
-      )
-
-    } else if (result.dismiss === Swal.DismissReason.cancel) {
-
-
-
-      Swal.fire(
-        'Cancelled',
-        'Your imaginary file is safe :)',
-        'error'
-      )
-    }
-});
+/*
 */
 
 if(success_response) {
@@ -36,4 +8,31 @@ if(success_response) {
         'success'
     );
 }
+
+$('.remove-form').on('submit', function(event) {
+    event.preventDefault();
+
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: 'Você não poderá recuperar essas informaçoes!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim, deletar!',
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: 'red'
+
+    }).then((result) => {
+
+      if (result.value) {
+        $(this).submit();
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    });
+});
 
