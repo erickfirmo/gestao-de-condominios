@@ -10,11 +10,19 @@ require_once 'auth/user.php';
 require_once 'auth/admin.php';
 require_once 'auth/superadmin.php';
 
-Route::prefix('superadmin')->name('superadmin.')->namespace('Superadmin')->group(function () {
+Route::prefix('superadmin')->name('superadmin.')->group(function () {
 
     ##cadastros
     // empresas
-    Route::resource('empresas', 'EmpresaController');
+    Route::prefix('empresas')->name('empresas.')->group(function () {
+        Route::get('/', 'EmpresaController@index')->name('index');
+        Route::get('/create', 'EmpresaController@create')->name('create');
+        Route::get('/{id}/edit', 'EmpresaController@edit')->name('edit');
+        Route::post('/store', 'EmpresaController@store')->name('store');
+        Route::put('/{id}', 'EmpresaController@update')->name('update');
+        Route::delete('/{id}', 'EmpresaController@destroy')->name('destroy');
+    });
+
     // condominios
     Route::resource('condominios', 'CondominioController');
     // imoveis
