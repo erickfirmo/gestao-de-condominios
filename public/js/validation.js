@@ -13,7 +13,8 @@ $('.error').onkeyup = function() {
 
 //show form after load
 setTimeout(function() {
-    $('.lds-ring').addClass('d-none')
+    
     $('.main-form').removeClass('d-none');
-}, 100);
+    $('.lds-ring').addClass('d-none')
+}, 0);
 
