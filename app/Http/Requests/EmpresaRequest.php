@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class EmpresaRequest extends FormRequest
 {
-    private $rules = [];
+    private $store_rules = [];
 
     private $update_rules = [];
     /**
