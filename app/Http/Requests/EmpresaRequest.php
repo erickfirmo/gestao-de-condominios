@@ -19,29 +19,10 @@ class EmpresaRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Set the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function setRules($method)
-    {
-        $this->rules = $method;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function getRules($method)
-    {
-        return $this->rules;
-    }
-
+    
     public function rules()
     {
-        return $this->rules;
+        return $this->getRules;
     }
 
     public function attributes()
