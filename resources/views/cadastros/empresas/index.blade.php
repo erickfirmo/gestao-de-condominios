@@ -30,6 +30,8 @@
                 <div class="panel">
                     <!-- Records Header Start -->
                     <div class="records--header">
+
+
                         <div class="title fa-university">
                             <h3 class="h3">Empresas
                             <!--<a href="#" class="btn btn-sm btn-outline-info">Manage Orders</a>-->
@@ -59,6 +61,7 @@
                 <div class="panel">
 
                     <div class="records--list" data-title="Lista de Empresas">
+                        
                         <table id="recordsListView" class="empresas-table">
                             <thead>
                                 <tr>
