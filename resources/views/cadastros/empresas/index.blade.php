@@ -34,7 +34,7 @@
 
                         <div class="title fa-university">
                             <h3 class="h3">Empresas
-                            <!--<a href="#" class="btn btn-sm btn-outline-info">Manage Orders</a>-->
+                            <a href="{{ route('superadmin.empresas.create') }}" class="btn btn-sm btn-outline-info">Adicionar Empresa</a>
                         
                             </h3>
                             <p>
