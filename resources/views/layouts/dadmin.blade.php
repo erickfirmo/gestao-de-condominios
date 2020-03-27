@@ -66,7 +66,7 @@
 
 <!-- Scripts -->
 
-
+@include('javascript._vars');
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -74,7 +74,7 @@
 <script src="{{ asset('themes/dadmin/assets/js/jquery.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.sparkline.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/datatables.min.js') }}"></script>
-@include('partials.validation-js');
+@include('javascript._validation');
 <script src="{{ asset('themes/dadmin/assets/js/raphael.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/morris.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/select2.min.js') }}"></script>
