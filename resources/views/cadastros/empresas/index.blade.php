@@ -68,7 +68,7 @@
                                     <th>ID</th>
                                     <th>Razão Social</th>
                                     <th>Nome Fantasia</th>
-                                    <th>Cnpj</th>
+                                    <!--<th>Cnpj</th>-->
                                     <th>Email</th>
                                     <th>Telefone(s)</th>
                                     <th>Responsável</th>
@@ -85,7 +85,7 @@
                                     <td>{{ $empresa->id }}</td>
                                     <td>{{ $empresa->razao_social }}</td>
                                     <td>{{ $empresa->nome_fantasia }}</td>
-                                    <td>{{ $empresa->cnpj }}</td>
+                                    <!--<td>{$empresa->cnpj}</td>-->
                                     <td>{{ $empresa->email }}</td>
                                     <td>{{ $empresa->telefone_1.($empresa->telefone_2 ? ', '.$empresa->telefone_2 : '') }}</td>
                                     <td>{{ $empresa->responsavel_para_contato }}</td>
