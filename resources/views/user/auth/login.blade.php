@@ -8,16 +8,16 @@
                 <div class="row no-gutters">
                     <div class="col-md-6">
                         <!-- Login Content Start -->
-                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg.jpg') }}">
+                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-admin.jpg') }}">
                             <div class="m-account--content">
-                                <h2 class="h2">Seja bem-vindo, Usuário!</h2>
+                                <h2 class="h2">Seja bem-vindo!</h2>
                                 <p>Sistema de gestão de condomínios e controle de portarias.</p>
-                                <a href="{{ route('admin.login') }}" class="btn btn-rounded">Acessar como Administrador</a>
+                                <!--<a href="#" class="btn btn-rounded">Acessar como Administrador</a>-->
                             </div>
                         </div>
                         <!-- Login Content End -->
                     </div>
-                    
+
                     <div class="col-md-6">
                         <!-- Login Form Start -->
                         <div class="m-account--form-w">
@@ -28,13 +28,13 @@
                                 </div>
                                 <!-- Logo End -->
 
-                                <form action="{{ route('user.login') }}" method="POST">
-                                    <label class="m-account--title text-loginarea">ÁREA DE LOGIN</label>
+                                <form action="{{ route('login') }}" method="POST">
+                                    <label class="m-account--title text-admin">ÁREA DE LOGIN</label>
                                     @csrf
 
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <div class="input-group-prepend">
+                                        <div class="input-group-prepend">
                                                 <i class="fas fa-envelope"></i>
                                             </div>
 
@@ -63,13 +63,7 @@
                                     </div>
 
                                     <div class="m-account--actions">
-                                        @if (Route::has('password.request'))
-                                            <a class="btn-link" href="{{ route('user.password.request') }}">
-                                                {{ __('Esqueceu sua senha?') }}
-                                            </a>
-                                        @endif
-
-                                        <button type="submit" class="btn btn-rounded btn-warning">Login</button>
+                                        <button type="submit" class="btn btn-rounded btn-info">Login</button>
                                     </div>
 
                                     <!--<div class="m-account--alt">
@@ -82,7 +76,7 @@
                                     </div>-->
 
                                     <div class="m-account--footer">
-                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2019 Gestão de Condomínios</a></p>
+                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2019 Érick Firmo</a></p>
                                     </div>
                                 </form>
                             </div>
