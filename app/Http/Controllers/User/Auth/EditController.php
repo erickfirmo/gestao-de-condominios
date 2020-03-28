@@ -20,7 +20,7 @@ class EditController extends Controller
         if($id == Auth::user()->id)
             return view('user.auth.edit', ['user' => User::findOrfail($id)]);
         else
-            return redirect()->route('user.home');
+            return redirect()->route('home');
     }
 
     public function update(Request $request, $id)
@@ -37,7 +37,7 @@ class EditController extends Controller
             'foto_de_perfil' => $request->foto_de_perfil,
         ]);
 
-        return redirect()->route('user.edit', compact('user'))
+        return redirect()->route('edit', compact('user'))
             ->with('success', 'Informações alteradas com sucesso!');
     }
 
