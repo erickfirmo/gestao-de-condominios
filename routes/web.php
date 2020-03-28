@@ -14,15 +14,17 @@ Route::prefix('superadmin')->name('superadmin.')->group(function () {
 
     ##cadastros
     // empresas
-    Route::prefix('empresas')->name('empresas.')->group(function () {
-        Route::get('/', 'EmpresaController@index')->name('index');
-        Route::get('/create', 'EmpresaController@create')->name('create');
-        Route::get('/{id}/edit', 'EmpresaController@edit')->name('edit');
-        Route::post('/store', 'EmpresaController@store')->name('store');
-        Route::put('/{id}', 'EmpresaController@update')->name('update');
-        Route::delete('/{id}', 'EmpresaController@destroy')->name('destroy');
-    });
-
+    /*Route::middleware(['superadmin'])->group(function () {
+        Route::prefix('empresas')->name('empresas.')->group(function () {
+            Route::get('/', 'EmpresaController@index')->name('index');
+            Route::get('/create', 'EmpresaController@create')->name('create');
+            Route::get('/{id}/edit', 'EmpresaController@edit')->name('edit');
+            Route::post('/store', 'EmpresaController@store')->name('store');
+            Route::put('/{id}', 'EmpresaController@update')->name('update');
+            Route::delete('/{id}', 'EmpresaController@destroy')->name('destroy');
+        });
+    });*/
+    Route::resource('empresas', 'EmpresaController');
     // condominios
     Route::resource('condominios', 'CondominioController');
     // imoveis

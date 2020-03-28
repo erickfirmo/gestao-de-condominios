@@ -19,6 +19,11 @@ class CreateSuperadminsTable extends Migration
             $table->string('email')->unique();
             $table->string('foto_de_perfil');
             $table->string('password');;
+
+            $table->unsignedBigInteger('role_id')->index();
+            $table->foreign('role_id')
+                ->references('id')
+                ->on('roles')->default(1);
                 
             $table->rememberToken();
             $table->timestamps();
