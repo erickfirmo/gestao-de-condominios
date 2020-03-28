@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.dadmin')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Redefinir Senha') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.password.update') }}">
+                    <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
