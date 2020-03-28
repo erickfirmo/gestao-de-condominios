@@ -1,7 +1,7 @@
 <?php
 
 
-Route::prefix('user')->name('user.')->namespace('User')->group(function () {
+Route::prefix('')->name('')->namespace('User')->group(function () {
     Auth::routes();
     Route::middleware('auth:user')->group(function () {
         Route::get('/', 'HomeController@home')->name('/');
@@ -11,6 +11,6 @@ Route::prefix('user')->name('user.')->namespace('User')->group(function () {
     Route::post('update/{id}', 'Auth\EditController@update')->name('update');
 
     Route::get('/password/email', function () {
-        return redirect('user/login');
+        return redirect('login');
     });
 });
