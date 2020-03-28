@@ -87,7 +87,7 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                <li><a href="{{ route('superadmin.edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
+                <li><a href="{{ route('admin.edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
                     <li><a href="{{ route('register')}}"><i class="fas fa-users"></i>Cadastrar Usuário</a></li>
                     <li><a href="{{ route('admin.register')}}"><i class="fas fa-users"></i>Cadastrar Administrador</a></li>
                     <li><a href="javascript:void(0)"><i class="fa fa-cog"></i>Configurações</a></li>
@@ -103,7 +103,7 @@
                                         <i class="fa fa-power-off"></i>Sair</a>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('superadmin.logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                             </li>
