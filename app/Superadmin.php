@@ -21,7 +21,7 @@ class Superadmin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'foto_de_perfil', 'password',
+        'name', 'email', 'foto_de_perfil', 'password', 'role_id'
     ];
 
     /**
