@@ -6,12 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Auth;
 
 class EmpresaController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:superadmin');
+        $this->middleware('auth:admin');
+        return $this->middleware('role');
+
     }   
 
      /**
@@ -64,7 +67,7 @@ class EmpresaController extends Controller
         $empresa->responsavel_para_contato = $responsavel_para_contato;
         $empresa->save();
 
-        return redirect()->route('superadmin.empresas.edit', compact('empresa'))
+        return redirect()->route('admin.empresas.edit', compact('empresa'))
             ->with('success', 'Empresa cadastrada com sucesso!');
     }
 
@@ -125,7 +128,7 @@ class EmpresaController extends Controller
             'responsavel_para_contato' => $request->responsavel_para_contato,
         ]);
 
-        return redirect()->route('superadmin.empresas.edit', compact('empresa'))
+        return redirect()->route('admin.empresas.edit', compact('empresa'))
             ->with('success', 'Dados da empresa atualizados com sucesso!');
     }
 
@@ -139,7 +142,7 @@ class EmpresaController extends Controller
     {
         Empresa::findOrFail($id)->delete();
 
-        return redirect()->route('superadmin.empresas.index')
+        return redirect()->route('admin.empresas.index')
             ->with('success', 'Empresa removida com sucesso!');
     }
 }
