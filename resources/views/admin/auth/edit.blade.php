@@ -100,7 +100,7 @@
                         <!-- Login Content Start -->
                         <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-admin.jpg') }}">
                             <div class="m-account--content">
-                                <a href="{{ route('admin.home') }}" class="btn btn-rounded">Voltar ao Dashboard</a>
+                                <a href="{{ route('superadmin.home') }}" class="btn btn-rounded">Voltar ao Dashboard</a>
                             </div>
                         </div>
                         <!-- Login Content End -->

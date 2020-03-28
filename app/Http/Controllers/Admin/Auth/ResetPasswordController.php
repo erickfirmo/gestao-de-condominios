@@ -29,7 +29,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/superadmin';
 
     /**
      * Create a new controller instance.
@@ -43,16 +43,16 @@ class ResetPasswordController extends Controller
 
     public function showResetForm(Request $request, $token = null)
     {
-        return view('admin.auth.passwords.reset')->with(
+        return view('superadmin.auth.passwords.reset')->with(
             ['token' => $token, 'email' => $request->email]
         );
     }
     public function broker()
     {
-        return Password::broker('admins');
+        return Password::broker('superadmins');
     }
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('superadmin');
     }
 }

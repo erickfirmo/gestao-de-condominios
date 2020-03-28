@@ -40,10 +40,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function register() {
-        return redirect('/admin/register');
-    }
-
     public function showRegistrationForm()
     {
         return view('admin.auth.register');

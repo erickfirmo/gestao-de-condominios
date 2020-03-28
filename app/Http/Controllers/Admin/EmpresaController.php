@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class EmpresaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:user');
+        $this->middleware('auth:admin');
         return $this->middleware('role');
 
     }   

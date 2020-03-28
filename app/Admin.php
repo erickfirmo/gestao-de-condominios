@@ -25,7 +25,7 @@ class Admin extends Authenticatable
         'email',
         'foto_de_perfil',
         'password',
-        'funcionario_id',
+        'role_id',
     ];
 
     /**
@@ -40,10 +40,5 @@ class Admin extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
-    }
-
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 }

@@ -8,11 +8,11 @@
                 <div class="row no-gutters">
                     <div class="col-md-6">
                         <!-- Login Content Start -->
-                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-admin.jpg') }}">
+                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-superadmin.jpg') }}">
                             <div class="m-account--content">
-                                <h2 class="h2">Seja bem-vindo, Administrador!</h2>
+                                <h2 class="h2">Seja bem-vindo, Super Admin!</h2>
                                 <p>Sistema de gestão de condomínios e controle de portarias.</p>
-                                <a href="{{ route('user.login') }}" class="btn btn-rounded">Acessar como Usuário</a>
+                                <a href="{{ route('admin.login') }}" class="btn btn-rounded">Acessar como Administrador</a>
                             </div>
                         </div>
                         <!-- Login Content End -->
@@ -29,7 +29,7 @@
                                 <!-- Logo End -->
 
                                 <form action="{{ route('admin.login') }}" method="POST">
-                                    <label class="m-account--title text-admin">ÁREA DE LOGIN</label>
+                                    <label class="m-account--title text-superadmin">ÁREA DE LOGIN</label>
                                     @csrf
 
                                     <div class="form-group">
@@ -63,17 +63,20 @@
                                     </div>
 
                                     <div class="m-account--actions">
-                                        @if (Route::has('password.request'))
-                                            <a class="btn-link esqueceu-admin" href="{{ route('admin.password.request') }}">
-                                                {{ __('Esqueceu sua senha?') }}
-                                            </a>
-                                        @endif
-
-                                        <button type="submit" class="btn btn-rounded btn-primary">Login</button>
+                                        <button type="submit" class="btn btn-rounded btn-info">Login</button>
                                     </div>
 
+                                    <!--<div class="m-account--alt">
+                                        <p><span>OR LOGIN WITH</span></p>
+
+                                        <div class="btn-list">
+                                            <a href="#" class="btn btn-rounded btn-warning">Facebook</a>
+                                            <a href="#" class="btn btn-rounded btn-warning">Google</a>
+                                        </div>
+                                    </div>-->
+
                                     <div class="m-account--footer">
-                                        <p><a href="https://github.com/erickfirmo" target="_blank"><p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2020 Gestão de Condomínios</a></p></a></p>
+                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2019 Érick Firmo</a></p>
                                     </div>
                                 </form>
                             </div>

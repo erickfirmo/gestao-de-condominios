@@ -20,13 +20,6 @@ class CreateAdminsTable extends Migration
             $table->string('foto_de_perfil');
             $table->timestamp('email_verified_at')->nullable();
 
-            $table->unsignedBigInteger('funcionario_id');
-            $table->foreign('funcionario_id')
-                ->references('id')
-                ->on('funcionarios')
-                ->onDelete('cascade');
-
-                
             $table->unsignedBigInteger('role_id')->index();
             $table->foreign('role_id')
                 ->references('id')

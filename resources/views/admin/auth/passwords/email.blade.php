@@ -1,76 +1,47 @@
-@extends('layouts.dadmin')
+@extends('layouts.superadmin')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Redefinir Senha') }}</div>
 
-        <!-- Login Page Start -->
-        <div class="m-account-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/wrapper-bg.jpg') }}">
-            <div class="m-account">
-                <div class="row no-gutters">
-                    <div class="col-md-6">
-                        <!-- Login Content Start -->
-                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-admin.jpg') }}">
-                            <div class="m-account--content">
-                                <h2 class="h2">Possui uma conta?</h2>
-                                <p>Caso saiba o seu acesso, clique abaixo para efetuar o login.</p>
-                                <a href="{{ route('admin.login') }}" class="btn btn-rounded">Acessar</a>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('superadmin.password.email') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Endereço de Email') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
-                        <!-- Login Content End -->
-                    </div>
 
-                    <div class="col-md-6">
-                        <!-- Login Form Start -->
-                        <div class="m-account--form-w">
-                            <div class="m-account--form">
-                                <!-- Logo Start -->
-                                <div class="logo">
-                                    <img src="{{ url('images/logo-mini-branco.png') }}" alt="#" style="width: 50%;">
-                                </div>
-                                <!-- Logo End -->
-
-                                <form action="{{ route('admin.password.email') }}" method="POST">
-                                    <label class="m-account--title text-admin" style="text-transform: inherit;font-weight: lighter;">
-                                    {{ __('Redefinir Senha') }}
-                                    </label>
-                                    @csrf
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <div class="input-group-prepend">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-
-                                            <input placeholder="Digite seu e-mail" id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                                            @if ($errors->has('email'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="m-account--actions">
-                                        <p>     
-                                        Não lembra seu e-mail? <a href="br?subject=[GESTÃO DE CONDOMÍNIOS] Esqueci meu e-mail como administrador" class="pl-1" style="color:#745faa;">Entre em contato com o suporte.</a>
-                                        </p>
-                                    </div>
-                                    <div class="m-account--actions">
-                                            <button type="submit" class="btn btn-block btn-rounded btn-primary">
-                                            {{ __('Redefinir Senha') }}
-                                            </button>
-                                    </div>
-
-                                    <div class="m-account--footer">
-                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2020 Gestão de Condomínios</a></p>
-                                    </div>
-                                </form>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Enviar o link de redefinição de senha') }}
+                                </button>
                             </div>
                         </div>
-                        <!-- Login Form End -->
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!-- Login Page End -->
-
+    </div>
+</div>
 @endsection

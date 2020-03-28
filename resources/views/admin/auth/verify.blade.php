@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.superadmin')
 
 @section('content')
 <div class="container">
@@ -16,7 +16,7 @@
                     @endif
 
                     {{ __('Antes de prosseguir, verifique seu e-mail em busca de um link de verificação.') }}
-                    {{ __('Se você não recebeu o email') }}, <a href="{{ route('admin.verification.resend') }}">{{ __('clique aqui para solicitar outro envio') }}</a>.
+                    {{ __('Se você não recebeu o email') }}, <a href="{{ route('superadmin.verification.resend') }}">{{ __('clique aqui para solicitar outro envio') }}</a>.
                 </div>
             </div>
         </div>

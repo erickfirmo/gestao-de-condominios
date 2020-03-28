@@ -17,10 +17,10 @@
                                 <!-- Logo End -->
 
                                 <div style="margin-bottom: 33px;">
-                                    @include('admin.partials._alert')
+                                    @include('partials._alert')
                                 </div>
 
-                                <form action="{{ route('user.update', Auth::user() ) }}" method="POST">
+                                <form action="{{ route('update', Auth::user() ) }}" method="POST">
                                 <label class="m-account--title text-admin">EDIÇÃO DE USUÁRIO</label>
                                     @csrf
 
@@ -85,11 +85,11 @@
                                     </div>
 
                                     <div class="m-account--actions">
-                                        <button type="submit" class="btn btn-rounded btn-warning">SALVAR</button>
+                                        <button type="submit" class="btn btn-rounded btn-primary">SALVAR</button>
                                     </div>
 
                                     <div class="m-account--footer">
-                                        <p>&copy; 2019 Gestão de Condomínios</p>
+                                        <p>&copy;2020 Gestão de Condomínios</p>
                                     </div>
                                 </form>
                             </div>
@@ -98,9 +98,9 @@
                     </div>
                     <div class="col-md-6">
                         <!-- Login Content Start -->
-                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-user.jpg') }}">
+                        <div class="m-account--content-w" data-bg-img="{{ url('vendor/dadmin/assets/img/account/content-bg-jpg') }}">
                             <div class="m-account--content">
-                                <a href="{{ route('user.home') }}" class="btn btn-rounded">Voltar ao Dashboard</a>
+                                <a href="{{ route('home') }}" class="btn btn-rounded">Voltar ao Dashboard</a>
                             </div>
                         </div>
                         <!-- Login Content End -->

@@ -2,8 +2,8 @@
 
 @section('content')
 
-@include('superadmin.partials._navbar')
-@include('superadmin.partials._sidebar')
+@include('admin.partials._navbar')
+@include('admin.partials._sidebar')
 
 <!-- Main Container Start -->
 <main class="main--container">
@@ -17,7 +17,7 @@
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('superadmin.empresas.index') }}">Empresas</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.empresas.index') }}">Empresas</a></li>
                         <li class="breadcrumb-item active"><span>Editar</span></li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Empresa</h3>
-                        <form action="{{ route('superadmin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form" style="float:right">
+                        <form action="{{ route('admin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form" style="float:right">
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Empresa</button></a>
                         </form>
@@ -43,7 +43,7 @@
                     <div class="panel-content">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
-                        <form action="{{ route('superadmin.empresas.update', $empresa->id) }}" method="POST" class="show-onload d-none">
+                        <form action="{{ route('admin.empresas.update', $empresa->id) }}" method="POST" class="show-onload d-none">
                             @csrf
                             {{ method_field('PUT') }}
                             <!-- Form Group Start -->
@@ -118,7 +118,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('superadmin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Voltar</button></a>
+                                    <a href="{{ route('admin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Voltar</button></a>
                                 </div>
                             </div>
 
@@ -130,7 +130,7 @@
         </div>
     </section>
 
-    @include('superadmin.partials._footer')
+    @include('admin.partials._footer')
 </main>
 
 <!-- Main Container End -->

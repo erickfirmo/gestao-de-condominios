@@ -81,40 +81,33 @@
             <!-- Nav User Start -->
             <li class="nav-item dropdown nav--user online">
                 <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
-                    <img src="{{ Auth::user()->foto_de_perfil }}" alt="" class="rounded-circle">
+                    <img src="{{ Auth::user()->foto_de_perfil != '#' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="" class="rounded-circle">
                     <span>{{ Auth::user()->name }}</span>
                     <i class="fa fa-angle-down"></i>
                 </a>
 
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('admin.edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
-                    <li><a href="{{ route('user.register')}}"><i class="fas fa-users"></i>Cadastrar Usuário</a></li>
-                    <li><a href="{{ route('admin.register')}}"><i class="fas fa-users"></i>Cadastrar Novo Administrador</a></li>
+                <li><a href="{{ route('admin.edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
+                    <li><a href="{{ route('register')}}"><i class="fas fa-users"></i>Cadastrar Usuário</a></li>
+                    <li><a href="{{ route('admin.register')}}"><i class="fas fa-users"></i>Cadastrar Administrador</a></li>
                     <li><a href="javascript:void(0)"><i class="fa fa-cog"></i>Configurações</a></li>
-
                     <li class="dropdown-divider"></li>
                     <li><a href="javascript:void(0)">
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Entrar') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.register') }}">{{ __('Cadastrar-se') }}</a>
+                        @guest
+                        @else
+                            <li class="nav-item dropdown">
+                                
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-power-off"></i>Sair</a>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                             </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-item" href="{{ route('admin.logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                <i class="fa fa-power-off"></i>Sair</a>
-                            </a>
-                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
-                    @endguest
+                        @endguest
                     </li>
                 </ul>
             </li>
