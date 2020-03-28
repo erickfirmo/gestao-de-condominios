@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CondominioRequest extends FormRequest
 {
@@ -13,6 +14,12 @@ class CondominioRequest extends FormRequest
      */
     public function authorize()
     {
+        if(Auth::guard('admin')->check()){
+
+
+        } elseif($ee) {
+
+        }
         return true;
     }
 
