@@ -28,7 +28,7 @@
                                 </div>
                                 <!-- Logo End -->
 
-                                <form action="{{ route('superadmin.login') }}" method="POST">
+                                <form action="{{ route('admin.login') }}" method="POST">
                                     <label class="m-account--title text-superadmin">ÁREA DE LOGIN</label>
                                     @csrf
 
