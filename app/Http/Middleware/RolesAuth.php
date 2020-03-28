@@ -16,8 +16,6 @@ class RolesAuth
      */
     public function handle($request, Closure $next)
     {
-        dd(Auth::user()->role_id);
-
         $role = \App\Models\Role::findOrFail(auth()->user()->role_id);
         $permissions = $role->permissions;
         $actionName = class_basename($request->route()->getActionname());
