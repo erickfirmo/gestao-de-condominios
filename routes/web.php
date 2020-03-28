@@ -9,13 +9,13 @@ Auth::routes();
 require_once 'auth/user.php';
 require_once 'auth/admin.php';
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     ##cadastros
     // empresas
     Route::resource('empresas', 'EmpresaController');
     // condominios
-    /*Route::resource('condominios', 'CondominioController');
+    Route::resource('condominios', 'CondominioController');
     // imoveis
     Route::resource('imoveis', 'ImovelController');
     // moradores
@@ -64,7 +64,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('ocorrencias', 'OcorrenciaController');
     // reservas
     Route::resource('relatorios', 'RelatorioController');
-    */
+    
         
 });
 
