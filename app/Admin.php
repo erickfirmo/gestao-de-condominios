@@ -26,6 +26,7 @@ class Admin extends Authenticatable
         'foto_de_perfil',
         'password',
         'funcionario_id',
+        'role_id',
     ];
 
     /**
