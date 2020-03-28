@@ -2,8 +2,8 @@
 
 @section('content')
 
-@include('superadmin.partials._navbar')
-@include('superadmin.partials._sidebar')
+@include('admin.partials._navbar')
+@include('admin.partials._sidebar')
 
 <!-- Main Container Start -->
 <main class="main--container">
@@ -25,7 +25,7 @@
     </section>
     <!-- Page Header End -->
 
-    @include('superadmin.partials._footer')
+    @include('admin.partials._footer')
 </main>
 <!-- Main Container End -->
 @endsection
