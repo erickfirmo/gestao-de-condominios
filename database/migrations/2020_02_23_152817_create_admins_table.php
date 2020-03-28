@@ -28,7 +28,9 @@ class CreateAdminsTable extends Migration
 
                 
             $table->unsignedBigInteger('role_id')->index();
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')
+                ->references('id')
+                ->on('roles')->default(2);
 
             $table->string('password');
             $table->rememberToken();
