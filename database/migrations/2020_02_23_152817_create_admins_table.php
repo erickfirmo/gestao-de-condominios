@@ -26,6 +26,10 @@ class CreateAdminsTable extends Migration
                 ->on('funcionarios')
                 ->onDelete('cascade');
 
+                
+            $table->unsignedBigInteger('role_id')->index();
+            $table->foreign('role_id')->references('id')->on('roles');
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
