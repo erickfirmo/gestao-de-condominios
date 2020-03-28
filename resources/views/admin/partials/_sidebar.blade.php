@@ -45,7 +45,7 @@
             <li>
                 <ul>
                     <li class="active">
-                        <a href="{{ route('superadmin.home' ) }}">
+                        <a href="{{ route('admin.home' ) }}">
                             <i class="fa fa-home"></i>
                             <span>Dashboard</span>
                         </a>
@@ -67,8 +67,8 @@
 
                                 
                         <ul>
-                            <li><a href="{{ route('superadmin.empresas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.empresas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.empresas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.empresas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -81,8 +81,8 @@
 
                                 
                         <ul>
-                            <li><a href="{{ route('superadmin.condominios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.condominios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.condominios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.condominios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>          
                 </ul>
@@ -96,8 +96,8 @@
 
                                 
                         <ul>
-                            <li><a href="{{ route('superadmin.imoveis.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.imoveis.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.imoveis.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.imoveis.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>          
                 </ul>
@@ -111,8 +111,8 @@
 
                                 
                         <ul>
-                            <li><a href="{{ route('superadmin.moradores.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.moradores.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.moradores.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.moradores.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>    
                                    
@@ -127,8 +127,8 @@
 
                                 
                         <ul>
-                            <li><a href="{{ route('superadmin.funcionarios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.funcionarios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.funcionarios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.funcionarios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>    
                                    
@@ -147,8 +147,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.entregas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.entregas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.entregas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.entregas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -160,8 +160,8 @@
                             <span>Visitantes</span>
                         </a>
                         <ul>
-                            <li><a href="{{ route('superadmin.visitantes.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.visitantes.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.visitantes.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.visitantes.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -173,8 +173,8 @@
                             <span>Prestadores de Serviços</span>
                         </a>
                         <ul>
-                            <li><a href="{{ route('superadmin.prestadores-de-servicos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.prestadores-de-servicos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.prestadores-de-servicos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.prestadores-de-servicos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -190,8 +190,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.vagas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.vagas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.vagas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.vagas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -203,8 +203,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.veiculos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.veiculos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.veiculos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.veiculos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -251,8 +251,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.receitas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.receitas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.receitas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.receitas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -264,8 +264,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.despesas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.despesas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.despesas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.despesas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -277,8 +277,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.faturas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.faturas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.faturas.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.faturas.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -290,8 +290,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.boletos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.boletos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.boletos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.boletos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -308,8 +308,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.areas-comuns.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.areas-comuns.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.areas-comuns.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.areas-comuns.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -321,8 +321,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.reservas.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.reservas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.reservas.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.reservas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
@@ -334,8 +334,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="{{ route('superadmin.ocorrencias.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('superadmin.ocorrencias.index') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('admin.ocorrencias.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('admin.ocorrencias.index') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
                 </ul>
