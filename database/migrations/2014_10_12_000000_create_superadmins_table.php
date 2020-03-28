@@ -20,7 +20,7 @@ class CreateSuperadminsTable extends Migration
             $table->string('foto_de_perfil');
             $table->string('password');;
 
-            $table->unsignedInteger('role_id')->index();
+            $table->unsignedBigInteger('role_id')->index();
             $table->foreign('role_id')->references('id')->on('roles');
                 
             $table->rememberToken();
