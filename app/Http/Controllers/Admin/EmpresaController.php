@@ -24,7 +24,7 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('cadastros.empresas.index', [
+        return view('admin.cadastros.empresas.index', [
             'empresas' => Empresa::all()
         ]);
     }
@@ -36,7 +36,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view('cadastros.empresas.create');
+        return view('admin.cadastros.empresas.create');
     }
 
     /**
@@ -79,7 +79,7 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.empresas.show', [
+        return view('admin.cadastros.empresas.show', [
             'empresa' => Empresa::findOrFail($id)
         ]);
     }
@@ -92,7 +92,7 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.empresas.edit', [
+        return view('admin.cadastros.empresas.edit', [
             'empresa' => Empresa::findOrFail($id)
         ]);
     }
