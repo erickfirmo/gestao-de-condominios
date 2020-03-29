@@ -69,8 +69,6 @@
 <!-- Scripts -->
 
 @include('javascript._vars')
-@include('javascript._validation')
-
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/bootstrap.bundle.min.js') }}"></script>
