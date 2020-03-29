@@ -12,17 +12,19 @@ class Funcionario extends Model
         'nome_completo',
         'identidade',
         'genero',
-        'servico_temporario',
-        'duracao',
-        'inicio',
-        'finalizacao',
+        'entrada',
+        'saida',
         'foto',
         'telefone_1',
         'telefone_2',
-        'jornada_semanal',
-        'carga_horaria',
+        'cargo',
         'empresa_id',
     ];
+
+    public function empresa()
+    {
+        return $this->belongsTo(Empresa::class, 'empresa_id');
+    }
 
     public function user()
     {
@@ -33,5 +35,6 @@ class Funcionario extends Model
     {
         return $this->hasMany(Relatorio::class, 'parent_id');
     }
+
     
 }
