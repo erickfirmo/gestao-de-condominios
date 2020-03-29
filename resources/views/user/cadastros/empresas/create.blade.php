@@ -2,8 +2,8 @@
 
 @section('content')
 
-@include('admin.partials._navbar')
-@include('admin.partials._sidebar')
+@include('user.partials._navbar')
+@include('user.partials._sidebar')
 
 <!-- Main Container Start -->
 <main class="main--container">
@@ -18,7 +18,7 @@
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('admin.empresas.index') }}">Empresas</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('empresas.index') }}">Empresas</a></li>
                         <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
                     </ul>
                 </div>
@@ -116,7 +116,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('admin.empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('empresas.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
