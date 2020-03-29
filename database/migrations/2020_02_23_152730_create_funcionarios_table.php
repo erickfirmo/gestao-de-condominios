@@ -17,16 +17,19 @@ class CreateFuncionariosTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome_completo', 80);
             $table->string('identidade', 11);
-            $table->enum('gerero', ['masc', 'fem', 'nd']);
-            $table->enum('servico_temporario', ['s', 'n']);
-            $table->unsignedInteger('duracao');
-            $table->string('inicio', 30);
-            $table->string('finalizacao', 30);
+            $table->enum('genero', ['masc', 'fem', 'nd']);
+            $table->string('entrada');
+            $table->string('saida', 30);
             $table->string('foto');
             $table->string('telefone_1', 11);
-            $table->string('telefone_2', 11);
-            $table->string('jornada_semanal', 30);
-            $table->string('carga_horaria');
+            $table->string('telefone_2', 11)->nullable();
+            $table->string('cargo', 30);
+
+            $table->unsignedBigInteger('empresa_id');
+            $table->foreign('empresa_id')
+                ->references('id')
+                ->on('empresas');
+
             $table->timestamps();
         });
     }
