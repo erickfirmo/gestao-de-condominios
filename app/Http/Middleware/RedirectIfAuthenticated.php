@@ -22,8 +22,8 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
 
-            $guard = ($guard == 'user') ? '' : $guard;
-            return redirect()->route("{$guard}.home");
+            $guard = ($guard == 'user') ? '' : $guard.'.';
+            return redirect()->route("{$guard}home");
         }
 
         return $next($request);
