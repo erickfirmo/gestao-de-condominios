@@ -11,16 +11,24 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        $permission_ids = [];
         
+        $permission = new App\Models\Permission;
+        $permission->name = '';
+        $permission->key = '';
+        $permission->controller = 'EmpresaController';
+        $permission->method = 'index';
+        $permission->save();
+        $permission_ids[] = $permission->id;
+
+
+
+        $permission_ids = [];
         foreach (Route::getRoutes()->getRoutes() as $key => $route)
         {
             $action = $route->getActionname();
             $_action = explode('@',$action);
-
             $controller = $_action[0];
             $method = end($_action);
-            
             $permission_check = App\Models\Permission::where(['controller' => $controller, 'method' => $method])
                 ->first();
 
@@ -32,8 +40,22 @@ class PermissionsTableSeeder extends Seeder
                 $permission_ids[] = $permission->id;
             }
         }
+        $admin_role = App\Models\Role::where("name","admin")->first();
+        $admin_role->permissions()->attach($permission_ids);
 
-        $superadmin_role = App\Models\Role::where("name","superadmin")->first();
-        $superadmin_role->permissions()->attach($permission_ids);
     }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -14,7 +14,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     ##cadastros
     // empresas
     Route::resource('empresas', 'EmpresaController');
-    // condominios
+    /*// condominios
     Route::resource('condominios', 'CondominioController');
     // imoveis
     Route::resource('imoveis', 'ImovelController');
@@ -64,7 +64,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('ocorrencias', 'OcorrenciaController');
     // reservas
     Route::resource('relatorios', 'RelatorioController');
-    
+    */
         
 });
 
@@ -83,8 +83,6 @@ Route::resource('funcionarios', 'FuncionarioController');
 Route::resource('areas-comuns', 'AreaComumController');
 // pets
 Route::resource('pets', 'PetController');
-// reservas
-Route::resource('reservas', 'ReservaController');
 
 ##estacionamento/garagem
 // veiculos
@@ -99,6 +97,31 @@ Route::resource('entregas', 'EntregaController');
 Route::resource('visitantes', 'VisitanteController');
 // prestadores de servicos
 Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
+
+##usuarios/acessos
+// usuarios
+Route::resource('acessos/users', 'User\Auth\EditController');
+// administradores
+Route::resource('acessos/admins', 'Admin\Auth\EditController');
+
+##financeiro
+// receita
+Route::resource('financeiro/receitas', 'ReceitaController');
+// despesas
+Route::resource('financeiro/despesas', 'DespesaController');
+// faturas
+Route::resource('financeiro/faturas', 'FaturaController');
+// boletos
+Route::resource('financeiro/boletos', 'BoletoController');
+
+##outros
+// reservas
+Route::resource('reservas', 'ReservaController');
+// ocorrencias
+Route::resource('ocorrencias', 'OcorrenciaController');
+// reservas
+Route::resource('relatorios', 'RelatorioController');
+    
         
 
 

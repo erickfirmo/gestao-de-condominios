@@ -17,7 +17,7 @@
                                 <!-- Logo End -->
 
                                 <div style="margin-bottom: 33px;">
-                                    @include('partials._alert')
+                                    @include('user.partials._alert')
                                 </div>
 
                                 <form action="{{ route('update', Auth::user() ) }}" method="POST">

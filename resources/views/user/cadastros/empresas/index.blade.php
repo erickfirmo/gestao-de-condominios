@@ -2,8 +2,8 @@
 
 @section('content')
 
-@include('admin.partials._navbar')
-@include('admin.partials._sidebar')
+@include('user.partials._navbar')
+@include('user.partials._sidebar')
 <!-- Main Container Start -->
 <main class="main--container">
             <!-- Page Header Start -->
@@ -16,7 +16,7 @@
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('admin.empresas.index') }}">Empresas</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('empresas.index') }}">Empresas</a></li>
                                 <li class="breadcrumb-item active"><span>Todas</span></li>
                             </ul>
                         </div>
@@ -34,7 +34,7 @@
 
                         <div class="title fa-university">
                             <h3 class="h3">Empresas
-                            <a href="{{ route('admin.empresas.create') }}" class="btn btn-sm btn-outline-info">Adicionar Empresa</a>
+                            <a href="{{ route('empresas.create') }}" class="btn btn-sm btn-outline-info">Adicionar Empresa</a>
                         
                             </h3>
                             <p>
@@ -92,12 +92,12 @@
 
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('admin.empresas.edit', $empresa->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('empresas.edit', $empresa->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
 
                                         
 
-                                        <form action="{{ route('admin.empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('empresas.destroy', $empresa->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
@@ -115,7 +115,7 @@
             </section>
             <!-- Main Content End -->
 
-    @include('admin.partials._footer')
+    @include('user.partials._footer')
 </main>
 <!-- Main Container End -->
 
