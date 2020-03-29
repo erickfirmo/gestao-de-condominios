@@ -24,7 +24,7 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('cadastros.empresas.index', [
+        return view('user.cadastros.empresas.index', [
             'empresas' => Empresa::all()
         ]);
     }
@@ -36,7 +36,7 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view('cadastros.empresas.create');
+        return view('user.cadastros.empresas.create');
     }
 
     /**
@@ -67,7 +67,7 @@ class EmpresaController extends Controller
         $empresa->responsavel_para_contato = $responsavel_para_contato;
         $empresa->save();
 
-        return redirect()->route('admin.empresas.edit', compact('empresa'))
+        return redirect()->route('empresas.edit', compact('empresa'))
             ->with('success', 'Empresa cadastrada com sucesso!');
     }
 
@@ -79,7 +79,7 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.empresas.show', [
+        return view('user.cadastros.empresas.show', [
             'empresa' => Empresa::findOrFail($id)
         ]);
     }
@@ -92,7 +92,7 @@ class EmpresaController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.empresas.edit', [
+        return view('user.cadastros.empresas.edit', [
             'empresa' => Empresa::findOrFail($id)
         ]);
     }
@@ -128,7 +128,7 @@ class EmpresaController extends Controller
             'responsavel_para_contato' => $request->responsavel_para_contato,
         ]);
 
-        return redirect()->route('admin.empresas.edit', compact('empresa'))
+        return redirect()->route('empresas.edit', compact('empresa'))
             ->with('success', 'Dados da empresa atualizados com sucesso!');
     }
 
@@ -142,7 +142,7 @@ class EmpresaController extends Controller
     {
         Empresa::findOrFail($id)->delete();
 
-        return redirect()->route('admin.empresas.index')
+        return redirect()->route('empresas.index')
             ->with('success', 'Empresa removida com sucesso!');
     }
 }
