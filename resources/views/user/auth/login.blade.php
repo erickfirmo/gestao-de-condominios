@@ -76,7 +76,7 @@
                                     </div>-->
 
                                     <div class="m-account--footer">
-                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2019 Érick Firmo</a></p>
+                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2020 Gestão de Condomínios</a></p>
                                     </div>
                                 </form>
                             </div>
