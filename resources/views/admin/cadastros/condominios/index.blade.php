@@ -87,8 +87,8 @@
                                     <td>{{ $condominio->logradouro }}</td>
                                     <td>{{ $condominio->numero }}</td>
                                     <td>{{ $condominio->bairro }}</td>
-                                    <td>{{ $condominio->cidade }}/{{ $condominio->uf()->uf }}</td>
-                                    <td>{{ $condominio->empresa }}</td>
+                                    <td>{{ $condominio->cidade }}/{{ $condominio->uf->sigla }}</td>
+                                    <td>{{ $condominio->empresa->razao_social }}</td>
 
                                     <td>
                                         <button class="d-inline mr-2 btn-action">

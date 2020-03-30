@@ -121,7 +121,35 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Estado</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="uf_id" class="form-control" id="uf_id" maxlenght="2" value="{{ $condominio->uf_id }}">
+                                    <select name="uf_id" class="form-control" id="uf_id">
+                                        <option></option>
+                                        @foreach($ufs as $uf)
+                                            <option 
+                                            @if($uf->id == $condominio->uf_id)
+                                             {{ ' selected ' }}
+                                            @endif
+                                            value="{{ $uf->id }}">{{ $uf->estado }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <select name="empresa_id" class="form-control" id="empresas_id">
+                                        <option></option>
+                                        @foreach($empresas as $empresa)
+                                            <option 
+                                            @if($empresa->id == $condominio->empresa_id)
+                                             {{ ' selected ' }}
+                                            @endif
+                                            value="{{ $empresa->id }}">{{ $empresa->razao_social }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -146,20 +174,11 @@
                             </div>
                             <!-- Form Group End -->
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <input type="text" name="empresa_id" class="form-control" id="empresa_id" maxlenght="40" value="{{ $condominio->empresa_id }}">
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
                             
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('admin.condominios.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Voltar</button></a>
+                                    <a href="{{ route('admin.condominios.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
