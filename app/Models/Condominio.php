@@ -34,9 +34,7 @@ class Condominio extends Model
 
     public function funcionarios()
     {
-        return $this->hasMany(Funcionario::class)
-            ->using(FuncionarioDoCondominio::class)
-            ->withPivot('created_at', 'update_at');
+        return $this->hasMany(Funcionario::class, 'condominio_id');
     }
 
     public function areas_comuns()
