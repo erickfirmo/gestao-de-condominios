@@ -3,8 +3,12 @@ if(errors_response) {
         if(errors_response.hasOwnProperty(name))
         {
             let elem = document.getElementsByName(name)[0];
-            elem.className += ' error';
-            elem.previousElementSibling.innerText = errors_response[name];
+            if(elem)
+            {
+
+                elem.className += ' error';
+                elem.previousElementSibling.innerText = errors_response[name];
+            }
         }
     });
 }
