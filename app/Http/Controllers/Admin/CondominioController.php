@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CondominioRequest;
 use App\Models\Condominio;
@@ -22,8 +23,7 @@ class CondominioController extends Controller
      */
     public function index()
     {
-
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
+        $condominios = Condominio::all();
 
         return view('admin.cadastros.condominios.index', [
             'condominios' => $condominios
@@ -37,10 +37,7 @@ class CondominioController extends Controller
      */
     public function create()
     {
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
-
         return view('admin.cadastros.condominios.create', [
-            'condominios' => $condominios,
             'empresas' => Empresa::all()
         ]);
     }
