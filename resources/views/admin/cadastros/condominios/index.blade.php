@@ -67,8 +67,12 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Nome</th>
-
-
+                                    <th>CEP</th>
+                                    <th>Logradouro</th>
+                                    <th>Número</th>
+                                    <th>Bairro</th>
+                                    <th>Cidade/Estado</th>
+                                    <th>Empresa</th>
 
                                     <th class="not-sortable">Ações</th>
                                 </tr>
@@ -79,6 +83,13 @@
                                 <tr id="{{ 'empresa-'.$condominio->id }}">
                                     <td>{{ $condominio->id }}</td>
                                     <td>{{ $condominio->nome }}</td>
+                                    <td>{{ $condominio->cep }}</td>
+                                    <td>{{ $condominio->logradouro }}</td>
+                                    <td>{{ $condominio->numero }}</td>
+                                    <td>{{ $condominio->bairro }}</td>
+                                    <td>{{ $condominio->cidade }}/{{ $condominio->uf()->uf }}</td>
+                                    <td>{{ $condominio->empresa }}</td>
+
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('admin.condominios.edit', $condominio->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
