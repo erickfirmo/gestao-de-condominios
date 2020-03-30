@@ -39,8 +39,13 @@ class PermissionsTableSeeder extends Seeder
                 $permission_ids[] = $permission->id;
             }
         }
-        $admin_role = App\Models\Role::where("name","porteiro")->first();
-        $admin_role->permissions()->attach($permission_ids);
+        $admin_roles = App\Models\Role::all();
+
+
+        foreach($admin_roles as $admin_role)
+        {
+            $admin_role->permissions()->attach($permission_ids);
+        }
 
     }
 
