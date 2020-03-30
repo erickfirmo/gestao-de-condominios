@@ -128,7 +128,7 @@
         </div>
     </section>
 
-    @include('admin.partials._footer')
+    @include('user.partials._footer')
 </main>
 
 <!-- Main Container End -->

@@ -36,5 +36,12 @@ class Funcionario extends Model
         return $this->hasMany(Relatorio::class, 'parent_id');
     }
 
+    public function condominios()
+    {
+        return $this->hasMany(Condominio::class)
+            ->using(FuncionarioDoCondominio::class)
+            ->withPivot('created_at', 'update_at');
+    }
+
     
 }

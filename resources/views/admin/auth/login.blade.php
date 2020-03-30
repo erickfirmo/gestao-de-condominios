@@ -12,7 +12,7 @@
                             <div class="m-account--content">
                                 <h2 class="h2">Seja bem-vindo, Super Admin!</h2>
                                 <p>Sistema de gestão de condomínios e controle de portarias.</p>
-                                <a href="{{ route('admin.login') }}" class="btn btn-rounded">Acessar como Administrador</a>
+                                <a href="{{ route('login') }}" class="btn btn-rounded">Acessar como Usuário</a>
                             </div>
                         </div>
                         <!-- Login Content End -->

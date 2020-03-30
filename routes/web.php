@@ -14,7 +14,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     ##cadastros
     // empresas
     Route::resource('empresas', 'EmpresaController');
-    /*// condominios
+    // condominios
     Route::resource('condominios', 'CondominioController');
     // imoveis
     Route::resource('imoveis', 'ImovelController');
@@ -64,13 +64,13 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('ocorrencias', 'OcorrenciaController');
     // reservas
     Route::resource('relatorios', 'RelatorioController');
-    */
+    
         
 });
 
 ##cadastros
 // empresas
-Route::resource('empresas', 'EmpresaController');
+##Route::resource('empresas', 'EmpresaController');
 // condominios
 Route::resource('condominios', 'CondominioController');
 // imoveis

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\CondominioRequest;
 use App\Models\Condominio;
@@ -12,7 +13,7 @@ class CondominioController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:user');
+        return $this->middleware('auth:admin');
     }   
 
      /**
@@ -22,10 +23,9 @@ class CondominioController extends Controller
      */
     public function index()
     {
+        $condominios = Condominio::all();
 
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
-
-        return view('user.cadastros.condominios.index', [
+        return view('admin.cadastros.condominios.index', [
             'condominios' => $condominios
         ]);
     }
@@ -37,10 +37,8 @@ class CondominioController extends Controller
      */
     public function create()
     {
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
-
-        return view('user.cadastros.condominios.create', [
-            'condominios' => $condominios
+        return view('admin.cadastros.condominios.create', [
+            'empresas' => Empresa::all()
         ]);
     }
 
@@ -64,7 +62,7 @@ class CondominioController extends Controller
         $uf_id = $request->input('uf_id');
         $complemento = $request->input('complemento');
         $observacoes = $request->input('observacoes');
-        $empresa_id = Auth::user()->funcionario->empresa_id;
+        $empresa_id = $request->input('empresa_id');
 
         $condominio = new Condominio;
         $condominio->nome = $nome;
@@ -80,7 +78,7 @@ class CondominioController extends Controller
         $condominio->empresa_id = $empresa_id;
         $condominio->save();
 
-        return redirect()->route('condominios.edit', compact('condominio'))
+        return redirect()->route('admin.condominios.edit', compact('condominio'))
             ->with('success', 'Condomínio cadastrado com sucesso!');
     }
 
@@ -92,7 +90,7 @@ class CondominioController extends Controller
      */
     public function show($id)
     {
-        return view('user.cadastros.condominios.show', [
+        return view('admin.cadastros.condominios.show', [
             'condominio' => Condominio::findOrFail($id)
         ]);
     }
@@ -105,7 +103,7 @@ class CondominioController extends Controller
      */
     public function edit($id)
     {
-        return view('user.cadastros.condominios.edit', [
+        return view('admin.cadastros.condominios.edit', [
             'condominio' => Condominio::findOrFail($id),
             'empresas' => Empresa::all()
         ]);
@@ -133,10 +131,10 @@ class CondominioController extends Controller
             'uf_id' => $request->uf_id,
             'complemento' => $request->complemento,
             'observacoes' => $request->observacoes,
-            'empresa_id' => Auth::user()->funcionario->empresa_id
+            'empresa_id' => $request->empresa_id
         ]);
 
-        return redirect()->route('condominios.edit', compact('condominio'))
+        return redirect()->route('admin.condominios.edit', compact('condominio'))
             ->with('success', 'Dados do condomínio atualizados com sucesso!');
     }
 
@@ -150,7 +148,7 @@ class CondominioController extends Controller
     {
         Condominio::findOrFail($id)->delete();
 
-        return redirect()->route('condominios.index')
+        return redirect()->route('admin.condominios.index')
             ->with('success', 'Condomínio removido com sucesso!');
     }
 }

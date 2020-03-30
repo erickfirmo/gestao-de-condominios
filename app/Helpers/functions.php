@@ -24,19 +24,21 @@ if(!function_exists('countMessage'))
 {
     function countMessage($obj_array, $messages)
     {
-        $obj_lenght = count($obj_array);
-        // return replace('[X]', $obj_lenght, $messages['many']);
-        switch(count($obj_array)) {
-            case 0:
-                return $messages['zero'];
-                break;
-            case 1:
-                return str_replace('[X]', $obj_lenght, $messages['one']);
+        if($obj_array != null){
+            $obj_lenght = count($obj_array);
+            // return replace('[X]', $obj_lenght, $messages['many']);
+            switch(count($obj_array)) {
+                case 0:
+                    return $messages['zero'];
+                    break;
+                case 1:
+                    return str_replace('[X]', $obj_lenght, $messages['one']);
 
-                break;
-            default:
-                return str_replace('[X]', $obj_lenght, $messages['many']);
-                break;
+                    break;
+                default:
+                    return str_replace('[X]', $obj_lenght, $messages['many']);
+                    break;
+            }
         }
     }
 }
