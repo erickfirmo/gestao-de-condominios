@@ -22,16 +22,8 @@ class CondominioController extends Controller
      */
     public function index()
     {
-        //create 'active' field
-        //$condominios = Condominio::where('active','=',1)->whereHas('user', function($q)
 
-        $condominios = Condominio::where('funcionarios', function($q)
-        {
-            $q->whereHas('user', function($q)
-            {
-                $q->where('user.id', '=', Auth::user()->id);
-            });
-        })->get();
+        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
 
         return view('user.cadastros.condominios.index', [
             'condominios' => $condominios
@@ -45,13 +37,7 @@ class CondominioController extends Controller
      */
     public function create()
     {
-        $condominios = Condominio::where('funcionarios', function($q)
-        {
-            $q->whereHas('user', function($q)
-            {
-                $q->where('user.id', '=', Auth::user()->id);
-            });
-        })->get();
+        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
 
         return view('user.cadastros.condominios.create', [
             'condominios' => $condominios
