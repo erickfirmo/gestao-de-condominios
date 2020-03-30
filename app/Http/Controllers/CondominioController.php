@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CondominioRequest;
 use App\Models\Condominio;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\Auth;
 
 class CondominioController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:superadmin');
+        return $this->middleware('auth:user');
     }   
 
      /**
@@ -20,8 +22,19 @@ class CondominioController extends Controller
      */
     public function index()
     {
+        //create 'active' field
+        //$condominios = Condominio::where('active','=',1)->whereHas('user', function($q)
+
+        $condominios = Condominio::where('funcionarios', function($q)
+        {
+            $q->whereHas('user', function($q)
+            {
+                $q->where('user.id', '=', Auth::user()->id);
+            });
+        })->get();
+
         return view('cadastros.condominios.index', [
-            'condominios' => Condominio::all()
+            'condominios' => $condominios
         ]);
     }
 
@@ -32,32 +45,28 @@ class CondominioController extends Controller
      */
     public function create()
     {
+        $condominios = Condominio::where('funcionarios', function($q)
+        {
+            $q->whereHas('user', function($q)
+            {
+                $q->where('user.id', '=', Auth::user()->id);
+            });
+        })->get();
+
         return view('cadastros.condominios.create', [
-            'empresas' => Empresa::all()
+            'condominios' => $condominios
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\CondominioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CondominioRequest $request)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:60|unique:condominios',
-            'descricao' => 'min:1|max:280',
-            'cep' => 'required|min:8|max:9',
-            'logradouro' => 'required|min:2|max:80',
-            'numero' => 'required|min:1|max:10',
-            'bairro' => 'min:2|max:20',
-            'cidade' => 'required|min:2|max:40',
-            'uf_id' => 'required|digits:2',
-            'complemento' => 'max:120',
-            'observacoes' => 'max:200',
-            'empresa_id' => 'required|min:1|max:50',
-        ]);
+        $request->validated();
             
         $nome = $request->input('nome');
         $descricao = $request->input('descricao');
@@ -85,7 +94,7 @@ class CondominioController extends Controller
         $condominio->empresa_id = $empresa_id;
         $condominio->save();
 
-        return redirect()->route('superadmin.condominios.edit', compact('condominio'))
+        return redirect()->route('condominios.edit', compact('condominio'))
             ->with('success', 'Condomínio cadastrado com sucesso!');
     }
 
@@ -119,11 +128,11 @@ class CondominioController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\CondominioRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CondominioRequest $request, $id)
     {
         $request->validate([
             'nome' => 'required|min:2|max:60|unique:condominios,nome,'.$id,
