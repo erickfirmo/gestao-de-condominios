@@ -32,9 +32,7 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('user.cadastros.imoveis.create', [
-            'condominios' => Condominio::all()
-        ]);
+        return view('user.cadastros.imoveis.create');
     }
 
     /**
@@ -45,14 +43,7 @@ class ImovelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'numero' => 'required|min:1|max:20',
-            'bloco' => 'required|min:1|max:10',
-            'andar' => 'required|min:1|max:3',
-            'descricao' => 'max:200',
-            'observacoes' => 'max:200',
-            'condominio_id' => 'required|min:1|max:20',
-        ]);
+        $request->validated();
 
         $numero = $request->input('numero');
         $bloco = $request->input('bloco');
@@ -111,14 +102,7 @@ class ImovelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'numero' => 'required|min:1|max:20',
-            'bloco' => 'required|min:1|max:10',
-            'andar' => 'required|min:1|max:3',
-            'descricao' => 'max:200',
-            'observacoes' => 'max:200',
-            'condominio_id' => 'required|min:1|max:20',
-        ]);
+        $request->validated();
 
         $imovel = Imovel::findOrFail($id)->update([
             'numero' => $request->numero,
