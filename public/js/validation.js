@@ -3,9 +3,7 @@ if(errors_response) {
         if(errors_response.hasOwnProperty(name))
         {
             let elem = document.getElementsByName(name)[0];
-            if(elem)
-            {
-
+            if(elem) {
                 elem.className += ' error';
                 elem.previousElementSibling.innerText = errors_response[name];
             }
