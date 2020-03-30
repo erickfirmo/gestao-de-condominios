@@ -138,7 +138,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <select name="uf_id" class="form-control" id="uf_id">
+                                    <select name="empresa_id" class="form-control" id="empresa_id">
                                         <option></option>
                                         @foreach($empresas as $empresa)
                                             <option 
