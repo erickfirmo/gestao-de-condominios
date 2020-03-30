@@ -56,6 +56,96 @@
                             </div>
                             <!-- Form Group End -->
 
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="60" value="{{ $condominio->descricao }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">CEP</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="cep" class="form-control" id="cep" maxlenght="9" value="{{ $condominio->cep }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Logradouro</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="logradouro" class="form-control" id="logradouro" maxlenght="40" value="{{ $condominio->logradouro }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Número</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="numero" class="form-control" id="numero" maxlenght="20" value="{{ $condominio->numero }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Bairro</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="bairro" class="form-control" id="bairro" maxlenght="40" value="{{ $condominio->bairro }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Cidade</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="cidade" class="form-control" id="cidade" maxlenght="40" value="{{ $condominio->cidade }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Estado</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="uf_id" class="form-control" id="uf_id" maxlenght="2" value="{{ $condominio->uf()->uf }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Complemento</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="complemento" class="form-control" id="complemento" maxlenght="40" value="{{ $condominio->complemento }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="observacoes" class="form-control" id="observacoes" maxlenght="40" value="{{ $condominio->observacoes }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
                             
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
