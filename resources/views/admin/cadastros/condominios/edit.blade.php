@@ -121,7 +121,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Estado</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="uf_id" class="form-control" id="uf_id" maxlenght="2" value="{{ $condominio->uf()->id }}">
+                                    <input type="text" name="uf_id" class="form-control" id="uf_id" maxlenght="2" value="{{ $condominio->uf_id }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
