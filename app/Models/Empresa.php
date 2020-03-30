@@ -23,11 +23,6 @@ class Empresa extends Model
         return $this->hasMany(Condominio::class, 'empresa_id', 'id');
     }
 
-    public function funcionarios()
-    {
-        return $this->hasMany(Funcionario::class, 'empresa_id', 'id');
-    }
-
     public function contratos()
     {
         return $this->hasMany(Contrato::class, 'empresa_id', 'id');
