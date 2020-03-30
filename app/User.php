@@ -39,6 +39,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function funcionario()
+    {
+        return $this->belongsTo(Funcionario::class, 'funcionario_id');
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
