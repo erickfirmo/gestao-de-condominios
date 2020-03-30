@@ -106,15 +106,6 @@ class EmpresaController extends Controller
      */
     public function update(EmpresaRequest $request, $id)
     {
-        /*$request->validate([
-            'razao_social' => 'required|min:1|max:60|unique:empresas,razao_social,'.$id,
-            'nome_fantasia' => 'required|min:1|max:60',
-            'cnpj' => 'required|unique:empresas,cnpj,'.$id,
-            'email' => 'required|min:3|max:40|',
-            'telefone_1' => 'required|min:8|max:20',
-            'telefone_2' => 'min:8|max:20',
-            'responsavel_para_contato' => 'required|min:1|max:50',
-        ]);*/
 
         $request->validated();
 
