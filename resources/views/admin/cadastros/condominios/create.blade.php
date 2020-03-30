@@ -113,17 +113,46 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
+                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Estado</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="uf_id" class="form-control" id="uf_id" maxlenght="2" value="{{ old('uf_id') }}">
+                                    <select name="uf_id" class="form-control" id="uf_id">
+                                        <option></option>
+                                        @foreach($ufs as $uf)
+                                            <option 
+                                            @if($uf->id == old('uf_id'))
+                                             {{ ' selected ' }}
+                                            @endif
+                                            value="{{ $uf->id }}">{{ $uf->estado }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <select name="uf_id" class="form-control" id="uf_id">
+                                        <option></option>
+                                        @foreach($empresas as $empresa)
+                                            <option 
+                                            @if($empresa->id == old('empresa_id'))
+                                             {{ ' selected ' }}
+                                            @endif
+                                            value="{{ $empresa->id }}">{{ $empresa->razao_social }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+                            
+                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Complemento</span>
@@ -140,16 +169,6 @@
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
                                     <input type="text" name="observacoes" class="form-control" id="observacoes" maxlenght="40" value="{{ old('observacoes') }}">
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <input type="text" name="empresa_id" class="form-control" id="empresa_id" maxlenght="40" value="{{ old('empresa_id') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
