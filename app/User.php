@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function funcionario()
     {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
+        return $this->belongsTo(\App\Models\Funcionario::class, 'funcionario_id');
     }
 
     public function sendPasswordResetNotification($token)
