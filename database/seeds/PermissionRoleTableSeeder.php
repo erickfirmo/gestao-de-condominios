@@ -18,11 +18,20 @@ class PermissionRoleTableSeeder extends Seeder
         $permission_role->save();
 
         $permissions = $this->getPermissions();
+        $roles = $this->getRoles();
+
+
 
     }
 
     public function getPermissions()
     {
         return App\Models\Permission::all();
+    }
+
+
+    public function getRoles()
+    {
+        return App\Models\Role::all();
     }
 }
