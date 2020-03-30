@@ -27,7 +27,7 @@ class CreatePermissionRoleTable extends Migration
                 ->on('roles')
                 ->onDelete('cascade');
 
-            $table->primary(['permission_id', 'role_id']);
+            //$table->primary(['permission_id', 'role_id']);
 
         });
     }
