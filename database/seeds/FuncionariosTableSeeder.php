@@ -12,12 +12,12 @@ class FuncionariosTableSeeder extends Seeder
     {
         $funcionario = new App\Models\Funcionario;
         $funcionario->nome_completo = 'Funcionario A';
-        $funcionario->identidade = '99999999-0';
+        $funcionario->identidade = '99999999-1';
         $funcionario->genero = 'masc';
         $funcionario->entrada = '8:00';
         $funcionario->saida = '20:00';
         $funcionario->foto = '#';
-        $funcionario->telefone_1 = '11999999999';
+        $funcionario->telefone_1 = '11999999997';
         $funcionario->telefone_2 = '';
         $funcionario->cargo = 'Master';
         $funcionario->empresa_id = 1;
@@ -25,12 +25,12 @@ class FuncionariosTableSeeder extends Seeder
 
         $funcionario = new App\Models\Funcionario;
         $funcionario->nome_completo = 'Funcionario B';
-        $funcionario->identidade = '99999999-0';
+        $funcionario->identidade = '99999999-2';
         $funcionario->genero = 'masc';
         $funcionario->entrada = '8:00';
         $funcionario->saida = '20:00';
         $funcionario->foto = '#';
-        $funcionario->telefone_1 = '11999999999';
+        $funcionario->telefone_1 = '11999999998';
         $funcionario->telefone_2 = '';
         $funcionario->cargo = 'Síndico';
         $funcionario->empresa_id = 1;
@@ -38,7 +38,7 @@ class FuncionariosTableSeeder extends Seeder
 
         $funcionario = new App\Models\Funcionario;
         $funcionario->nome_completo = 'Funcionario C';
-        $funcionario->identidade = '99999999-0';
+        $funcionario->identidade = '99999999-3';
         $funcionario->genero = 'masc';
         $funcionario->entrada = '8:00';
         $funcionario->saida = '20:00';

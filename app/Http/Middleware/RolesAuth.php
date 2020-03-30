@@ -30,6 +30,7 @@ class RolesAuth
             }
         }
 
-        return response('Unauthorized Action', 403);
+        return abort(404);
+
     }
 }

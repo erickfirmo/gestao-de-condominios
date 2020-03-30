@@ -14,12 +14,6 @@ class CondominioRequest extends FormRequest
      */
     public function authorize()
     {
-        if(Auth::guard('admin')->check()){
-
-
-        } elseif($ee) {
-
-        }
         return true;
     }
 
@@ -34,20 +28,29 @@ class CondominioRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'nome' => 'required|min:1|max:60|unique:condominios,nome,'.$this->route('id'),
-                'descricao' => 'max:280',
-                'cep' => 'required|max:9',
-                'logradouro' => 'required|min:3|max:80',
-                'numero' => 'required|min:1|max:20',
-                'bairro' => 'required|max:40',
-                'cidade' => 'required|max:40',
-                'uf_id' => 'required',
-                'complemento' => 'min:3|max:120',
-                'observacoes' => 'min:3|max:200',
+                'nome' => 'required|min:1|max:60|unique:condominios,id,'.$this->route('id'),
+                'descricao' => 'max:60',
+                'cep' => 'required|min:3|max:9',
+                'logradouro' => 'required|min:3|max:40',
+                'numero' => 'required|min:3|max:80',
+                'bairro' => 'required|min:3|max:40',
+                'cidade' => 'required|min:3|max:40',
+                'uf_id' => 'required|min:2|max:2',
+                'complemento' => 'min:3|max:40',
+                'observacoes' => 'min:3|max:40',
             ];
         } else {
             return [
-                
+                'nome' => 'required|min:1|max:60|unique:condominios',
+                'descricao' => 'max:60',
+                'cep' => 'required|min:3|max:9',
+                'logradouro' => 'required|min:3|max:40',
+                'numero' => 'required|min:3|max:80',
+                'bairro' => 'required|min:3|max:40',
+                'cidade' => 'required|min:3|max:40',
+                'uf_id' => 'required|min:2|max:2',
+                'complemento' => 'min:3|max:40',
+                'observacoes' => 'min:3|max:40',
             ];
         }
     }
@@ -55,7 +58,10 @@ class CondominioRequest extends FormRequest
     public function attributes()
     {
         return [
-            
+            'descricao' => 'descrição',
+            'numero' => 'número',
+            'observacoes' => 'observações',
+            'uf_id' => 'estado'
         ];
     }
 

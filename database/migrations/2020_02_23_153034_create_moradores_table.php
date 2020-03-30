@@ -17,8 +17,8 @@ class CreateMoradoresTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 80);
             $table->enum('genero', ['masc', 'fem', 'nd']);
-            $table->string('observacoes', 400);
-            $table->boolean('proprietario');
+            $table->string('observacoes', 400)->nullable();
+            $table->boolean('proprietario')->nullable();
 
             $table->unsignedBigInteger('imovel_id');
             $table->foreign('imovel_id')

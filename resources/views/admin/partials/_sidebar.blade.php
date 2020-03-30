@@ -4,12 +4,12 @@
     <div class="sidebar--profile">
         <div class="profile--img">
             <a href="#" class="logo" style="text-align:center;">
-                <img src="{{ Auth::user()->foto_de_perfil != '#' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Perfil">
+                <img src="{{ Auth::user()->foto_de_perfil != '#' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Perfil" style="border-radius: 50%;">
             </a>
         </div>
 
         <div class="profile--name">
-            <a href="#" class="btn-link">Gestão de Condomínios</a>
+            <a href="#" class="btn-link">{{ Auth::user()->name }}</a>
         </div>
 
         <div class="profile--nav">
