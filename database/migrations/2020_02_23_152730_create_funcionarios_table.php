@@ -16,11 +16,11 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_completo', 80);
-            $table->string('identidade', 11);
+            $table->string('identidade', 11)->unique();
             $table->enum('genero', ['masc', 'fem', 'nd']);
-            $table->string('entrada');
+            $table->string('entrada', 30);
             $table->string('saida', 30);
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('telefone_1', 11);
             $table->string('telefone_2', 11)->nullable();
             $table->string('cargo', 30);
