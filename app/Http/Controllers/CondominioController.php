@@ -64,7 +64,7 @@ class CondominioController extends Controller
         $uf_id = $request->input('uf_id');
         $complemento = $request->input('complemento');
         $observacoes = $request->input('observacoes');
-        $empresa_id = $request->input('empresa_id');
+        $empresa_id = Auth::user()->funcionario->empresa_id;
 
         $condominio = new Condominio;
         $condominio->nome = $nome;
@@ -120,19 +120,7 @@ class CondominioController extends Controller
      */
     public function update(CondominioRequest $request, $id)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:60|unique:condominios,nome,'.$id,
-            'descricao' => 'min:1|max:280',
-            'cep' => 'required|min:8|max:9',
-            'logradouro' => 'required|min:2|max:80',
-            'numero' => 'required|min:1|max:10',
-            'bairro' => 'min:2|max:20',
-            'cidade' => 'required|min:2|max:40',
-            'uf_id' => 'required|digits:2',
-            'complemento' => 'max:120',
-            'observacoes' => 'max:200',
-            'empresa_id' => 'required|min:1|max:50',
-        ]);
+        $request->validated();
 
         $condominio = Condominio::findOrFail($id)->update([
             'nome' => $request->nome,
@@ -145,10 +133,10 @@ class CondominioController extends Controller
             'uf_id' => $request->uf_id,
             'complemento' => $request->complemento,
             'observacoes' => $request->observacoes,
-            'empresa_id' => $request->empresa_id
+            'empresa_id' => Auth::user()->funcionario->empresa_id
         ]);
 
-        return redirect()->route('superadmin.condominios.edit', compact('condominio'))
+        return redirect()->route('condominios.edit', compact('condominio'))
             ->with('success', 'Dados do condomínio atualizados com sucesso!');
     }
 
@@ -162,7 +150,7 @@ class CondominioController extends Controller
     {
         Condominio::findOrFail($id)->delete();
 
-        return redirect()->route('superadmin.condominios.index')
+        return redirect()->route('condominios.index')
             ->with('success', 'Condomínio removido com sucesso!');
     }
 }
