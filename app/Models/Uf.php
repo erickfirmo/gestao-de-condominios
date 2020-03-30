@@ -9,7 +9,8 @@ class Uf extends Model
     public $table = 'ufs';
 
     public $fillable = [
-        'uf'
+        'sigla',
+        'estado',
     ];
 
     public function condominios()

@@ -10,7 +10,7 @@ class ImovelController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:superadmin');
+        return $this->middleware('auth:user');
     }   
 
      /**
@@ -20,7 +20,7 @@ class ImovelController extends Controller
      */
     public function index()
     {
-        return view('cadastros.imoveis.index', [
+        return view('user.cadastros.imoveis.index', [
             'imoveis' => Imovel::all()
         ]);
     }
@@ -32,7 +32,7 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('cadastros.imoveis.create', [
+        return view('user.cadastros.imoveis.create', [
             'condominios' => Condominio::all()
         ]);
     }
@@ -71,7 +71,7 @@ class ImovelController extends Controller
 
         $imovel->save();
 
-        return redirect()->route('superadmin.imoveis.edit', compact('imovel'))
+        return redirect()->route('imoveis.edit', compact('imovel'))
             ->with('success', 'Imóvel cadastrado com sucesso!');
     }
 
@@ -83,7 +83,7 @@ class ImovelController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.imoveis.show', [
+        return view('user.cadastros.imoveis.show', [
             'imovel' => Imovel::findOrFail($id)
         ]);
     }
@@ -96,7 +96,7 @@ class ImovelController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.imoveis.edit', [
+        return view('user.cadastros.imoveis.edit', [
             'imovel' => Imovel::findOrFail($id),
             'condominios' => Condominio::all()
         ]);
@@ -129,7 +129,7 @@ class ImovelController extends Controller
             'condominio_id' => $request->condominio_id,
         ]);
 
-        return redirect()->route('superadmin.imoveis.edit', compact('imovel'))
+        return redirect()->route('imoveis.edit', compact('imovel'))
             ->with('success', 'Dados do imóvel atualizados com sucesso!');
     }
 
@@ -143,7 +143,7 @@ class ImovelController extends Controller
     {
         Imovel::findOrFail($id)->delete();
 
-        return redirect()->route('superadmin.imoveis.index')
+        return redirect()->route('imoveis.index')
             ->with('success', 'Imóvel removido com sucesso!');
     }
 }
