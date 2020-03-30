@@ -14,7 +14,7 @@ class EmpresaRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::guard('admin')->check();
+        return true;
     }
 
     /**
@@ -28,12 +28,12 @@ class EmpresaRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'razao_social' => 'required|min:1|max:60|unique:empresas,razao_social,'.$this->route('id'),
+                'razao_social' => 'required|min:1|max:60|unique:empresas,id,'.$this->route('id'),
                 'nome_fantasia' => 'required|min:1|max:60',
-                'cnpj' => 'required|unique:empresas,cnpj,'.$this->route('id'),
+                'cnpj' => 'required|unique:empresas,id,'.$this->route('id'),
                 'email' => 'required|min:3|max:40|',
                 'telefone_1' => 'required|min:8|max:20',
-                'telefone_2' => 'min:8|max:20',
+                'telefone_2' => 'max:20',
                 'responsavel_para_contato' => 'required|min:1|max:50',
             ];
         } else {

@@ -42,7 +42,7 @@
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
                     
-                        <form action="{{ route('superadmin.empresas.store') }}" method="POST" class="show-onload d-none">
+                        <form action="{{ route('empresas.store') }}" method="POST" class="show-onload d-none">
                             @csrf
                             <!-- Form Group Start -->
                             <div class="form-group row">
@@ -128,7 +128,7 @@
         </div>
     </section>
 
-    @include('superadmin.partials._footer')
+    @include('user.partials._footer')
 </main>
 
 <!-- Main Container End -->

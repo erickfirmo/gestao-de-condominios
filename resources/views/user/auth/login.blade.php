@@ -29,7 +29,7 @@
                                 <!-- Logo End -->
 
                                 <form action="{{ route('login') }}" method="POST">
-                                    <label class="m-account--title text-admin">ÁREA DE LOGIN</label>
+                                    <label class="m-account--title text-loginarea">ÁREA DE LOGIN</label>
                                     @csrf
 
                                     <div class="form-group">
@@ -63,7 +63,7 @@
                                     </div>
 
                                     <div class="m-account--actions">
-                                        <button type="submit" class="btn btn-rounded btn-info">Login</button>
+                                        <button type="submit" class="btn btn-rounded btn-warning">Login</button>
                                     </div>
 
                                     <!--<div class="m-account--alt">
@@ -76,7 +76,7 @@
                                     </div>-->
 
                                     <div class="m-account--footer">
-                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2019 Érick Firmo</a></p>
+                                        <p><a href="https://github.com/erickfirmo" style="color:#999;" target="_blank">&copy; 2020 Gestão de Condomínios</a></p>
                                     </div>
                                 </form>
                             </div>
