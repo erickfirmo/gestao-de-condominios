@@ -70,7 +70,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
 ##cadastros
 // empresas
-Route::resource('empresas', 'EmpresaController');
+##Route::resource('empresas', 'EmpresaController');
 // condominios
 Route::resource('condominios', 'CondominioController');
 // imoveis
