@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Condominio;
 use App\Models\Imovel;
+use Illuminate\Support\Facades\Auth;
+
 
 class ImovelController extends Controller
 {
@@ -20,6 +22,8 @@ class ImovelController extends Controller
      */
     public function index()
     {
+
+        dd(Auth::user()->funcionario->condominios->nome);
         return view('user.cadastros.imoveis.index', [
             'imoveis' => Imovel::all()
         ]);
