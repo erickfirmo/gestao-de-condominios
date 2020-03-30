@@ -4,7 +4,8 @@
     <div class="navbar--header">
         <!-- Logo Start -->
         <a href="javascript:void(0)" class="logo" style="text-align:center;">
-            <img src="#" alt="Logo">
+            <!--img src="#" alt="Logo"-->
+            <span style="font-weight: bold;">GESTÃO DE CONDOMÍNIOS</span>
         </a>
         <!-- Logo End -->
 
