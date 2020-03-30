@@ -12,15 +12,20 @@ class PermissionRoleTableSeeder extends Seeder
     public function run()
     {
         //sindico
-        $permission_role = new App\Models\PermissionRole;
-        $permission_role->role_id = 2;
-        $permission_role->permission_id = 1;
-        $permission_role->save();
-
+       
         $permissions = $this->getPermissions();
         $roles = $this->getRoles();
 
-
+        foreach($roles as $role)
+        {
+            foreach($permissions as $permission)
+            {
+                $permission_role = new App\Models\PermissionRole;
+                $permission_role->role_id = $role->id;
+                $permission_role->permission_id = $permission->id;
+                $permission_role->save();
+            }
+        }
 
     }
 
