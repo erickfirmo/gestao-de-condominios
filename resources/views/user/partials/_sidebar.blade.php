@@ -58,7 +58,7 @@
                     <span>Cadastros</span> 
                 </a>
 
-                <ul>
+                <!--<ul>
                     <li>
                         <a href="#">
                         <i class="fas fa-user"></i>
@@ -85,8 +85,7 @@
                             <li><a href="{{ route('condominios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>          
-                </ul>
-
+                </ul>-->
                 <ul>
                     <li>
                         <a href="#">
