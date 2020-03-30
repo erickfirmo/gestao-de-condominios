@@ -92,8 +92,8 @@
 <!-- Page Level Scripts -->
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
-<script src="{{ asset('js/validation.js') }}"></script>
 <script src="{{ asset('node_modules/sweetalert2/dist/sweetalert2.all.js') }}"></script>
+<script src="{{ asset('js/validation.js') }}"></script>
 <script src="{{ asset('js/alerts.js') }}"></script>
 
 
