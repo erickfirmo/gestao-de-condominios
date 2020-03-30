@@ -20,7 +20,7 @@ class FuncionariosTableSeeder extends Seeder
         $funcionario->telefone_1 = '11999999997';
         $funcionario->telefone_2 = '';
         $funcionario->cargo = 'Master';
-        $funcionario->empresa_id = 1;
+        $funcionario->condominio_id = 1;
         $funcionario->save();
 
         $funcionario = new App\Models\Funcionario;
@@ -33,7 +33,7 @@ class FuncionariosTableSeeder extends Seeder
         $funcionario->telefone_1 = '11999999998';
         $funcionario->telefone_2 = '';
         $funcionario->cargo = 'Síndico';
-        $funcionario->empresa_id = 1;
+        $funcionario->condominio_id = 1;
         $funcionario->save();
 
         $funcionario = new App\Models\Funcionario;
@@ -46,7 +46,7 @@ class FuncionariosTableSeeder extends Seeder
         $funcionario->telefone_1 = '11999999999';
         $funcionario->telefone_2 = '';
         $funcionario->cargo = 'Porteiro';
-        $funcionario->empresa_id = 1;
+        $funcionario->condominio_id = 1;
         $funcionario->save();
 
     }

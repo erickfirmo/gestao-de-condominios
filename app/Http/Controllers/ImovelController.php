@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Condominio;
 use App\Models\Imovel;
+use Illuminate\Support\Facades\Auth;
+
 
 class ImovelController extends Controller
 {
@@ -20,6 +22,7 @@ class ImovelController extends Controller
      */
     public function index()
     {
+
         return view('user.cadastros.imoveis.index', [
             'imoveis' => Imovel::all()
         ]);
@@ -32,9 +35,7 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('user.cadastros.imoveis.create', [
-            'condominios' => Condominio::all()
-        ]);
+        return view('user.cadastros.imoveis.create');
     }
 
     /**
@@ -45,21 +46,16 @@ class ImovelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'numero' => 'required|min:1|max:20',
-            'bloco' => 'required|min:1|max:10',
-            'andar' => 'required|min:1|max:3',
-            'descricao' => 'max:200',
-            'observacoes' => 'max:200',
-            'condominio_id' => 'required|min:1|max:20',
-        ]);
+        $request->validated();
 
         $numero = $request->input('numero');
         $bloco = $request->input('bloco');
         $andar = $request->input('andar');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-        $condominio_id = $request->input('condominio_id');
+        //$condominio_id = $request->input('condominio_id');
+        $condominio_id = Auth::user()->funcionario->condominio->id;
+
         
         $imovel = new Imovel;
         $imovel->numero = $numero;
@@ -111,14 +107,9 @@ class ImovelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'numero' => 'required|min:1|max:20',
-            'bloco' => 'required|min:1|max:10',
-            'andar' => 'required|min:1|max:3',
-            'descricao' => 'max:200',
-            'observacoes' => 'max:200',
-            'condominio_id' => 'required|min:1|max:20',
-        ]);
+        $request->validated();
+
+        $condominio_id = Auth::user()->funcionario->condominio->id;
 
         $imovel = Imovel::findOrFail($id)->update([
             'numero' => $request->numero,
@@ -126,7 +117,7 @@ class ImovelController extends Controller
             'andar' => $request->andar,
             'descricao' => $request->descricao,
             'observacoes' => $request->observacoes,
-            'condominio_id' => $request->condominio_id,
+            'condominio_id' => $condominio_id,
         ]);
 
         return redirect()->route('imoveis.edit', compact('imovel'))
