@@ -35,9 +35,9 @@ class CondominioRequest extends FormRequest
                 'numero' => 'required|min:3|max:20',
                 'bairro' => 'required|min:3|max:40',
                 'cidade' => 'required|min:3|max:40',
-                'uf_id' => 'required|min:2|max:2',
-                'complemento' => 'min:3|max:40',
-                'observacoes' => 'min:3|max:40',
+                'uf_id' => 'required|min:1|max:2',
+                'complemento' => 'max:40',
+                'observacoes' => 'max:40',
             ];
         } else {
             return [
@@ -48,9 +48,9 @@ class CondominioRequest extends FormRequest
                 'numero' => 'required|min:3|max:20',
                 'bairro' => 'required|min:3|max:40',
                 'cidade' => 'required|min:3|max:40',
-                'uf_id' => 'required|min:2|max:2',
-                'complemento' => 'min:3|max:40',
-                'observacoes' => 'min:3|max:40',
+                'uf_id' => 'required|min:1|max:2',
+                'complemento' => 'max:40',
+                'observacoes' => 'max:40',
             ];
         }
     }
