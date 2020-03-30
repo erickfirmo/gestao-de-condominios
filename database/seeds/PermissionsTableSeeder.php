@@ -11,7 +11,7 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        /*
         $permission = new App\Models\Permission;
         $permission->name = '';
         $permission->key = '';
@@ -19,8 +19,7 @@ class PermissionsTableSeeder extends Seeder
         $permission->method = 'index';
         $permission->save();
         $permission_ids[] = $permission->id;
-
-
+        */
 
         $permission_ids = [];
         foreach (Route::getRoutes()->getRoutes() as $key => $route)
@@ -40,22 +39,9 @@ class PermissionsTableSeeder extends Seeder
                 $permission_ids[] = $permission->id;
             }
         }
-        $admin_role = App\Models\Role::where("name","admin")->first();
+        $admin_role = App\Models\Role::where("name","porteiro")->first();
         $admin_role->permissions()->attach($permission_ids);
 
     }
-
-
-    
-
-
-
-
-
-
-
-
-
-
 
 }
