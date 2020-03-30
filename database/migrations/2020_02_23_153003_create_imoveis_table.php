@@ -18,8 +18,8 @@ class CreateImoveisTable extends Migration
             $table->unsignedInteger('numero');
             $table->string('bloco', 10);
             $table->string('andar', 3);
-            $table->string('descricao', 200);
-            $table->string('observacoes', 200);
+            $table->string('descricao', 200)->nullable();
+            $table->string('observacoes', 200)->nullable();
 
             $table->unsignedBigInteger('condominio_id');
             $table->foreign('condominio_id')
