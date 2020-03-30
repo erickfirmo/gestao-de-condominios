@@ -87,7 +87,7 @@
                     </li>          
                 </ul>
 
-                <ul>
+                <!--<ul>
                     <li>
                         <a href="#">
                         <i class="fas fa-user"></i>
@@ -132,11 +132,11 @@
                         </ul>
                     </li>    
                                    
-                </ul>
+                </ul>-->
 
             </li>
 
-            <li>
+            <!--<li>
                 <a href="#">PORTARIAS</a>
 
                 <ul>
@@ -208,7 +208,7 @@
                         </ul>
                     </li>                   
                 </ul>
-            </li>
+            </li> -->
 
             <li>
                 <a href="#">USUÁRIOS</a>
@@ -300,7 +300,7 @@
             
             <li>
                 <a href="#">OUTROS</a>
-                <ul>
+                <!--<ul>
                     <li>
                         <a href="#">
                         <i class="fas fa-user"></i>
@@ -338,7 +338,7 @@
                             <li><a href="{{ route('admin.ocorrencias.index') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>                   
-                </ul>
+                </ul>-->
                 <ul>
                     <li>
                         <a href="#">
