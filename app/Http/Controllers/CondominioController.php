@@ -33,7 +33,7 @@ class CondominioController extends Controller
             });
         })->get();
 
-        return view('cadastros.condominios.index', [
+        return view('user.cadastros.condominios.index', [
             'condominios' => $condominios
         ]);
     }
@@ -53,7 +53,7 @@ class CondominioController extends Controller
             });
         })->get();
 
-        return view('cadastros.condominios.create', [
+        return view('user.cadastros.condominios.create', [
             'condominios' => $condominios
         ]);
     }
@@ -106,7 +106,7 @@ class CondominioController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.condominios.show', [
+        return view('user.cadastros.condominios.show', [
             'condominio' => Condominio::findOrFail($id)
         ]);
     }
@@ -119,7 +119,7 @@ class CondominioController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.condominios.edit', [
+        return view('user.cadastros.condominios.edit', [
             'condominio' => Condominio::findOrFail($id),
             'empresas' => Empresa::all()
         ]);
