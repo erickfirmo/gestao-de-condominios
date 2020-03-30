@@ -55,6 +55,7 @@ class FuncionarioRequest extends FormRequest
     {
         return [
             'genero' => 'gênero',
+            'saida' => 'saída',
         ];
     }
 
