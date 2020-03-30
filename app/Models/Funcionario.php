@@ -18,12 +18,18 @@ class Funcionario extends Model
         'telefone_1',
         'telefone_2',
         'cargo',
-        'empresa_id',
+        'condominio_id',
+        //'empresa_id',
     ];
 
-    public function empresa()
+    /*public function empresa()
     {
         return $this->belongsTo(Empresa::class, 'empresa_id');
+    }*/
+    
+    public function condominio()
+    {
+        return $this->belongsTo(Condominio::class, 'condomino_id');
     }
 
     public function user()
@@ -35,13 +41,5 @@ class Funcionario extends Model
     {
         return $this->hasMany(Relatorio::class, 'parent_id');
     }
-
-    public function condominios()
-    {
-        return $this->hasMany(Condominio::class)
-            ->using(FuncionarioDoCondominio::class)
-            ->withPivot('created_at', 'update_at');
-    }
-
     
 }
