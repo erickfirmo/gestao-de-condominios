@@ -146,10 +146,10 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Cidade</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="cidade" class="form-control" id="cidade" maxlenght="40" value="{{ old('cidade') }}">
+                                    <input type="text" name="empresa_id" class="form-control" id="empresa_id" maxlenght="40" value="{{ old('empresa_id') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
