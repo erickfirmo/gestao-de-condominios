@@ -25,10 +25,10 @@ class CreateFuncionariosTable extends Migration
             $table->string('telefone_2', 11)->nullable();
             $table->string('cargo', 30);
 
-            $table->unsignedBigInteger('empresa_id');
-            $table->foreign('empresa_id')
+            $table->unsignedBigInteger('condominio_id');
+            $table->foreign('condominio_id')
                 ->references('id')
-                ->on('empresas');
+                ->on('condominios');
 
             $table->timestamps();
         });
