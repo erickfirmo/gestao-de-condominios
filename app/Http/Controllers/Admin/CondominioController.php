@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CondominioRequest;
 use App\Models\Condominio;
 use App\Models\Empresa;
+use App\Models\Uf;
 use Illuminate\Support\Facades\Auth;
 
 class CondominioController extends Controller
@@ -38,7 +39,8 @@ class CondominioController extends Controller
     public function create()
     {
         return view('admin.cadastros.condominios.create', [
-            'empresas' => Empresa::all()
+            'empresas' => Empresa::all(),
+            'ufs' => Uf::all(),
         ]);
     }
 
@@ -105,7 +107,8 @@ class CondominioController extends Controller
     {
         return view('admin.cadastros.condominios.edit', [
             'condominio' => Condominio::findOrFail($id),
-            'empresas' => Empresa::all()
+            'empresas' => Empresa::all(),
+            'ufs' => Uf::all(),
         ]);
     }
 
