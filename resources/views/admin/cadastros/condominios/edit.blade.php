@@ -146,6 +146,15 @@
                             </div>
                             <!-- Form Group End -->
 
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="empresa_id" class="form-control" id="empresa_id" maxlenght="40" value="{{ $condominio->empresa_id }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
                             
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
