@@ -19,6 +19,6 @@ class HomeController extends Controller
 
     public function home()
     {
-        return redirect()->route('user.home');
+        return redirect()->route('home');
     }
 }
