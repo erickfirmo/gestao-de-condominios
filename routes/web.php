@@ -25,13 +25,13 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     ##financeiro
     // receita
-    //Route::resource('financeiro/receitas', 'ReceitaController');
+    Route::resource('financeiro/receitas', 'ReceitaController');
     // despesas
-    //Route::resource('financeiro/despesas', 'DespesaController');
+    Route::resource('financeiro/despesas', 'DespesaController');
     // faturas
-    //Route::resource('financeiro/faturas', 'FaturaController');
+    Route::resource('financeiro/faturas', 'FaturaController');
     // boletos
-    //Route::resource('financeiro/boletos', 'BoletoController');
+    Route::resource('financeiro/boletos', 'BoletoController');
 
     ##outros
     // relatorios
