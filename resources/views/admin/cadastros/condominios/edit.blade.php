@@ -169,7 +169,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="observacoes" class="form-control" id="observacoes" maxlenght="40" value="{{ $condominio->observacoes }}">
+                                    <textarea name="observacoes" class="form-control" maxlengh="40">{{ $condominio->observacoes }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
