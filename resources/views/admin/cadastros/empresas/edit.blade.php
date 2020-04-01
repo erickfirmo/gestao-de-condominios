@@ -91,7 +91,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="20" value="{{ $empresa->telefone_1 }}">
+                                    <input type="text" name="telefone_1" class="form-control mask-telefone" id="telefone_1" maxlenght="20" value="{{ $empresa->telefone_1 }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -102,7 +102,7 @@
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
 
-                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="20" value="{{ $empresa->telefone_2 }}">
+                                    <input type="text" name="telefone_2" class="form-control mask-telefone" id="telefone_2" maxlenght="20" value="{{ $empresa->telefone_2 }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
