@@ -68,10 +68,10 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Cnpj</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">CNPJ</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="cnpj" class="form-control" id="cnpj" maxlenght="18" value="{{ $empresa->cnpj }}">
+                                    <input type="text" name="cnpj" class="form-control mask-cnpj" id="cnpj" maxlenght="18" value="{{ $empresa->cnpj }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
