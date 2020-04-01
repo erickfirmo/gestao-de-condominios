@@ -69,7 +69,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">CEP</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="cep" class="form-control" id="cep" maxlenght="9" value="{{ old('cep') }}">
+                                    <input type="text" name="cep" class="form-control mask-cep" id="cep" maxlenght="9" value="{{ old('cep') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -89,7 +89,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Número</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="numero" class="form-control" id="numero" maxlenght="20" value="{{ old('numero') }}">
+                                    <input type="text" name="numero" class="form-control mask-numero" id="numero" maxlenght="20" value="{{ old('numero') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
