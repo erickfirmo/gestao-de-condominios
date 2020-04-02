@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Condominio;
 use App\Models\Imovel;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Uf;
 
 
 class ImovelController extends Controller
@@ -25,7 +26,8 @@ class ImovelController extends Controller
     {
 
         return view('user.cadastros.imoveis.index', [
-            'imoveis' => Imovel::all()
+            'imoveis' => Imovel::all(),
+            'ufs' => Uf::all(),
         ]);
     }
 
@@ -36,7 +38,9 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('user.cadastros.imoveis.create');
+        return view('user.cadastros.imoveis.create', [
+            'ufs' => Uf::all(),
+        ]);
     }
 
     /**
@@ -95,7 +99,8 @@ class ImovelController extends Controller
     {
         return view('user.cadastros.imoveis.edit', [
             'imovel' => Imovel::findOrFail($id),
-            'condominios' => Condominio::all()
+            'condominios' => Condominio::all(),
+            'ufs' => Uf::all(),
         ]);
     }
 
