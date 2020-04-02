@@ -104,12 +104,15 @@ class ImovelController extends Controller
      */
     public function edit($id)
     {
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
+        $empresa_id = Auth::user()->funcionario->condominio->empresa_id;
+        $condominios = Condominio::where('empresa_id', $empresa_id);
+        $imovel = Imovel::findOrFail($id);
+        $ufs = Uf::all();
  
         return view('user.cadastros.imoveis.edit', [
-            'imovel' => Imovel::findOrFail($id),
+            'imovel' => $imovel,
             'condominios' => $condominios,
-            'ufs' => Uf::all(),
+            'ufs' => $ufs,
         ]);
     }
 
