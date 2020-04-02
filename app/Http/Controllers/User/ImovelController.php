@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use App\Http\Requests\ImovelRequest;
 use App\Models\Condominio;
 use App\Models\Imovel;
 use Illuminate\Support\Facades\Auth;
@@ -24,10 +26,15 @@ class ImovelController extends Controller
      */
     public function index()
     {
+        $empresa_id = Auth::user()->funcionario->condominio->empresa_id;
+        $condominios = Condominio::where('empresa_id', $empresa_id);
+        $imoveis = Imovel::all();
+        $ufs = Uf::all();
 
         return view('user.cadastros.imoveis.index', [
-            'imoveis' => Imovel::all(),
-            'ufs' => Uf::all(),
+            'condominios' => $condominios,
+            'imoveis' => $imoveis,
+            'ufs' => $ufs,
         ]);
     }
 
@@ -38,22 +45,18 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        $condominio_id = Auth::user()->funcionario->condominio->id;
-
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->condominio->empresa_id);
         return view('user.cadastros.imoveis.create', [
             'ufs' => Uf::all(),
-            'condominios' => $condominios
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\ImovelRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ImovelRequest $request)
     {
         $request->validated();
 
@@ -113,11 +116,11 @@ class ImovelController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\ImovelRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ImovelRequest $request, $id)
     {
         $request->validated();
 
