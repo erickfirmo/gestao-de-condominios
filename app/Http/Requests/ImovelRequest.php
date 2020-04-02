@@ -28,7 +28,7 @@ class ImovelRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'nome' => 'required|min:1|max:60',
+                'numero' => 'required|min:1|max:60',
                 'bloco' => 'required|min:1|max:10',
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
@@ -37,7 +37,7 @@ class ImovelRequest extends FormRequest
             ];
         } else {
             return [
-                'nome' => 'required|min:1|max:60',
+                'numero' => 'required|min:1|max:60',
                 'bloco' => 'required|min:1|max:10',
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
