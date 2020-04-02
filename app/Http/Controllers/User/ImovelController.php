@@ -38,10 +38,12 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
+        $condominio_id = Auth::user()->funcionario->condominio->id;
+
+        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->condominio->empresa_id);
         return view('user.cadastros.imoveis.create', [
             'ufs' => Uf::all(),
-            'condominios' => Condominio::all()
+            'condominios' => $condominios
         ]);
     }
 
