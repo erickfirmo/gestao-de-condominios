@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EntregaController extends Controller
+class VisitanteController extends Controller
 {
     /**
      * Display a listing of the resource.

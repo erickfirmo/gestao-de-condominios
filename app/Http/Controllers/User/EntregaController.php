@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RelatorioController extends Controller
+class EntregaController extends Controller
 {
     /**
      * Display a listing of the resource.

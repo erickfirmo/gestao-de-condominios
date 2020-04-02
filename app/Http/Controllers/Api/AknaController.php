@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Emkt;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
