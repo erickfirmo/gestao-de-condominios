@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\ImovelRequest;
 use App\Models\Condominio;
@@ -65,9 +64,8 @@ class ImovelController extends Controller
         $andar = $request->input('andar');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-        //$condominio_id = $request->input('condominio_id');
-        $condominio_id = Auth::user()->funcionario->condominio->id;
 
+        $condominio_id = Auth::user()->funcionario->condominio->id;
         
         $imovel = new Imovel;
         $imovel->numero = $numero;
@@ -78,6 +76,7 @@ class ImovelController extends Controller
         $imovel->condominio_id = $condominio_id;
 
         $imovel->save();
+
 
         return redirect()->route('imoveis.edit', compact('imovel'))
             ->with('success', 'Imóvel cadastrado com sucesso!');
