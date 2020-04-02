@@ -39,6 +39,9 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     
 });
 
+Route::prefix('')->name('')->namespace('User')->group(function () {
+
+
 ##cadastros
 // empresas
 ##Route::resource('empresas', 'EmpresaController');
@@ -100,3 +103,5 @@ Route::resource('relatorios', 'RelatorioController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+});
