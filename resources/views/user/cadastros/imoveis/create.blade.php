@@ -50,7 +50,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Número</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="numero" class="form-control mask-numero" id="numero" maxlenght="20" value="{{ old('numero') }}">
+                                    <input type="text" name="numero" class="form-control mask-numero" id="numero" maxlenght="10" value="{{ old('numero') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -60,7 +60,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Bloco</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="bloco" class="form-control" id="bloco" maxlenght="40" value="{{ old('bloco') }}">
+                                    <input type="text" name="bloco" class="form-control" id="bloco" maxlenght="10" value="{{ old('bloco') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -70,7 +70,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Andar</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="andar" class="form-control" id="andar" maxlenght="40" value="{{ old('andar') }}">
+                                    <input type="text" name="andar" class="form-control" id="andar" maxlenght="3" value="{{ old('andar') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->                   
@@ -80,7 +80,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="40" value="{{ old('descricao') }}">
+                                    <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -90,7 +90,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="40">{{ old('observacoes') }}</textarea>
+                                    <textarea name="observacoes" class="form-control" maxlengh="200">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
