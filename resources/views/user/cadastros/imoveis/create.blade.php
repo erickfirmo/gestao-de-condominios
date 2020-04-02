@@ -135,17 +135,17 @@
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Condomínio</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
                                     <select name="empresa_id" class="form-control" id="empresa_id">
                                         <option></option>
-                                        @foreach($empresas as $empresa)
+                                        @foreach($condominios as $condominio)
                                             <option 
-                                            @if($empresa->id == old('empresa_id'))
+                                            @if($condominio->id == old('condominio_id'))
                                              {{ ' selected ' }}
                                             @endif
-                                            value="{{ $empresa->id }}">{{ $empresa->razao_social }}</option>
+                                            value="{{ $condominio->id }}">{{ $condominio->nome }}</option>
                                         @endforeach
                                     </select>
                                 </div>
