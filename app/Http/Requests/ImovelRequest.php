@@ -33,7 +33,6 @@ class ImovelRequest extends FormRequest
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
                 'observacoes' => 'max:200',
-                'condominio_id' => 'required|min:1|max:20',
             ];
         } else {
             return [
@@ -42,7 +41,6 @@ class ImovelRequest extends FormRequest
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
                 'observacoes' => 'max:200',
-                'condominio_id' => 'required|min:1|max:20',
             ];
         }
     }
@@ -53,7 +51,6 @@ class ImovelRequest extends FormRequest
             'descricao' => 'descrição',
             'numero' => 'número',
             'observacoes' => 'observações',
-            'condominio_id' => 'condomínio'
         ];
     }
 
