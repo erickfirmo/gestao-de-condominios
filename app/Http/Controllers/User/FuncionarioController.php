@@ -97,7 +97,14 @@ class FuncionarioController extends Controller
         $request->validated();
 
         $funcionario = Funcionario::findOrFail($id)->update([
-            'nome' => $request->nome,
+            'nome_completo' => $request->nome_completo,
+            'identidade' => $request->identidade,
+            'genero' => $request->genero,
+            'entrada' => $request->entrada,
+            'saida' => $request->saida,
+            'telefone_1' => $request->telefone_1,
+            'telefone_2' => $request->telefone_2,
+            'cargo' => $request->cargo,
         ]);
 
         return redirect()->route('superadmin.funcionarios.edit', compact('funcionario'))
