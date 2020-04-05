@@ -11,7 +11,7 @@ class MoradorController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:superadmin');
+        return $this->middleware('auth:user');
     }   
 
      /**
