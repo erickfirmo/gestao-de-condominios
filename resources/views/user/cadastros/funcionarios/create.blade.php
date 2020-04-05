@@ -85,7 +85,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
+                                    <input type="date" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
