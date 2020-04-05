@@ -11,7 +11,7 @@ class FuncionarioController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('auth:superadmin');
+        return $this->middleware('auth:user');
     }   
 
      /**
@@ -33,9 +33,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return view('cadastros.funcionarios.create', [
-            'condominios' => Condominio::all()
-        ]);
+        return view('cadastros.funcionarios.create');
     }
 
     /**
@@ -48,10 +46,30 @@ class FuncionarioController extends Controller
     {
         $request->validated();
 
-        $nome = $request->input('nome');
+        $nome_completo = $request->input('nome_completo');
+        $identidade = $request->input('identidade');
+        $genero = $request->input('genero');
+        $entrada = $request->input('entrada');
+        $saida = $request->input('saida');
+        $foto = $request->input('foto');
+        $telefone_1 = $request->input('telefone_1');
+        $telefone_2 = $request->input('telefone_2');
+        $cargo = $request->input('cargo');
+
+        $condominio_id = Auth::user()->funcionario->condominio->id;
 
         $funcionario = new Funcionario;
-        $funcionario->nome = $nome;
+        $funcionario->nome_completo = $nome_completo;
+        $funcionario->identidade = $identidade;
+        $funcionario->genero = $genero;
+        $funcionario->entrada = $entrada;
+        $funcionario->saida = $saida;
+        $funcionario->foto = $foto;
+        $funcionario->telefone_1 = $telefone_1;
+        $funcionario->telefone_2 = $telefone_2;
+        $funcionario->cargo = $cargo;
+        $funcionario->condominio_id = $condominio_id;
+
         $funcionario->save();
         
         return redirect()->route('superadmin.funcionarios.edit', compact('funcionario'))
