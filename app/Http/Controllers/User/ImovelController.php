@@ -25,8 +25,7 @@ class ImovelController extends Controller
      */
     public function index()
     {
-        $empresa_id = Auth::user()->funcionario->condominio->empresa_id;
-        $condominios = Condominio::where('empresa_id', $empresa_id);
+        $condominios = Condominio::all();
         $imoveis = Imovel::all();
         $ufs = Uf::all();
 
@@ -45,7 +44,7 @@ class ImovelController extends Controller
     public function create()
     {
         return view('user.cadastros.imoveis.create', [
-            'ufs' => Uf::all(),
+            'condominios' => Condominio::all(),
         ]);
     }
 
@@ -64,8 +63,7 @@ class ImovelController extends Controller
         $andar = $request->input('andar');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-
-        $condominio_id = Auth::user()->funcionario->condominio->id;
+        $condominio_id = $request->input('condominio_id');
         
         $imovel = new Imovel;
         $imovel->numero = $numero;
@@ -74,9 +72,7 @@ class ImovelController extends Controller
         $imovel->descricao = $descricao;
         $imovel->observacoes = $observacoes;
         $imovel->condominio_id = $condominio_id;
-
         $imovel->save();
-
 
         return redirect()->route('imoveis.edit', compact('imovel'))
             ->with('success', 'Imóvel cadastrado com sucesso!');
@@ -103,8 +99,7 @@ class ImovelController extends Controller
      */
     public function edit($id)
     {
-        $empresa_id = Auth::user()->funcionario->condominio->empresa_id;
-        $condominios = Condominio::where('empresa_id', $empresa_id);
+        $condominios = Condominio::all();
         $imovel = Imovel::findOrFail($id);
         $ufs = Uf::all();
  
@@ -125,8 +120,6 @@ class ImovelController extends Controller
     public function update(ImovelRequest $request, $id)
     {
         $request->validated();
-
-        $condominio_id = Auth::user()->funcionario->condominio->id;
 
         $imovel = Imovel::findOrFail($id)->update([
             'numero' => $request->numero,
