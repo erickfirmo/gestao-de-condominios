@@ -21,7 +21,7 @@ class FuncionarioController extends Controller
      */
     public function index()
     {
-        return view('cadastros.funcionarios.index', [
+        return view('user.cadastros.funcionarios.index', [
             'funcionarios' => Funcionario::all()
         ]);
     }
@@ -33,7 +33,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return view('cadastros.funcionarios.create');
+        return view('user.cadastros.funcionarios.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class FuncionarioController extends Controller
 
         $funcionario->save();
         
-        return redirect()->route('superadmin.funcionarios.edit', compact('funcionario'))
+        return redirect()->route('funcionarios.edit', compact('funcionario'))
             ->with('success', 'Funcionario cadastrado com sucesso!');
     }
 
@@ -84,7 +84,7 @@ class FuncionarioController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.funcionarios.show', [
+        return view('user.cadastros.funcionarios.show', [
             'funcionario' => Funcionario::findOrFail($id)
         ]);
     }
@@ -97,7 +97,7 @@ class FuncionarioController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.funcionarios.edit', [
+        return view('user.cadastros.funcionarios.edit', [
             'funcionario' => Funcionario::findOrFail($id),
             'condominios' => Condominio::all()
         ]);
@@ -125,7 +125,7 @@ class FuncionarioController extends Controller
             'cargo' => $request->cargo,
         ]);
 
-        return redirect()->route('superadmin.funcionarios.edit', compact('funcionario'))
+        return redirect()->route('funcionarios.edit', compact('funcionario'))
             ->with('success', 'Dados do funcionário atualizados com sucesso!');
     }
 
@@ -139,7 +139,7 @@ class FuncionarioController extends Controller
     {
         Funcionario::findOrFail($id)->delete();
 
-        return redirect()->route('superadmin.funcionarios.index')
+        return redirect()->route('funcionarios.index')
             ->with('success', 'Funcionário removido com sucesso!');
     }
 }
