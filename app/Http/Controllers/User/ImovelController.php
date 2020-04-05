@@ -43,9 +43,7 @@ class ImovelController extends Controller
      */
     public function create()
     {
-        return view('user.cadastros.imoveis.create', [
-            'condominios' => Condominio::all(),
-        ]);
+        return view('user.cadastros.imoveis.create');
     }
 
     /**
@@ -63,7 +61,7 @@ class ImovelController extends Controller
         $andar = $request->input('andar');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-        $condominio_id = $request->input('condominio_id');
+        $condominio_id = Auth::user()->funcionario->condominio->id;
         
         $imovel = new Imovel;
         $imovel->numero = $numero;
@@ -105,7 +103,6 @@ class ImovelController extends Controller
  
         return view('user.cadastros.imoveis.edit', [
             'imovel' => $imovel,
-            'condominios' => $condominios,
             'ufs' => $ufs,
         ]);
     }
@@ -120,6 +117,8 @@ class ImovelController extends Controller
     public function update(ImovelRequest $request, $id)
     {
         $request->validated();
+
+        $condominio_id = Auth::user()->funcionario->condominio->id;
 
         $imovel = Imovel::findOrFail($id)->update([
             'numero' => $request->numero,
