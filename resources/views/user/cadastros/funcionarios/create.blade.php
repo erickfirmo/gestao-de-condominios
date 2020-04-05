@@ -50,7 +50,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome Completo</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="nome_completo" class="form-control" id="nome_completo" maxlenght="10" value="{{ old('nome_completo') }}">
+                                    <input type="text" name="nome_completo" class="form-control" id="nome_completo" maxlenght="80" value="{{ old('nome_completo') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -60,7 +60,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="10" value="{{ old('identidade') }}">
+                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ old('identidade') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -82,24 +82,64 @@
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="date" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
+                                    <input type="date" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ old('entrada') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="200">{{ old('observacoes') }}</textarea>
+                                    <input type="date" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ old('saida') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Foto</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="foto" class="form-control" value="{{ old('foto') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
                             
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="11" value="{{ old('telefone_1') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="11" value="{{ old('telefone_2') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ old('cargo') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
