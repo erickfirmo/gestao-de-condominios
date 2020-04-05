@@ -9,7 +9,7 @@ Auth::routes();
 require_once 'auth/user.php';
 require_once 'auth/admin.php';
 
-Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+Route::group(['namespace' => 'Admin',  'middleware' => 'role', 'prefix' => 'admin', 'name' => 'admin.'], function() {
 
     ##cadastros
     // empresas
