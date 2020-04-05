@@ -16,21 +16,30 @@ class RolesAuth
      */
     public function handle($request, Closure $next)
     {
-        $role = \App\Models\Role::findOrFail(auth()->user()->role_id);
-        $permissions = $role->permissions;
-        $actionName = class_basename($request->route()->getActionname());
+        if (Auth::check()) {
 
-        foreach ($permissions as $permission)
-        {
-            $_namespaces_chunks = explode('\\', $permission->controller);
-            $controller = end($_namespaces_chunks);
-            if ($actionName == $controller . '@' . $permission->method)
+            $role = \App\Models\Role::findOrFail(auth()->user()->role_id);
+
+            $permissions = $role->permissions;
+            $actionName = class_basename($request->route()->getActionname());
+
+            foreach ($permissions as $permission)
             {
-                return $next($request);
+                $_namespaces_chunks = explode('\\', $permission->controller);
+                $controller = end($_namespaces_chunks);
+                if ($actionName == $controller . '@' . $permission->method)
+                {
+                    return $next($request);
+                }
             }
-        }
 
-        return abort(404);
+            return abort(404);
+
+        } else {
+            
+            return $next($request);
+
+        }
 
     }
 }
