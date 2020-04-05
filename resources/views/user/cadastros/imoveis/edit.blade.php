@@ -75,26 +75,7 @@
                                     <input type="text" name="andar" class="form-control" id="andar" maxlenght="3" value="{{ $imovel->andar }}">
                                 </div>
                             </div>
-                            <!-- Form Group End -->      
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Condomínio</span>
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <select name="condominio_id" class="form-control" id="condominio_id">
-                                        <option></option>
-                                        @foreach($condominios as $condominio)
-                                            <option 
-                                            @if($condominio->id == $condominio->id)
-                                             {{ ' selected ' }}
-                                            @endif
-                                            value="{{ $condominio->id }}">{{ $condominio->nome }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->               
+                            <!-- Form Group End -->                  
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
