@@ -12,9 +12,7 @@ class EmpresaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin');
-        return $this->middleware('role');
-
+        return $this->middleware('auth:admin');
     }   
 
      /**
