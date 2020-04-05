@@ -33,8 +33,6 @@ class ImovelRequest extends FormRequest
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
                 'observacoes' => 'max:200',
-                'condomonio_id' => 'required',
-
             ];
         } else {
             return [
@@ -43,8 +41,6 @@ class ImovelRequest extends FormRequest
                 'andar' => 'required|min:1|max:3',
                 'descricao' => 'max:200',
                 'observacoes' => 'max:200',
-                'condominio_id' => 'required',
-
             ];
         }
     }
