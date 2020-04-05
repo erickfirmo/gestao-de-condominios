@@ -46,12 +46,7 @@ class FuncionarioController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:80',
-            'nome' => 'required|min:2|max:80',
-
-
-        ]);
+        $request->validated();
 
         $nome = $request->input('nome');
 
@@ -99,9 +94,7 @@ class FuncionarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:80',
-        ]);
+        $request->validated();
 
         $funcionario = Funcionario::findOrFail($id)->update([
             'nome' => $request->nome,
