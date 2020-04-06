@@ -4,6 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\AreaComumRequest;
+use App\Models\AreaComum;
+use Illuminate\Support\Facades\Auth;
 
 class AreaComumController extends Controller
 {
@@ -14,7 +17,9 @@ class AreaComumController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.cadastros.areas-comuns.index', [
+            'areas_comuns' => AreaComum::all(),
+        ]);
     }
 
     /**
@@ -24,7 +29,7 @@ class AreaComumController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.cadastros.areas-comuns.create');
     }
 
     /**
@@ -33,7 +38,7 @@ class AreaComumController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AreaComumRequest $request)
     {
         //
     }
@@ -46,7 +51,9 @@ class AreaComumController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('user.cadastros.areas-comuns.show', [
+            'area_comum' => AreaComum::findOrFail($id)
+        ]);
     }
 
     /**
@@ -57,7 +64,9 @@ class AreaComumController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('user.cadastros.areas-comuns.edit', [
+            'areas_comum' => AreaComum::findOrFail($id),
+        ]);
     }
 
     /**
@@ -67,7 +76,7 @@ class AreaComumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AreaComumRequest $request, $id)
     {
         //
     }
