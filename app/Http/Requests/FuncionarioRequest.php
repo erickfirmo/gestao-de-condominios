@@ -34,7 +34,6 @@ class FuncionarioRequest extends FormRequest
                 'entrada' => 'required|min:1|max:30',
                 'saida' => 'required|min:1|max:30',
                 'telefone_1' => 'required|min:1|max:11',
-                'telefone_2' => 'required|min:1|max:11',
                 'cargo' => 'required|min:1|max:30',
             ];
         } else {
@@ -45,7 +44,6 @@ class FuncionarioRequest extends FormRequest
                 'entrada' => 'required|min:1|max:30',
                 'saida' => 'required|min:1|max:30',
                 'telefone_1' => 'required|min:1|max:11',
-                'telefone_2' => 'max:11',
                 'cargo' => 'required|min:1|max:30',
             ];
         }
