@@ -62,7 +62,7 @@ class AreaComumController extends Controller
         $area_comum->save();
 
         return redirect()->route('areas-comuns.edit', compact('area_comum'))
-            ->with('success', 'Área Comum cadastrada com sucesso!');
+            ->with('success', 'Área comum cadastrada com sucesso!');
 
     }
 
@@ -101,7 +101,19 @@ class AreaComumController extends Controller
      */
     public function update(AreaComumRequest $request, $id)
     {
-        
+        $request->validated();
+
+        $area_comum = AreaComun::findOrFail($id)->update([
+            'nome' => $request->nome,
+            'abertura' => $request->abertura,
+            'fechamento' => $request->fechamento,
+            'status' => $request->status,
+            'descricao' => $request->descricao,
+            'observacoes' => $request->observacoes
+        ]);
+
+        return redirect()->route('areas-comuns.edit', compact('area_comum'))
+            ->with('success', 'Dados da área comum atualizados com sucesso!');
     }
 
     /**
@@ -112,6 +124,9 @@ class AreaComumController extends Controller
      */
     public function destroy($id)
     {
-        //
+        AreaComum::findOrFail($id)->delete();
+
+        return redirect()->route('areas-comuns.index')
+            ->with('success', 'Área comum removida com sucesso!');
     }
 }
