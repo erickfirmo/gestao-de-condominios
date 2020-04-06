@@ -72,9 +72,9 @@
                                     <span class="form-text text-error"></span>
                                     <select name="genero" class="form-control" id="genero">
                                         <option></option>
-                                        <option value="masc">Masculino</option>
-                                        <option value="fem">Feminino</option>
-                                        <option value="nd">Não Definido</option>
+                                        <option value="masc" {{ old('genero') == 'masc' ? 'selected' : null }}>Masculino</option>
+                                        <option value="fem" {{ old('genero') == 'fem' ? 'selected' : null }}>Feminino</option>
+                                        <option value="nd" {{ old('genero') == 'nd' ? 'selected' : null }}>Não Definido</option>
                                     </select>
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="date" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ old('entrada') }}">
+                                    <input type="time" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ old('entrada') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -95,7 +95,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="date" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ old('saida') }}">
+                                    <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ old('saida') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
