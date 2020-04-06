@@ -20,7 +20,7 @@ class CreateAreasComunsTable extends Migration
             $table->string('fechamento', 20);
             $table->string('status', 20);
             $table->string('descricao', 200);
-            $table->string('observacoes', 400);
+            $table->string('observacoes', 400)->nullable();
 
             $table->unsignedBigInteger('condominio_id');
             $table->foreign('condominio_id')
