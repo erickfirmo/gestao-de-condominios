@@ -40,7 +40,30 @@ class AreaComumController extends Controller
      */
     public function store(AreaComumRequest $request)
     {
-        //
+        $request->validated();
+
+        $nome = $request->input('nome');
+        $abertura = $request->input('abertura');
+        $fechamento = $request->input('fechamento');
+        $status = $request->input('status');
+        $descricao = $request->input('descricao');
+        $observacoes = $request->input('observacoes');
+        $condominio_id = Auth::user()->funcionario->condominio->id;
+
+        $area_comum = new AreaComum;
+        $area_comum->nome = $nome;
+        $area_comum->abertura = $abertura;
+        $area_comum->fechamento = $request->input('fechamento');
+        $area_comum->status = $request->input('status');
+        $area_comum->descricao = $request->input('descricao');
+        $area_comum->observacoes = $request->input('observacoes');
+        $area_comum->condominio_id = $condominio_id;
+
+        $area_comum->save();
+
+        return redirect()->route('areas-comuns.edit', compact('area_comum'))
+            ->with('success', 'Área Comum cadastrada com sucesso!');
+
     }
 
     /**
@@ -78,7 +101,7 @@ class AreaComumController extends Controller
      */
     public function update(AreaComumRequest $request, $id)
     {
-        //
+        
     }
 
     /**
