@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\FuncionarioRequest;
 use App\Models\Condominio;
 use App\Models\Funcionario;
+use Illuminate\Support\Facades\Auth;
 
 class FuncionarioController extends Controller
 {
