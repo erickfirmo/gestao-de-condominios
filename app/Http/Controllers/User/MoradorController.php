@@ -21,8 +21,8 @@ class MoradorController extends Controller
      */
     public function index()
     {
-        return view('cadastros.moradores.index', [
-            'morador' => Morador::all()
+        return view('user.cadastros.moradores.index', [
+            'moradores' => Morador::all()
         ]);
     }
 
@@ -33,7 +33,7 @@ class MoradorController extends Controller
      */
     public function create()
     {
-        return view('cadastros.moradores.create', [
+        return view('user.cadastros.moradores.create', [
             'imoveis' => Imovel::all()
         ]);
     }
@@ -46,13 +46,7 @@ class MoradorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:80',
-            'genero' => 'required|min:2|max:4',
-            'observacoes' => 'max:400',
-            'proprietario' => 'required',
-            'imovel_id' => 'required|min:1|max:20'
-        ]);
+        $request->validated();
 
         $nome = $request->input('nome');
         $genero = $request->input('genero');
@@ -80,7 +74,7 @@ class MoradorController extends Controller
      */
     public function show($id)
     {
-        return view('cadastros.moradores.show', [
+        return view('user.cadastros.moradores.show', [
             'morador' => Morador::findOrFail($id)
         ]);
     }
@@ -93,7 +87,7 @@ class MoradorController extends Controller
      */
     public function edit($id)
     {
-        return view('cadastros.moradores.edit', [
+        return view('user.cadastros.moradores.edit', [
             'morador' => Morador::findOrFail($id),
             'imoveis' => Imovel::all()
         ]);
@@ -108,13 +102,7 @@ class MoradorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nome' => 'required|min:2|max:80',
-            'genero' => 'required|min:2|max:4',
-            'observacoes' => 'max:400',
-            'proprietario' => 'required',
-            'imovel_id' => 'required|min:1|max:20'
-        ]);
+        $request->validated();
 
         $morador = Morador::findOrFail($id)->update([
             'nome' => $request->nome,
