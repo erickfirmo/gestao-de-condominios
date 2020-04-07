@@ -47,8 +47,8 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-12 col-form-label text-md-left">Nome</span>
-                                <div class="col-md-12">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
+                                <div class="col-md-10">
                                     <span class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
                                 </div>
@@ -57,8 +57,8 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-12 col-form-label text-md-left">Gênero</span>
-                                <div class="col-md-12">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
+                                <div class="col-md-10">
                                     <span class="form-text text-error"></span>
                                     <select name="genero" class="form-control" id="genero">
                                         <option></option>
@@ -69,40 +69,18 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->              
-                            
-                            <!-- Form Group Start -->
-                            <div class="form-group pt-1 pb-1 row">
-                                <span class="label-text col-md-12 col-form-label text-md-left">Proprietário do Imóvel</span>
-                                <label class="col-md-12">
-                                    <input type="radio" name="proprietario" value="1" class="form-radio-input">
-                                    <span class="form-radio-label">Sim</span>
-                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
-                                    <span class="form-radio-label">Não</span>
-                                </label>
-                            </div>
-                            <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-12 col-form-label text-md-left">Imóvel</span>
-                                <div class="col-md-12">
-                                    <span class="form-text text-error"></span>
-                                    <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ old('saida') }}">
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
+                            <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                            <span class="label-text col-md-12 col-form-label text-md-left">Imóvel</span>
-
-                                <div class="col-md-12">
+                                <div class="col-md-10">
                                     <span class="form-text text-error"></span>
                                     <select name="imovel_id" class="form-control" id="imovel_id">
                                         <option></option>
                                         @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ $morador->imovel->id == $imovel->id ? 'selected' : null }}>
-                                                {{ 'Nº $imovel->numero.' - Bloco '.$imovel->bloco }}
+                                            <option value="{{ $imovel->id }}">
+                                                {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -110,20 +88,28 @@
                             </div>
                             <!-- Form Group End -->
 
+                             <!-- Form Group Start -->
+                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
+                                <div class="col-md-10 form-inline">
+                                    <label class="form-radio mr-3">
+                                    <input type="radio" name="proprietario" value="1" class="form-radio-input">
+                                    <span class="form-radio-label">Sim</span></label>
+                                    <label class="form-radio">
+                                    <input type="radio" name="proprietario" value="2" class="form-radio-input">
+                                    <span class="form-radio-label">Não</span>
+                                </label>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-12 col-form-label text-md-left">Observações</span>
+                            <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
 
-                                <div class="col-md-12">
+                                <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <select name="observacoes" class="form-control" id="observacoes">
-                                        <option></option>
-                                        @foreach
-                                            <option value="{{  }}" {{ $funcionario->genero == 'masc' ? 'selected' : null }}>Masculino</option>
-                                        @endforeach
-                                    </select>
-
-    
+                                    <textarea name="observacoes" class="form-control" maxlengh="40">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
