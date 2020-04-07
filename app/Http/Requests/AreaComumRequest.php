@@ -51,9 +51,8 @@ class AreaComumRequest extends FormRequest
     public function attributes()
     {
         return [
-            'razao_social' => 'razão social',
-            'responsavel_para_contato' => 'responsável para contato',
-            'cnpj' => 'CNPJ',
+            'descricao' => 'descrição',
+            'observacoes' => 'observações',
         ];
     }
 
