@@ -79,7 +79,7 @@
                                     <select name="imovel_id" class="form-control" id="imovel_id">
                                         <option></option>
                                         @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}">
+                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $morador->imovel->id ? ' selected' : null}}>
                                                 {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
                                             </option>
                                         @endforeach
@@ -93,10 +93,10 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
                                 <div class="col-md-10 form-inline">
                                     <label class="form-radio mr-3">
-                                    <input type="radio" name="proprietario" value="1" class="form-radio-input">
+                                    <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
                                     <span class="form-radio-label">Sim</span></label>
                                     <label class="form-radio">
-                                    <input type="radio" name="proprietario" value="2" class="form-radio-input">
+                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
                                     <span class="form-radio-label">Não</span>
                                 </label>
                                 </div>
@@ -109,7 +109,7 @@
 
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="40">{{ old('observacoes') }}</textarea>
+                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
