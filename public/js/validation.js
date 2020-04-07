@@ -19,6 +19,13 @@ $('.error').keyup(function() {
     }
 });
 
+$('.error').change(function() {
+    if($(this).val() != '') {
+        $(this).removeClass('error');
+        $(this).prev().text('');
+    }
+});
+
 //show form after load
 setTimeout(function() {
     $('.show-onload').removeClass('d-none');
