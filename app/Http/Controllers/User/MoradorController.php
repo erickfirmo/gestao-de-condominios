@@ -63,7 +63,7 @@ class MoradorController extends Controller
         $morador->imovel_id = $imovel_id;
         $morador->save();
 
-        return redirect()->route('superadmin.moradores.edit', compact('morador'))
+        return redirect()->route('moradores.edit', compact('morador'))
             ->with('success', 'Morador cadastrado com sucesso!');
     }
 
@@ -113,7 +113,7 @@ class MoradorController extends Controller
             'imovel_id' => $request->imovel_id
         ]);
 
-        return redirect()->route('superadmin.moradores.edit', compact('morador'))
+        return redirect()->route('moradores.edit', compact('morador'))
             ->with('success', 'Dados do imóvel atualizados com sucesso!');
     }
 
@@ -127,7 +127,7 @@ class MoradorController extends Controller
     {
         Morador::findOrFail($id)->delete();
 
-        return redirect()->route('superadmin.moradores.index')
+        return redirect()->route('moradores.index')
             ->with('success', 'Morador removido com sucesso!');
     }
 }
