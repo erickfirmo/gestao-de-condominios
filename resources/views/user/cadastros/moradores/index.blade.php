@@ -40,9 +40,9 @@
                             <p>
                                 {{
                                     countMessage($moradores, [
-                                        'zero' => 'Nenhum funcionário encontrado',
-                                        'one' => '1 funcionário encontrado',
-                                        'many' => '[X] funcionários encontrados'
+                                        'zero' => 'Nenhum morador encontrado',
+                                        'one' => '1 morador encontrado',
+                                        'many' => '[X] moradores encontrados'
                                     ])
                                 }}
                             </p>
@@ -65,8 +65,12 @@
                         <table id="recordsListView" class="moradores-table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th class="not-sortable">Ações</th>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Gênero</th>
+                                <th>Proprietário do Imóvel</th>
+                                <th>Imóvel</th>
+                                <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,6 +78,11 @@
 
                                 <tr id="{{ 'morador-'.$morador->id }}">
                                     <td>{{ $morador->id }}</td>
+                                    <td>{{ $morador->nome }}</td>
+                                    <td>{{ $morador->genero }}</td>
+                                    <td>{{ $morador->proprietario ? 'Sim' : 'Não' }}</td>
+                                    <td>{{ $morador->imovel->nome }}</td>
+
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('moradores.edit', $morador->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
