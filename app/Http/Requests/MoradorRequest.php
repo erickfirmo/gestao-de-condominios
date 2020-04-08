@@ -49,7 +49,7 @@ class MoradorRequest extends FormRequest
     {
         return [
             'observacoes' => 'observações',
-            'proprietario' => 'proprietário',
+            'proprietario' => 'proprietário do imóvel',
             'genero' => 'gênero',
             'imovel_id' => 'imóvel'
         ];
