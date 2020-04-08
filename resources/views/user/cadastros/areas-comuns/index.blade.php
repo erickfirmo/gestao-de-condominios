@@ -12,11 +12,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Page Title Start -->
-                            <h2 class="page--title h5">Área Comuns</h2>
+                            <h2 class="page--title h5">Áreas Comuns</h2>
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('areas-comuns.index') }}">Área Comuns</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('areas-comuns.index') }}">Áreas Comuns</a></li>
                                 <li class="breadcrumb-item active"><span>Todas</span></li>
                             </ul>
                         </div>
@@ -33,7 +33,7 @@
 
 
                         <div class="title fa-university">
-                            <h3 class="h3">Área Comuns
+                            <h3 class="h3">Áreas Comuns
                             <a href="{{ route('areas-comuns.create') }}" class="btn btn-sm btn-outline-info">Adicionar Área Comum</a>
                         
                             </h3>
@@ -60,7 +60,7 @@
 
                 <div class="panel">
 
-                    <div class="records--list" data-title="Lista de Área Comuns">
+                    <div class="records--list" data-title="Lista de Áreas Comuns">
                         
                         <table id="recordsListView" class="areas_comuns-table">
                             <thead>
@@ -80,7 +80,9 @@
                                     <td>{{ $area_comum->id }}</td>
                                     <td>{{ $area_comum->nome }}</td>
                                     <td>{{ 'Das '.$area_comum->abertura.' às '.$area_comum->fechamento }}</td>
-                                    <td>{{ $area_comum->status }}</td>
+                                    <td>
+                                    <span class="label {{ statusClass($area_comum->status) }}">{{ $area_comum->status }}</span>
+                                    </td>
                                     <td>{{ $area_comum->descricao }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
