@@ -57,18 +57,23 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <select name="genero" class="form-control" id="genero">
-                                        <option></option>
-                                        <option value="Masculino" {{ old('genero') == 'Masculino' ? 'selected' : null }}>Masculino</option>
-                                        <option value="Feminino" {{ old('genero') == 'Feminino' ? 'selected' : null }}>Feminino</option>
-                                        <option value="Não Deninido" {{ old('genero') == 'Não Deninido' ? 'selected' : null }}>Não Definido</option>
-                                    </select>
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
+                                <div class="col-md-10 form-inline">
+                                    <label class="form-radio mr-3">
+                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ old('genero') == 'Masculino' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Masculino</span>
+                                    </label>
+                                    <label class="form-radio mr-3">
+                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ old('genero') == 'Feminino' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Feminino</span>
+                                    </label>
+                                    <label class="form-radio">
+                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ old('genero') == 'Não Definido' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Não Definido</span>
+                                    </label>
                                 </div>
                             </div>
-                            <!-- Form Group End -->              
+                            <!-- Form Group End -->               
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
