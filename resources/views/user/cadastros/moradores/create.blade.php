@@ -79,7 +79,7 @@
                                     <select name="imovel_id" class="form-control" id="imovel_id">
                                         <option></option>
                                         @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $morador->imovel->id ? ' selected' : null }}>
+                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $imovel->id ? ' selected' : null }}>
                                                 {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
                                             </option>
                                         @endforeach
