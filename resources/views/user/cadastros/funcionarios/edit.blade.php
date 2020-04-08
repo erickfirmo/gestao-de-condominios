@@ -74,9 +74,9 @@
                                     <span class="form-text text-error"></span>
                                     <select name="genero" class="form-control" id="genero">
                                         <option></option>
-                                        <option value="masc" {{ $funcionario->genero == 'masc' ? 'selected' : null }}>Masculino</option>
-                                        <option value="fem" {{ $funcionario->genero == 'fem' ? 'selected' : null }}>Feminino</option>
-                                        <option value="nd" {{ $funcionario->genero == 'nd' ? 'selected' : null }}>Não Definido</option>
+                                        <option value="Masculino" {{ $funcionario->genero == 'Masculino' ? 'selected' : null }}>Masculino</option>
+                                        <option value="Feminino" {{ $funcionario->genero == 'Feminino' ? 'selected' : null }}>Feminino</option>
+                                        <option value="Não Deninido" {{ $funcionario->genero == 'Não Deninido' ? 'selected' : null }}>Não Definido</option>
                                     </select>
                                 </div>
                             </div>
