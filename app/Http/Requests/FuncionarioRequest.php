@@ -30,7 +30,7 @@ class FuncionarioRequest extends FormRequest
             return [
                 'nome_completo' => 'required|min:3|max:80',
                 'identidade' => 'required|min:1|max:11|unique:funcionarios,id,'.$this->route('id'),
-                'genero' => 'required|in:masc,fem,nd',
+                'genero' => 'required|in:Masculino,Feminino,Não Definido',
                 'entrada' => 'required|min:1|max:30',
                 'saida' => 'required|min:1|max:30',
                 'telefone_1' => 'required|min:1|max:11',
@@ -40,7 +40,7 @@ class FuncionarioRequest extends FormRequest
             return [
                 'nome_completo' => 'required|min:3|max:80',
                 'identidade' => 'required|min:1|max:11|unique:funcionarios',
-                'genero' => 'required|in:masc,fem,nd',
+                'genero' => 'required|in:Masculino,Feminino,Não Definido',
                 'entrada' => 'required|min:1|max:30',
                 'saida' => 'required|min:1|max:30',
                 'telefone_1' => 'required|min:1|max:11',
