@@ -42,3 +42,24 @@ if(!function_exists('countMessage'))
         }
     }
 }
+
+if(!function_exists('statusClass'))
+{
+    function statusClass($value)
+    {
+       switch ($value) {
+            case 'Aberto':
+                return 'label-success';
+                break;
+            case 'Fechado':
+                return 'label-danger';
+                break;
+            case 'Em Manutenção':
+                return 'label-warning';
+                break;
+           default:
+                return 'label-light';
+                break;
+       }
+    }
+}
