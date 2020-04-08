@@ -62,9 +62,9 @@
                                     <span class="form-text text-error"></span>
                                     <select name="genero" class="form-control" id="genero">
                                         <option></option>
-                                        <option value="masc" {{ old('genero') == 'masc' ? 'selected' : null }}>Masculino</option>
-                                        <option value="fem" {{ old('genero') == 'fem' ? 'selected' : null }}>Feminino</option>
-                                        <option value="nd" {{ old('genero') == 'nd' ? 'selected' : null }}>Não Definido</option>
+                                        <option value="Masculino" {{ old('genero') == 'Masculino' ? 'selected' : null }}>Masculino</option>
+                                        <option value="Feminino" {{ old('genero') == 'Feminino' ? 'selected' : null }}>Feminino</option>
+                                        <option value="Não Deninido" {{ old('genero') == 'Não Deninido' ? 'selected' : null }}>Não Definido</option>
                                     </select>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                     <select name="imovel_id" class="form-control" id="imovel_id">
                                         <option></option>
                                         @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $morador->imovel->id ? ' selected' : null}}>
+                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $morador->imovel->id ? ' selected' : null }}>
                                                 {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
                                             </option>
                                         @endforeach
