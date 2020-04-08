@@ -99,7 +99,7 @@
                                     <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ $morador->proprietario ? 'checked' : null }}>
                                     <span class="form-radio-label">Sim</span></label>
                                     <label class="form-radio">
-                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
+                                    <input type="radio" name="proprietario" value="0" class="form-radio-input" {{ !$morador->proprietario ? 'checked' : null }}>
                                     <span class="form-radio-label">Não</span>
                                 </label>
                                 </div>
