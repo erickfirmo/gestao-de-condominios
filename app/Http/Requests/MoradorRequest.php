@@ -29,7 +29,7 @@ class MoradorRequest extends FormRequest
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
                 'nome' => 'required|min:1|max:80',
-                'genero' => 'required|in:masc,fem,nd',
+                'genero' => 'required|in:Masculino,Feminino,Não Definido',
                 'observacoes' => 'max:400',
                 'proprietario' => 'boolean',
                 'imovel_id' => 'required|min:1|max:20',
@@ -37,7 +37,7 @@ class MoradorRequest extends FormRequest
         } else {
             return [
                 'nome' => 'required|min:1|max:80',
-                'genero' => 'required|in:masc,fem,nd',
+                'genero' => 'required|in:Masculino,Feminino,Não Definido',
                 'observacoes' => 'max:400',
                 'proprietario' => 'boolean',
                 'imovel_id' => 'required|min:1|max:20',
