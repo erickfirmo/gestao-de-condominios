@@ -88,7 +88,7 @@ class AreaComumController extends Controller
     public function edit($id)
     {
         return view('user.cadastros.areas-comuns.edit', [
-            'areas_comum' => AreaComum::findOrFail($id),
+            'area_comum' => AreaComum::findOrFail($id),
         ]);
     }
 
