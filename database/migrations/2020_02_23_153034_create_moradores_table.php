@@ -16,7 +16,7 @@ class CreateMoradoresTable extends Migration
         Schema::create('moradores', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 80);
-            $table->enum('genero', ['masc', 'fem', 'nd']);
+            $table->enum('genero', ['Masculino', 'Feminino', 'Não Definido']);
             $table->string('observacoes', 400)->nullable();
             $table->boolean('proprietario')->nullable();
 
