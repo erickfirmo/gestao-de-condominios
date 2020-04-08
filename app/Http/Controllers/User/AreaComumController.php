@@ -103,7 +103,7 @@ class AreaComumController extends Controller
     {
         $request->validated();
 
-        $area_comum = AreaComun::findOrFail($id)->update([
+        $area_comum = AreaComum::findOrFail($id)->update([
             'nome' => $request->nome,
             'abertura' => $request->abertura,
             'fechamento' => $request->fechamento,
