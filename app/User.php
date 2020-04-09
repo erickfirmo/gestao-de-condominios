@@ -24,8 +24,16 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'identidade',
+        'genero',
+        'entrada',
+        'saida',
+        'foto',
+        'telefone_1',
+        'telefone_2',
+        'cargo',
+        'condominio_id',
         'password',
-        'funcionario_id',
         'role_id',
     ];
 
@@ -38,9 +46,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function funcionario()
+    public function condominio()
     {
-        return $this->belongsTo(\App\Models\Funcionario::class, 'funcionario_id');
+        return $this->belongsTo(\App\Models\Condominio::class, 'condominio_id');
     }
 
     public function sendPasswordResetNotification($token)
