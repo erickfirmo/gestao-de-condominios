@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('identidade', 11)->unique();
-            $table->enum('genero', ['masc', 'fem', 'nd']);
+            $table->enum('genero', ['Masculino', 'Feminino', 'Não Definido']);
             $table->string('entrada', 30);
             $table->string('saida', 30);
             $table->string('foto')->nullable();
