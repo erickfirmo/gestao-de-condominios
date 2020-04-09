@@ -65,8 +65,16 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'identidade' => ['required', 'string', 'digits:11'],
+            'genero' => ['required', 'string', 'max:20'],
+            'entrada' => ['required', 'string', 'max:30'],
+            'saida' => ['required', 'string', 'max:30'],
+            'foto' => ['string', 'max:255'],
+            'telefone_1' => ['required', 'string', 'max:11'],
+            'telefone_2' => ['string', 'max:11'],
+            'cargo' => ['required', 'string', 'max:30'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'funcionario_id' => ['required', 'string', 'min:1', 'max:20'],
+            'condominio_id' => ['required', 'string', 'min:1', 'max:20'],
             'role_id' => ['required'],
         ]);
     }
@@ -82,8 +90,16 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'identidade' => $data['identidade'],
+            'genero' => $data['genero'],
+            'entrada' => $data['entrada'],
+            'saida' => $data['saida'],
+            'foto' => $data['foto'],
+            'telefone_1' => $data['telefone_1'],
+            'telefone_2' => $data['telefone_2'],
+            'cargo' => $data['cargo'],
             'password' => Hash::make($data['password']),
-            'funcionario_id' => $data['funcionario_id'],
+            'condominio_id' => $data['funcionario_id'],
             'role_id' => 3,
         ]);
     }
