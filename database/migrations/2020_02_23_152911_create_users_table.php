@@ -18,11 +18,19 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('identidade', 11)->unique();
+            $table->enum('genero', ['masc', 'fem', 'nd']);
+            $table->string('entrada', 30);
+            $table->string('saida', 30);
+            $table->string('foto')->nullable();
+            $table->string('telefone_1', 11);
+            $table->string('telefone_2', 11)->nullable();
+            $table->string('cargo', 30);
 
-            $table->unsignedBigInteger('funcionario_id');
-            $table->foreign('funcionario_id')
+            $table->unsignedBigInteger('condominio_id');
+            $table->foreign('condominio_id')
                 ->references('id')
-                ->on('funcionarios');
+                ->on('condominios');
 
             $table->rememberToken();
             $table->timestamps();
