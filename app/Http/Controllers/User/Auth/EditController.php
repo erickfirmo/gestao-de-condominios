@@ -35,6 +35,7 @@ class EditController extends Controller
             'telefone_2' => 'min:1|max:11',
             'cargo' => 'required|min:1|max:30',
             'password' => 'required|min:6|max:255|string',
+            'role_id' => ['required', 'in:2,3'],
         ]);
 
         $user = User::findOrFail($id)->update([
