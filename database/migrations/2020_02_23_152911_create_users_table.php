@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('foto_de_perfil');
             $table->string('password');
 
             $table->unsignedBigInteger('funcionario_id');
