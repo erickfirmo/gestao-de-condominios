@@ -64,11 +64,18 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'foto_de_perfil' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'identidade' => ['required', 'string', 'digits:11'],
+            'genero' => ['required', 'string', 'max:20'],
+            'entrada' => ['required', 'string', 'max:30'],
+            'saida' => ['required', 'string', 'max:30'],
+            'foto' => ['string', 'max:255'],
+            'telefone_1' => ['required', 'string', 'max:11'],
+            'telefone_2' => ['string', 'max:11'],
+            'cargo' => ['required', 'string', 'max:30'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'funcionario_id' => ['required', 'string', 'min:1', 'max:20'],
-            'role_id' => ['required'],
+            'condominio_id' => ['required', 'string', 'min:1', 'max:20'],
+            'role_id' => ['required', 'in:2,3'],
         ]);
     }
 
