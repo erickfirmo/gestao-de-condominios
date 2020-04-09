@@ -58,7 +58,7 @@
 
 
 </head>
-<body>
+<body class="sidebar-light">
 
 <!-- Wrapper Start -->
 <div class="wrapper">
