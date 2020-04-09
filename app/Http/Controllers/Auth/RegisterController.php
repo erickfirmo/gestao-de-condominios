@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'cargo' => ['required', 'string', 'max:30'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'condominio_id' => ['required', 'string', 'min:1', 'max:20'],
-            'role_id' => ['required'],
+            'role_id' => ['required', 'in:2,3'],
         ]);
     }
 
@@ -99,8 +99,8 @@ class RegisterController extends Controller
             'telefone_2' => $data['telefone_2'],
             'cargo' => $data['cargo'],
             'password' => Hash::make($data['password']),
-            'condominio_id' => $data['funcionario_id'],
-            'role_id' => 3,
+            'condominio_id' => $data['condominio_id'],
+            'role_id' => $data['role_id'],
         ]);
     }
 }
