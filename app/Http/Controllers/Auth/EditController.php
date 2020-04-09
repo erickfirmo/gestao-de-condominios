@@ -27,6 +27,13 @@ class EditController extends Controller
     {
         $request->validate([
             'name' => 'required|min:2|max:255|string',
+            'identidade' => 'required|min:1|max:11|unique:users,id,'.$this->route('id'),
+            'genero' => 'required|in:Masculino,Feminino,Não Definido',
+            'entrada' => 'required|min:1|max:30',
+            'saida' => 'required|min:1|max:30',
+            'telefone_1' => 'required|min:1|max:11',
+            'telefone_2' => 'min:1|max:11',
+            'cargo' => 'required|min:1|max:30',
             'password' => 'required|min:6|max:255|string',
         ]);
 
