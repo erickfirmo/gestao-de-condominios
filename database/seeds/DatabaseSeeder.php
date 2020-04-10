@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UfsTableSeeder::class);
         $this->call(EmpresasTableSeeder::class);
         $this->call(CondominiosTableSeeder::class);
-        $this->call(FuncionariosTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(PermissionRoleTableSeeder::class);
 
