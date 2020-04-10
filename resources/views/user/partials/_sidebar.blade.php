@@ -4,7 +4,7 @@
     <div class="sidebar--profile">
         <div class="profile--img">
             <a href="#" class="logo" style="text-align:center;">
-                <img src="{{ Auth::user()->foto_de_perfil != '#' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Perfil"  style="border-radius: 50%;">
+                <img src="{{ Auth::user()->foto_de_perfil != '' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Perfil"  style="border-radius: 50%;">
             </a>
         </div>
 
@@ -84,22 +84,6 @@
                         <ul>
                             <li><a href="{{ route('moradores.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="{{ route('moradores.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
-                        </ul>
-                    </li>    
-                                   
-                </ul>
-
-                <ul>
-                    <li>
-                        <a href="#">
-                        <i class="fas fa-user"></i>
-                            <span>Funcionários</span>
-                        </a>
-
-                                
-                        <ul>
-                            <li><a href="{{ route('funcionarios.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('funcionarios.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>    
                                    
