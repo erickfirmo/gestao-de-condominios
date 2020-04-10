@@ -11,7 +11,7 @@ class Relatorio extends Model
     public $fillable = [
         'descricao',
         'operacao',
-        'funcionario_id',
+        'user_id',
         'parent_id',
         'parent_table',
     ];
