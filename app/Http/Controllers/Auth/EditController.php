@@ -35,11 +35,20 @@ class EditController extends Controller
             'telefone_2' => 'min:1|max:11',
             'cargo' => 'required|min:1|max:30',
             'password' => 'required|min:6|max:255|string',
+            'foto' => 'max:255',
         ]);
 
         $user = User::findOrFail($id)->update([
             'name' => $request->name,
+            'identidade' => $request->identidade,
+            'genero' => $request->genero,
+            'entrada' => $request->entrada,
+            'saida' => $request->saida,
+            'telefone_1' => $request->telefone_1,
+            'telefone_2' => $request->telefone_2,
+            'cargo' => $request->cargo,
             'password' => bcrypt($request->password),
+            'foto' => $request->foto_de_perfil,
         ]);
 
         return redirect()->route('edit', compact('user'))
