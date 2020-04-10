@@ -32,8 +32,9 @@ class User extends Authenticatable
         'telefone_1',
         'telefone_2',
         'cargo',
-        'condominio_id',
         'password',
+        'foto',
+        'condominio_id',
         'role_id',
     ];
 
