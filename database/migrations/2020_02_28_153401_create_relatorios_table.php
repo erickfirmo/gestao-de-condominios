@@ -18,10 +18,10 @@ class CreateRelatoriosTable extends Migration
             $table->string('descricao', 200);
             $table->string('operacao', 30);
 
-            $table->unsignedBigInteger('funcionario_id');
-            $table->foreign('funcionario_id')
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('funcionarios')
+                ->on('users')
                 ->onDelete('cascade');
 
             $table->unsignedBigInteger('parent_id');
