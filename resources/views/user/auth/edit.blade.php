@@ -38,22 +38,6 @@
                                             @endif
                                         </div>
                                     </div>
-                                    
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                        <div class="input-group-prepend" title="Foto de Perfil">
-                                                <i class="fas fa-images"></i>
-                                            </div>
-
-                                            <input title="Foto de Perfil" placeholder="URL da Foto de Perfil" id="foto_de_perfil" type="text" class="form-control{{ $errors->has('foto_de_perfil') ? ' is-invalid' : '' }}" name="foto_de_perfil" value="{{ Auth::user()->foto_de_perfil }}" autofocus autocomplete="off">
-                                            @if ($errors->has('foto_de_perfil'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('foto_de_perfil') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-                                    </div>
 
                                     
                                     <div class="form-group">
@@ -71,25 +55,25 @@
                                         </div>
                                     </div>
 
-                                    <!-- Form Group Start -->
                                     <div class="form-group row">
-                                        <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
-                                        <div class="col-md-10 form-inline">
-                                            <label class="form-radio mr-3">
+                                        <div class="input-group">
+                                            <label class="form-radio">
+                                                <span class="form-text text-error"></span>
                                                 <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ Auth::user()->genero == 'Masculino' ? 'checked' : null }}>
                                                 <span class="form-radio-label">Masculino</span>
                                             </label>
-                                            <label class="form-radio mr-3">
+                                            <label class="form-radio">
+                                                <span class="form-text text-error"></span>
                                                 <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ Auth::user()->genero == 'Feminino' ? 'checked' : null }}>
                                                 <span class="form-radio-label">Feminino</span>
                                             </label>
                                             <label class="form-radio">
+                                                <span class="form-text text-error"></span>
                                                 <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ Auth::user()->genero == 'Não Definido' ? 'checked' : null }}>
                                                 <span class="form-radio-label">Não Definido</span>
                                             </label>
                                         </div>
-                                    </div>
-                                    <!-- Form Group End -->        
+                                    </div>  
                                     
                                     <!-- Form Group Start -->
                                     <div class="form-group row">
@@ -126,7 +110,7 @@
                                         <div class="input-group-prepend" title="Telefone Principal">
                                                 <i class="fas fa-phone"></i>
                                             </div>
-
+                                            <span class="form-text text-error"></span>
                                             <input title="Telefone Principal" placeholder="Digite o telefone principal" id="telefone_1" type="text" class="form-control{{ $errors->has('telefone_1') ? ' is-invalid' : '' }}" name="telefone_1" value="{{ Auth::user()->telefone_1 }}" required autofocus autocomplete="off">
                                             @if ($errors->has('telefone_1'))
                                                 <span class="invalid-feedback" role="alert">
@@ -141,7 +125,7 @@
                                         <div class="input-group-prepend" title="Telefone de Emergência">
                                                 <i class="fas fa-phone"></i>
                                             </div>
-
+                                            <span class="form-text text-error"></span>
                                             <input title="Telefone de Emergência" placeholder="Digite o telefone de emergência" id="telefone_2" type="text" class="form-control{{ $errors->has('telefone_2') ? ' is-invalid' : '' }}" name="telefone_2" value="{{ Auth::user()->telefone_2 }}" autofocus autocomplete="off">
                                             @if ($errors->has('telefone_2'))
                                                 <span class="invalid-feedback" role="alert">
@@ -156,7 +140,7 @@
                                         <div class="input-group-prepend" title="Cargo">
                                             <i class="fa fa-file"></i>
                                             </div>
-
+                                            <span class="form-text text-error"></span>
                                             <input title="Cargo" placeholder="Digite o cargo" id="cargo" type="text" class="form-control{{ $errors->has('cargo') ? ' is-invalid' : '' }}" name="cargo" value="{{ Auth::user()->cargo }}" autofocus autocomplete="off">
                                             @if ($errors->has('cargo'))
                                                 <span class="invalid-feedback" role="alert">
@@ -173,7 +157,7 @@
                                             <div class="input-group-prepend">
                                                 <i class="fas fa-key"></i>
                                             </div>
-
+                                            <span class="form-text text-error"></span>
                                             <input placeholder="Digite a Senha" id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" autocomplete="off" required>
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
@@ -189,6 +173,7 @@
                                                 <i class="fas fa-key"></i>
                                             </div>
 
+                                            <span class="form-text text-error"></span>
                                             <input placeholder="Confirme a Senha" id="password_confirmation" type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" autocomplete="off" required>
                                             @if ($errors->has('password'))
                                                 <span class="invalid-feedback" role="alert">
