@@ -49,7 +49,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="identidade-text-error" class="form-text text-error"></span>
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ old('identidade') }}">
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="password-text-error" class="form-text text-error"></span>
                                     <input type="text" name="password" class="form-control" id="password" maxlenght="11" value="{{ old('password') }}">
                                 </div>
                             </div>
@@ -79,7 +79,13 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
                                 <div class="col-md-10 form-inline">
+                                    <div class="d-block w-100">
+                                        <span id="genero-text-error" class="form-text text-error"></span>
+
+                                    </div>
+                                
                                     <label class="form-radio mr-3">
+
                                         <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ old('genero') == 'Masculino' ? 'checked' : null }}>
                                         <span class="form-radio-label">Masculino</span>
                                     </label>
@@ -99,7 +105,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="entrada-text-error" class="form-text text-error"></span>
                                     <input type="time" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ old('entrada') }}">
                                 </div>
                             </div>
@@ -109,7 +115,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="saida-text-error" class="form-text text-error"></span>
                                     <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ old('saida') }}">
                                 </div>
                             </div>
@@ -119,7 +125,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Foto</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="foto-text-error" class="form-text text-error"></span>
                                     <input type="text" name="foto" class="form-control" value="{{ old('foto') }}">
                                 </div>
                             </div>
@@ -129,7 +135,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="telefone_1-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="11" value="{{ old('telefone_1') }}">
                                 </div>
                             </div>
@@ -139,7 +145,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="telefone_2-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="11" value="{{ old('telefone_2') }}">
                                 </div>
                             </div>
@@ -149,7 +155,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="cargo-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ old('cargo') }}">
                                 </div>
                             </div>
