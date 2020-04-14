@@ -8,6 +8,7 @@ Route::middleware('auth:user')->group(function () {
 
 Route::prefix('usuarios')->name('usuarios.')->namespace('User')->group(function () {
     Auth::routes();
+    Route::get('create', 'Auth\CreateController@create')->name('create');
     Route::get('edit/{id}', 'Auth\EditController@edit')->name('edit');
     Route::post('update/{id}', 'Auth\EditController@update')->name('update');
 
