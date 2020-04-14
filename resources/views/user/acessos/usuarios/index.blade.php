@@ -16,7 +16,7 @@
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('funcionarios.index') }}">Funcionários</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('acessos.usuarios.index') }}">Funcionários</a></li>
                                 <li class="breadcrumb-item active"><span>Todos</span></li>
                             </ul>
                         </div>
@@ -34,15 +34,15 @@
 
                         <div class="title fa-university">
                             <h3 class="h3">Funcionários
-                            <a href="{{ route('funcionarios.create') }}" class="btn btn-sm btn-outline-info">Adicionar Funcionário</a>
+                            <a href="{{ route('acessos.usuarios.create') }}" class="btn btn-sm btn-outline-info">Adicionar Usuário</a>
                         
                             </h3>
                             <p>
                                 {{
-                                    countMessage($funcionarios, [
+                                    countMessage($usuarios, [
                                         'zero' => 'Nenhum funcionário encontrado',
                                         'one' => '1 funcionário encontrado',
-                                        'many' => '[X] funcionários encontrados'
+                                        'many' => '[X] usuários encontrados'
                                     ])
                                 }}
                             </p>
@@ -50,7 +50,7 @@
 
                         <div class="actions row">
                             <form class="search">
-                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('funcionarios-table', this)">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('usuarios-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -62,7 +62,7 @@
 
                     <div class="records--list" data-title="Lista de Funcionários">
                         
-                        <table id="recordsListView" class="funcionarios-table">
+                        <table id="recordsListView" class="usuarios-table">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -75,23 +75,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($funcionarios as $funcionario)
+                                @foreach($usuarios as $usuario)
 
-                                <tr id="{{ 'funcionario-'.$funcionario->id }}">
-                                    <td>{{ $funcionario->id }}</td>
-                                    <td>{{ $funcionario->nome_completo }}</td>
-                                    <td>{{ $funcionario->genero }}</td>
-                                    <td>{{ $funcionario->identidade }}</td>
-                                    <td>{{ $funcionario->telefone_1.($funcionario->telefone_2 ? ', '.$funcionario->telefone_2 : '') }}</td>
-                                    <td>{{ $funcionario->cargo }}</td>
+                                <tr id="{{ 'funcionario-'.$usuario->id }}">
+                                    <td>{{ $usuario->id }}</td>
+                                    <td>{{ $usuario->nome_completo }}</td>
+                                    <td>{{ $usuario->genero }}</td>
+                                    <td>{{ $usuario->identidade }}</td>
+                                    <td>{{ $usuario->telefone_1.($usuario->telefone_2 ? ', '.$usuario->telefone_2 : '') }}</td>
+                                    <td>{{ $usuario->cargo }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('funcionarios.edit', $funcionario->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('acessos.usuarios.edit', $usuario->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
 
                                         
 
-                                        <form action="{{ route('funcionarios.destroy', $funcionario->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('acessos.usuarios.destroy', $usuario->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
