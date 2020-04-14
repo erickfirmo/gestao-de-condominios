@@ -18,7 +18,7 @@ class EditController extends Controller
     public function edit($id)
     {
         if($id == Auth::user()->id)
-            return view('user.auth.edit', ['user' => User::findOrfail($id)]);
+            return view('user.acessos.usuarios.edit', ['user' => User::findOrfail($id)]);
         else
             return redirect()->route('home');
     }
@@ -26,7 +26,7 @@ class EditController extends Controller
     public function update(Request $request, $id)
     {        
         $request->validate([
-            'name' => 'required|min:2|max:255|string',
+            'nome' => 'required|min:2|max:255|string',
             'identidade' => 'required|min:1|max:11|unique:users,id,'.$id,
             'genero' => 'required|in:Masculino,Feminino,Não Definido',
             'entrada' => 'required|min:1|max:30',
@@ -39,7 +39,7 @@ class EditController extends Controller
         ]);
 
         $user = User::findOrFail($id)->update([
-            'name' => $request->name,
+            'name' => $request->nome,
             'identidade' => $request->identidade,
             'genero' => $request->genero,
             'entrada' => $request->entrada,
