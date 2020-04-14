@@ -74,9 +74,9 @@ Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
 
 ##usuarios/acessos
 // usuarios
-Route::resource('acessos/users', 'User\Auth\EditController');
-// administradores
-Route::resource('acessos/admins', 'Admin\Auth\EditController');
+Route::get('acessos/usuarios', 'Auth\ListController@index')->name('acessos.usuarios.index');
+Route::get('acessos/usuarios/edit', 'Auth\EditController@edit')->name('acessos.usuarios.edit');
+Route::put('acessos/usuarios/update', 'Auth\EditController@update')->name('acessos.usuarios.update');
 
 ##financeiro
 // receita
