@@ -28,23 +28,34 @@ class UserRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'nome_completo' => 'required|min:3|max:80',
-                'identidade' => 'required|min:1|max:11|unique:funcionarios,id,'.$this->route('id'),
-                'genero' => 'required|in:Masculino,Feminino,Não Definido',
-                'entrada' => 'required|min:1|max:30',
-                'saida' => 'required|min:1|max:30',
-                'telefone_1' => 'required|min:1|max:11',
-                'cargo' => 'required|min:1|max:30',
+                'name' => 'required|max:255|string',
+                'email' => 'required|max:255|string|email|unique:users,'.$this->route('id'),
+                'identidade' => 'required|max:11|unique:users|digits:11|string',
+                'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
+                'entrada' => 'required|digits:4|string',
+                'saida' => 'required|digits:4|string',
+                'telefone_1' => 'required|min:10|max:11|string',
+                'telefone_2' => 'min:10|max:11|string',
+                'cargo' => 'required||max:30|string',
+                'password' => 'required|min:6|max:255|string',
+                'role_id' => 'required|in:2,3|max:1|string',
+                'foto' => 'max:255',
             ];
         } else {
             return [
-                'nome_completo' => 'required|min:3|max:80',
-                'identidade' => 'required|min:1|max:11|unique:funcionarios',
-                'genero' => 'required|in:Masculino,Feminino,Não Definido',
-                'entrada' => 'required|min:1|max:30',
-                'saida' => 'required|min:1|max:30',
-                'telefone_1' => 'required|min:1|max:11',
-                'cargo' => 'required|min:1|max:30',
+                'name' => 'required|max:255|string',
+                'email' => 'required|max:255|string|email|unique:users',
+                'identidade' => 'required|max:11|unique:users|digits:11|string',
+                'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
+                'entrada' => 'required|digits:4|string',
+                'saida' => 'required|digits:4|string',
+                'telefone_1' => 'required|min:10|max:11|string',
+                'telefone_2' => 'min:10|max:11|string',
+                'cargo' => 'required||max:30|string',
+                'password' => 'required|min:6|max:255|string',
+                'role_id' => 'required|in:2,3|max:1|string',
+                'condominio_id' => 'required|string|max:8',
+                'foto' => 'max:255',
             ];
         }
     }
