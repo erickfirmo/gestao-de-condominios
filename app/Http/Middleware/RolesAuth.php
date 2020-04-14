@@ -33,7 +33,7 @@ class RolesAuth
                 }
             }
 
-            return abort(404);
+            return abort(401);
 
         } else {
             
