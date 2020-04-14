@@ -4,6 +4,10 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/user/login', function () {
+    return redirect('/login');
+});
+
 Auth::routes();
 
 require_once 'auth/user.php';
@@ -19,9 +23,9 @@ Route::group(['namespace' => 'Admin',  'middleware' => 'role', 'prefix' => 'admi
     
     ##usuarios/acessos
     // usuarios
-    Route::resource('usuarios', 'Auth\EditController');
+    //Route::resource('usuarios', 'Auth\EditController');
     // administradores
-    Route::resource('admins', 'Auth\EditController');
+    //Route::resource('admins', 'Auth\EditController');
 
     ##financeiro
     // receita
@@ -71,12 +75,6 @@ Route::resource('entregas', 'EntregaController');
 Route::resource('visitantes', 'VisitanteController');
 // prestadores de servicos
 Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
-
-##usuarios/acessos
-// usuarios
-Route::get('usuarios', 'Auth\ListController@index')->name('usuarios.index');
-Route::get('usuarios/{id}/edit', 'Auth\EditController@edit')->name('usuarios.edit');
-Route::put('usuarios/{id}/update', 'Auth\EditController@update')->name('usuarios.update');
 
 ##financeiro
 // receita
