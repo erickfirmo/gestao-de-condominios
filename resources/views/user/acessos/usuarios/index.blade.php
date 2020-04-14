@@ -16,7 +16,7 @@
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('acessos.usuarios.index') }}">Funcionários</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('usuarios.index') }}">Funcionários</a></li>
                                 <li class="breadcrumb-item active"><span>Todos</span></li>
                             </ul>
                         </div>
@@ -34,7 +34,7 @@
 
                         <div class="title fa-university">
                             <h3 class="h3">Funcionários
-                            <a href="{{ route('acessos.usuarios.create') }}" class="btn btn-sm btn-outline-info">Adicionar Usuário</a>
+                            <a href="{{ route('usuarios.create') }}" class="btn btn-sm btn-outline-info">Adicionar Usuário</a>
                         
                             </h3>
                             <p>
@@ -65,7 +65,7 @@
                         <table id="recordsListView" class="usuarios-table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <!--<th>ID</th>-->
                                     <th>Nome Completo</th>
                                     <th>Gênero</th>
                                     <th>Identidade</th>
@@ -78,20 +78,20 @@
                                 @foreach($usuarios as $usuario)
 
                                 <tr id="{{ 'funcionario-'.$usuario->id }}">
-                                    <td>{{ $usuario->id }}</td>
-                                    <td>{{ $usuario->nome_completo }}</td>
+                                    <!--<td>{ $usuario->id }</td>-->
+                                    <td>{{ $usuario->name }}</td>
                                     <td>{{ $usuario->genero }}</td>
                                     <td>{{ $usuario->identidade }}</td>
                                     <td>{{ $usuario->telefone_1.($usuario->telefone_2 ? ', '.$usuario->telefone_2 : '') }}</td>
                                     <td>{{ $usuario->cargo }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('acessos.usuarios.edit', $usuario->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('usuarios.edit', $usuario->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
 
                                         
 
-                                        <form action="{{ route('acessos.usuarios.destroy', $usuario->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
