@@ -25,13 +25,13 @@ Route::group(['namespace' => 'Admin',  'middleware' => 'role', 'prefix' => 'admi
 
     ##financeiro
     // receita
-    Route::resource('financeiro/receitas', 'ReceitaController');
+    //Route::resource('financeiro/receitas', 'ReceitaController');
     // despesas
-    Route::resource('financeiro/despesas', 'DespesaController');
+    //Route::resource('financeiro/despesas', 'DespesaController');
     // faturas
-    Route::resource('financeiro/faturas', 'FaturaController');
+    //Route::resource('financeiro/faturas', 'FaturaController');
     // boletos
-    Route::resource('financeiro/boletos', 'BoletoController');
+    //Route::resource('financeiro/boletos', 'BoletoController');
 
     ##outros
     // relatorios
@@ -75,18 +75,18 @@ Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
 ##usuarios/acessos
 // usuarios
 Route::get('usuarios', 'Auth\ListController@index')->name('usuarios.index');
-Route::get('usuarios/{$id}/edit', 'Auth\EditController@edit')->name('usuarios.edit');
-Route::put('usuarios/update', 'Auth\EditController@update')->name('usuarios.update');
+Route::get('usuarios/{id}/edit', 'Auth\EditController@edit')->name('usuarios.edit');
+Route::put('usuarios/{id}/update', 'Auth\EditController@update')->name('usuarios.update');
 
 ##financeiro
 // receita
-Route::resource('financeiro/receitas', 'ReceitaController');
+//Route::resource('financeiro/receitas', 'ReceitaController');
 // despesas
-Route::resource('financeiro/despesas', 'DespesaController');
+//Route::resource('financeiro/despesas', 'DespesaController');
 // faturas
-Route::resource('financeiro/faturas', 'FaturaController');
+//Route::resource('financeiro/faturas', 'FaturaController');
 // boletos
-Route::resource('financeiro/boletos', 'BoletoController');
+//Route::resource('financeiro/boletos', 'BoletoController');
 
 ##outros
 // reservas
