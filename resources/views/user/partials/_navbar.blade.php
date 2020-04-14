@@ -88,8 +88,8 @@
                 </a>
 
                 <ul class="dropdown-menu">
-                <li><a href="{{ route('edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
-                    <li><a href="{{ route('register')}}"><i class="fas fa-users"></i>Cadastrar Usuário</a></li>
+                <li><a href="{{ route('usuarios.edit', Auth::user()->id ) }}"><i class="far fa-user"></i>Minha Conta</a></li>
+                    <li><a href="{{ route('usuarios.register')}}"><i class="fas fa-users"></i>Cadastrar Usuário</a></li>
                     <!--li><a href="#"><i class="fas fa-users"></i>Cadastrar Administrador</a></li>-->
                     <li><a href="javascript:void(0)"><i class="fa fa-cog"></i>Configurações</a></li>
                     <li class="dropdown-divider"></li>
@@ -98,13 +98,13 @@
                         @else
                             <li class="nav-item dropdown">
                                 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('usuarios.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         <i class="fa fa-power-off"></i>Sair</a>
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('usuarios.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                             </li>
