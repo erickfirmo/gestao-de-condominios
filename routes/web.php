@@ -19,9 +19,9 @@ Route::group(['namespace' => 'Admin',  'middleware' => 'role', 'prefix' => 'admi
     
     ##usuarios/acessos
     // usuarios
-    Route::resource('acessos/users', 'Auth\EditController');
+    Route::resource('usuarios', 'Auth\EditController');
     // administradores
-    Route::resource('acessos/admins', 'Auth\EditController');
+    Route::resource('admins', 'Auth\EditController');
 
     ##financeiro
     // receita
@@ -74,9 +74,9 @@ Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
 
 ##usuarios/acessos
 // usuarios
-Route::get('acessos/usuarios', 'Auth\ListController@index')->name('acessos.usuarios.index');
-Route::get('acessos/usuarios/edit', 'Auth\EditController@edit')->name('acessos.usuarios.edit');
-Route::put('acessos/usuarios/update', 'Auth\EditController@update')->name('acessos.usuarios.update');
+Route::get('usuarios', 'Auth\ListController@index')->name('usuarios.index');
+Route::get('usuarios/{$id}/edit', 'Auth\EditController@edit')->name('usuarios.edit');
+Route::put('usuarios/update', 'Auth\EditController@update')->name('usuarios.update');
 
 ##financeiro
 // receita
