@@ -6,7 +6,7 @@ if(errors_response) {
             if(elem){
 
                 elem.className += ' error';
-                elem.previousElementSibling.innerText = errors_response[name];
+                document.getElementById(name+'-text-error').innerText = errors_response[name];
             }
         }
     });
