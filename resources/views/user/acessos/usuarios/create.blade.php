@@ -42,7 +42,7 @@
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
                     
-                        <form action="{{ route('usuarios.store') }}" method="POST" class="show-onload d-none">
+                        <form action="{{ route('usuarios.register') }}" method="POST" class="show-onload d-none">
                             @csrf
 
                             <!-- Form Group Start -->
