@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\User;
 
 class EditController extends Controller
@@ -23,7 +23,7 @@ class EditController extends Controller
             return redirect()->route('home');
     }
 
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {        
         $request->validated();
 
