@@ -43,7 +43,7 @@
                     <div class="panel-content">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
-                        <form action="{{ route('update', Auth::user()) }}" method="POST" class="show-onload d-none">
+                        <form action="{{ route('usuarios.update', Auth::user()) }}" method="POST" class="show-onload d-none">
                             @csrf
                             {{ method_field('PUT') }}
 
@@ -51,8 +51,8 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ Auth::user()->nome }}">
+                                    <span id="nome-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ Auth::user()->name }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -61,7 +61,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="identidade-text-error" class="form-text text-error"></span>
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ Auth::user()->identidade }}">
                                 </div>
                             </div>
@@ -71,6 +71,9 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
                                 <div class="col-md-10 form-inline">
+                                    <div class="d-block w-100">
+                                        <span id="genero-text-error" class="form-text text-error"></span>
+                                    </div>
                                     <label class="form-radio mr-3">
                                         <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ Auth::user()->genero == 'Masculino' ? 'checked' : null }}>
                                         <span class="form-radio-label">Masculino</span>
@@ -91,7 +94,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="entrada-text-error" class="form-text text-error"></span>
                                     <input type="time" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ Auth::user()->entrada }}">
                                 </div>
                             </div>
@@ -101,7 +104,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="saida-text-error" class="form-text text-error"></span>
                                     <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ Auth::user()->saida }}">
                                 </div>
                             </div>
@@ -111,7 +114,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Foto</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="foto-text-error" class="form-text text-error"></span>
                                     <input type="text" name="foto" class="form-control" value="{{ Auth::user()->foto }}">
                                 </div>
                             </div>
@@ -121,7 +124,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="telefone_1-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="11" value="{{ Auth::user()->telefone_1 }}">
                                 </div>
                             </div>
@@ -131,7 +134,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="telefone_2-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="11" value="{{ Auth::user()->telefone_2 }}">
                                 </div>
                             </div>
@@ -141,7 +144,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="cargo-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ Auth::user()->cargo }}">
                                 </div>
                             </div>
