@@ -28,9 +28,9 @@ class UserRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'name' => 'required|max:255|string',
+                'nome' => 'required|max:255|string',
                 'email' => 'required|max:255|string|email|unique:users,'.$this->route('id'),
-                'identidade' => 'required|max:11|unique:users|digits:11|string',
+                'identidade' => 'required|max:11|unique:users,id,'.$this->route('id').'|digits:11|string',
                 'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
                 'entrada' => 'required|digits:4|string',
                 'saida' => 'required|digits:4|string',
@@ -43,7 +43,7 @@ class UserRequest extends FormRequest
             ];
         } else {
             return [
-                'name' => 'required|max:255|string',
+                'nome' => 'required|max:255|string',
                 'email' => 'required|max:255|string|email|unique:users',
                 'identidade' => 'required|max:11|unique:users|digits:11|string',
                 'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
@@ -65,6 +65,8 @@ class UserRequest extends FormRequest
         return [
             'genero' => 'gênero',
             'saida' => 'saída',
+            'password' => 'senha',
+
         ];
     }
 
