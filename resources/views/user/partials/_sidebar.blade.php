@@ -175,8 +175,8 @@
                         </a>
 
                         <ul>
-                            <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                            <li><a href="{{ route('usuarios.index') }}"><i class="fas fa-bars"></i> Listar Todos</a></li>
+                            <li><a href="{{ route('usuarios.create') }}"><i class="fas fa-plus"></i> Cadastrar Usuário</a></li>
                         </ul>
                     </li>                   
                 </ul>
