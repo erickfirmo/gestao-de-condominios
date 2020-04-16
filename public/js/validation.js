@@ -3,11 +3,11 @@ if(errors_response) {
         if(errors_response.hasOwnProperty(name))
         {
             let elem = document.getElementsByName(name)[0];
-            if(elem){
-
+        if(elem){
                 elem.className += ' error';
-                document.getElementById(name+'-text-error').innerText = errors_response[name];
-            }
+                if(document.getElementById(name+'-text-error') != null)
+                    document.getElementById(name+'-text-error').innerText = errors_response[name];
+            } 
         }
     });
 }
