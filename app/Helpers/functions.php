@@ -63,3 +63,11 @@ if(!function_exists('statusClass'))
        }
     }
 }
+
+if(!function_exists('selectOption'))
+{
+    function selectOption($value_one, $value_two)
+    {
+       return ($value_one == $value_two) ? ' selected' : '';
+    }
+}
