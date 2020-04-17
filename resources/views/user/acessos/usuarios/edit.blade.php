@@ -148,7 +148,27 @@
                                     <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ Auth::user()->cargo }}">
                                 </div>
                             </div>
-                            <!-- Form Group End -->       
+                            <!-- Form Group End -->    
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
+                                <div class="col-md-10">
+                                    <span id="password-text-error" class="form-text text-error"></span>
+                                    <input type="password" name="password" class="form-control" id="password" maxlenght="40">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
+                                <div class="col-md-10">
+                                    <span id="password_confirmation-text-error" class="form-text text-error"></span>
+                                    <input type="password_confirmation" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->   
                     
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
