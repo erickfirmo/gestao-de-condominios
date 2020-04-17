@@ -169,7 +169,7 @@
                                     <select name="role_id" id="role_id" class="form-control">
                                         <option></option>
                                         @foreach($roles as $role)
-                                            <option value="{{ $role->id }}">{{ ucwords($role->name) }}</option>
+                                            <option value="{{ $role->id }}" {{ selectOption($role->id, old('role_id')) }}>{{ ucwords($role->name) }}</option>
                                         @endforeach
                                     </select>
                                 </div>
