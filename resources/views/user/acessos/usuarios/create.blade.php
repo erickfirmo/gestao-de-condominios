@@ -67,10 +67,20 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
+                                <div class="col-md-10">
+                                    <span id="email-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="email" class="form-control" id="email" maxlenght="40" value="{{ old('email') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
                                 <div class="col-md-10">
                                     <span id="password-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="password" class="form-control" id="password" maxlenght="11" value="{{ old('password') }}">
+                                    <input type="password" name="password" class="form-control" id="password" maxlenght="11" value="{{ old('password') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -157,6 +167,21 @@
                                 <div class="col-md-10">
                                     <span id="cargo-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ old('cargo') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Permissão</span>
+                                <div class="col-md-10">
+                                    <span id="role_id-text-error" class="form-text text-error"></span>
+                                    <select name="role_id" id="role_id" class="form-control">
+                                        <option></option>
+                                        @foreach($roles as $role)
+                                            <option value="{{ $role->id }}">{{ ucwords($role->name) }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <!-- Form Group End -->
