@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Requests\UserRequest;
-
+use Illuminate\Auth\Events\Registered;
+use Session;
 use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
@@ -31,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/usuarios';
 
     /**
      * Create a new controller instance.
@@ -111,6 +112,8 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         // $this->guard()->login($user);
+
+        Session::flash('success', 'Usuário cadastrado com sucesso!');
 
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
