@@ -37,7 +37,8 @@ class UserRequest extends FormRequest
                 'telefone_1' => 'required|min:10|max:11|string',
                 'telefone_2' => 'min:10|max:11|string',
                 'cargo' => 'required||max:30|string',
-                'password' => 'required|min:6|max:255|string',
+                'password' => 'required|min:6|max:40|string|confirmed',
+                'password_confirmation' => 'required_with:password|min:6|max:40|string',
                 'role_id' => 'required|in:2,3|max:1|string',
                 'foto' => 'max:255',
             ];
@@ -52,7 +53,8 @@ class UserRequest extends FormRequest
                 'telefone_1' => 'required|min:10|max:11|string',
                 'telefone_2' => 'min:10|max:11|string',
                 'cargo' => 'required||max:30|string',
-                'password' => 'required|min:6|max:255|string',
+                'password' => 'required|min:6|max:40|string|confirmed',
+                'password_confirmation'=>'required_with:password|min:6|max:40|string',
                 'role_id' => 'required|in:2,3|max:1|string',
                 'foto' => 'max:255',
             ];
