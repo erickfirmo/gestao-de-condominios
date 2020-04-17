@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserRequest;
 use App\User;
+use App\Models\Role;
 
 class EditController extends Controller
 {
@@ -18,7 +19,10 @@ class EditController extends Controller
     public function edit($id)
     {
         if($id == Auth::user()->id)
-            return view('user.acessos.usuarios.edit', ['user' => User::findOrfail($id)]);
+            return view('user.acessos.usuarios.edit', [
+                'user' => User::findOrfail($id),
+                'roles' => Role::all()
+            ]);
         else
             return redirect()->route('home');
     }
