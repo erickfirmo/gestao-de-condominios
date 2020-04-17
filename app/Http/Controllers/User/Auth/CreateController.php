@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\Role;
 
 class CreateController extends Controller
 {
@@ -16,7 +17,7 @@ class CreateController extends Controller
 
     public function create()
     {
-        return view('user.acessos.usuarios.create');
+        return view('user.acessos.usuarios.create', [ 'roles' => Role::all() ]);
     }
 
 }
