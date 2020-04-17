@@ -41,7 +41,7 @@ class EditController extends Controller
         ]);
 
         return redirect()->route('edit', compact('user'))
-            ->with('success', 'Informações alteradas com sucesso!');
+            ->with('success', 'Informações do usuário alteradas com sucesso!');
     }
 
 }
