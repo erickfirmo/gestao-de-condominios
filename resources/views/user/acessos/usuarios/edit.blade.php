@@ -152,6 +152,21 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Permissão</span>
+                                <div class="col-md-10">
+                                    <span id="role_id-text-error" class="form-text text-error"></span>
+                                    <select name="role_id" id="role_id" class="form-control">
+                                        <option></option>
+                                        @foreach($roles as $role)
+                                            <option value="{{ $role->id }}" {{ selectOption($role->id, Auth::user()->role_id) }}>{{ ucwords($role->name) }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
                                 <div class="col-md-10">
                                     <span id="password-text-error" class="form-text text-error"></span>
