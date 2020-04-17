@@ -87,6 +87,16 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
+                                <div class="col-md-10">
+                                    <span id="password_confirmation-text-error" class="form-text text-error"></span>
+                                    <input type="password_confirmation" name="password_confirmation" class="form-control" id="password" maxlenght="11" value="{{ old('password') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
                                 <div class="col-md-10 form-inline">
                                     <div class="d-block w-100">
