@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Requests\UserRequest;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -63,19 +64,18 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'identidade' => ['required', 'string', 'digits:11'],
-            'genero' => ['required', 'string', 'max:20'],
-            'entrada' => ['required', 'string', 'max:30'],
-            'saida' => ['required', 'string', 'max:30'],
-            'foto' => ['string', 'max:255'],
-            'telefone_1' => ['required', 'string', 'max:11'],
-            'telefone_2' => ['string', 'max:11'],
-            'cargo' => ['required', 'string', 'max:30'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'condominio_id' => ['required', 'string', 'min:1', 'max:20'],
-            'role_id' => ['required', 'in:2,3'],
+            'nome' => ['required','max:255','string'],
+            'email' => ['required','max:255','string','email','unique:users'],
+            'identidade' => ['required','min:10','unique:users','max:11','string'],
+            'genero' => ['required','max:20','in:Masculino,Feminino,Não Definido','string'],
+            'entrada' => ['required','max:5', 'min:4','string'],
+            'saida' => ['required','max:5', 'min:4', 'string'],
+            'telefone_1' => ['required','min:10','max:11','string'],
+            'telefone_2' => ['min:10','max:11','string'],
+            'cargo' => ['required','max:30','string'],
+            'password' => ['required','min:6','max:255','string'],
+            'role_id' => ['required','in:2,3','max:1','string'],
+            'foto' => ['max:255'],
         ]);
     }
 
@@ -88,7 +88,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'name' => $data['nome'],
             'email' => $data['email'],
             'identidade' => $data['identidade'],
             'genero' => $data['genero'],
@@ -99,8 +99,20 @@ class RegisterController extends Controller
             'telefone_2' => $data['telefone_2'],
             'cargo' => $data['cargo'],
             'password' => Hash::make($data['password']),
-            'condominio_id' => $data['condominio_id'],
+            'condominio_id' => Auth::user()->condominio_id,
             'role_id' => $data['role_id'],
         ]);
+    }
+
+    public function register(UserRequest $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
     }
 }
