@@ -167,6 +167,16 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Senha Atual</span>
+                                <div class="col-md-10">
+                                    <span id="current_password-text-error" class="form-text text-error"></span>
+                                    <input type="password" name="current_password" class="form-control" id="current_password" maxlenght="40">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
                                 <div class="col-md-10">
                                     <span id="password-text-error" class="form-text text-error"></span>
