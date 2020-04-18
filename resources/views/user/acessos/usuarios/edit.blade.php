@@ -190,7 +190,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
                                 <div class="col-md-10">
                                     <span id="password_confirmation-text-error" class="form-text text-error"></span>
-                                    <input type="password_confirmation" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
+                                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
                                 </div>
                             </div>
                             <!-- Form Group End -->   
