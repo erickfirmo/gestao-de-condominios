@@ -14,7 +14,9 @@ class UserRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::user()->password == bcrypt($this->current_password) ? true : false;
+        //return Auth::user()->password == bcrypt($this->current_password) ? true : false;
+
+        return true;
     }
 
     /**
@@ -35,7 +37,7 @@ class UserRequest extends FormRequest
                 'entrada' => 'required|min:4|max:5|string',
                 'saida' => 'required|min:4|max:5|string',
                 'telefone_1' => 'required|min:10|max:11|string',
-                'telefone_2' => 'min:10|max:11|string',
+                'telefone_2' => 'max:11|string',
                 'cargo' => 'required||max:30|string',
                 'current_password' => 'required|min:6|max:40|string',
                 'password' => 'required|min:6|max:40|string|confirmed',
@@ -52,7 +54,7 @@ class UserRequest extends FormRequest
                 'entrada' => 'required|min:4|max:5|string',
                 'saida' => 'required|min:4|max:5|string',
                 'telefone_1' => 'required|min:10|max:11|string',
-                'telefone_2' => 'min:10|max:11|string',
+                'telefone_2' => 'max:11|string',
                 'cargo' => 'required||max:30|string',
                 'current_password' => 'required|min:6|max:40|string',
                 'password' => 'required|min:6|max:40|string|confirmed',
@@ -69,6 +71,9 @@ class UserRequest extends FormRequest
             'genero' => 'gênero',
             'saida' => 'saída',
             'password' => 'senha',
+            'password_confirmation' => 'confirmação de senha',
+            'current_password' => 'senha atual',
+
 
         ];
     }
