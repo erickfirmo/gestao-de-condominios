@@ -18,17 +18,21 @@ class EditController extends Controller
 
     public function edit($id)
     {
-        if($id == Auth::user()->id)
+        $user = User::findOrFail($id);
+
+        //if($id == Auth::user()->id)
             return view('user.acessos.usuarios.edit', [
-                'user' => User::findOrfail($id),
-                'roles' => Role::all()
+                'roles' => Role::all(),
+                'user' => $user,
             ]);
-        else
-            return redirect()->route('home');
+        //else
+            //return redirect()->route('home');
     }
 
     public function update(UserRequest $request, $id)
     {        
+
+        //dd(strlen($request->telefone_1));
         $request->validated();
 
         $user = User::findOrFail($id)->update([
@@ -44,7 +48,7 @@ class EditController extends Controller
             'foto' => $request->foto_de_perfil,
         ]);
 
-        return redirect()->route('edit', compact('user'))
+        return redirect()->route('usuarios.edit', compact('user'))
             ->with('success', 'Informações do usuário alteradas com sucesso!');
     }
 
