@@ -36,8 +36,8 @@ class UserRequest extends FormRequest
                 'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
                 'entrada' => 'required|min:4|max:5|string',
                 'saida' => 'required|min:4|max:5|string',
-                'telefone_1' => 'required|min:10|max:40',
-                'telefone_2' => 'max:40',
+                'telefone_1' => 'required|min:10|max:11',
+                'telefone_2' => 'max:11',
                 'cargo' => 'required||max:30|string',
                 'current_password' => 'required|min:6|max:40|string',
                 'password' => 'required|min:6|max:40|string|confirmed',
@@ -72,9 +72,8 @@ class UserRequest extends FormRequest
             'saida' => 'saída',
             'password' => 'senha',
             'password_confirmation' => 'confirmação de senha',
+            'role_id' => 'permissão',
             'current_password' => 'senha atual',
-
-
         ];
     }
 
