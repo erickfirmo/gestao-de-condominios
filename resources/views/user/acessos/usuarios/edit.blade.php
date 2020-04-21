@@ -167,6 +167,20 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right"></span>
+                                <div class="col-md-10">
+                                    <input type="checkbox" name="change_password" value="1" class="form-check-input">
+                                    <label class="form-check">
+                                        <input type="checkbox" name="change_password" value="1" class="form-check-input" {{ checkboxState(old('change_password'), 1) }}>
+                                        <span class="form-check-label">Alterar Senha</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Senha Atual</span>
                                 <div class="col-md-10">
                                     <span id="current_password-text-error" class="form-text text-error"></span>
@@ -193,7 +207,7 @@
                                     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
                                 </div>
                             </div>
-                            <!-- Form Group End -->   
+                            <!-- Form Group End -->
                     
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
@@ -201,7 +215,6 @@
                                     <a href="{{ route('usuarios.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
