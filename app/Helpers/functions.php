@@ -71,3 +71,11 @@ if(!function_exists('selectOption'))
        return ($value_one == $value_two) ? ' selected' : '';
     }
 }
+
+if(!function_exists('checkboxState'))
+{
+    function checkboxState($value_one, $value_two)
+    {
+       return ($value_one == $value_two) ? ' checked' : '';
+    }
+}
