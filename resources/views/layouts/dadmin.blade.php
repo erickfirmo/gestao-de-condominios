@@ -98,7 +98,6 @@
 <script src="{{ asset('js/alerts.js') }}"></script>
 <script src="{{ asset('js/custom-masks.js') }}"></script>
 
-
 @stack('js')
 
 <!-- Page Level Scripts -->
