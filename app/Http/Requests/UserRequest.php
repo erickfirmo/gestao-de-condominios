@@ -31,7 +31,6 @@ class UserRequest extends FormRequest
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
                 'nome' => 'required|max:255|string',
-                //'email' => 'required|max:255|string|email|unique:users,'.$this->route('id'),
                 'identidade' => 'required|min:10|unique:users,id,'.$this->route('id').'|max:11|string',
                 'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
                 'entrada' => 'required|min:4|max:5|string',
