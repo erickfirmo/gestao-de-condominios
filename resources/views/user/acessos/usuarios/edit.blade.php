@@ -191,7 +191,7 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Senha</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Nova Senha</span>
                                 <div class="col-md-10">
                                     <span id="password-text-error" class="form-text text-error"></span>
                                     <input type="password" name="password" class="form-control" id="password" maxlenght="40">
@@ -227,5 +227,12 @@
 </main>
 
 <!-- Main Container End -->
+
+@push('js')
+<script type="text/javascript">
+    
+</script>
+@endpush
+
 @endsection
 
