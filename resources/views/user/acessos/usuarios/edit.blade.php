@@ -178,36 +178,37 @@
                             </div>
                             <!-- Form Group End -->
 
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Senha Atual</span>
-                                <div class="col-md-10">
-                                    <span id="current_password-text-error" class="form-text text-error"></span>
-                                    <input type="password" name="current_password" class="form-control" id="current_password" maxlenght="40">
+                            <div id="password-box" style="display:none;">
+                                <!-- Form Group Start -->
+                                <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Senha Atual</span>
+                                    <div class="col-md-10">
+                                        <span id="current_password-text-error" class="form-text text-error"></span>
+                                        <input type="password" name="current_password" class="form-control" id="current_password" maxlenght="40">
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Form Group End -->
+                                <!-- Form Group End -->
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Nova Senha</span>
-                                <div class="col-md-10">
-                                    <span id="password-text-error" class="form-text text-error"></span>
-                                    <input type="password" name="password" class="form-control" id="password" maxlenght="40">
+                                <!-- Form Group Start -->
+                                <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Nova Senha</span>
+                                    <div class="col-md-10">
+                                        <span id="password-text-error" class="form-text text-error"></span>
+                                        <input type="password" name="password" class="form-control" id="password" maxlenght="40">
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Form Group End -->
+                                <!-- Form Group End -->
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
-                                <div class="col-md-10">
-                                    <span id="password_confirmation-text-error" class="form-text text-error"></span>
-                                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
+                                <!-- Form Group Start -->
+                                <div class="form-group row">
+                                    <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
+                                    <div class="col-md-10">
+                                        <span id="password_confirmation-text-error" class="form-text text-error"></span>
+                                        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
+                                    </div>
                                 </div>
+                                <!-- Form Group End -->
                             </div>
-                            <!-- Form Group End -->
                     
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
@@ -230,6 +231,14 @@
 
 @push('js')
 <script type="text/javascript">
+    //window.onload = function() {
+        var password_box = document.getElementById('password-box');
+        if(password_box.checked == true) {
+            password_box.style.display = 'block';
+        } else {
+            password_box.style.display = 'none';
+        }
+    //}
     
 </script>
 @endpush
