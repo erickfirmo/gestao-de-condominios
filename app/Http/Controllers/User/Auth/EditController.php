@@ -18,15 +18,16 @@ class EditController extends Controller
 
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        if($id == Auth::user()->id) {
+            return redirect()->route('usuarios.minha-conta');
+        }
+    }
 
-        //if($id == Auth::user()->id)
-            return view('user.acessos.usuarios.edit', [
-                'roles' => Role::all(),
-                'user' => $user,
-            ]);
-        //else
-            //return redirect()->route('home');
+    public function minhaConta()
+    {
+        return view('user.acessos.usuarios.minha-conta', [
+            'roles' => Role::all(),
+        ]);
     }
 
     public function update(UserRequest $request, $id)
