@@ -20,7 +20,7 @@
                                     @include('user.partials._alert')
                                 </div>
 
-                                <form action="{{ route('update', Auth::user() ) }}" method="POST">
+                                <form action="{{ route('usuarios.update', Auth::user() ) }}" method="POST">
                                 <label class="m-account--title text-admin">EDIÇÃO DE USUÁRIO</label>
                                     @csrf
 
