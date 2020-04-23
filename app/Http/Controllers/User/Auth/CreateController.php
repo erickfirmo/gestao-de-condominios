@@ -17,7 +17,9 @@ class CreateController extends Controller
 
     public function create()
     {
-        return view('user.acessos.usuarios.create', [ 'roles' => Role::all() ]);
+        $roles = Auth::user()->role_id == 1 ? Role::all() : Role::where('id', '==', 1);
+
+        return view('user.acessos.usuarios.create', [ 'roles' => $roles ]);
     }
 
 }
