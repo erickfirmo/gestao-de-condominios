@@ -30,8 +30,10 @@ class EditController extends Controller
 
     public function minhaConta()
     {
+        $roles = Role::where('id', '!=', 1)->get();
+
         return view('user.acessos.usuarios.minha-conta', [
-            'roles' => Role::all(),
+            'roles' => $roles,
         ]);
     }
 
@@ -52,6 +54,7 @@ class EditController extends Controller
             'cargo' => $request->cargo,
             'password' => bcrypt($request->password),
             'foto' => $request->foto_de_perfil,
+            'role_id' => $request->foto_de_perfil,
         ]);
 
         return redirect()->route('usuarios.edit', compact('user'))
