@@ -79,3 +79,13 @@ if(!function_exists('checkboxState'))
        return ($value_one == $value_two) ? ' checked' : '';
     }
 }
+
+
+if(!function_exists('disabledField'))
+{
+    function disabledField($value_one, $value_two)
+    {
+       return ($value_one == $value_two) ? ' disabled' : '';
+    }
+}
+
