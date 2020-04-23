@@ -162,9 +162,9 @@
                                                     <option value="{{ $role->id }}" {{ selectOption($role->id, Auth::user()->role_id) }}>{{ ucwords($role->name) }}</option>
                                                 @endforeach
                                             </select>
-                                            @if ($errors->has('identidade'))
+                                            @if ($errors->has('role_id'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('identidade') }}</strong>
+                                                    <strong>{{ $errors->first('role_id') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
