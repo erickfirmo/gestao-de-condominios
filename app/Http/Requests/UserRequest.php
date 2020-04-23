@@ -29,21 +29,36 @@ class UserRequest extends FormRequest
     {
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
-            return [
-                'nome' => 'required|max:255|string',
-                'identidade' => 'required|min:10|unique:users,id,'.$this->route('id').'|max:11|string',
-                'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
-                'entrada' => 'required|min:4|max:5|string',
-                'saida' => 'required|min:4|max:5|string',
-                'telefone_1' => 'required|min:10|max:11',
-                'telefone_2' => 'max:11',
-                'cargo' => 'required||max:30|string',
-                'current_password' => 'required|min:6|max:40|string',
-                'password' => 'required|min:6|max:40|string|confirmed',
-                'password_confirmation' => 'required_with:password|min:6|max:40|string',
-                'role_id' => 'required|in:2,3|max:1|string',
-                'foto' => 'max:255',
-            ];
+            if(Auth::user()->id == $this->route('id')) {
+                return [
+                    'nome' => 'required|max:255|string',
+                    'identidade' => 'required|min:10|unique:users,id,'.$this->route('id').'|max:11|string',
+                    'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
+                    'entrada' => 'required|min:4|max:5|string',
+                    'saida' => 'required|min:4|max:5|string',
+                    'telefone_1' => 'required|min:10|max:11',
+                    'telefone_2' => 'max:11',
+                    'cargo' => 'required||max:30|string',
+                    'role_id' => 'required|in:2,3|max:1|string',
+                    'foto' => 'max:255',
+                ];
+            } else {
+                return [
+                    'nome' => 'required|max:255|string',
+                    'identidade' => 'required|min:10|unique:users,id,'.$this->route('id').'|max:11|string',
+                    'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
+                    'entrada' => 'required|min:4|max:5|string',
+                    'saida' => 'required|min:4|max:5|string',
+                    'telefone_1' => 'required|min:10|max:11',
+                    'telefone_2' => 'max:11',
+                    'cargo' => 'required||max:30|string',
+                    'current_password' => 'required|min:6|max:40|string',
+                    'password' => 'required|min:6|max:40|string|confirmed',
+                    'password_confirmation' => 'required_with:password|min:6|max:40|string',
+                    'role_id' => 'required|in:2,3|max:1|string',
+                    'foto' => 'max:255',
+                ];
+            }
         } else {
             return [
                 'nome' => 'required|max:255|string',
