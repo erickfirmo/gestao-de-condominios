@@ -9,7 +9,9 @@ Route::middleware('auth:user')->group(function () {
 Route::prefix('usuarios')->name('usuarios.')->namespace('User')->group(function () {
     Auth::routes();
     Route::get('edit/{id}', 'Auth\EditController@edit')->name('edit');
-    Route::post('update/{id}', 'Auth\EditController@update')->name('update');
+    Route::get('minha-conta', 'Auth\EditController@minhaConta')->name('minha-conta');
+
+    Route::put('update/{id}', 'Auth\EditController@update')->name('update');
 
     ##usuarios/acessos
     // usuarios
