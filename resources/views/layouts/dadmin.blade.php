@@ -87,8 +87,8 @@
 <script src="{{ asset('themes/dadmin/assets/js/dropzone.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/ion.rangeSlider.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/main.js') }}"></script>
-<script src="{{ asset('assets/js/summernote-bs4.min.js') }}"></script>
-<script src="{{ asset('assets/js/summernote-bs4-init.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/summernote-bs4-init.js') }}"></script>
 <!-- Page Level Scripts -->
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
