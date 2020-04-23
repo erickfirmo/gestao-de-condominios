@@ -21,16 +21,18 @@ class EditController extends Controller
         if($id == Auth::user()->id)
             return redirect()->route('usuarios.minha-conta');
 
+        $roles = Auth::user()->role_id == 1 ? Role::all() : Role::where('id', '!=', 1)->get();
+
         return view('user.acessos.usuarios.edit', [
             'user' => User::findOrFail($id),
-            'roles' => Role::all(),
+            'roles' => $roles,
         ]);
 
     }
 
     public function minhaConta()
     {
-        $roles = Role::where('id', '!=', 1)->get();
+        $roles = Auth::user()->role_id == 1 ? Role::all() : Role::where('id', '!=', 1)->get();
 
         return view('user.acessos.usuarios.minha-conta', [
             'roles' => $roles,
@@ -54,7 +56,7 @@ class EditController extends Controller
             'cargo' => $request->cargo,
             'password' => bcrypt($request->password),
             'foto' => $request->foto_de_perfil,
-            'role_id' => $request->foto_de_perfil,
+            'role_id' => $request->role_id,
         ]);
 
         return redirect()->route('usuarios.edit', compact('user'))
