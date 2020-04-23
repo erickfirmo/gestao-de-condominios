@@ -31,10 +31,10 @@
                                                 <i class="fas fa-user"></i>
                                             </div>
 
-                                            <input title="Nome" placeholder="Digite o nome" id="nome" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ Auth::user()->name }}" required autofocus autocomplete="off">
-                                            @if ($errors->has('name'))
+                                            <input title="Nome" placeholder="Digite o nome" id="nome" type="text" class="form-control{{ $errors->has('nome') ? ' is-invalid' : '' }}" name="nome" value="{{ Auth::user()->name }}" required autofocus autocomplete="off">
+                                            @if ($errors->has('nome'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                    <strong>{{ $errors->first('nome') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -58,19 +58,18 @@
 
                                     <div class="form-group">
                                         <div class="input-group">
-                                        <div class="input-group-prepend" title="Identidade">
+                                        <div class="input-group-prepend" title="Gênero">
                                             <i class="fas fa-address-card"></i>
                                             </div>
-                                            <select name="" id="" class="form-control">
+                                            <select name="genero" id="genero" class="form-control">
                                                 <option></option>
                                                 <option value="Masculino" {{ selectOption('Masculino', Auth::user()->genero) }}>Masculino</option>
                                                 <option value="Feminino" {{ selectOption('Feminino', Auth::user()->genero) }}>Feminino</option>
                                                 <option value="Não Definido" {{ selectOption('Não Definido', Auth::user()->genero) }}>Não Definido</option>
-
                                             </select>
-                                            @if ($errors->has('identidade'))
+                                            @if ($errors->has('genero'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('identidade') }}</strong>
+                                                    <strong>{{ $errors->first('genero') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -109,6 +108,36 @@
 
                                     <div class="form-group">
                                         <div class="input-group">
+                                        <div class="input-group-prepend" title="Entrada">
+                                            <i class="fa fa-file"></i>
+                                            </div>
+                                            <span class="form-text text-error"></span>
+                                            <input title="Entrada" placeholder="Digite o horário de entrada" id="entrada" type="time" class="form-control{{ $errors->has('entrada') ? ' is-invalid' : '' }}" name="entrada" value="{{ Auth::user()->entrada }}" autofocus autocomplete="off">
+                                            @if ($errors->has('entrada'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('entrada') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                        <div class="input-group-prepend" title="Saída">
+                                            <i class="fa fa-file"></i>
+                                            </div>
+                                            <span class="form-text text-error"></span>
+                                            <input title="Saída" placeholder="Digite o horário de saída" id="saida" type="time" class="form-control{{ $errors->has('saida') ? ' is-invalid' : '' }}" name="saida" value="{{ Auth::user()->saida }}" autofocus autocomplete="off">
+                                            @if ($errors->has('saida'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('saida') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
                                         <div class="input-group-prepend" title="Cargo">
                                             <i class="fa fa-file"></i>
                                             </div>
@@ -117,6 +146,25 @@
                                             @if ($errors->has('cargo'))
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $errors->first('cargo') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                        <div class="input-group-prepend" title="Permissão">
+                                            <i class="fas fa-address-card"></i>
+                                            </div>
+                                            <select name="role_id" id="permissao" class="form-control" title="Permissão">
+                                                <option></option>
+                                                @foreach($roles as $role)
+                                                    <option value="{{ $role->id }}" {{ selectOption($role->id, Auth::user()->role_id) }}>{{ ucwords($role->name) }}</option>
+                                                @endforeach
+                                            </select>
+                                            @if ($errors->has('identidade'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('identidade') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
