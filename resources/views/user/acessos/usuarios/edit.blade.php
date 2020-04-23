@@ -164,52 +164,7 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right"></span>
-                                <div class="col-md-10">
-                                    <input type="checkbox" name="change_password" value="1" class="form-check-input">
-                                    <label class="form-check">
-                                        <input type="checkbox" name="change_password" value="1" class="form-check-input" {{ checkboxState(old('change_password'), 1) }}>
-                                        <span class="form-check-label">Alterar Senha</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
-
-                            <div id="password-box" style="display:none;">
-                                <!-- Form Group Start -->
-                                <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Senha Atual</span>
-                                    <div class="col-md-10">
-                                        <span id="current_password-text-error" class="form-text text-error"></span>
-                                        <input type="password" name="current_password" class="form-control" id="current_password" maxlenght="40">
-                                    </div>
-                                </div>
-                                <!-- Form Group End -->
-
-                                <!-- Form Group Start -->
-                                <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Nova Senha</span>
-                                    <div class="col-md-10">
-                                        <span id="password-text-error" class="form-text text-error"></span>
-                                        <input type="password" name="password" class="form-control" id="password" maxlenght="40">
-                                    </div>
-                                </div>
-                                <!-- Form Group End -->
-
-                                <!-- Form Group Start -->
-                                <div class="form-group row">
-                                    <span class="label-text col-md-2 col-form-label text-md-right">Confirmação de Senha</span>
-                                    <div class="col-md-10">
-                                        <span id="password_confirmation-text-error" class="form-text text-error"></span>
-                                        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" maxlenght="40">
-                                    </div>
-                                </div>
-                                <!-- Form Group End -->
-                            </div>
-                    
+                            
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
@@ -228,20 +183,6 @@
 </main>
 
 <!-- Main Container End -->
-
-@push('js')
-<script type="text/javascript">
-    //window.onload = function() {
-        var password_box = document.getElementById('password-box');
-        if(password_box.checked == true) {
-            password_box.style.display = 'block';
-        } else {
-            password_box.style.display = 'none';
-        }
-    //}
-    
-</script>
-@endpush
 
 @endsection
 
