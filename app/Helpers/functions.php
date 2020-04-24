@@ -81,9 +81,9 @@ if(!function_exists('checkboxState'))
 }
 
 
-if(!function_exists('disabledField'))
+if(!function_exists('disabledInput'))
 {
-    function disabledField($value_one, $value_two)
+    function disabledInput($value_one, $value_two)
     {
        return ($value_one == $value_two) ? ' disabled' : '';
     }
