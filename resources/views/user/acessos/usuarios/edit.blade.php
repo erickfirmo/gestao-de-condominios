@@ -34,10 +34,12 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Usuário</h3>
+                        @if(Auth::user()->id == 1)
                         <form action="{{ route('usuarios.destroy', $user) }}" method="POST" class="remove-form" style="float:right">
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Usuário</button></a>
                         </form>
+                        @endif
                     </div>
 
                     <div class="panel-content">
@@ -167,7 +169,9 @@
 
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
-                                    <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
+                                    @if(Auth::user()->id == 1)
+                                        <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success" {{ disabledInput('1', '!=', Auth::user()->id) }}>
+                                    @endif
                                     <a href="{{ route('usuarios.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
