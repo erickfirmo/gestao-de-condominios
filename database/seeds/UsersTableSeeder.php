@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'master@condominio.loc';
         $user->identidade = '99999999-1';
         $user->genero = 'Masculino';
-        $user->entrada = '8:00';
+        $user->entrada = '08:00';
         $user->saida = '20:00';
         $user->foto = '#';
         $user->telefone_1 = '11999999999';
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'sindico@condominio.loc';
         $user->identidade = '99999999-2';
         $user->genero = 'Masculino';
-        $user->entrada = '8:00';
+        $user->entrada = '08:00';
         $user->saida = '20:00';
         $user->foto = '#';
         $user->telefone_1 = '11999999998';
@@ -49,7 +49,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'porteiro@condominio.loc';
         $user->identidade = '99999999-3';
         $user->genero = 'Masculino';
-        $user->entrada = '8:00';
+        $user->entrada = '08:00';
         $user->saida = '20:00';
         $user->foto = '#';
         $user->telefone_1 = '11999999997';
