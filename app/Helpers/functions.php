@@ -80,12 +80,43 @@ if(!function_exists('checkboxState'))
     }
 }
 
-
 if(!function_exists('disabledInput'))
 {
-    function disabledInput($value_one, $value_two)
+    function disabledInput($value_one, $condition, $value_two)
     {
-       return ($value_one == $value_two) ? ' disabled' : '';
+        return stringOperator($value_one, $condition, $value_two) ? ' disabled' : '';
     }
 }
+
+if(!function_exists('stringOperator'))
+{
+    function stringOperator($value_one, $condition, $value_two)
+    {
+        switch ($condition) {
+            case '==':
+               return ($value_one == $value_two);
+               break;
+            case '!=':
+                return ($value_one != $value_two);
+                break;
+            case '>':
+                return ($value_one > $value_two);
+                break;
+            case '<':
+                return ($value_one < $value_two);
+                break;
+            case '>=':
+                return ($value_one >= $value_two);
+                break;
+            case '<=':
+                return ($value_one > $value_two);
+                break;
+            default:
+                return ($value_one == $value_two);
+        }
+    }
+}
+
+
+
 
