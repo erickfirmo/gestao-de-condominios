@@ -62,7 +62,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
                                     <span id="identidade-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $user->identidade }}">
+                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $user->identidade }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -75,15 +75,15 @@
                                         <span id="genero-text-error" class="form-text text-error"></span>
                                     </div>
                                     <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ $user->genero == 'Masculino' ? 'checked' : null }}>
+                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ $user->genero == 'Masculino' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                         <span class="form-radio-label">Masculino</span>
                                     </label>
                                     <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ $user->genero == 'Feminino' ? 'checked' : null }}>
+                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ $user->genero == 'Feminino' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                         <span class="form-radio-label">Feminino</span>
                                     </label>
                                     <label class="form-radio">
-                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ $user->genero == 'Não Definido' ? 'checked' : null }}>
+                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ $user->genero == 'Não Definido' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                         <span class="form-radio-label">Não Definido</span>
                                     </label>
                                 </div>
@@ -95,7 +95,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
                                     <span id="entrada-text-error" class="form-text text-error"></span>
-                                    <input type="time" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ $user->entrada }}">
+                                    <input type="time" name="entrada" class="form-control" id="entrada" maxlenght="30" value="{{ $user->entrada }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -105,7 +105,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
                                     <span id="saida-text-error" class="form-text text-error"></span>
-                                    <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ $user->saida }}">
+                                    <input type="time" name="saida" class="form-control" id="saida" maxlenght="30" value="{{ $user->saida }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -115,7 +115,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Foto</span>
                                 <div class="col-md-10">
                                     <span id="foto-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="foto" class="form-control" value="{{ $user->foto }}">
+                                    <input type="text" name="foto" class="form-control" value="{{ $user->foto }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -125,7 +125,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
                                     <span id="telefone_1-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="11" value="{{ $user->telefone_1 }}">
+                                    <input type="text" name="telefone_1" class="form-control" id="telefone_1" maxlenght="11" value="{{ $user->telefone_1 }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -135,7 +135,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
                                 <div class="col-md-10">
                                     <span id="telefone_2-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="11" value="{{ $user->telefone_2 }}">
+                                    <input type="text" name="telefone_2" class="form-control" id="telefone_2" maxlenght="11" value="{{ $user->telefone_2 }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -145,7 +145,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
                                 <div class="col-md-10">
                                     <span id="cargo-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ $user->cargo }}">
+                                    <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ $user->cargo }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->    
@@ -155,7 +155,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Permissão</span>
                                 <div class="col-md-10">
                                     <span id="role_id-text-error" class="form-text text-error"></span>
-                                    <select name="role_id" id="role_id" class="form-control">
+                                    <select name="role_id" id="role_id" class="form-control" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                         <option></option>
                                         @foreach($roles as $role)
                                             <option value="{{ $role->id }}" {{ selectOption($role->id, $user->role_id) }}>{{ ucwords($role->name) }}</option>
