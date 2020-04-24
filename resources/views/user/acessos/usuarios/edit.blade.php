@@ -52,7 +52,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
                                     <span id="nome-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ $user->name }}">
+                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ $user->name }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
                             <!-- Form Group End -->
