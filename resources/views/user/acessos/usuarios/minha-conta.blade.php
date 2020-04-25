@@ -169,22 +169,7 @@
                                             @endif
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <i class="fas fa-key"></i>
-                                            </div>
-                                            <span class="form-text text-error"></span>
-                                            <input placeholder="Senha Atual" id="current_password" type="password" class="form-control{{ $errors->has('current_password') ? ' is-invalid' : '' }}" name="password" autocomplete="off">
-                                            @if ($errors->has('current_password'))
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('current_password') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
-                                    </div>
-
+                                    
                                     <div class="form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
