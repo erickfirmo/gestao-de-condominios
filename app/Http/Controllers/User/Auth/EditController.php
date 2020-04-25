@@ -41,8 +41,6 @@ class EditController extends Controller
 
     public function update(UserRequest $request, $id)
     {        
-
-        //dd(strlen($request->telefone_1));
         $request->validated();
 
         $user = User::findOrFail($id)->update([
