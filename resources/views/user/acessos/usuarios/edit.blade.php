@@ -152,6 +152,23 @@
                             </div>
                             <!-- Form Group End -->    
 
+                        
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
+                                <div class="col-md-10">
+                                    <span id="genero-text-error" class="form-text text-error"></span>
+                                    <select name="genero" id="genero" class="form-control">
+                                        <option></option>
+                                        <option value="Masculino" {{ selectOption('Masculino', Auth::user()->genero) }}>Masculino</option>
+                                        <option value="Feminino" {{ selectOption('Feminino', Auth::user()->genero) }}>Feminino</option>
+                                        <option value="Não Definido" {{ selectOption('Não Definido', Auth::user()->genero) }}>Não Definido</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Permissão</span>
