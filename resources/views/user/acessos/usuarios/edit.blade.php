@@ -67,7 +67,6 @@
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $user->identidade }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
-                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ $user->genero == 'Feminino' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
                             <!-- Form Group End -->     
                             
                             <!-- Form Group Start -->
