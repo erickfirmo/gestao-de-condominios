@@ -67,30 +67,8 @@
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $user->identidade }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                 </div>
                             </div>
-                            <!-- Form Group End -->
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
-                                <div class="col-md-10 form-inline">
-                                    <div class="d-block w-100">
-                                        <span id="genero-text-error" class="form-text text-error"></span>
-                                    </div>
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ $user->genero == 'Masculino' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
-                                        <span class="form-radio-label">Masculino</span>
-                                    </label>
-                                    <label class="form-radio mr-3">
                                         <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ $user->genero == 'Feminino' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
-                                        <span class="form-radio-label">Feminino</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ $user->genero == 'Não Definido' ? 'checked' : null }} {{ disabledInput('1', '!=', Auth::user()->id) }}>
-                                        <span class="form-radio-label">Não Definido</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->        
+                            <!-- Form Group End -->     
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
@@ -144,22 +122,10 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
-                                <div class="col-md-10">
-                                    <span id="cargo-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ $user->cargo }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->    
-
-                        
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
                                 <div class="col-md-10">
                                     <span id="genero-text-error" class="form-text text-error"></span>
-                                    <select name="genero" id="genero" class="form-control">
+                                    <select name="genero" id="genero" class="form-control" {{ disabledInput('1', '!=', Auth::user()->id) }}>
                                         <option></option>
                                         <option value="Masculino" {{ selectOption('Masculino', Auth::user()->genero) }}>Masculino</option>
                                         <option value="Feminino" {{ selectOption('Feminino', Auth::user()->genero) }}>Feminino</option>
@@ -168,6 +134,16 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Cargo</span>
+                                <div class="col-md-10">
+                                    <span id="cargo-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="cargo" class="form-control" id="cargo" maxlenght="30" value="{{ $user->cargo }}" {{ disabledInput('1', '!=', Auth::user()->id) }}>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->    
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
