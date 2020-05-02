@@ -16,15 +16,21 @@ class CreateEntregasTable extends Migration
         Schema::create('entregas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome_do_entregador', 40);
-            $table->string('receptor', 40);
             $table->string('descricao', 200);
             $table->string('status', 20);
             
+            //receptor_id
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
             $table->unsignedBigInteger('morador_id');
             $table->foreign('morador_id')
                 ->references('id')
                 ->on('moradores')
-                ->onDelete('cascade');;
+                ->onDelete('cascade');
                 
             $table->timestamps();
         });
