@@ -84,15 +84,7 @@
                             <li><a href="{{ route('moradores.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
                     </li>    
-                                   
-                </ul>
-
-            </li>
-
-            <li>
-                <a href="#">PORTARIAS</a>
-
-                <ul>
+                               
                     <li>
                         <a href="#">
                         <i class="fas fa-user"></i>
@@ -125,7 +117,34 @@
                             <li><a href="{{ route('prestadores-de-servicos.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="{{ route('prestadores-de-servicos.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
-                    </li>                   
+                    </li>
+
+        
+                    
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Áreas Comuns</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="{{ route('areas-comuns.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('areas-comuns.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>    
+
+                    <li>
+                        <a href="#">
+                        <i class="fas fa-user"></i>
+                            <span>Reservas</span>
+                        </a>
+
+                        <ul>
+                            <li><a href="{{ route('reservas.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
+                            <li><a href="{{ route('reservas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
+                        </ul>
+                    </li>   
+                                
                 </ul>
             </li>
 
@@ -159,7 +178,7 @@
             </li>
 
             <li>
-                <a href="#">USUÁRIOS</a>
+                <a href="#">ACESSOS</a>
                 <ul>
                     <li>
                         <a href="#">
@@ -180,30 +199,8 @@
             <li>
                 <a href="#">OUTROS</a>
                 <ul>
-                    <li>
-                        <a href="#">
-                        <i class="fas fa-user"></i>
-                            <span>Áreas Comuns</span>
-                        </a>
 
-                        <ul>
-                            <li><a href="{{ route('areas-comuns.index' ) }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('areas-comuns.create' ) }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
-                        </ul>
-                    </li>    
-
-                    <li>
-                        <a href="#">
-                        <i class="fas fa-user"></i>
-                            <span>Reservas</span>
-                        </a>
-
-                        <ul>
-                            <li><a href="{{ route('reservas.index') }}"><i class="fas fa-bars"></i> Listar Todas</a></li>
-                            <li><a href="{{ route('reservas.create') }}"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
-                        </ul>
-                    </li>   
-                    
+                     
                     <li>
                         <a href="#">
                         <i class="fas fa-user"></i>
@@ -226,7 +223,8 @@
                             <li><a href="#"><i class="fas fa-bars"></i> Listar Todas</a></li>
                             <li><a href="#"><i class="fas fa-plus"></i> Novo Cadastro</a></li>
                         </ul>
-                    </li>                   
+                    </li>                 
+                     
                 </ul>
             </li>
             
