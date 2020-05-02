@@ -10,10 +10,10 @@ class Entrega extends Model
 
     public $fillable = [
         'nome_do_entregador',
-        'receptor',
         'tipo',
         'descricao',
         'status',
+        'user_id',
         'morador_id',
     ];
     
