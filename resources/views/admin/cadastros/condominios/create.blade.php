@@ -48,7 +48,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="60" value="{{ old('nome') }}">
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
                                     <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="60" value="{{ old('descricao') }}">
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">CEP</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="cep-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cep" class="form-control mask-cep" id="cep" maxlenght="9" value="{{ old('cep') }}">
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Logradouro</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="logradouro-text-error" class="form-text text-error"></span>
                                     <input type="text" name="logradouro" class="form-control" id="logradouro" maxlenght="40" value="{{ old('logradouro') }}">
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Número</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="numero-text-error" class="form-text text-error"></span>
                                     <input type="text" name="numero" class="form-control mask-numero" id="numero" maxlenght="20" value="{{ old('numero') }}">
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Bairro</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="bairro-text-error" class="form-text text-error"></span>
                                     <input type="text" name="bairro" class="form-control" id="bairro" maxlenght="40" value="{{ old('bairro') }}">
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Cidade</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="cidade-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cidade" class="form-control" id="cidade" maxlenght="40" value="{{ old('cidade') }}">
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Estado</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="uf_id-text-error" class="form-text text-error"></span>
                                     <select name="uf_id" class="form-control" id="uf_id">
                                         <option></option>
                                         @foreach($ufs as $uf)
@@ -137,7 +137,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Empresa</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="empresa-text-error" class="form-text text-error"></span>
                                     <select name="empresa_id" class="form-control" id="empresa_id">
                                         <option></option>
                                         @foreach($empresas as $empresa)
@@ -157,7 +157,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Complemento</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="complemento-text-error" class="form-text text-error"></span>
                                     <input type="text" name="complemento" class="form-control" id="complemento" maxlenght="40" value="{{ old('complemento') }}">
                                 </div>
                             </div>
@@ -167,7 +167,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="40">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
