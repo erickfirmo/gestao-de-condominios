@@ -49,7 +49,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
                                 </div>
                             </div>
@@ -57,20 +57,15 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
-                                <div class="col-md-10 form-inline">
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ old('genero') == 'Masculino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Masculino</span>
-                                    </label>
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ old('genero') == 'Feminino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Feminino</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ old('genero') == 'Não Definido' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Não Definido</span>
-                                    </label>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
+                                <div class="col-md-10">
+                                    <span id="genero-text-error" class="form-text text-error"></span>
+                                    <select name="genero" id="genero" class="form-control">
+                                        <option></option>
+                                        <option value="Masculino" {{ selectOption('Masculino', old('genero')) }}>Masculino</option>
+                                        <option value="Feminino" {{ selectOption('Feminino', old('genero')) }}>Feminino</option>
+                                        <option value="Não Definido" {{ selectOption('Não Definido', old('genero')) }}>Não Definido</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- Form Group End -->               
@@ -80,7 +75,7 @@
                             <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
 
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="imovei_id-text-error" class="form-text text-error"></span>
                                     <select name="imovel_id" class="form-control" id="imovel_id">
                                         <option></option>
                                         @foreach($imoveis as $imovel)
@@ -97,6 +92,8 @@
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
                                 <div class="col-md-10 form-inline">
+                                    <span id="proprietario-text-error" class="form-text text-error"></span>
+
                                     <label class="form-radio mr-3">
                                     <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
                                     <span class="form-radio-label">Sim</span></label>
@@ -113,7 +110,7 @@
                             <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
 
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
