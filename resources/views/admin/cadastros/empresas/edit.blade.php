@@ -50,7 +50,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Razão Social</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="razao_social-text-error" class="form-text text-error"></span>
                                     <input type="text" name="razao_social" class="form-control" id="razao_social" maxlenght="60" value="{{ $empresa->razao_social }}">
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome Fantasia</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome_fantasia-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome_fantasia" class="form-control" id="nome_fantasia" maxlenght="60" value="{{ $empresa->nome_fantasia }}">
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">CNPJ</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="cnpj-text-error" class="form-text text-error"></span>
                                     <input type="text" name="cnpj" class="form-control mask-cnpj" id="cnpj" maxlenght="18" value="{{ $empresa->cnpj }}">
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Email</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="email-text-error" class="form-text text-error"></span>
                                     <input type="email" name="email" class="form-control" id="email" maxlenght="40" value="{{ $empresa->email }}">
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 1</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="telefone_1-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_1" class="form-control mask-telefone" id="telefone_1" maxlenght="20" value="{{ $empresa->telefone_1 }}">
                                 </div>
                             </div>
@@ -100,8 +100,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Telefone 2</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-
+                                    <span id="telefone_2-text-error" class="form-text text-error"></span>
                                     <input type="text" name="telefone_2" class="form-control mask-telefone" id="telefone_2" maxlenght="20" value="{{ $empresa->telefone_2 }}">
                                 </div>
                             </div>
@@ -111,7 +110,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Responsável</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="responsavel_para_contato-text-error" class="form-text text-error"></span>
                                     <input type="text" name="responsavel_para_contato" class="form-control" id="responsavel_para_contato" maxlenght="50" value="{{ $empresa->responsavel_para_contato }}">
                                 </div>
                             </div>
