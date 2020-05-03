@@ -52,7 +52,7 @@
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="40" value="{{ $area_comum->nome }}">
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Abertura</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="abertura-text-error" class="form-text text-error"></span>
                                     <input type="time" name="abertura" class="form-control" id="abertura" maxlenght="20" value="{{ $area_comum->abertura }}">
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Fechamento</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="fechamento-text-error" class="form-text text-error"></span>
                                     <input type="time" name="fechamento" class="form-control" id="fechamento" maxlenght="20" value="{{ $area_comum->fechamento }}">
                                 </div>
                             </div>
@@ -81,6 +81,7 @@
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span> 
+                                <span id="status-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-radio mr-3">
                                         <input type="radio" name="status" value="Aberto" class="form-radio-input" {{ $area_comum->status == 'Aberto' ? 'checked' : null }}>
@@ -102,7 +103,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
                                     <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ $area_comum->descricao }}">
                                 </div>
                             </div>
@@ -113,7 +114,7 @@
                             <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
 
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="400">{{ $area_comum->observacoes }}</textarea>
                                 </div>
                             </div>
