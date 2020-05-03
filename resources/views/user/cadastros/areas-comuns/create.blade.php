@@ -50,7 +50,7 @@
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="40" value="{{ old('nome') }}">
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Abertura</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="abertura-text-error" class="form-text text-error"></span>
                                     <input type="time" name="abertura" class="form-control" id="abertura" maxlenght="20" value="{{ old('abertura') }}">
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Fechamento</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="fechamento-text-error" class="form-text text-error"></span>
                                     <input type="time" name="fechamento" class="form-control" id="fechamento" maxlenght="20" value="{{ old('fechamento') }}">
                                 </div>
                             </div>
@@ -78,7 +78,8 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span> 
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span>
+                                <span id="status-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-radio mr-3">
                                         <input type="radio" name="status" value="Aberto" class="form-radio-input" {{ old('status') == 'Aberto' ? 'checked' : null }}>
@@ -100,7 +101,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
                                     <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
                                 </div>
                             </div>
@@ -109,9 +110,8 @@
                             <!-- Form Group Start -->
                             <div class="form-group row">
                             <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
-
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
