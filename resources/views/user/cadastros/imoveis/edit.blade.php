@@ -51,7 +51,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Número</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="numero-text-error" class="form-text text-error"></span>
                                     <input type="text" name="numero" class="form-control mask-numero" id="numero" maxlenght="10" value="{{ $imovel->numero }}">
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Bloco</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="bloco-text-error" class="form-text text-error"></span>
                                     <input type="text" name="bloco" class="form-control" id="bloco" maxlenght="10" value="{{ $imovel->bloco }}">
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Andar</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="andar-text-error" class="form-text text-error"></span>
                                     <input type="text" name="andar" class="form-control" id="andar" maxlenght="3" value="{{ $imovel->andar }}">
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
                                     <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ $imovel->descricao }}">
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="200">{{ $imovel->observacoes }}</textarea>
                                 </div>
                             </div>
