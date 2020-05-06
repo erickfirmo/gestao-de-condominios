@@ -4,6 +4,9 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\EntregaRequest;
+use App\Models\Entrega;
+use Illuminate\Support\Facades\Auth;
 
 class EntregaController extends Controller
 {
