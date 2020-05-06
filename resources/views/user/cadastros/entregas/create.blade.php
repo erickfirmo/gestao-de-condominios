@@ -41,6 +41,12 @@
                     <div class="panel-content">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
+
+
+                        <!-- bootstrap alert -->
+                        <input type="radio" name="status" value="Em Manutenção" class="form-radio-input" {{ old('status') == 'Notificado ao Morador' ? 'checked' : null }}>
+                        
+
                     
                         <form action="{{ route('entregas.store') }}" method="POST" class="show-onload d-none">
                             @csrf
@@ -55,40 +61,25 @@
                             </div>
                             <!-- Form Group End -->
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span>
-                                <span id="nome-text-error" class="form-text text-error"></span>
-                                <div class="col-md-10 form-inline">
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ old('genero') == 'Masculino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Masculino</span>
-                                    </label>
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ old('genero') == 'Feminino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Feminino</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ old('genero') == 'Não Definido' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Não Definido</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->               
+                            <!-- morador input com autocomplete -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
-                                <div class="col-md-10">
-                                    <span id="nome-text-error" class="form-text text-error"></span>
-                                    <select name="imovel_id" class="form-control" id="imovel_id">
-                                        <option></option>
-                                        @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $imovel->id ? ' selected' : null }}>
-                                                {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
-                                            </option>
-                                        @endforeach
-                                    </select>
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span>
+                                <span id="status-text-error" class="form-text text-error"></span>
+                                <div class="col-md-10 form-inline">
+                                    <label class="form-radio mr-3">
+                                        <input type="radio" name="status" value="Entregue ao Morador" class="form-radio-input" {{ old('status') == 'Entregue ao Morador' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Entregue ao Morador</span>
+                                    </label>
+                                    <label class="form-radio mr-3">
+                                        <input type="radio" name="status" value="Notificado ao Morador" class="form-radio-input" {{ old('status') == 'Notificado ao Morador' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Notificado ao Morador</span>
+                                    </label>
+                                    <label class="form-radio">
+                                        <input type="radio" name="status" value="Não Notificado ao Morador" class="form-radio-input" {{ old('status') == 'Não Notificado ao Morador' ? 'checked' : null }}>
+                                        <span class="form-radio-label">Não Notificado ao Morador</span>
+                                    </label>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -96,7 +87,7 @@
                              <!-- Form Group Start -->
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span>
-                                <span id="nome-text-error" class="form-text text-error"></span>
+                                <span id="proprietario-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-radio mr-3">
                                     <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
@@ -111,10 +102,10 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
+                            <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span id="nome-text-error" class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
+                                    <textarea name="descricao" class="form-control" maxlengh="200">{{ old('descricao') }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
