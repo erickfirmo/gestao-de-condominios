@@ -17,7 +17,7 @@ class CreateEntregasTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome_do_entregador', 40);
             $table->string('descricao', 200);
-            $table->string('status', 20);
+            $table->string('status', 30);
             
             //receptor_id
             $table->unsignedBigInteger('user_id');
