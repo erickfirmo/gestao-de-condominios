@@ -17,7 +17,9 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        //
+        $entregas = Entrega::all();
+
+        return view('user.cadastros.entregas.index', [ 'entregas' => $entregas]);
     }
 
     /**
