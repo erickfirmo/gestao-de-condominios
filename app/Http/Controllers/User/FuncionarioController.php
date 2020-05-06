@@ -58,7 +58,7 @@ class FuncionarioController extends Controller
         $telefone_2 = $request->input('telefone_2');
         $cargo = $request->input('cargo');
 
-        $condominio_id = Auth::user()->funcionario->condominio->id;
+        $condominio_id = Auth::user()->condominio->id;
 
         $funcionario = new Funcionario;
         $funcionario->nome_completo = $nome_completo;
