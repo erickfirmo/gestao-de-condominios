@@ -35,12 +35,29 @@ class EntregaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\EntregaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EntregaRequest $request)
     {
-        //
+        $request->validated();
+
+        $nome_do_entregador = $request->nome_do_entregador;
+        $descricao = $request->descricao;
+        $status = $request->status;
+        $user_id = Auth::user()->id;
+        $morador_id = $request->morador_id;
+
+        $entrega = new Entrega;
+        $entrega->nome_do_entregador = $nome_do_entregador;
+        $entrega->descricao = $descricao;
+        $entrega->status = $status;
+        $entrega->user_id = $user_id;
+        $entrega->morador_id = $morador_id;
+        $entrega->save();
+
+        return view('user.cadastros.entregas.edit', [ 'entrega' => $entrega ]);
+
     }
 
     /**
@@ -68,11 +85,11 @@ class EntregaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\EntregaRequest  $requestH
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EntregaRequest $request, $id)
     {
         //
     }
