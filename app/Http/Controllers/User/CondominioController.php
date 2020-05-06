@@ -24,7 +24,7 @@ class CondominioController extends Controller
     public function index()
     {
 
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
+        $condominios = Condominio::where('empresa_id', Auth::user()->empresa_id);
 
         return view('user.cadastros.condominios.index', [
             'condominios' => $condominios
@@ -38,7 +38,7 @@ class CondominioController extends Controller
      */
     public function create()
     {
-        $condominios = Condominio::where('empresa_id', Auth::user()->funcionario->empresa_id);
+        $condominios = Condominio::where('empresa_id', Auth::user()->empresa_id);
 
         return view('user.cadastros.condominios.create', [
             'condominios' => $condominios
@@ -65,7 +65,7 @@ class CondominioController extends Controller
         $uf_id = $request->input('uf_id');
         $complemento = $request->input('complemento');
         $observacoes = $request->input('observacoes');
-        $empresa_id = Auth::user()->funcionario->empresa_id;
+        $empresa_id = Auth::user()->empresa_id;
 
         $condominio = new Condominio;
         $condominio->nome = $nome;
@@ -134,7 +134,7 @@ class CondominioController extends Controller
             'uf_id' => $request->uf_id,
             'complemento' => $request->complemento,
             'observacoes' => $request->observacoes,
-            'empresa_id' => Auth::user()->funcionario->empresa_id
+            'empresa_id' => Auth::user()->empresa_id
         ]);
 
         return redirect()->route('condominios.edit', compact('condominio'))
