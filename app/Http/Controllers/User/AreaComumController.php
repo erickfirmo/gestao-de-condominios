@@ -48,7 +48,7 @@ class AreaComumController extends Controller
         $status = $request->input('status');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-        $condominio_id = Auth::user()->funcionario->condominio->id;
+        $condominio_id = Auth::user()->condominio->id;
 
         $area_comum = new AreaComum;
         $area_comum->nome = $nome;
