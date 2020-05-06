@@ -67,7 +67,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span>
                                 <span id="status-text-error" class="form-text text-error"></span>
-                                <div class="col-md-10 form-inline">
+                                <div class="col-md-10 form-block">
                                     <label class="form-radio mr-3">
                                         <input type="radio" name="status" value="Entregue ao Morador" class="form-radio-input" {{ old('status') == 'Entregue ao Morador' ? 'checked' : null }}>
                                         <span class="form-radio-label">Entregue ao Morador</span>
