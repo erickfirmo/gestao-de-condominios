@@ -29,7 +29,7 @@ class EntregaController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.cadastros.entregas.create');
     }
 
     /**
