@@ -61,7 +61,28 @@
                             </div>
                             <!-- Form Group End -->
 
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
+                                <div class="col-md-10">
+                                    <span id="morador_id-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="80" value="{{ old('morador_id') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
                             <!-- morador input com autocomplete -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                            <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
+                                <div class="col-md-10">
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
+                                    <textarea name="descricao" class="form-control" maxlengh="200">{{ old('descricao') }}</textarea>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
@@ -90,24 +111,13 @@
                                 <span id="proprietario-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-check">
-                                        <input type="checkbox" name="proprietario" value="1" class="form-check-input">
+                                        <input type="checkbox" name="proprietario" value="1" class="form-check-input" {{ checkboxState(old('proprietario'), 1) }}>
                                         <span class="form-check-label">Este Morador é Proprietário do Imóvel</span>
                                     </label>
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
-                            
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
-                                <div class="col-md-10">
-                                    <span id="descricao-text-error" class="form-text text-error"></span>
-                                    <textarea name="descricao" class="form-control" maxlengh="200">{{ old('descricao') }}</textarea>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
 
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
