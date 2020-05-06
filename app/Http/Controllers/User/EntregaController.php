@@ -56,7 +56,8 @@ class EntregaController extends Controller
         $entrega->morador_id = $morador_id;
         $entrega->save();
 
-        return view('user.cadastros.entregas.edit', [ 'entrega' => $entrega ]);
+        return view('user.cadastros.entregas.edit', [ 'entrega' => $entrega ])
+            ->with('success', 'Entrega cadastrada com sucesso!');
 
     }
 
