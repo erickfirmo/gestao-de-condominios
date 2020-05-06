@@ -86,19 +86,18 @@
 
                              <!-- Form Group Start -->
                              <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0" style="opacity:0;">Proprietário do Imóvel</span>
                                 <span id="proprietario-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
-                                    <label class="form-radio mr-3">
-                                    <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
-                                    <span class="form-radio-label">Sim</span></label>
-                                    <label class="form-radio">
-                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
-                                    <span class="form-radio-label">Não</span>
-                                </label>
+                                    <label class="form-check">
+                                        <input type="checkbox" name="proprietario" value="1" class="form-check-input">
+                                        <span class="form-check-label">Este Morador é Proprietário do Imóvel</span>
+                                    </label>
                                 </div>
                             </div>
                             <!-- Form Group End -->
+
+                            
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
