@@ -61,7 +61,7 @@ class ImovelController extends Controller
         $andar = $request->input('andar');
         $descricao = $request->input('descricao');
         $observacoes = $request->input('observacoes');
-        $condominio_id = Auth::user()->funcionario->condominio->id;
+        $condominio_id = Auth::user()->condominio->id;
         
         $imovel = new Imovel;
         $imovel->numero = $numero;
@@ -118,7 +118,7 @@ class ImovelController extends Controller
     {
         $request->validated();
 
-        $condominio_id = Auth::user()->funcionario->condominio->id;
+        $condominio_id = Auth::user()->condominio->id;
 
         $imovel = Imovel::findOrFail($id)->update([
             'numero' => $request->numero,
