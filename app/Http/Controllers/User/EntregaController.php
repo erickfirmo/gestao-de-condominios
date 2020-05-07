@@ -69,7 +69,9 @@ class EntregaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('user.cadastros.entregas.show', [
+            'entrega' => Entrega::findOrFail($id)
+        ]);
     }
 
     /**
@@ -80,7 +82,9 @@ class EntregaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('user.cadastros.entregas.edit', [
+            'entrega' => Entrega::findOrFail($id),
+        ]);
     }
 
     /**
@@ -92,7 +96,16 @@ class EntregaController extends Controller
      */
     public function update(EntregaRequest $request, $id)
     {
-        //
+        $request->validated();
+
+        $entrega = Entrega::findOrFail($id)->update([
+            'nome_do_entregador' => $request->nome_do_entregador,
+            'descricao' => $request->descricao,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->route('entregas.edit', compact('entrega'))
+            ->with('success', 'Dados da entrega atualizados com sucesso!');
     }
 
     /**
@@ -103,6 +116,11 @@ class EntregaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Entrega::findOrFail($id)->delete();
+
+        //if status == 'Entregue' - request
+
+        return redirect()->route('entregas.index')
+            ->with('success', 'Entrega removida com sucesso!');
     }
 }
