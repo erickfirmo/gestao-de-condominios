@@ -47,6 +47,12 @@ class EntregaController extends Controller
         $status = $request->status;
         $user_id = Auth::user()->id;
         $morador_id = $request->morador_id;
+        $enviar_notificacao = $request->enviar_notificacao;
+
+        if($enviar_notificacao == true)
+        {
+            // enviar whatsapp/sms/email em horário definido pelo admin
+        }
 
         $entrega = new Entrega;
         $entrega->nome_do_entregador = $nome_do_entregador;
