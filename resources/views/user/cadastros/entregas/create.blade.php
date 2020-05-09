@@ -107,12 +107,12 @@
 
                              <!-- Form Group Start -->
                              <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0" style="opacity:0;">Proprietário do Imóvel</span>
-                                <span id="proprietario-text-error" class="form-text text-error"></span>
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0" style="opacity:0;">Enviar Notificação</span>
+                                <span id="enviar_notificacao-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-check">
-                                        <input type="checkbox" name="proprietario" value="1" class="form-check-input" {{ checkboxState(old('proprietario'), 1) }}>
-                                        <span class="form-check-label">Este Morador é Proprietário do Imóvel</span>
+                                        <input type="checkbox" name="enviar_notificacao" value="1" class="form-check-input" {{ checkboxState(old('enviar_notificacao'), 1) }}>
+                                        <span class="form-check-label">Enviar Notificação</span>
                                     </label>
                                 </div>
                             </div>
