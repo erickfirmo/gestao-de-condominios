@@ -47,6 +47,8 @@
                             @csrf
                             {{ method_field('PUT') }}
 
+                            {{ $entrega->status }}
+
                              <!-- Form Group Start -->
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome do Entregador</span>
@@ -76,27 +78,6 @@
                                 <div class="col-md-10">
                                     <span id="descricao-text-error" class="form-text text-error"></span>
                                     <textarea name="descricao" class="form-control" maxlengh="200">{{ $entrega->descricao }}</textarea>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Status</span>
-                                <span id="status-text-error" class="form-text text-error"></span>
-                                <div class="col-md-10 form-block">
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="status" value="Entregue ao Morador" class="form-radio-input" {{ $entrega->status == 'Entregue ao Morador' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Entregue ao Morador</span>
-                                    </label>
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="status" value="Notificado ao Morador" class="form-radio-input" {{ $entrega->status == 'Notificado ao Morador' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Notificado ao Morador</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="status" value="Não Notificado ao Morador" class="form-radio-input" {{ $entrega->status == 'Não Notificado ao Morador' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Não Notificado ao Morador</span>
-                                    </label>
                                 </div>
                             </div>
                             <!-- Form Group End -->
