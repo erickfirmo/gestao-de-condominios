@@ -26,24 +26,13 @@ class EntregaRequest extends FormRequest
      */
     public function rules()
     {
-
-        if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
-            return [
-                'nome_do_entregador' => 'required|max:40|unique:entregas,id,'.$this->route('id'),
-                'descricao' => 'required|max:200',
-                'status' => 'required|max:30',
-                'morador_id' => 'required|numeric',
-                'enviar_notificacao' => 'numeric|:in:0,1',
-            ];
-        } else {
-            return [
-                'nome_do_entregador' => 'required|max:40|unique:entregas',
-                'descricao' => 'required|max:200',
-                'status' => 'required|max:30',
-                'morador_id' => 'required|numeric',
-                'enviar_notificacao' => 'numeric|:in:0,1',
-            ];
-        }
+        return [
+            'nome_do_entregador' => 'required|max:40',
+            'descricao' => 'required|max:200',
+            'status' => 'required|max:30',
+            'morador_id' => 'required|numeric',
+            'enviar_notificacao' => 'numeric|:in:0,1',
+        ];
     }
 
     public function attributes()
