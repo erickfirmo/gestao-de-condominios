@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class EntregaController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth:user');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +54,7 @@ class EntregaController extends Controller
         $morador_id = $request->morador_id;
         $enviar_notificacao = $request->enviar_notificacao;
 
-        if($enviar_notificacao == true)
+        if($enviar_notificacao == true && $status != 'Notificado ao ')
         {
             // enviar whatsapp/sms/email em horário definido pelo admin
         }
