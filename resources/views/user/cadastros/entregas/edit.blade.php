@@ -36,7 +36,11 @@
                         <h3 class="panel-title">Editar Entrega</h3>
                         <form action="{{ route('entregas.destroy', $entrega->id) }}" method="POST" class="remove-form" style="float:right">
                             {{method_field('DELETE')}}
-                            <a href="#"><button class="btn btn-rounded btn-danger">Deletar Entrega</button></a>
+                            <a href="#"><button class="btn btn-rounded btn-danger"><span class="mr-2"><i class="fas fa-trash"></i></span>Deletar Entrega</button></a>
+                        </form>
+                        <form action="{{ route('entregas.destroy', $entrega->id) }}" method="POST" class="remove-form mr-2" style="float:right">
+                            {{method_field('DELETE')}}
+                            <a href="#"><button class="btn btn-rounded btn-warning"><span class="mr-2"><i class="fas fa-bell"></i></span>Notificar Morador</button></a>
                         </form>
                     </div>
 
@@ -47,7 +51,13 @@
                             @csrf
                             {{ method_field('PUT') }}
 
-                            {{ $entrega->status }}
+                        
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Importante!</strong> {{ $entrega->status }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
                              <!-- Form Group Start -->
                              <div class="form-group row">
@@ -82,14 +92,14 @@
                             </div>
                             <!-- Form Group End -->
 
-                             <!-- Form Group Start -->
-                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0" style="opacity:0;">Proprietário do Imóvel</span>
-                                <span id="proprietario-text-error" class="form-text text-error"></span>
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0" style="opacity:0;">Enviar Notificação</span>
+                                <span id="enviar_notificacao-text-error" class="form-text text-error"></span>
                                 <div class="col-md-10 form-inline">
                                     <label class="form-check">
-                                        <input type="checkbox" name="proprietario" value="1" class="form-check-input" {{ checkboxState($entrega->proprietario, 1) }}>
-                                        <span class="form-check-label">Este Morador é Proprietário do Imóvel</span>
+                                        <input type="checkbox" name="enviar_notificacao" value="1" class="form-check-input" {{ checkboxState(old('enviar_notificacao'), 1) }}>
+                                        <span class="form-check-label">Enviar Notificação</span>
                                     </label>
                                 </div>
                             </div>
@@ -109,6 +119,7 @@
             </div>
         </div>
     </section>
+
 
     @include('user.partials._footer')
 </main>
