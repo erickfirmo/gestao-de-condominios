@@ -17,7 +17,7 @@ class CreateVagasTable extends Migration
             $table->bigIncrements('id');
             $table->string('identificacao', 12);
             $table->string('andar', 3);
-            $table->string('observacoes', 200);
+            $table->string('observacoes', 200)->nullable();
             $table->unsignedBigInteger('morador_id');
             
             $table->foreign('morador_id')
