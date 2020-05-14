@@ -20,7 +20,6 @@ class CreateVisitantesTable extends Migration
             $table->string('chegada', 20);
             $table->string('saida', 20);
             $table->string('transporte', 20);
-            $table->boolean('prestador_de_servico');
 
             $table->unsignedBigInteger('morador_id');
 
