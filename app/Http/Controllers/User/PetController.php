@@ -4,9 +4,17 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\PetRequest;
+use App\Models\Pet;
+use Illuminate\Support\Facades\Auth;
 
 class PetController extends Controller
 {
+    public function __construct()
+    {
+        return $this->middleware('auth:user');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,9 @@ class PetController extends Controller
      */
     public function index()
     {
-        //
+        $pets = Pet::all();
+
+        return view('user.cadastros.pets.index', [ 'pets' => $pets]);
     }
 
     /**
@@ -24,18 +34,35 @@ class PetController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.cadastros.pets.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\PetRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PetRequest $request)
     {
-        //
+        $request->validated();
+
+        $nome = $request->nome_do_entregador;
+        $especie = $request->especie;
+        $raca = $request->raca;
+        $descricao = $request->descricao;
+        $morador_id = $request->morador_id;
+
+        $pet = new Pet;
+        $pet->nome = $nome;
+        $pet->especie = $especie;
+        $pet->raca = $raca;
+        $pet->descricao = $descricao;
+        $pet->morador_id = $morador_id;
+        $pet->save();
+
+        return redirect()->route('pets.edit', compact('pet'))
+        ->with('success', 'Pet cadastrado com sucesso!');
     }
 
     /**
@@ -46,7 +73,9 @@ class PetController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('user.cadastros.pets.show', [
+            'pet' => Pet::findOrFail($id)
+        ]);
     }
 
     /**
@@ -57,19 +86,33 @@ class PetController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('user.cadastros.pets.edit', [
+            'pet' => Pet::findOrFail($id),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\PetRequest  $requestH
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PetRequest $request, $id)
     {
-        //
+        $request->validated();
+
+        $pet = Pet::findOrFail($id)->update([
+            'nome' => $request->nome,
+            'especie' => $request->especie,
+            'raca' => $request->raca,
+            'cor' => $request->cor,
+            'descricao' => $request->descricao,
+            'morador_id' => $request->morador_id,
+        ]);
+
+        return redirect()->route('pets.edit', compact('pet'))
+            ->with('success', 'Dados do pet atualizados com sucesso!');
     }
 
     /**
@@ -80,6 +123,11 @@ class PetController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pet::findOrFail($id)->delete();
+
+        //if status == 'Entregue' - request
+
+        return redirect()->route('pets.index')
+            ->with('success', 'Pet removido com sucesso!');
     }
 }
