@@ -14,4 +14,9 @@ class CartaoMagnetico extends Model
         'responsavel_id',
         'status',
     ];
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'parent_id');
+    }
 }
