@@ -32,11 +32,6 @@ class Funcionario extends Model
         return $this->belongsTo(Condominio::class, 'condominio_id');
     }
 
-    public function user()
-    {
-        return $this->hasOne(User::class, 'funcionario_id');
-    }
-
     public function relatorios()
     {
         return $this->hasMany(Relatorio::class, 'parent_id');
