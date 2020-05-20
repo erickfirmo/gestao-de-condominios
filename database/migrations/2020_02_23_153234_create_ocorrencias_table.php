@@ -16,7 +16,6 @@ class CreateOcorrenciasTable extends Migration
         Schema::create('ocorrencias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('descricao', 400);
-            $table->string('status', 20);
             $table->string('data', 20);
             $table->string('hora', 20);
             $table->enum('gravidade', ['baixa', 'media', 'alta']);
@@ -25,12 +24,6 @@ class CreateOcorrenciasTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade');
-
-            $table->unsignedBigInteger('condominio_id');
-            $table->foreign('condominio_id')
-                ->references('id')
-                ->on('condominios')
                 ->onDelete('cascade');
                 
             $table->unsignedBigInteger('morador_id');
