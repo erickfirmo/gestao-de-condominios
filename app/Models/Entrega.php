@@ -12,6 +12,8 @@ class Entrega extends Model
         'nome_do_entregador',
         'tipo',
         'descricao',
+        'data',
+        'hora',
         'status',
         'user_id',
         'morador_id',
