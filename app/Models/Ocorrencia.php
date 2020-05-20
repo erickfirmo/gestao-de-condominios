@@ -16,7 +16,6 @@ class Ocorrencia extends Model
         'gravidade',
         'user_id',
         'morador_id',
-        'condominio_id',
 
     ];
 
