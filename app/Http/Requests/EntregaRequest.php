@@ -29,6 +29,9 @@ class EntregaRequest extends FormRequest
         return [
             'nome_do_entregador' => 'required|max:40',
             'descricao' => 'required|max:200',
+            'agora' => 'required|in:0,1',
+            'data' => 'required_if:agora,0',
+            'hora' => 'required_if:agora,0',
             'status' => 'required|max:30',
             'morador_id' => 'required|numeric',
             'enviar_notificacao' => 'numeric|:in:0,1',
