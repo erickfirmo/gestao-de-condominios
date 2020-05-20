@@ -18,6 +18,8 @@ class CreateEntregasTable extends Migration
             $table->string('nome_do_entregador', 40);
             $table->string('descricao', 200);
             $table->string('status', 40);
+            $table->string('data', 20);
+            $table->string('hora', 20);
             
             //receptor_id
             $table->unsignedBigInteger('user_id');
