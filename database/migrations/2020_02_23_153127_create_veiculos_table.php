@@ -18,15 +18,12 @@ class CreateVeiculosTable extends Migration
             $table->string('modelo', 40);
             $table->enum('tipo', ['Carro', 'Motocicleta', 'Van', 'Mini Van', 'Micro-Ônibus', 'Outros']);
             $table->string('cor', 20);
-            $table->string('descricao', 200);
+            $table->string('descricao', 200)->nullable();
             $table->string('placa', 7)->unique();
-            $table->unsignedBigInteger('morador_id');
+            $table->unsignedBigInteger('parent_id');
+            $table->string('parent_table', 30);
             $table->timestamps();
 
-            $table->foreign('morador_id')
-                ->references('id')
-                ->on('moradores')
-                ->onDelete('cascade');;
         });
     }
 
