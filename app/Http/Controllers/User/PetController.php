@@ -112,7 +112,7 @@ class PetController extends Controller
         ]);
 
         return redirect()->route('pets.edit', compact('pet'))
-            ->with('success', 'Dados do pet atualizados com sucesso!');
+            ->with('success', 'Informações do pet atualizados com sucesso!');
     }
 
     /**
