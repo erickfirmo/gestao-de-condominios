@@ -35,7 +35,6 @@ class ReservaRequest extends FormRequest
                 'status' => 'required|max:20',
                 'area_comum_id' => 'required|max:20|numeric',
                 'morador_id' => 'required|max:20|numeric',
-                'funcionario_id' => 'required|max:20|numeric',
             ];
         } else {
             return [
@@ -48,7 +47,7 @@ class ReservaRequest extends FormRequest
     {
         return [
             'observacoes' => 'observações',
-            'morador_id' => 'morador'
+            'morador_id' => 'morador',
         ];
     }
 
