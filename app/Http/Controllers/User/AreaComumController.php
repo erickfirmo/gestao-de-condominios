@@ -113,7 +113,7 @@ class AreaComumController extends Controller
         ]);
 
         return redirect()->route('areas-comuns.edit', compact('area_comum'))
-            ->with('success', 'Dados da área comum atualizados com sucesso!');
+            ->with('success', 'Informações da área comum atualizados com sucesso!');
     }
 
     /**
