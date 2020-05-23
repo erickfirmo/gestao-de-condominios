@@ -5,10 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EntregaRequest;
-use App\Models\PrestadorDeServico;
+use App\Models\PrestadorDeServicos;
 use Illuminate\Support\Facades\Auth;
 
-class EntregaController extends Controller
+class PrestadorDeServicosController extends Controller
 {
     public function __construct()
     {
@@ -22,7 +22,7 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        $prestador_de_servicos = PrestadorDeServico::all();
+        $prestador_de_servicos = PrestadorDeServicos::all();
 
         return view('user.cadastros.prestador-de-servicos.index', [ 'prestador_de_servicos' => $prestador_de_servicos]);
     }
@@ -53,15 +53,15 @@ class EntregaController extends Controller
         $identidade = $identidade;
         $morador_id = $request->morador_id;
 
-        $prestador_de_servico = new PrestadorDeServico;
-        $prestador_de_servico->nome = $nome;
-        $prestador_de_servico->chegada = $chegada;
-        $prestador_de_servico->saida = $saida;
-        $prestador_de_servico->identidade = $identidade;
-        $prestador_de_servico->morador_id = $morador_id;
-        $prestador_de_servico->save();
+        $prestador_de_servicos = new PrestadorDeServicos;
+        $prestador_de_servicos->nome = $nome;
+        $prestador_de_servicos->chegada = $chegada;
+        $prestador_de_servicos->saida = $saida;
+        $prestador_de_servicos->identidade = $identidade;
+        $prestador_de_servicos->morador_id = $morador_id;
+        $prestador_de_servicos->save();
 
-        return redirect()->route('prestador-de-servicos.edit', compact('entrega'))
+        return redirect()->route('prestador-de-servicos.edit', compact('prestador_de_servicos'))
         ->with('success', 'Prestador De Serviços cadastrado com sucesso!');
     }
 
@@ -74,7 +74,7 @@ class EntregaController extends Controller
     public function show($id)
     {
         return view('user.cadastros.prestador-de-servicos.show', [
-            'entrega' => PrestadorDeServico::findOrFail($id)
+            'prestador_de_servicos' => PrestadorDeServicos::findOrFail($id)
         ]);
     }
 
@@ -87,7 +87,7 @@ class EntregaController extends Controller
     public function edit($id)
     {
         return view('user.cadastros.prestador-de-servicos.edit', [
-            'entrega' => PrestadorDeServico::findOrFail($id),
+            'prestador_de_servicos' => PrestadorDeServicos::findOrFail($id),
         ]);
     }
 
@@ -102,7 +102,7 @@ class EntregaController extends Controller
     {
         $request->validated();
 
-        $prestador_de_servico = PrestadorDeServico::findOrFail($id)->update([
+        $prestador_de_servicos = PrestadorDeServicos::findOrFail($id)->update([
             'nome' => $request->nome,
             'chegada' => $request->descricao,
             'saida' => $request->status,
@@ -110,7 +110,7 @@ class EntregaController extends Controller
             'morador_id' => $request->morador_id,
         ]);
 
-        return redirect()->route('prestador-de-servicos.edit', compact('entrega'))
+        return redirect()->route('prestador-de-servicos.edit', compact('prestador_de_servicos'))
             ->with('success', 'Dados do Prestador de Serviços atualizados com sucesso!');
     }
 
@@ -122,9 +122,7 @@ class EntregaController extends Controller
      */
     public function destroy($id)
     {
-        PrestadorDeServico::findOrFail($id)->delete();
-
-        //if status == 'Entregue' - request
+        PrestadorDeServicos::findOrFail($id)->delete();
 
         return redirect()->route('prestador-de-servicos.index')
             ->with('success', 'Prestador De Serviços removido com sucesso!');
