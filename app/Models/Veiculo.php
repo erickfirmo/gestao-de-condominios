@@ -14,19 +14,9 @@ class Veiculo extends Model
         'cor',
         'descricao',
         'placa',
-        'morador_id',
-        'funcionario_id',
+        'parent_id',
+        'parent_table',
     ];
-
-    public function morador()
-    {
-        return $this->belongsTo(Morador::class, 'morador_id');
-    }
-
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
-    }
 
     public function relatorios()
     {
