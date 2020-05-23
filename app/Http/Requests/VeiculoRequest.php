@@ -32,7 +32,7 @@ class VeiculoRequest extends FormRequest
                 'modelo' => 'required|min:1|max:40',
                 'tipo' => 'required|in:Carro,Motocicleta,Van,Mini Van,Micro-Ônibus,Outros',
                 'cor' => 'required|min:1|max:20',
-                'descricao' => 'required|min:1|max:200',
+                'descricao' => 'max:200',
                 'placa' => 'required|digits:7|unique:veiculos',
                 'morador_id' => 'required|min:1|max:20|numeric',
             ];
@@ -41,7 +41,7 @@ class VeiculoRequest extends FormRequest
                 'modelo' => 'required|min:1|max:40',
                 'tipo' => 'required|in:Carro,Motocicleta,Van,Mini Van,Micro-Ônibus,Outros',
                 'cor' => 'required|min:1|max:20',
-                'descricao' => 'required|min:1|max:200',
+                'descricao' => 'max:200',
                 'placa' => 'required|digits:7|unique:veiculos,id,'.$this->route('id'),
                 'morador_id' => 'required|min:1|max:20|numeric',
             ];
