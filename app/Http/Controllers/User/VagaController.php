@@ -116,7 +116,7 @@ class VagaController extends Controller
         ]);
 
         return redirect()->route('vagas.edit', compact('vaga'))
-            ->with('success', 'Dados do vaga atualizados com sucesso!');
+            ->with('success', 'Informações do vaga atualizados com sucesso!');
     }
 
     /**
