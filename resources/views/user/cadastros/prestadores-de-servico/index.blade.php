@@ -39,7 +39,7 @@
                             </h3>
                             <p>
                                 {{
-                                    countMessage($moradores, [
+                                    countMessage($prestadores_de_servicos, [
                                         'zero' => 'Nenhum morador encontrado',
                                         'one' => '1 morador encontrado',
                                         'many' => '[X] moradores encontrados'
@@ -67,26 +67,29 @@
                                 <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Gênero</th>
-                                <th>Imóvel</th>
-                                <th>Proprietário do Imóvel</th>
+                                <th>Chegada</th>
+                                <th>Saída</th>
+                                <th>Identidade</th>
+                                <th>Morador</th>
                                 <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($moradores as $morador)
+                                @foreach($prestadores_de_servicos as $prestador_de_servicos)
 
-                                <tr id="{{ 'morador-'.$morador->id }}">
-                                    <td>{{ $morador->id }}</td>
-                                    <td>{{ $morador->nome }}</td>
-                                    <td>{{ $morador->genero }}</td>
-                                    <td>{{ 'Nº '.$morador->imovel->numero.' - Bloco '.$morador->imovel->bloco }}</td>
-                                    <td>{{ $morador->proprietario ? 'Sim' : 'Não' }}</td>
+                                <tr id="{{ 'morador-'.$prestador_de_servicos->id }}">
+                                    <td>{{ $prestador_de_servicos->id }}</td>
+                                    <td>{{ $prestador_de_servicos->nome }}</td>
+                                    <td>{{ $prestador_de_servicos->chegada }}</td>
+                                    <td>{{ $prestador_de_servicos->saida }}</td>
+                                    <td>{{ $prestador_de_servicos->identidade }}</td>
+                                    <td>{{ $prestador_de_servicos->morador()->nome }}</td>
+                                    <td>{{ $prestador_de_servicos->proprietario ? 'Sim' : 'Não' }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('moradores.edit', $morador->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('moradores.edit', $prestador_de_servicos->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
-                                        <form action="{{ route('moradores.destroy', $morador->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('moradores.destroy', $prestador_de_servicos->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
