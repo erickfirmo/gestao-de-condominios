@@ -114,7 +114,7 @@ class MoradorController extends Controller
         ]);
 
         return redirect()->route('moradores.edit', compact('morador'))
-            ->with('success', 'Dados do imóvel atualizados com sucesso!');
+            ->with('success', 'Informações do imóvel atualizados com sucesso!');
     }
 
     /**
