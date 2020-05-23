@@ -128,7 +128,7 @@ class FuncionarioController extends Controller
         ]);
 
         return redirect()->route('funcionarios.edit', compact('funcionario'))
-            ->with('success', 'Dados do funcionário atualizados com sucesso!');
+            ->with('success', 'Informações do funcionário atualizados com sucesso!');
     }
 
     /**
