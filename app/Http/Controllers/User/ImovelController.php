@@ -130,7 +130,7 @@ class ImovelController extends Controller
         ]);
 
         return redirect()->route('imoveis.edit', compact('imovel'))
-            ->with('success', 'Dados do imóvel atualizados com sucesso!');
+            ->with('success', 'Informações do imóvel atualizados com sucesso!');
     }
 
     /**
