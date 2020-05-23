@@ -111,7 +111,7 @@ class PrestadorDeServicosController extends Controller
         ]);
 
         return redirect()->route('prestador-de-servicos.edit', compact('prestador_de_servicos'))
-            ->with('success', 'Dados do Prestador de Serviços atualizados com sucesso!');
+            ->with('success', 'Informações do Prestador de Serviços atualizados com sucesso!');
     }
 
     /**
