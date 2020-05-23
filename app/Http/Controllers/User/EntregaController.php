@@ -115,7 +115,7 @@ class EntregaController extends Controller
         ]);
 
         return redirect()->route('entregas.edit', compact('entrega'))
-            ->with('success', 'Dados da entrega atualizados com sucesso!');
+            ->with('success', 'Informações da entrega atualizados com sucesso!');
     }
 
     /**
