@@ -129,7 +129,7 @@ class EmpresaController extends Controller
         ]);
 
         return redirect()->route('empresas.edit', compact('empresa'))
-            ->with('success', 'Dados da empresa atualizados com sucesso!');
+            ->with('success', 'Informações da empresa atualizados com sucesso!');
     }
 
     /**
