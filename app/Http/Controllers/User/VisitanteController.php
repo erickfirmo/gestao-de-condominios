@@ -110,7 +110,7 @@ class VisitanteController extends Controller
         ]);
 
         return redirect()->route('visitantes.edit', compact('visitante'))
-            ->with('success', 'Dados do imóvel atualizados com sucesso!');
+            ->with('success', 'Informações do imóvel atualizados com sucesso!');
     }
 
     /**
