@@ -15,7 +15,6 @@ class Reserva extends Model
         'status',
         'area_comum_id',
         'morador_id',
-        'funcionario_id',
     ];
 
     public function area_comum()
@@ -26,11 +25,6 @@ class Reserva extends Model
     public function morador()
     {
         return $this->belongsTo(Morador::class, 'morador_id');
-    }
-
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 
     public function relatorios()
