@@ -116,7 +116,7 @@ class VeiculoController extends Controller
         ]);
 
         return redirect()->route('veiculos.edit', compact('veiculo'))
-            ->with('success', 'Dados do veículo atualizados com sucesso!');
+            ->with('success', 'Informações do veículo atualizados com sucesso!');
     }
 
     /**
