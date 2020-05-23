@@ -138,7 +138,7 @@ class CondominioController extends Controller
         ]);
 
         return redirect()->route('condominios.edit', compact('condominio'))
-            ->with('success', 'Dados do condomínio atualizados com sucesso!');
+            ->with('success', 'Informações do condomínio atualizados com sucesso!');
     }
 
     /**
