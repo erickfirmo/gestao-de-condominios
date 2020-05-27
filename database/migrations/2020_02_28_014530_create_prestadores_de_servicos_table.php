@@ -16,7 +16,7 @@ class CreatePrestadoresDeServicosTable extends Migration
         Schema::create('prestadores_de_servicos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 40);
-            $table->string('chegada', 20);
+            $table->string('entrada', 20);
             $table->string('saida', 20);
             $table->string('identidade', 11);
 
