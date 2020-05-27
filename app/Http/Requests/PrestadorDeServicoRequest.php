@@ -30,7 +30,7 @@ class PrestadorDeServicoRequest extends FormRequest
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
                 'nome',
-                'chegada',
+                'entrada',
                 'saida',
                 'identidade',
                 'morador_id',
@@ -38,7 +38,7 @@ class PrestadorDeServicoRequest extends FormRequest
         } else {
             return [
                 'nome',
-                'chegada',
+                'entrada',
                 'saida',
                 'identidade',
                 'morador_id',
