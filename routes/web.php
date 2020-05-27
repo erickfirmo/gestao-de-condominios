@@ -74,7 +74,7 @@ Route::resource('entregas', 'EntregaController');
 // visitantes
 Route::resource('visitantes', 'VisitanteController');
 // prestadores de servicos
-Route::resource('prestadores-de-servicos', 'PrestadorDeServicoController');
+Route::resource('prestadores-de-servicos', 'PrestadorDeServicosController');
 
 ##financeiro
 // receita
