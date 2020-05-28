@@ -22,9 +22,9 @@ class PrestadorDeServicosController extends Controller
      */
     public function index()
     {
-        $prestador_de_servicos = PrestadorDeServicos::all();
+        $prestadores_de_servicos = PrestadorDeServicos::all();
 
-        return view('user.cadastros.prestador-de-servicos.index', [ 'prestador_de_servicos' => $prestador_de_servicos]);
+        return view('user.cadastros.prestadores-de-servicos.index', [ 'prestadores_de_servicos' => $prestadores_de_servicos]);
     }
 
     /**
@@ -34,7 +34,7 @@ class PrestadorDeServicosController extends Controller
      */
     public function create()
     {
-        return view('user.cadastros.prestador-de-servicos.create');
+        return view('user.cadastros.prestadores-de-servicos.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class PrestadorDeServicosController extends Controller
         $prestador_de_servicos->morador_id = $morador_id;
         $prestador_de_servicos->save();
 
-        return redirect()->route('prestador-de-servicos.edit', compact('prestador_de_servicos'))
+        return redirect()->route('prestadores-de-servicos.edit', compact('prestador_de_servicos'))
         ->with('success', 'Prestador De Serviços cadastrado com sucesso!');
     }
 
@@ -73,7 +73,7 @@ class PrestadorDeServicosController extends Controller
      */
     public function show($id)
     {
-        return view('user.cadastros.prestador-de-servicos.show', [
+        return view('user.cadastros.prestadores-de-servicos.show', [
             'prestador_de_servicos' => PrestadorDeServicos::findOrFail($id)
         ]);
     }
@@ -86,7 +86,7 @@ class PrestadorDeServicosController extends Controller
      */
     public function edit($id)
     {
-        return view('user.cadastros.prestador-de-servicos.edit', [
+        return view('user.cadastros.prestadores-de-servicos.edit', [
             'prestador_de_servicos' => PrestadorDeServicos::findOrFail($id),
         ]);
     }
@@ -110,7 +110,7 @@ class PrestadorDeServicosController extends Controller
             'morador_id' => $request->morador_id,
         ]);
 
-        return redirect()->route('prestador-de-servicos.edit', compact('prestador_de_servicos'))
+        return redirect()->route('prestadores-de-servicos.edit', compact('prestador_de_servicos'))
             ->with('success', 'Informações do Prestador de Serviços atualizados com sucesso!');
     }
 
@@ -124,7 +124,7 @@ class PrestadorDeServicosController extends Controller
     {
         PrestadorDeServicos::findOrFail($id)->delete();
 
-        return redirect()->route('prestador-de-servicos.index')
+        return redirect()->route('prestadores-de-servicos.index')
             ->with('success', 'Prestador De Serviços removido com sucesso!');
     }
 }
