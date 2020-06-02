@@ -38,9 +38,8 @@
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger"><span class="mr-2"><i class="fas fa-trash"></i></span>Deletar Entrega</button></a>
                         </form>
-                        <form action="{{ route('entregas.destroy', $entrega->id) }}" method="POST" class="remove-form mr-2" style="float:right">
-                            {{method_field('DELETE')}}
-                            <a href="#"><button class="btn btn-rounded btn-warning"><span class="mr-2"><i class="fas fa-bell"></i></span>Notificar Morador</button></a>
+                        <form action="#" method="GET" class="notification-form mr-2" style="float:right">
+                            <a href="#"><button class="btn btn-rounded btn-warning"><span class="mr-2"><i class="fas fa-bell"></i></span>Enviar Notificação</button></a>
                         </form>
                     </div>
 
