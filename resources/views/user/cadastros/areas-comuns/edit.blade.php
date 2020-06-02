@@ -38,6 +38,9 @@
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Área Comum</button></a>
                         </form>
+                        <form action="#" method="GET" class="notification-form mr-2" style="float:right">
+                            <a href="#"><button class="btn btn-rounded btn-warning"><span class="mr-2"><i class="fas fa-bell"></i></span>Enviar Notificação</button></a>
+                        </form>
                     </div>
 
                     <div class="panel-content">
