@@ -31,7 +31,7 @@ class VisitanteRequest extends FormRequest
                 'nome' => 'required|min:1|max:40',
                 'entrada' => 'required|digits:5',
                 'saida' => 'required|digits:5',
-                'identidade' => 'required|min:10|unique:prestadores_de_servicos,id,'.$this->route('id').'|max:11|string',
+                'identidade' => 'unique:prestadores_de_servicos,id,'.$this->route('id').'|max:11|string',
                 'morador_id' => 'required|numeric'
             ];
         } else {
@@ -39,7 +39,7 @@ class VisitanteRequest extends FormRequest
                 'nome' => 'required|min:1|max:40',
                 'entrada' => 'required|digits:5',
                 'saida' => 'required|min:1|max:3',
-                'identidade' => 'required|min:10|max:11|string',
+                'identidade' => 'max:11|string',
                 'morador_id' => 'required|numeric'
             ];
         }
