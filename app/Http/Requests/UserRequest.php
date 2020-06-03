@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
                 if(Auth::user()->id == $this->route('id')) {
                     return [
                         'nome' => 'required|max:255|string',
-                        'identidade' => 'required|min:10|unique:users,id,'.$this->route('id').'|max:11|string',
+                        'identidade' => 'required|min:10|max:11|unique:users,id,'.$this->route('id').'|max:11|string',
                         'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
                         'entrada' => 'required|min:4|max:5|string',
                         'saida' => 'required|min:4|max:5|string',
@@ -48,7 +48,7 @@ class UserRequest extends FormRequest
                 } else {
                     return [
                         'nome' => 'required|max:255|string',
-                        'identidade' => 'required|min:10|unique:users|max:11|string',
+                        'identidade' => 'required|min:10|max:11|string',
                         'genero' => 'required|max:20|in:Masculino,Feminino,Não Definido|string',
                         'entrada' => 'required|min:4|max:5|string',
                         'saida' => 'required|min:4|max:5|string',
