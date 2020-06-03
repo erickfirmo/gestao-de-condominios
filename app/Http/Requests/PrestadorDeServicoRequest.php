@@ -29,19 +29,19 @@ class PrestadorDeServicoRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
-                'nome',
-                'entrada',
-                'saida',
-                'identidade',
-                'morador_id',
+                'nome' => 'required|max:40|string',
+                'entrada' => 'required|max:20',
+                'saida' => 'required|max:20',
+                'identidade' => 'required|digits:11',
+                'morador_id' => 'required|max:8',
             ];
         } else {
             return [
-                'nome',
-                'entrada',
-                'saida',
-                'identidade',
-                'morador_id',
+                'nome' => 'required|max:40|string',
+                'entrada' => 'required|max:20',
+                'saida' => 'required|max:20',
+                'identidade' => 'required|digits:11',
+                'morador_id' => 'required|max:8',
             ];
         }
     }
