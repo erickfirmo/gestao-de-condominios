@@ -40,8 +40,8 @@
                             <p>
                                 {{
                                     countMessage($visitantes, [
-                                        'zero' => 'Nenhum morador encontrado',
-                                        'one' => '1 morador encontrado',
+                                        'zero' => 'Nenhum visitante encontrado',
+                                        'one' => '1 visitante encontrado',
                                         'many' => '[X] visitantes encontrados'
                                     ])
                                 }}
@@ -67,9 +67,10 @@
                                 <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Gênero</th>
-                                <th>Imóvel</th>
-                                <th>Proprietário do Imóvel</th>
+                                <th>Identidade</th>
+                                <th>Entrada</th>
+                                <th>Saída</th>
+                                <th>Morador</th>
                                 <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
@@ -79,9 +80,10 @@
                                 <tr id="{{ 'visitante-'.$visitante->id }}">
                                     <td>{{ $visitante->id }}</td>
                                     <td>{{ $visitante->nome }}</td>
+                                    <td>{{ $visitante->identidade }}</td>
                                     <td>{{ $visitante->entrada }}</td>
-                                    <td>{{ 'Nº '.$visitante->imovel->numero.' - Bloco '.$visitante->imovel->bloco }}</td>
-                                    <td>{{ $visitante->proprietario ? 'Sim' : 'Não' }}</td>
+                                    <td>{{ $visitante->saida }}</td>
+                                    <td>{{ $visitante->morador }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('visitantes.edit', $visitante->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
