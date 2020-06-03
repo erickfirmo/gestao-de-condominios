@@ -32,7 +32,7 @@ class PrestadorDeServicoRequest extends FormRequest
                 'nome' => 'required|max:40|string',
                 'entrada' => 'required|max:20',
                 'saida' => 'required|max:20',
-                'identidade' => 'required|digits:11',
+                'identidade' => 'required|min:10||unique:prestadores_de_servicos,id,'.$this->route('id').'|max:11|string',
                 'morador_id' => 'required|max:8',
             ];
         } else {
@@ -40,7 +40,7 @@ class PrestadorDeServicoRequest extends FormRequest
                 'nome' => 'required|max:40|string',
                 'entrada' => 'required|max:20',
                 'saida' => 'required|max:20',
-                'identidade' => 'required|digits:11',
+                'identidade' => 'required|min:10|max:11|string',
                 'morador_id' => 'required|max:8',
             ];
         }
