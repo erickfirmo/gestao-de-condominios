@@ -30,14 +30,12 @@ class VagaRequest extends FormRequest
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
                 'identificacao' => 'required|min:1|max:60|unique:vagas,id,'.$this->route('id'),
-                'andar' => 'required|min:1|max:3',
                 'observacoes' => 'max:200',
                 'morador_id' => 'required|numeric|min:1|max:12',
             ];
         } else {
             return [
                 'identificacao' => 'required|min:1|max:60',
-                'andar' => 'required|min:1|max:3',
                 'observacoes' => 'max:200',
                 'morador_id' => 'required|numeric|min:1|max:12',
             ];
