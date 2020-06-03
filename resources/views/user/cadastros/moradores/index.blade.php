@@ -12,11 +12,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Page Title Start -->
-                            <h2 class="page--title h5">Moradores</h2>
+                            <h2 class="page--title h5">Ocorrências</h2>
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('moradores.index') }}">Moradores</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('ocorrencias.index') }}">Ocorrências</a></li>
                                 <li class="breadcrumb-item active"><span>Todos</span></li>
                             </ul>
                         </div>
@@ -33,16 +33,16 @@
 
 
                         <div class="title fa-university">
-                            <h3 class="h3">Moradores
-                            <a href="{{ route('moradores.create') }}" class="btn btn-sm btn-outline-info">Adicionar Morador</a>
+                            <h3 class="h3">Ocorrências
+                            <a href="{{ route('ocorrencias.create') }}" class="btn btn-sm btn-outline-info">Adicionar Ocorrência</a>
                         
                             </h3>
                             <p>
                                 {{
-                                    countMessage($moradores, [
-                                        'zero' => 'Nenhum morador encontrado',
-                                        'one' => '1 morador encontrado',
-                                        'many' => '[X] moradores encontrados'
+                                    countMessage($ocorrencias, [
+                                        'zero' => 'Nenhuma ocorrência encontrada',
+                                        'one' => '1 ocorrência encontrada',
+                                        'many' => '[X] ocorrências encontradas'
                                     ])
                                 }}
                             </p>
@@ -50,7 +50,7 @@
 
                         <div class="actions row">
                             <form class="search">
-                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('moradores-table', this)">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('ocorrencias-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -60,13 +60,14 @@
 
                 <div class="panel">
 
-                    <div class="records--list" data-title="Lista de Moradores">
+                    <div class="records--list" data-title="Lista de Ocorrências">
                         
-                        <table id="recordsListView" class="moradores-table">
+                        <table id="recordsListView" class="ocorrencias-table">
                             <thead>
                                 <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
+                                <th>Título</th>
+                                <th>Descrição</th>
                                 <th>Gênero</th>
                                 <th>Imóvel</th>
                                 <th>Proprietário do Imóvel</th>
@@ -74,19 +75,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($moradores as $morador)
+                                @foreach($ocorrencias as $ocorrencia)
 
-                                <tr id="{{ 'morador-'.$morador->id }}">
-                                    <td>{{ $morador->id }}</td>
-                                    <td>{{ $morador->nome }}</td>
-                                    <td>{{ $morador->genero }}</td>
-                                    <td>{{ 'Nº '.$morador->imovel->numero.' - Bloco '.$morador->imovel->bloco }}</td>
-                                    <td>{{ $morador->proprietario ? 'Sim' : 'Não' }}</td>
+                                <tr id="{{ 'ocorrencia-'.$ocorrencia->id }}">
+                                    <td>{{ $ocorrencia->id }}</td>
+                                    <td>{{ $ocorrencia->nome }}</td>
+                                    <td>{{ $ocorrencia->genero }}</td>
+                                    <td>{{ 'Nº '.$ocorrencia->imovel->numero.' - Bloco '.$ocorrencia->imovel->bloco }}</td>
+                                    <td>{{ $ocorrencia->proprietario ? 'Sim' : 'Não' }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('moradores.edit', $morador->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('ocorrencias.edit', $ocorrencia->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
-                                        <form action="{{ route('moradores.destroy', $morador->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('ocorrencias.destroy', $ocorrencia->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
