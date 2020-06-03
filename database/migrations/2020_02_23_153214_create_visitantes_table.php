@@ -17,9 +17,9 @@ class CreateVisitantesTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 40);
 
-            $table->string('chegada', 20);
+            $table->string('entrada', 20);
             $table->string('saida', 20);
-            $table->string('transporte', 20);
+            $table->string('identidade', 11)->nullable();
 
             $table->unsignedBigInteger('morador_id');
 
