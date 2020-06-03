@@ -52,7 +52,6 @@ class VeiculoController extends Controller
         $descricao = $request->input('descricao');
         $placa = $request->input('placa');
         $morador_id = $request->input('morador_id');
-        $funcionario_id = Auth::user()->id;
 
         $veiculo = new Veiculo;
         $veiculo->modelo = $modelo;
@@ -61,7 +60,6 @@ class VeiculoController extends Controller
         $veiculo->descricao = $descricao;
         $veiculo->placa = $placa;
         $veiculo->morador_id = $morador_id;
-        $veiculo->funcionario_id = $funcionario_id;
 
         $veiculo->save();
 
