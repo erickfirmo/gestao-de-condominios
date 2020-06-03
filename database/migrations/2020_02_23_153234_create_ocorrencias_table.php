@@ -15,6 +15,7 @@ class CreateOcorrenciasTable extends Migration
     {
         Schema::create('ocorrencias', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('titulo', 40);
             $table->string('descricao', 400);
             $table->string('data', 20);
             $table->string('hora', 20);
