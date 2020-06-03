@@ -37,7 +37,7 @@ class VisitanteRequest extends FormRequest
         } else {
             return [
                 'nome' => 'required|min:1|max:40',
-                'chegada' => 'required|min:1|max:10',
+                'entrada' => 'required|digits:5',
                 'saida' => 'required|min:1|max:3',
                 'identidade' => 'required|min:10|max:11|string',
                 'morador_id' => 'required|numeric'
