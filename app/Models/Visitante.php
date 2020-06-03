@@ -10,9 +10,9 @@ class Visitante extends Model
 
     public $fillable = [
         'nome',
-        'chegada',
+        'entrada',
         'saida',
-        'transporte',
+        'identidade',
         'morador_id',
     ];
 
