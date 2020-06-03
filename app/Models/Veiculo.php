@@ -14,8 +14,6 @@ class Veiculo extends Model
         'cor',
         'descricao',
         'placa',
-        'parent_id',
-        'parent_table',
     ];
 
     public function relatorios()
