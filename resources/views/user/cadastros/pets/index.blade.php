@@ -40,8 +40,8 @@
                             <p>
                                 {{
                                     countMessage($pets, [
-                                        'zero' => 'Nenhum morador encontrado',
-                                        'one' => '1 morador encontrado',
+                                        'zero' => 'Nenhum pet encontrado',
+                                        'one' => '1 pet encontrado',
                                         'many' => '[X] pets encontrados'
                                     ])
                                 }}
@@ -67,21 +67,25 @@
                                 <tr>
                                 <th>ID</th>
                                 <th>Nome</th>
-                                <th>Gênero</th>
-                                <th>Imóvel</th>
-                                <th>Proprietário do Imóvel</th>
+                                <th>Espécie</th>
+                                <th>Raça</th>
+                                <th>Cor</th>
+                                <th>Morador</th>
+                                <th>Descrição</th>
                                 <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($pets as $pet)
 
-                                <tr id="{{ 'morador-'.$pet->id }}">
+                                <tr id="{{ 'pet-'.$pet->id }}">
                                     <td>{{ $pet->id }}</td>
                                     <td>{{ $pet->nome }}</td>
-                                    <td>{{ $pet->genero }}</td>
-                                    <td>{{ 'Nº '.$pet->imovel->numero.' - Bloco '.$pet->imovel->bloco }}</td>
-                                    <td>{{ $pet->proprietario ? 'Sim' : 'Não' }}</td>
+                                    <td>{{ $pet->especie }}</td>
+                                    <td>{{ $pet->raca }}</td>
+                                    <td>{{ $pet->cor }}</td>
+                                    <td>{{ $pet->morador }}</td>
+                                    <td>{{ $pet->descricao }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('pets.edit', $pet->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
