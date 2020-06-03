@@ -12,11 +12,11 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- Page Title Start -->
-                            <h2 class="page--title h5">Moradores</h2>
+                            <h2 class="page--title h5">Visitantes</h2>
                             <!-- Page Title End -->
 
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('moradores.index') }}">Moradores</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('visitantes.index') }}">Visitantes</a></li>
                                 <li class="breadcrumb-item active"><span>Todos</span></li>
                             </ul>
                         </div>
@@ -33,16 +33,16 @@
 
 
                         <div class="title fa-university">
-                            <h3 class="h3">Moradores
-                            <a href="{{ route('moradores.create') }}" class="btn btn-sm btn-outline-info">Adicionar Morador</a>
+                            <h3 class="h3">Visitantes
+                            <a href="{{ route('visitantes.create') }}" class="btn btn-sm btn-outline-info">Adicionar Visitante</a>
                         
                             </h3>
                             <p>
                                 {{
-                                    countMessage($moradores, [
+                                    countMessage($visitantes, [
                                         'zero' => 'Nenhum morador encontrado',
                                         'one' => '1 morador encontrado',
-                                        'many' => '[X] moradores encontrados'
+                                        'many' => '[X] visitantes encontrados'
                                     ])
                                 }}
                             </p>
@@ -50,7 +50,7 @@
 
                         <div class="actions row">
                             <form class="search">
-                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('moradores-table', this)">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('visitantes-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -60,9 +60,9 @@
 
                 <div class="panel">
 
-                    <div class="records--list" data-title="Lista de Moradores">
+                    <div class="records--list" data-title="Lista de Visitantes">
                         
-                        <table id="recordsListView" class="moradores-table">
+                        <table id="recordsListView" class="visitantes-table">
                             <thead>
                                 <tr>
                                 <th>ID</th>
@@ -74,19 +74,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($moradores as $morador)
+                                @foreach($visitantes as $visitante)
 
-                                <tr id="{{ 'morador-'.$morador->id }}">
-                                    <td>{{ $morador->id }}</td>
-                                    <td>{{ $morador->nome }}</td>
-                                    <td>{{ $morador->genero }}</td>
-                                    <td>{{ 'Nº '.$morador->imovel->numero.' - Bloco '.$morador->imovel->bloco }}</td>
-                                    <td>{{ $morador->proprietario ? 'Sim' : 'Não' }}</td>
+                                <tr id="{{ 'visitante-'.$visitante->id }}">
+                                    <td>{{ $visitante->id }}</td>
+                                    <td>{{ $visitante->nome }}</td>
+                                    <td>{{ $visitante->entrada }}</td>
+                                    <td>{{ 'Nº '.$visitante->imovel->numero.' - Bloco '.$visitante->imovel->bloco }}</td>
+                                    <td>{{ $visitante->proprietario ? 'Sim' : 'Não' }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
-                                            <a href="{{ route('moradores.edit', $morador->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
+                                            <a href="{{ route('visitantes.edit', $visitante->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
                                         </button>
-                                        <form action="{{ route('moradores.destroy', $morador->id) }}" method="POST" class="remove-form">
+                                        <form action="{{ route('visitantes.destroy', $visitante->id) }}" method="POST" class="remove-form">
                                             @csrf
                                             {{method_field('DELETE')}}
                                             <button class="d-inline btn-action">
