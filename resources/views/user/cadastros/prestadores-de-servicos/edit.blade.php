@@ -56,15 +56,12 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
-                                <div class="col-md-3">
-                                    <input type="date" name="entrada" class="form-control" id="entrada">
-                                </div>
-                                <div class="col-md-3">
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
                                     <input type="time" name="entrada" class="form-control" id="entrada">
                                 </div>
                             </div>
@@ -73,15 +70,12 @@
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
-                                <div class="col-md-3">
-                                    <input type="date" name="saida" class="form-control" id="saida">
-                                </div>
-                                <div class="col-md-3">
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
                                     <input type="time" name="saida" class="form-control" id="saida">
                                 </div>
                             </div>
                             <!-- Form Group End -->
-
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
