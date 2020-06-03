@@ -84,7 +84,7 @@
                                     <td>{{ $pet->especie }}</td>
                                     <td>{{ $pet->raca }}</td>
                                     <td>{{ $pet->cor }}</td>
-                                    <td>{{ $pet->morador }}</td>
+                                    <td>{{ $pet->morador()->nome }}</td>
                                     <td>{{ $pet->descricao }}</td>
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
