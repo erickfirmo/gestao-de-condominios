@@ -50,7 +50,7 @@
 
                         <div class="actions row">
                             <form class="search">
-                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('moradores-table', this)">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('veiculos-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -62,14 +62,15 @@
 
                     <div class="records--list" data-title="Lista de Veículos">
                         
-                        <table id="recordsListView" class="moradores-table">
+                        <table id="recordsListView" class="veiculos-table">
                             <thead>
                                 <tr>
                                 <th>ID</th>
-                                <th>Nome</th>
-                                <th>Gênero</th>
-                                <th>Imóvel</th>
-                                <th>Proprietário do Imóvel</th>
+                                <th>Modelo</th>
+                                <th>Tipo</th>
+                                <th>Cor</th>
+                                <th>Placa</th>
+                                <th>Descrição</th>
                                 <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
@@ -78,10 +79,12 @@
 
                                 <tr id="{{ 'veiculo-'.$veiculo->id }}">
                                     <td>{{ $veiculo->id }}</td>
-                                    <td>{{ $veiculo->nome }}</td>
-                                    <td>{{ $veiculo->genero }}</td>
-                                    <td>{{ 'Nº '.$veiculo->imovel->numero.' - Bloco '.$veiculo->imovel->bloco }}</td>
-                                    <td>{{ $veiculo->proprietario ? 'Sim' : 'Não' }}</td>
+                                    <td>{{ $veiculo->modelo }}</td>
+                                    <td>{{ $veiculo->tipo }}</td>
+                                    <td>{{ $veiculo->cor }}</td>
+                                    <td>{{ $veiculo->placa }}</td>
+                                    <td>{{ $veiculo->descricao }}</td>
+
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('veiculos.edit', $veiculo->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
