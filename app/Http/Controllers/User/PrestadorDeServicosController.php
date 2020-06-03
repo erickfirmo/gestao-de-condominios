@@ -104,8 +104,8 @@ class PrestadorDeServicosController extends Controller
 
         $prestador_de_servicos = PrestadorDeServicos::findOrFail($id)->update([
             'nome' => $request->nome,
-            'entrada' => $request->descricao,
-            'saida' => $request->status,
+            'entrada' => $request->entrada,
+            'saida' => $request->saida,
             'identidade' => $request->identidade,
             'morador_id' => $request->morador_id,
         ]);
