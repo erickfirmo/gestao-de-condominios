@@ -10,20 +10,13 @@ class Vaga extends Model
 
     public $fillable = [
         'identificacao',
-        'andar',
         'observacoes',
         'morador_id',
-        'funcionario_id',
     ];
 
     public function morador()
     {
         return $this->belongsTo(Morador::class, 'morador_id');
-    }
-
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'funcionario_id');
     }
 
     public function relatorios()
