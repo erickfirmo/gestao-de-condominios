@@ -47,14 +47,14 @@ class VisitanteController extends Controller
         $request->validated();
 
         $nome = $request->input('nome');
-        $chegada = $request->input('chegada');
+        $entrada = $request->input('entrada');
         $saida = $request->input('saida');
         $transporte = $request->input('transporte');
         $morador_id = $request->input('morador_id');
 
         $visitante = new Visitante;
         $visitante->nome = $nome;
-        $visitante->chegada = $chegada;
+        $visitante->entrada = $entrada;
         $visitante->saida = $saida;
         $visitante->transporte = $transporte;
         $visitante->morador_id = $morador_id;
@@ -103,7 +103,7 @@ class VisitanteController extends Controller
 
         $visitante = Visitante::findOrFail($id)->update([
             'nome' => $request->nome,
-            'chegada' => $request->chegada,
+            'entrada' => $request->entrada,
             'saida' => $request->saida,
             'transporte' => $request->transporte,
             'morador_id' => $request->morador_id
