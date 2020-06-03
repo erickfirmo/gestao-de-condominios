@@ -57,61 +57,65 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
-                                <div class="col-md-10">
-                                    <span id="genero-text-error" class="form-text text-error"></span>
-                                    <select name="genero" id="genero" class="form-control">
-                                        <option></option>
-                                        <option value="Masculino" {{ selectOption('Masculino', old('genero')) }}>Masculino</option>
-                                        <option value="Feminino" {{ selectOption('Feminino', old('genero')) }}>Feminino</option>
-                                        <option value="Não Definido" {{ selectOption('Não Definido', old('genero')) }}>Não Definido</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->               
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Espécie</span>
 
                                 <div class="col-md-10">
-                                    <span id="imovei_id-text-error" class="form-text text-error"></span>
-                                    <select name="imovel_id" class="form-control" id="imovel_id">
+                                    <span id="especie-text-error" class="form-text text-error"></span>
+                                    <select name="especie" class="form-control" id="especie">
                                         <option></option>
-                                        @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $imovel->id ? ' selected' : null }}>
-                                                {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
-                                            </option>
-                                        @endforeach
+                                        <option value="Cachorro" {{ old('especie') == 'Cachorro' ? ' selected' : null }}>
+                                            Cachorro/Cadela
+                                        </option>
+                                        <option value="Cachorro" {{ old('especie') == 'Gato' ? ' selected' : null }}>
+                                            Gato(a)
+                                        </option>
                                     </select>
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
-                             <!-- Form Group Start -->
-                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
-                                <div class="col-md-10 form-inline">
-                                    <span id="proprietario-text-error" class="form-text text-error"></span>
-
-                                    <label class="form-radio mr-3">
-                                    <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
-                                    <span class="form-radio-label">Sim</span></label>
-                                    <label class="form-radio">
-                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
-                                    <span class="form-radio-label">Não</span>
-                                </label>
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Raça</span>
+                                <div class="col-md-10">
+                                    <span id="raca-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="raca" class="form-control" id="raca" maxlenght="30" value="{{ old('raca') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
+                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
-
+                                <span class="label-text col-md-2 col-form-label text-md-right">Cor</span>
                                 <div class="col-md-10">
-                                    <span id="observacoes-text-error" class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
+                                    <span id="cor-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="cor" class="form-control" id="cor" maxlenght="30" value="{{ $old('cor') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
+                                <div class="col-md-10">
+                                    <span id="descricao-text-error" class="form-text text-error"></span>
+                                    <input type="text" name="descricao" class="form-control" id="descricao" maxlenght="200" value="{{ old('descricao') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+
+                            
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ old('morador') }}">
+                                    <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ old('morador_id') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
