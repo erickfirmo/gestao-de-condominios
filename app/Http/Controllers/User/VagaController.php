@@ -46,27 +46,19 @@ class VagaController extends Controller
     {
         $request->validated();
 
-        $modelo = $request->input('modelo');
-        $tipo = $request->input('tipo');
-        $cor = $request->input('cor');
-        $descricao = $request->input('descricao');
-        $placa = $request->input('placa');
+        $identificacao = $request->input('identificacao');
+        $observacoes = $request->input('observacoes');
         $morador_id = $request->input('morador_id');
-        $funcionario_id = Auth::user()->id;
-
+        
         $vaga = new Vaga;
-        $vaga->modelo = $modelo;
-        $vaga->tipo = $tipo;
-        $vaga->cor = $cor;
-        $vaga->descricao = $descricao;
-        $vaga->placa = $placa;
+        $vaga->identificacao = $identificacao;
+        $vaga->observacoes = $observacoes;
         $vaga->morador_id = $morador_id;
-        $vaga->funcionario_id = $funcionario_id;
 
         $vaga->save();
 
         return redirect()->route('vagas.edit', compact('vaga'))
-            ->with('success', 'Vaga cadastrado com sucesso!');
+            ->with('success', 'Vaga cadastrada com sucesso!');
     }
 
     /**
@@ -107,16 +99,13 @@ class VagaController extends Controller
         $request->validated();
 
         $vaga = Vaga::findOrFail($id)->update([
-            'modelo' => $request->modelo,
-            'tipo' => $request->tipo,
-            'cor' => $request->cor,
-            'descricao' => $request->descricao,
-            'placa' => $request->placa,
+            'identificacao' => $request->identificacao,
+            'observacoes' => $request->observacoes,
             'morador_id' => $request->morador_id,
         ]);
 
         return redirect()->route('vagas.edit', compact('vaga'))
-            ->with('success', 'Informações do vaga atualizados com sucesso!');
+            ->with('success', 'Informações da vaga atualizados com sucesso!');
     }
 
     /**
@@ -130,6 +119,6 @@ class VagaController extends Controller
         Vaga::findOrFail($id)->delete();
 
         return redirect()->route('vagas.index')
-            ->with('success', 'Vaga removido com sucesso!');
+            ->with('success', 'Vaga removida com sucesso!');
     }
 }
