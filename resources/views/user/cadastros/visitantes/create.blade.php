@@ -18,7 +18,7 @@
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('moradores.index') }}">Moradores</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('visitantes.index') }}">Moradores</a></li>
                         <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
                     </ul>
                 </div>
@@ -42,11 +42,11 @@
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
                     
-                        <form action="{{ route('moradores.store') }}" method="POST" class="show-onload d-none">
+                        <form action="{{ route('visitantes.store') }}" method="POST" class="show-onload d-none">
                             @csrf
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
+                           <!-- Form Group Start -->
+                           <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
@@ -57,64 +57,39 @@
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Gênero</span> 
-                                <div class="col-md-10 form-inline">
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Masculino" class="form-radio-input" {{ old('genero') == 'Masculino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Masculino</span>
-                                    </label>
-                                    <label class="form-radio mr-3">
-                                        <input type="radio" name="genero" value="Feminino" class="form-radio-input" {{ old('genero') == 'Feminino' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Feminino</span>
-                                    </label>
-                                    <label class="form-radio">
-                                        <input type="radio" name="genero" value="Não Definido" class="form-radio-input" {{ old('genero') == 'Não Definido' ? 'checked' : null }}>
-                                        <span class="form-radio-label">Não Definido</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->               
-
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
-
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <select name="imovel_id" class="form-control" id="imovel_id">
-                                        <option></option>
-                                        @foreach($imoveis as $imovel)
-                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $imovel->id ? ' selected' : null }}>
-                                                {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
-
-                             <!-- Form Group Start -->
-                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
-                                <div class="col-md-10 form-inline">
-                                    <label class="form-radio mr-3">
-                                    <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
-                                    <span class="form-radio-label">Sim</span></label>
-                                    <label class="form-radio">
-                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
-                                    <span class="form-radio-label">Não</span>
-                                </label>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
+                                <div class="col-md-3">
+                                    <input type="time" name="entrada" class="form-control" id="entrada" value="{{ old('entrada') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
+                                <div class="col-md-3">
+                                    <input type="time" name="saida" class="form-control" id="saida" value="{{ old('saida') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
 
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
+                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ old('identidade') }}">
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
+                                <div class="col-md-10">
+                                    <span class="form-text text-error"></span>
+                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ old('morador') }}">
+                                    <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ old('morador_id') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -122,7 +97,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('moradores.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('visitantes.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
