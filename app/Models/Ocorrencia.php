@@ -9,10 +9,11 @@ class Ocorrencia extends Model
     public $table = 'ocorrencias';
 
     public $fillable = [
+        'titulo',
         'descricao',
         'status',
         'data',
-        'hora',
+        'hora',  
         'gravidade',
         'morador_id',
 
