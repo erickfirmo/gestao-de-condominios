@@ -45,7 +45,6 @@
                         <form action="{{ route('prestadores-de-servicos.store') }}" method="POST" class="show-onload d-none">
                             @csrf
 
-
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
@@ -56,7 +55,6 @@
                             </div>
                             <!-- Form Group End -->
 
-                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
@@ -75,13 +73,12 @@
                             </div>
                             <!-- Form Group End -->
 
-
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $prestador_de_servicos->identidade }}">
+                                    <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ old('identidade') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -91,8 +88,8 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ $prestador_de_servicos->morador()->nome }}">
-                                    <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ $prestador_de_servicos->morador_id }}">
+                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ old('morador') }}">
+                                    <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ old('morador_id') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
