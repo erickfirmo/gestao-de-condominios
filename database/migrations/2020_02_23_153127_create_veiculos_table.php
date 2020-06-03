@@ -20,8 +20,6 @@ class CreateVeiculosTable extends Migration
             $table->string('cor', 20);
             $table->string('descricao', 200)->nullable();
             $table->string('placa', 7)->unique();
-            $table->unsignedBigInteger('parent_id');
-            $table->string('parent_table', 30);
             $table->timestamps();
 
         });
