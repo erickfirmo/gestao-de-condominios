@@ -29,6 +29,7 @@ class OcorrenciaRequest extends FormRequest
 
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
+                'titulo' => 'required|min:3|unique:ocorrencias,id,'.$this->route('id').'|max:40|string',
                 'descricao' => 'required|min:1|max:200',
                 // 'status' => 'required|in:a,b',
                 'agora' => 'required|in:0,1',
@@ -40,6 +41,7 @@ class OcorrenciaRequest extends FormRequest
             ];
         } else {
             return [
+                'titulo' => 'required|min:3|max:40|string',
                 'descricao' => 'required|min:1|max:200',
                 // 'status' => 'required|in:a,b',
                 'agora' => 'required|in:0,1',
