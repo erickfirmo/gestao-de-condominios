@@ -30,7 +30,7 @@ class PrestadorDeServicosRequest extends FormRequest
         if($this->input('_method') == 'PUT' || $this->input('_method') == 'PATCH') {
             return [
                 'nome' => 'required|max:40|string',
-                'entrada' => 'required|max:20',
+                'entrada' => 'required|digits:5',
                 'saida' => 'required|max:20',
                 'identidade' => 'required|min:10|unique:prestadores_de_servicos,id,'.$this->route('id').'|max:11|string',
                 'morador_id' => 'required|max:8',
@@ -38,7 +38,7 @@ class PrestadorDeServicosRequest extends FormRequest
         } else {
             return [
                 'nome' => 'required|max:40|string',
-                'entrada' => 'required|max:20',
+                'entrada' => 'required|digits:5',
                 'saida' => 'required|max:20',
                 'identidade' => 'required|min:10|max:11|string',
                 'morador_id' => 'required|max:8',
