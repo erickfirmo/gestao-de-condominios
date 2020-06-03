@@ -75,7 +75,7 @@
 
                                 <div class="col-md-10">
                                     <span id="observacoes-text-error" class="form-text text-error"></span>
-                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ $vaga->observacoes }}</textarea>
+                                    <textarea name="observacoes" class="form-control" maxlengh="200">{{ $vaga->observacoes }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
