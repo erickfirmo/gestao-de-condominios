@@ -49,14 +49,14 @@ class VisitanteController extends Controller
         $nome = $request->input('nome');
         $entrada = $request->input('entrada');
         $saida = $request->input('saida');
-        $transporte = $request->input('transporte');
+        $identidade = $request->input('identidade');
         $morador_id = $request->input('morador_id');
 
         $visitante = new Visitante;
         $visitante->nome = $nome;
         $visitante->entrada = $entrada;
         $visitante->saida = $saida;
-        $visitante->transporte = $transporte;
+        $visitante->identidade = $identidade;
         $visitante->morador_id = $morador_id;
         $visitante->save();
 
@@ -105,7 +105,7 @@ class VisitanteController extends Controller
             'nome' => $request->nome,
             'entrada' => $request->entrada,
             'saida' => $request->saida,
-            'transporte' => $request->transporte,
+            'identidade' => $request->identidade,
             'morador_id' => $request->morador_id
         ]);
 
