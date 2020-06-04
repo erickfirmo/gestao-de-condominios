@@ -79,7 +79,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
-                                    <span id="identidade-text-error"  class="form-text text-error"></span>
+                                    <span id="identidade-text-error" class="form-text text-error"></span>
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ old('identidade') }}">
                                 </div>
                             </div>
