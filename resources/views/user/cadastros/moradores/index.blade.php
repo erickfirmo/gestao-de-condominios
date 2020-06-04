@@ -68,9 +68,8 @@
                                 <th>ID</th>
                                 <th>Título</th>
                                 <th>Descrição</th>
-                                <th>Gênero</th>
-                                <th>Imóvel</th>
-                                <th>Proprietário do Imóvel</th>
+                                <th>Data</th>
+                                <th>Gravidade</th>
                                 <th class="not-sortable">Ações</th>
                                 </tr>
                             </thead>
@@ -79,10 +78,12 @@
 
                                 <tr id="{{ 'ocorrencia-'.$ocorrencia->id }}">
                                     <td>{{ $ocorrencia->id }}</td>
-                                    <td>{{ $ocorrencia->nome }}</td>
-                                    <td>{{ $ocorrencia->genero }}</td>
-                                    <td>{{ 'Nº '.$ocorrencia->imovel->numero.' - Bloco '.$ocorrencia->imovel->bloco }}</td>
-                                    <td>{{ $ocorrencia->proprietario ? 'Sim' : 'Não' }}</td>
+                                    <td>{{ $ocorrencia->titulo }}</td>
+                                    <td>{{ $ocorrencia->descricao }}</td>
+                                    <td>{{ $ocorrencia->data.' às '.$ocorrencia->hora }}</td>
+                                    <td>{{ strtoupper($ocorrencia->gravidade) }}</td>
+
+
                                     <td>
                                         <button class="d-inline mr-2 btn-action">
                                             <a href="{{ route('ocorrencias.edit', $ocorrencia->id ) }}" class="btn-link"><i class="fa fa-pencil-alt"></i></a>
