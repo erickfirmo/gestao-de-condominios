@@ -14,11 +14,11 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Page Title Start -->
-                    <h2 class="page--title h5">Ocorrências</h2>
+                    <h2 class="page--title h5">Moradores</h2>
                     <!-- Page Title End -->
 
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('ocorrencias.index') }}">Ocorrências</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('moradores.index') }}">Moradores</a></li>
                         <li class="breadcrumb-item active"><span>Novo Cadastro</span></li>
                     </ul>
                 </div>
@@ -35,66 +35,83 @@
                 <!-- Panel Start -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Nova Ocorrência</h3>
+                        <h3 class="panel-title">Novo Morador</h3>
                     </div>
 
                     <div class="panel-content">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
-                        <form action="{{ route('ocorrencias.store') }}" method="POST" class="show-onload d-none">
+                    
+                        <form action="{{ route('moradores.store') }}" method="POST" class="show-onload d-none">
                             @csrf
-                            
+
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
                                     <span id="nome-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ $ocorrencia->nome }}">
+                                    <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Gravidade</span>
+                                <span class="label-text col-md-2 col-form-label text-md-right">Gênero</span>
                                 <div class="col-md-10">
-                                    <span id="gravidade-text-error" class="form-text text-error"></span>
-                                    <select name="gravidade" id="gravidade" class="form-control">
+                                    <span id="genero-text-error" class="form-text text-error"></span>
+                                    <select name="genero" id="genero" class="form-control">
                                         <option></option>
-                                        <option value="baixa" {{ selectOption('baixa', $ocorrencia->gravidade) }}>Baixa</option>
-                                        <option value="média" {{ selectOption('média', $ocorrencia->gravidade) }}>Média</option>
-                                        <option value="1alta" {{ selectOption('alta', $ocorrencia->gravidade) }}>Alta</option>
+                                        <option value="Masculino" {{ selectOption('Masculino', old('genero')) }}>Masculino</option>
+                                        <option value="Feminino" {{ selectOption('Feminino', old('genero')) }}>Feminino</option>
+                                        <option value="Não Definido" {{ selectOption('Não Definido', old('genero')) }}>Não Definido</option>
                                     </select>
                                 </div>
                             </div>
-                            <!-- Form Group End -->    
-                            
+                            <!-- Form Group End -->               
+
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Data</span>
+                            <span class="label-text col-md-2 col-form-label text-md-right">Imóvel</span>
+
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <input type="date" name="data" class="form-control" id="data" value="{{ old('data') }}">
+                                    <span id="imovei_id-text-error" class="form-text text-error"></span>
+                                    <select name="imovel_id" class="form-control" id="imovel_id">
+                                        <option></option>
+                                        @foreach($imoveis as $imovel)
+                                            <option value="{{ $imovel->id }}" {{ old('imovel_id') == $imovel->id ? ' selected' : null }}>
+                                                {{ 'Nº '.$imovel->numero.' - Bloco '.$imovel->bloco }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
+
+                             <!-- Form Group Start -->
+                             <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right py-0">Proprietário do Imóvel</span> 
+                                <div class="col-md-10 form-inline">
+                                    <span id="proprietario-text-error" class="form-text text-error"></span>
+
+                                    <label class="form-radio mr-3">
+                                    <input type="radio" name="proprietario" value="1" class="form-radio-input" {{ old('proprietario') ? 'checked' : null }}>
+                                    <span class="form-radio-label">Sim</span></label>
+                                    <label class="form-radio">
+                                    <input type="radio" name="proprietario" value="0" class="form-radio-input">
+                                    <span class="form-radio-label">Não</span>
+                                </label>
                                 </div>
                             </div>
                             <!-- Form Group End -->
 
                             <!-- Form Group Start -->
                             <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Hora</span>
-                                <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
-                                    <input type="time" name="hora" class="form-control" id="hora" value="{{ old('hora') }}">
-                                </div>
-                            </div>
-                            <!-- Form Group End -->
+                            <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
 
-                            <!-- Form Group Start -->
-                            <div class="form-group row">
-                            <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
                                 <div class="col-md-10">
-                                    <span id="descricao-text-error" class="form-text text-error"></span>
-                                    <textarea name="descricao" class="form-control" maxlengh="400">{{ $ocorrencia->descricao }}</textarea>
+                                    <span id="observacoes-text-error" class="form-text text-error"></span>
+                                    <textarea name="observacoes" class="form-control" maxlengh="400">{{ old('observacoes') }}</textarea>
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -102,7 +119,7 @@
                             <div class="row">
                                 <div class="col-lg-10 offset-lg-2">
                                     <input type="submit" value="Salvar" class="btn btn-sm btn-rounded btn-success">
-                                    <a href="{{ route('ocorrencias.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
+                                    <a href="{{ route('moradores.index') }}"><button type="button" class="btn btn-sm btn-rounded btn-outline-secondary">Cancelar</button></a>
                                 </div>
                             </div>
 
