@@ -63,7 +63,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="time" name="entrada" class="form-control" id="entrada">
+                                    <input type="time" name="entrada" class="form-control" id="entrada" value="{{ $visitante->entrada }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -73,7 +73,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="time" name="saida" class="form-control" id="saida">
+                                    <input type="time" name="saida" class="form-control" id="saida" value="{{ $visitante->saida }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
