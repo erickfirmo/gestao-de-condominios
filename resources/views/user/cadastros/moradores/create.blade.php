@@ -35,16 +35,14 @@
                 <!-- Panel Start -->
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Novo Ocorrência</h3>
+                        <h3 class="panel-title">Nova Ocorrência</h3>
                     </div>
 
                     <div class="panel-content">
                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 
-                    
                         <form action="{{ route('ocorrencias.store') }}" method="POST" class="show-onload d-none">
                             @csrf
-
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
@@ -56,7 +54,6 @@
                             </div>
                             <!-- Form Group End -->
 
-                            
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Gravidade</span>
@@ -71,14 +68,13 @@
                                 </div>
                             </div>
                             <!-- Form Group End -->    
-
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Data</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="date" name="data" class="form-control" id="data">
+                                    <input type="date" name="data" class="form-control" id="data" value="{{ old('data') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -88,7 +84,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Hora</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="time" name="hora" class="form-control" id="hora">
+                                    <input type="time" name="hora" class="form-control" id="hora" value="{{ old('hora') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -96,7 +92,6 @@
                             <!-- Form Group Start -->
                             <div class="form-group row">
                             <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
-
                                 <div class="col-md-10">
                                     <span id="descricao-text-error" class="form-text text-error"></span>
                                     <textarea name="descricao" class="form-control" maxlengh="400">{{ $ocorrencia->descricao }}</textarea>
