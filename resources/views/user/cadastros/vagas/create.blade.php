@@ -72,7 +72,7 @@
                             <span class="label-text col-md-2 col-form-label text-md-right">Observações</span>
 
                                 <div class="col-md-10">
-                                    <span id="observacoes-text-error" class="form-text text-error"></span>
+                                    <span id="observacoes-text-error"  class="form-text text-error"></span>
                                     <textarea name="observacoes" class="form-control" maxlengh="200">{{ $vaga->observacoes }}</textarea>
                                 </div>
                             </div>
