@@ -79,7 +79,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Data</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="data-text-error" class="form-text text-error"></span>
                                     <input type="date" name="data" class="form-control" id="data" value="{{ $ocorrencia->data }}">
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Hora</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="hora-text-error" class="form-text text-error"></span>
                                     <input type="time" name="hora" class="form-control" id="hora" value="{{ $ocorrencia->hora }}">
                                 </div>
                             </div>
@@ -98,7 +98,6 @@
                             <!-- Form Group Start -->
                             <div class="form-group row">
                             <span class="label-text col-md-2 col-form-label text-md-right">Descrição</span>
-
                                 <div class="col-md-10">
                                     <span id="descricao-text-error" class="form-text text-error"></span>
                                     <textarea name="descricao" class="form-control" maxlengh="400">{{ $ocorrencia->descricao }}</textarea>
