@@ -35,7 +35,6 @@ class OcorrenciaRequest extends FormRequest
                 'agora' => 'required|in:0,1',
                 'data' => 'required_if:agora,0',
                 'hora' => 'required_if:agora,0',
-                'status' => 'required',
                 'gravidade' => 'required|in:baixa,media,alta',
                 'morador_id' => 'required|min:1|max:20|numeric',
             ];
