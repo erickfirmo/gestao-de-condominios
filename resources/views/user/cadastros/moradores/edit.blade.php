@@ -80,7 +80,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Data</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="date" name="data" class="form-control" id="data">
+                                    <input type="date" name="data" class="form-control" id="data" value="{{ $ocorrencia->data }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
@@ -90,7 +90,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Hora</span>
                                 <div class="col-md-10">
                                     <span class="form-text text-error"></span>
-                                    <input type="time" name="hora" class="form-control" id="hora">
+                                    <input type="time" name="hora" class="form-control" id="hora" value="{{ $ocorrencia->hora }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
