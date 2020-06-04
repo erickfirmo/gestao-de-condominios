@@ -51,7 +51,7 @@
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="nome-text-error" class="form-text text-error"></span>
                                     <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ $prestador_de_servicos->nome }}">
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Entrada</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="entrada-text-error" class="form-text text-error"></span>
                                     <input type="time" name="entrada" class="form-control" id="entrada">
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Saída</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="saida-text-error" class="form-text text-error"></span>
                                     <input type="time" name="saida" class="form-control" id="saida">
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Identidade</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="identidade-text-error" class="form-text text-error"></span>
                                     <input type="text" name="identidade" class="form-control" id="identidade" maxlenght="11" value="{{ $prestador_de_servicos->identidade }}">
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="morador_id-text-error" class="form-text text-error"></span>
                                     <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ $prestador_de_servicos->morador()->nome }}">
                                     <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ $prestador_de_servicos->morador_id }}">
                                 </div>
