@@ -73,7 +73,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Data</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="data-text-error" class="form-text text-error"></span>
                                     <input type="date" name="data" class="form-control" id="data" value="{{ old('data') }}">
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                             <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Hora</span>
                                 <div class="col-md-10">
-                                    <span class="form-text text-error"></span>
+                                    <span id="hora-text-error"  class="form-text text-error"></span>
                                     <input type="time" name="hora" class="form-control" id="hora" value="{{ old('hora') }}">
                                 </div>
                             </div>
