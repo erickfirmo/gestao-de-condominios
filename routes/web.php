@@ -94,7 +94,7 @@ Route::resource('ocorrencias', 'OcorrenciaController');
 // reservas
 Route::resource('relatorios', 'RelatorioController');
 // images
-Route::resource('imagens', 'ImageController');
+Route::resource('imagens', 'ImagemController');
     
 Auth::routes();
 
