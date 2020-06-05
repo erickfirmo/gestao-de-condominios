@@ -53,7 +53,7 @@ class ImageController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('imagens.edit', compact('image'))
+        return redirect()->route('images.edit', compact('image'))
             ->with('success', 'Informações da imagem atualizadas com sucesso!');
     }
 
@@ -65,9 +65,9 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        Imovel::findOrFail($id)->delete();
+        Image::findOrFail($id)->delete();
 
-        return redirect()->route('imoveis.index')
-            ->with('success', 'Imóvel removido com sucesso!');
+        return redirect()->route('images.index')
+            ->with('success', 'Imagem removido com sucesso!');
     }
 }
