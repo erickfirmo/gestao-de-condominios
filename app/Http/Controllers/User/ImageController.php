@@ -22,6 +22,9 @@ class ImageController extends Controller
 
     public function store(ImageRequest $requet)
     {
+
+        //criar recorte de imagem
+
         $original_name = $requet->input('original_name');
         $name = $requet->input('name');
         $extension = $requet->input('extension');
@@ -40,13 +43,31 @@ class ImageController extends Controller
         ]);
     }
 
-    public function update(ImageRequest $requet)
+    public function update(ImageRequest $request, $id)
     {
-        //load images
+        $request->validated();
+
+        //criar recorte de imagem
+
+        $image = Image::findOrFail($id)->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('imagens.edit', compact('image'))
+            ->with('success', 'Informações da imagem atualizadas com sucesso!');
     }
 
-    public function destroy(ImageRequest $requet)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        //load images
+        Imovel::findOrFail($id)->delete();
+
+        return redirect()->route('imoveis.index')
+            ->with('success', 'Imóvel removido com sucesso!');
     }
 }
