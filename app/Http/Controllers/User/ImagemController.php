@@ -4,9 +4,10 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\ImageRequest;
+use App\Http\Requests\ImagemRequest;
+use App\Models\Imagem;
 
-class ImageController extends Controller
+class ImagemController extends Controller
 {
     public function __construct()
     {
@@ -15,12 +16,12 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::all();
+        $imagens = Imagem::all();
 
-        return view('', [ '' => $image ]);
+        return view('', [ '' => $imagem ]);
     }
 
-    public function store(ImageRequest $requet)
+    public function store(ImagemRequest $requet)
     {
 
         //criar recorte de imagem
@@ -30,30 +31,30 @@ class ImageController extends Controller
         $extension = $requet->input('extension');
         $size = $requet->input('size');
 
-        $image = new Image;
+        $imagem = new Imagem;
 
-        $image->original_name = $original_name;
-        $image->name = $name;
-        $image->extension = $extension;
-        $image->size = $size;
-        $image->save();
+        $imagem->original_name = $original_name;
+        $imagem->name = $name;
+        $imagem->extension = $extension;
+        $imagem->size = $size;
+        $imagem->save();
 
-        return response()->json([
-            'status' => 'Imagem salva com sucesso!'
-        ]);
+        /*return response()->json([
+            'success' => 'Imagem salva com sucesso!'
+        ]);*/
     }
 
-    public function update(ImageRequest $request, $id)
+    public function update(ImagemRequest $request, $id)
     {
         $request->validated();
 
         //criar recorte de imagem
 
-        $image = Image::findOrFail($id)->update([
+        $imagem = Imagem::findOrFail($id)->update([
             'name' => $request->name,
         ]);
 
-        return redirect()->route('images.edit', compact('image'))
+        return redirect()->route('imagens.edit', compact('imagem'))
             ->with('success', 'Informações da imagem atualizadas com sucesso!');
     }
 
@@ -65,9 +66,9 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        Image::findOrFail($id)->delete();
+        Imagem::findOrFail($id)->delete();
 
-        return redirect()->route('images.index')
-            ->with('success', 'Imagem removido com sucesso!');
+        return redirect()->route('imagens.index')
+            ->with('success', 'Imagem removida com sucesso!');
     }
 }
