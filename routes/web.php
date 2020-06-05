@@ -93,11 +93,9 @@ Route::resource('reservas', 'ReservaController');
 Route::resource('ocorrencias', 'OcorrenciaController');
 // reservas
 Route::resource('relatorios', 'RelatorioController');
+// images
+Route::resource('imagens', 'ImageController');
     
-        
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
