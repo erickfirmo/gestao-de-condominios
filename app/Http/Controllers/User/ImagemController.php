@@ -18,7 +18,8 @@ class ImagemController extends Controller
     {
         $imagens = Imagem::all();
 
-        return view('', [ '' => $imagem ]);
+        return view('user.cadastros.imagens.index', [ 'imagens' => $imagens ]);
+
     }
 
     public function store(ImagemRequest $requet)
