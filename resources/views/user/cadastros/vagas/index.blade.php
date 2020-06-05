@@ -17,7 +17,7 @@
 
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('vagas.index') }}">Vagas</a></li>
-                                <li class="breadcrumb-item active"><span>Todos</span></li>
+                                <li class="breadcrumb-item active"><span>Todas</span></li>
                             </ul>
                         </div>
                     </div>
