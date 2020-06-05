@@ -2,68 +2,79 @@
 @charset "UTF-8";
 
 .custom-file-label::after {
-    content: "Procurar";
+  content: "Procurar";
 }
 
 .text-error {
-    color: #e16123;
-    font-size: .8em;
-    font-weight: 900;
+  color: #e16123;
+  font-size: .8em;
+  font-weight: 900;
 }
 
 .btn-action {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    padding: 4px 10px;
-    border-radius: 50%;
-    margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 4px 10px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
 form.remove-form {
-    display: inline;
+  display: inline;
 }
 
 .records--list .dataTable tbody tr td {
-    min-width: 80px;
-    width: 30px;
+  min-width: 80px;
+  width: 30px;
 }
 
 /* load animation */
 
 .lds-ring {
-    display: block;
-    margin: 40px auto;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  display: block;
+  margin: 40px auto;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #999999;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #999999 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
   }
-  .lds-ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #999999;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #999999 transparent transparent transparent;
+  100% {
+    transform: rotate(360deg);
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
-  }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
-  @keyframes lds-ring {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+}
+
+/* galeria de imagens */
+.galeria-de-imagens {
+  padding: 30px;
+}
+
+.galeria-de-imagens div.imagem {
+  padding: 30px;
+  background-color: red;
+}
   
