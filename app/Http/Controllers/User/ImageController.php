@@ -26,6 +26,7 @@ class ImageController extends Controller
         $extension = $requet->input('extension');
         $size = $requet->input('size');
 
+        
 
         return response()->json([
             'status' => 'Imagem salva com sucesso!'
