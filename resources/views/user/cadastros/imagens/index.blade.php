@@ -52,7 +52,7 @@
                             <form class="search">
                                 <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('imagens-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
-                            </form>
+                            </form>z
                         </div>-->
                     </div>
                     <!-- Records Header End -->
@@ -60,8 +60,24 @@
 
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
-                        <div class="imagem">
-                            
+                        <div class="row">
+                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
+
+
+                        
+                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
+
+                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
+
+                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
+
+
                         </div>
                     </div>
                 </div>
