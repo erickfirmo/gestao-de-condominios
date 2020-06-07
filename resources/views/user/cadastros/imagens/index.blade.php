@@ -34,8 +34,8 @@
 
                         <div class="title fa-image">
                             <h3 class="h3">Galeria de Imagens
-                            <a href="{{ route('imagens.create') }}" class="btn btn-sm btn-outline-info">Adicionar Imagem</a>
-                        
+                            <!--<a href="{ route('imagens.create') }" class="btn btn-sm btn-outline-info">Adicionar Imagem</a>-->
+
                             </h3>
                             <p>
                                 {{
@@ -48,34 +48,48 @@
                             </p>
                         </div>
 
-                        <!--<div class="actions row">
+                        <div class="actions row">
                             <form class="search">
-                                <input type="text" class="form-control d-inline" placeholder="Buscar..." onkeyup="tableFilter('imagens-table', this)">
+                                <input type="text" class="form-control d-inline" placeholder="Buscar por nome..." onkeyup="tableFilter('imagens-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
-                        </div>-->
+                        </div>
+
+
+                    
+                    <!-- modal -->
+                    <!-- Dropzone Start -->
+                    <form action="#" id="dropzone01" class="dropzone custom-dropzone" method="post" enctype="multipart/form-data">
+                        <div class="dz-message" data-dz-message>Drop files here to upload</div>
+                    </form>
+                    <!-- Dropzone End -->
+
+                    
+
                     </div>
                     <!-- Records Header End -->
                 </div>
 
+                
+
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
                         <div class="row">
-                        <div class="imagem imagem-1 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-5 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-3 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-4 col-sm-6 col-md-2"><span></span></div>
+                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
 
 
                         
-                        <div class="imagem imagem-3 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-1 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-5 col-sm-6 col-md-2"><span></span></div>
-                        <div class="imagem imagem-2 col-sm-6 col-md-2"><span></span></div>
+                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
 
-                        <div class="imagem imagem-2 col-sm-6 col-md-2"><span></span></div>
+                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
 
-                        <div class="imagem imagem-4 col-sm-6 col-md-2"><span></span></div>
+                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
 
 
                         </div>
