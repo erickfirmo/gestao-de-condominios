@@ -72,18 +72,23 @@ form.remove-form {
 
 .galeria-de-imagens {
   margin: 40px;
-  padding: 26px 0;
+  padding: 32px 4px;
 }
 
 
 .galeria-de-imagens div.row div.imagem {
   padding: 0;
   text-align: right;
-  border: 1px solid #FFF;
+  /*border: 1px solid #FFF;*/
   background-position: top;
   background-size: auto 100%;
-  height: 200px;
+  height: 180px;
   background-repeat: no-repeat;
+}
+
+.custom-dropzone {
+  margin-top: 32px;
+  width: 100%;
 }
 
 
