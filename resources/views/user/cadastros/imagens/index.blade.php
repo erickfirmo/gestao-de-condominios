@@ -138,6 +138,14 @@
                 method: 'POST',
                 success: function(data){
                     alert(data);
+
+                    if(data.status == 200) {
+                        $('#uploadImageModal').modal('show');
+                        //show images with progress
+                        //show dinamic inputs using upload response (name of images, alt)
+                    }
+
+
                 }
             });
         });
