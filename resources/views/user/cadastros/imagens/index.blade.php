@@ -31,11 +31,9 @@
                     <!-- Records Header Start -->
                     <div class="records--header">
 
-
                         <div class="title fa-image">
                             <h3 class="h3">Galeria de Imagens
-                            <!--<a href="{ route('imagens.create') }" class="btn btn-sm btn-outline-info">Adicionar Imagem</a>-->
-
+                                <a href="#uploadImageModal" data-toggle="modal" class="btn btn-sm btn-outline-info">Adicionar Imagens</a>
                             </h3>
                             <p>
                                 {{
@@ -55,14 +53,6 @@
                             </form>
                         </div>
 
-
-                    
-                    <!-- modal -->
-                    <!-- Dropzone Start -->
-                    <form action="#" id="dropzone01" class="dropzone custom-dropzone" method="post" enctype="multipart/form-data">
-                        <div class="dz-message" data-dz-message>Drop files here to upload</div>
-                    </form>
-                    <!-- Dropzone End -->
 
                     
 
@@ -94,6 +84,43 @@
     @include('user.partials._footer')
 </main>
 <!-- Main Container End -->
+
+
+
+<!-- Large Modal Start -->
+<div id="uploadImageModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload de Imagem</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form action="#" method="POST" class="show-onload d-none" id="uploadImageForm">
+
+                <div class="modal-body">
+                    @csrf
+
+                    <!-- Form Group Start -->
+                    <div class="form-group row">
+                        <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
+                        <div class="col-md-10">
+                            <span class="form-text text-error"></span>
+                            <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
+                        </div>
+                    </div>
+                    <!-- Form Group End -->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Large Modal End -->
 
 
 
