@@ -94,9 +94,11 @@
 <script src="{{ asset('themes/dadmin/assets/js/sweetalert-init.js') }}"></script>
 <script src="{{ asset('node_modules/sweetalert2/dist/sweetalert2.all.js') }}"></script>
 <script src="{{ asset('node_modules/inputmask/dist/jquery.inputmask.js') }}"></script>
+<script src="{{ asset('js/functions.js') }}"></script>
 <script src="{{ asset('js/validation.js') }}"></script>
 <script src="{{ asset('js/alerts.js') }}"></script>
 <script src="{{ asset('js/custom-masks.js') }}"></script>
+
 
 @stack('js')
 
