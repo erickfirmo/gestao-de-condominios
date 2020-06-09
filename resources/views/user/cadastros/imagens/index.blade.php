@@ -74,24 +74,17 @@
 
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
-                        <div class="row">
-                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
-
-
-                        
-                        <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
-                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
-
-                        <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
-
-                        <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
-
-
+                            <div class="row">
+                            <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
+                            <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
                         </div>
                     </div>
                 </div>
