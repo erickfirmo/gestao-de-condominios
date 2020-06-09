@@ -122,25 +122,23 @@
 </div>
 <!-- Large Modal End -->
 
-
-
-
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-
-        var formData = getFormDataById('uploadImageForm');
-
-        $.ajax({
-            url: 'imagens/store',
-            data: formData,
-            cache: false,
-            contentType: 'multipart/form-data',
-            processData: false,
-            method: 'POST',
-            success: function(data){
-                alert(data);
-            }
+        $('#uploadImageForm').on('submit', function() {
+            let formData = getFormDataById('uploadImageForm');
+            // criar validador
+            $.ajax({
+                url: 'imagens/store',
+                data: formData,
+                cache: false,
+                contentType: 'multipart/form-data',
+                processData: false,
+                method: 'POST',
+                success: function(data){
+                    alert(data);
+                }
+            });
         });
     </script>
 @endpush
