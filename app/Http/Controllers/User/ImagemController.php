@@ -24,6 +24,7 @@ class ImagemController extends Controller
 
     public function store(ImagemRequest $requet)
     {
+        $request->validated();
 
         //criar recorte de imagem
 
@@ -31,6 +32,10 @@ class ImagemController extends Controller
         $name = $requet->input('name');
         $extension = $requet->input('extension');
         $size = $requet->input('size');
+
+        $name .= time().'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('images'), $name);
 
         $imagem = new Imagem;
 
@@ -40,9 +45,10 @@ class ImagemController extends Controller
         $imagem->size = $size;
         $imagem->save();
 
-        /*return response()->json([
-            'success' => 'Imagem salva com sucesso!'
-        ]);*/
+        return response()->json([
+            'success' => 'Upload de imagem realizado com sucesso!',
+            'image_url' => '#',
+        ]);
     }
 
     public function update(ImagemRequest $request, $id)
