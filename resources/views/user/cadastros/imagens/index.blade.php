@@ -104,6 +104,28 @@
 
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
+    <script>
+
+
+        function data_form()
+        {
+            let formData = [];
+            let inputs = document.getElementById('uploadImageForm').getElementsByTagName('input');
+
+        }
+
+        $.ajax({
+            url: 'imagens/store',
+            data: [ ],
+            cache: false,
+            contentType: 'multipart/form-data',
+            processData: false,
+            method: 'POST',
+            success: function(data){
+                alert(data);
+            }
+        });
+    </script>
 @endpush
 
 @endsection
