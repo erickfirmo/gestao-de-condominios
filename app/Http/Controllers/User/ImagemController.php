@@ -31,6 +31,8 @@ class ImagemController extends Controller
         $original_name = $requet->input('original_name');
         $name = $requet->input('name');
         $extension = $requet->input('extension');
+        $alt = $requet->input('alt');
+        $title = $requet->input('title');
         $size = $requet->input('size');
 
         $name .= time().'.'.request()->image->getClientOriginalExtension();
@@ -42,6 +44,8 @@ class ImagemController extends Controller
         $imagem->original_name = $original_name;
         $imagem->name = $name;
         $imagem->extension = $extension;
+        $imagem->alt = $alt;
+        $imagem->title = $title;
         $imagem->size = $size;
         $imagem->save();
 
