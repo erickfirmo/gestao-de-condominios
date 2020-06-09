@@ -102,21 +102,18 @@
 </main>
 <!-- Main Container End -->
 
+
+
+
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
 
-
-        function data_form()
-        {
-            let formData = [];
-            let inputs = document.getElementById('uploadImageForm').getElementsByTagName('input');
-
-        }
+        var formData = getFormDataById('uploadImageForm');
 
         $.ajax({
             url: 'imagens/store',
-            data: [ ],
+            data: formData,
             cache: false,
             contentType: 'multipart/form-data',
             processData: false,
