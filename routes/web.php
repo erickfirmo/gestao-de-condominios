@@ -95,9 +95,10 @@ Route::resource('ocorrencias', 'OcorrenciaController');
 Route::resource('relatorios', 'RelatorioController');
 // images
 Route::resource('imagens', 'ImagemController');
+Route::post('imagens.upload', 'ImagemController@upload')->name('imagens.upload');
     
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
 });
