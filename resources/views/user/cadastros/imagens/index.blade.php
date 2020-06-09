@@ -125,7 +125,8 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-        $('#uploadImageForm').on('submit', function() {
+        $('#uploadImageForm').on('submit', function(e) {
+            e.preventDefault();
             let formData = getFormDataById('uploadImageForm');
             // criar validador
             $.ajax({
