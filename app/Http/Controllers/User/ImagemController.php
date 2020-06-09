@@ -28,6 +28,10 @@ class ImagemController extends Controller
 
         //criar recorte de imagem
 
+        $image_files = $requet->file('images');
+
+        echo json_encode(dd($image_files));
+
         $original_name = $requet->input('original_name');
         $name = $requet->input('name');
         $extension = $requet->input('extension');
@@ -63,6 +67,11 @@ class ImagemController extends Controller
 
         $imagem = Imagem::findOrFail($id)->update([
             'name' => $request->name,
+            'original_name' => $request->original_name,
+            'extension' => $request->extension,
+            'alt' => $request->alt,
+            'title' => $request->title,
+            'size' => $request->size,
         ]);
 
         return redirect()->route('imagens.edit', compact('imagem'))
