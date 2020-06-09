@@ -33,8 +33,10 @@
 
                         <div class="title fa-image">
                             <h3 class="h3">Galeria de Imagens
-                                <a href="#uploadImageModal" data-toggle="modal" class="btn btn-sm btn-outline-info">Adicionar Imagens</a>
+                                <button id="uploadImageLink" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
                             </h3>
+                            <input type="file" class="file" name="images[]" id="uploadImageInput" style="display: none;">
+
                             <p>
                                 {{
                                     countMessage($imagens, [
@@ -125,9 +127,42 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-        $('#uploadImageForm').on('submit', function(e) {
+        $('#uploadImageLink').on('click', function() {
+            let formData = //images;
+
+            $('#uploadImageInput').click();
+
+
+            /*$.ajax({
+                url: 'imagens/upload',
+                data: formData,
+                cache: false,
+                contentType: 'multipart/form-data',
+                processData: false,
+                method: 'POST',
+                success: function(data){
+                    if(data.status == 200) {
+                        $('#uploadImageModal').modal('show');
+                        //show images with progress
+                        //show dinamic inputs using upload response (name of images, alt)
+                    } else {
+
+                    }
+                }
+            });*/
+
+            $('#uploadImageModal').click();
+
+
+
+        });
+
+
+
+        $('#saveImageForm').on('submit', function(e) {
+
             e.preventDefault();
-            let formData = getFormDataById('uploadImageForm');
+
             // criar validador
             $.ajax({
                 url: 'imagens/store',
@@ -139,16 +174,29 @@
                 success: function(data){
                     alert(data);
 
+                    let formData = getFormDataById('uploadImageForm');
+
                     if(data.status == 200) {
                         $('#uploadImageModal').modal('show');
-                        //show images with progress
-                        //show dinamic inputs using upload response (name of images, alt)
+                        //status success
                     }
 
 
+                    $('#uploadImageModal').click();
+
                 }
             });
+
+
+            $('#uploadImageModal').click();
+
         });
+
+
+
+
+
+
     </script>
 @endpush
 
