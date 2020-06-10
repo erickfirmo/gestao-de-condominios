@@ -33,10 +33,11 @@
 
                         <div class="title fa-image">
                             <h3 class="h3">Galeria de Imagens
-                                <button id="uploadImageLink" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
+                                <button id="uploadButton" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
                             </h3>
-                            <input type="file" class="file" name="images[]" id="uploadImageInput" style="display: none;">
-
+                            <form id="uploadImageForm" action="#" style="display: block;">
+                                <input id="uploadImageInput" type="file" class="file" name="images[]" style="display: block;">
+                            </form>
                             <p>
                                 {{
                                     countMessage($imagens, [
@@ -102,15 +103,6 @@
                 <div class="modal-body">
                     @csrf
 
-                    <!-- Form Group Start -->
-                    <div class="form-group row">
-                        <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
-                        <div class="col-md-10">
-                            <span class="form-text text-error"></span>
-                            <input type="text" name="nome" class="form-control" id="nome" maxlenght="80" value="{{ old('nome') }}">
-                        </div>
-                    </div>
-                    <!-- Form Group End -->
                 </div>
 
                 <div class="modal-footer">
@@ -127,76 +119,46 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-        $('#uploadImageLink').on('click', function() {
-            let formData = //images;
+        var image_thumbnail = '<img class="outputImage" src="#">';
 
+        $('#uploadButton').on('click', function(event) {
             $('#uploadImageInput').click();
-
-
-            /*$.ajax({
-                url: 'imagens/upload',
-                data: formData,
-                cache: false,
-                contentType: 'multipart/form-data',
-                processData: false,
-                method: 'POST',
-                success: function(data){
-                    if(data.status == 200) {
-                        $('#uploadImageModal').modal('show');
-                        //show images with progress
-                        //show dinamic inputs using upload response (name of images, alt)
-                    } else {
-
-                    }
-                }
-            });*/
-
-            $('#uploadImageModal').click();
-
-
-
         });
 
-
+        $('#uploadImageInput').on('change', function() {
+            for (let i = 0; i < event.target.files.length; i++) {
+                document.getElementsByClassName('modal-body')[0].innerHTML += image_thumbnail;
+            }
+            var output = document.getElementsByClassName('outputImage');
+            for (let i = 0; i < output.length; i++) {
+                output[i].src = URL.createObjectURL(event.target.files[i]);
+            }
+            $('#uploadImageModal').modal('show');
+        });
 
         $('#saveImageForm').on('submit', function(e) {
-
             e.preventDefault();
-
-            // criar validador
+            /*let formData = new FormData(this);
             $.ajax({
-                url: 'imagens/store',
-                data: formData,
-                cache: false,
-                contentType: 'multipart/form-data',
-                processData: false,
-                method: 'POST',
-                success: function(data){
-                    alert(data);
+                    url: 'imagens/upload',
+                    data: formData,
+                    cache: false,
+                    contentType: 'multipart/form-data',
+                    processData: false,
+                    method: 'POST',
+                    success: function(data){
+                        //if(data.status == 200) {
+                            $('#uploadImageModal').modal('show');
+                            alert('asas');
+                            //show images with progress
+                            //show dinamic inputs using upload response (name of images, alt)
+                        //} else {
 
-                    let formData = getFormDataById('uploadImageForm');
-
-                    if(data.status == 200) {
-                        $('#uploadImageModal').modal('show');
-                        //status success
+                        //}
                     }
-
-
-                    $('#uploadImageModal').click();
-
-                }
-            });
-
-
-            $('#uploadImageModal').click();
-
+            });*/
+            $('#uploadImageModal').modal('show');
         });
-
-
-
-
-
-
     </script>
 @endpush
 
