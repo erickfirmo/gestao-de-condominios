@@ -35,8 +35,8 @@
                             <h3 class="h3">Galeria de Imagens
                                 <button id="uploadButton" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
                             </h3>
-                            <form id="uploadImageForm" action="#" style="display: block;">
-                                <input id="uploadImageInput" type="file" class="file" name="images[]" style="display: block;">
+                            <form id="uploadImageForm" action="#" style="display: none;">
+                                <input id="uploadImageInput" type="file" class="file" name="images[]" multiple style="display: none;">
                             </form>
                             <p>
                                 {{
@@ -136,9 +136,9 @@
             $('#uploadImageModal').modal('show');
         });
 
-        $('#saveImageForm').on('submit', function(e) {
+        /*$('#saveImageForm').on('submit', function(e) {
             e.preventDefault();
-            /*let formData = new FormData(this);
+            let formData = new FormData(this);
             $.ajax({
                     url: 'imagens/upload',
                     data: formData,
@@ -156,9 +156,9 @@
 
                         //}
                     }
-            });*/
+            });
             $('#uploadImageModal').modal('show');
-        });
+        });*/
     </script>
 @endpush
 
