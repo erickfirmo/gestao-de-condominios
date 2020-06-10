@@ -22,13 +22,29 @@ class ImagemController extends Controller
 
     }
 
+    public function upload(ImagemRequest $requet)
+    {
+        //$request->validated();
+
+        $image_files = $requet->file('images');
+
+        $name = time().'.'.request()->image->getClientOriginalExtension();
+
+        request()->image->move(public_path('imagens'), $name);
+
+        return response()->json([
+            'status' => 200,
+            'images' => [
+                '1' => ''
+            ]
+        ]);
+    }
+
     public function store(ImagemRequest $requet)
     {
         $request->validated();
 
         //criar recorte de imagem
-
-        $image_files = $requet->file('images');
 
         echo json_encode(dd($image_files));
 
