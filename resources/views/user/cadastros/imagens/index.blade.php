@@ -35,9 +35,6 @@
                             <h3 class="h3">Galeria de Imagens
                                 <button id="uploadButton" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
                             </h3>
-                            <form id="uploadImageForm" action="#" style="display: none;">
-                                <input id="uploadImageInput" type="file" class="file" name="images[]" multiple style="display: none;">
-                            </form>
                             <p>
                                 {{
                                     countMessage($imagens, [
@@ -56,8 +53,14 @@
                             </form>
                         </div>
 
+                        <form action="{{ route('imagens.upload') }}" class="dropzone" id="uploadImageDropzone" style="width:100%;">
+                            @csrf
+                            <div class="fallback">
+                                <input id="imagesToUpload" name="images" type="file" multiple>
+                            </div>
+                        </form>
 
-                    
+                        <button type="button" id="btn_upload">Upload</button>
 
                     </div>
                     <!-- Records Header End -->
@@ -98,19 +101,6 @@
                 <h5 class="modal-title">Upload de Imagem</h5>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <form action="#" method="POST" class="show-onload d-none" id="uploadImageForm">
-
-                <div class="modal-body">
-                    @csrf
-
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                </div>
-
-            </form>
         </div>
     </div>
 </div>
@@ -119,46 +109,23 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-        var image_thumbnail = '<img class="outputImage" src="#">';
+    Dropzone.options.uploadImageDropzone = {
+        autoProcessQueue: false,
+        init: function (e) {
 
-        $('#uploadButton').on('click', function(event) {
-            $('#uploadImageInput').click();
-        });
+            var myDropzone = this;
 
-        $('#uploadImageInput').on('change', function() {
-            for (let i = 0; i < event.target.files.length; i++) {
-                document.getElementsByClassName('modal-body')[0].innerHTML += image_thumbnail;
-            }
-            var output = document.getElementsByClassName('outputImage');
-            for (let i = 0; i < output.length; i++) {
-                output[i].src = URL.createObjectURL(event.target.files[i]);
-            }
-            $('#uploadImageModal').modal('show');
-        });
-
-        /*$('#saveImageForm').on('submit', function(e) {
-            e.preventDefault();
-            let formData = new FormData(this);
-            $.ajax({
-                    url: 'imagens/upload',
-                    data: formData,
-                    cache: false,
-                    contentType: 'multipart/form-data',
-                    processData: false,
-                    method: 'POST',
-                    success: function(data){
-                        //if(data.status == 200) {
-                            $('#uploadImageModal').modal('show');
-                            alert('asas');
-                            //show images with progress
-                            //show dinamic inputs using upload response (name of images, alt)
-                        //} else {
-
-                        //}
-                    }
+            $('#btn_upload').on("click", function() {
+                myDropzone.processQueue();
             });
-            $('#uploadImageModal').modal('show');
-        });*/
+
+            myDropzone.on("sending", function(file, xhr, data) {
+
+                data.append("images", $('#imagesToUpload').val());
+            });
+            images_to_upload
+        }
+    };
     </script>
 @endpush
 
