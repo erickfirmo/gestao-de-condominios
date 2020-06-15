@@ -53,10 +53,10 @@
                             </form>
                         </div>
 
-                        <form action="{{ route('imagens.upload') }}" class="dropzone" id="uploadImageDropzone" style="width:100%;">
+                        <form action="{{ route('imagens.upload') }}" method="POST" class="dropzone" id="uploadImageDropzone" style="width:100%;" enctype="multipart/form-data">
                             @csrf
                             <div class="fallback">
-                                <input id="imagesToUpload" name="images" type="file" multiple>
+                                <input id="imagesToUpload" name="images[]" type="file" multiple>
                             </div>
                         </form>
 
@@ -98,7 +98,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Upload de Imagem</h5>
+                <h5 class="modal-title">Upload de Imagem</h5> 
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
         </div>
@@ -109,23 +109,9 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-    Dropzone.options.uploadImageDropzone = {
-        autoProcessQueue: false,
-        init: function (e) {
+        // autoProcessQueue: false,
 
-            var myDropzone = this;
 
-            $('#btn_upload').on("click", function() {
-                myDropzone.processQueue();
-            });
-
-            myDropzone.on("sending", function(file, xhr, data) {
-
-                data.append("images", $('#imagesToUpload').val());
-            });
-            images_to_upload
-        }
-    };
     </script>
 @endpush
 
