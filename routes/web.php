@@ -95,7 +95,7 @@ Route::resource('ocorrencias', 'OcorrenciaController');
 Route::resource('relatorios', 'RelatorioController');
 // images
 Route::resource('imagens', 'ImagemController');
-Route::post('imagens.upload', 'ImagemController@upload')->name('imagens.upload');
+Route::post('imagens/upload', 'ImagemController@upload')->name('imagens.upload');
     
 Auth::routes();
 
