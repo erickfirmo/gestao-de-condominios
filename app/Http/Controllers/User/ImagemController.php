@@ -26,17 +26,15 @@ class ImagemController extends Controller
     {
         //$request->validated();
 
-        $image_files = $requet->file('images');
+        /*$image_files = $requet->file('images');
 
         $name = time().'.'.request()->image->getClientOriginalExtension();
 
-        request()->image->move(public_path('imagens'), $name);
+        request()->image->move(public_path('imagens'), $name);*/
 
         return response()->json([
-            'status' => 200,
-            'images' => [
-                '1' => ''
-            ]
+            'status' => '200',
+            'message' => 'Lorem ipsum dolor sit amet',
         ]);
     }
 
@@ -92,6 +90,28 @@ class ImagemController extends Controller
 
         return redirect()->route('imagens.edit', compact('imagem'))
             ->with('success', 'Informações da imagem atualizadas com sucesso!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
     }
 
     /**
