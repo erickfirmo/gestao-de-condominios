@@ -42,14 +42,13 @@
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/jquery-jvectormap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/horizontal-timeline.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/weather-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/dropzone.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/dropzone.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/ion.rangeSlider.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/ion.rangeSlider.skinFlat.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/datatables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/fullcalendar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('themes/dadmin/assets/css/summernote-bs4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/summernote-bs4-overrides.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}">
     
     <!-- Page Level Stylesheets -->
@@ -84,7 +83,7 @@
 <script src="{{ asset('themes/dadmin/assets/js/horizontal-timeline.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/jquery.steps.min.js') }}"></script>
-<script src="{{ asset('themes/dadmin/assets/js/dropzone.min.js') }}"></script>
+<script src="{{ asset('themes/dadmin/assets/js/dropzone.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/ion.rangeSlider.min.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/main.js') }}"></script>
 <script src="{{ asset('themes/dadmin/assets/js/summernote-bs4.min.js') }}"></script>
