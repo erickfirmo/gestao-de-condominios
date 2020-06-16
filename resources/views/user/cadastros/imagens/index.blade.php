@@ -47,9 +47,11 @@
 
 
                         <div class="row">
-                            <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="display:block;" enctype="multipart/form-data">
+                            <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="display:none;" enctype="multipart/form-data">
                                 @csrf
+                                <div class="fallback">
                                     <input type="file" name="imagens[]" id="imagesToUpload" multiple>
+                                </div>
                             </form>
                         </div>
 
