@@ -53,14 +53,12 @@
                             </form>
                         </div>
 
-                        <form action="{{ route('imagens.upload') }}" method="POST" class="dropzone" id="uploadImageDropzone" style="width:100%;" enctype="multipart/form-data">
+                        <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="width:100%;" enctype="multipart/form-data">
                             @csrf
                             <div class="fallback">
                                 <input id="imagesToUpload" name="images[]" type="file" multiple>
                             </div>
                         </form>
-
-                        <button type="button" id="btn_upload">Upload</button>
 
                     </div>
                     <!-- Records Header End -->
@@ -100,6 +98,14 @@
             <div class="modal-header">
                 <h5 class="modal-title">Upload de Imagem</h5> 
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row" id="previewBox">
+                            
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -108,11 +114,32 @@
 
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
+
     <script>
-        // autoProcessQueue: false,
+        function readURL(input) {
+            if (input.files) {
+                for (let i = 0; i < input.files.length; i++) {
+                    console.log(i);
+                    let reader = new FileReader();
+                    reader.onload = function(e) {
+                        let img_element = '<div class="col-md-3"><img src="'+e.target.result+'"></div>'
+                        $('#previewBox').html($('#previewBox').html()+img_element);
+                    }
+                    reader.readAsDataURL(input.files[i]);
+                }
+            }
+            $('#uploadImageModal').modal('show'); 
+
+        }
+        
+        $("#imagesToUpload").change(function() {
+            readURL(this);
+        });
 
 
+        //ajax
     </script>
+
 @endpush
 
 @endsection
