@@ -24,22 +24,22 @@ class ImagemController extends Controller
 
     public function upload(ImagemRequest $request)
     {
-        //$request->validated();
+        $request->validated();
 
-        /*$image_files = $requet->file('images');
+        $image_files = $requet->file('images');
 
         $name = time().'.'.request()->image->getClientOriginalExtension();
 
-        request()->image->move(public_path('imagens'), $name);*/
+        request()->image->move(public_path('imagens'), $name);
 
         $image = new Imagem;
 
-        $image->original_name = 'teste';
-        $image->name = 'teste';
-        $image->extension = 'teste';
-        $image->title = 'teste';
-        $image->alt = 'teste';
-        $image->size = 'teste';
+        $image->original_name = request()->image->getClientOriginalExtension();
+        $image->name = $name;
+        $image->extension = '.jpg';
+        $image->title = 'teste1';
+        $image->alt = 'teste1';
+        $image->size = 200;
         $image->save();
 
         return response()->json([
@@ -51,6 +51,23 @@ class ImagemController extends Controller
     public function store(ImagemRequest $request)
     {
         //$request->validated();
+
+        /*$image = new Imagem;
+
+        $image->original_name = 'teste';
+        $image->name = 'teste';
+        $image->extension = 'teste';
+        $image->title = 'teste';
+        $image->alt = 'teste';
+        $image->size = 'teste';
+        $image->save();*/
+
+        dd('asa');
+
+        /*$request->validated();
+
+        
+
 
         //criar recorte de imagem
 
@@ -80,7 +97,7 @@ class ImagemController extends Controller
         return response()->json([
             'success' => 'Upload de imagem realizado com sucesso!',
             'image_url' => '#',
-        ]);
+        ]);*/
     }
 
     public function update(ImagemRequest $request, $id)
