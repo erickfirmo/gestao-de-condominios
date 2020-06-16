@@ -71,7 +71,7 @@ form.remove-form {
 /* galeria de imagens */
 
 .galeria-de-imagens {
-  margin: 40px;
+  margin: 0px 40px 40px 40px;
   padding: 32px 4px;
 }
 
@@ -92,5 +92,33 @@ form.remove-form {
 }
 
 
+
+
+
+div.imagem-1 {
+	background-image: url('https://blog.valoreimoveis.com.br/wp-content/uploads/2019/03/267514-e-melhor-morar-em-predio-pequeno-ou-em-condominio-com-varias-torres.jpg');
+
+}
+
+
+div.imagem-2 {
+	background-image: url('https://s2.glbimg.com/9FJfHyRyAZ6pxfHfr_rBaw03WE8=/0x0:1280x960/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/u/2/ZsldkYTcyM7Y25hU3AKQ/predio-maringa-5.jpg');
+}
+
+
+
+div.imagem-3 {
+	background-image: url('https://cdn.awsli.com.br/600x450/530/530806/produto/35864631/4f06a0da6d.jpg');
+}
+
+
+
+div.imagem-4 {
+	background-image: url('https://s2.glbimg.com/oOOS7hC_E4e6uK0RQve-uzVSY60=/0x0:1036x667/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/A/K/fhigOVQjSgH95Sj8pg6w/predio1.jpg');
+}
+
+div.imagem-5 {
+	background-image: url('https://http2.mlstatic.com/blusa-blusa-tekashi-69-6ix9ine-gummo-trapper-sintetico-D_NQ_NP_691250-MLB27757627045_072018-F.jpg');
+}
 
 
