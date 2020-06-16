@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class ImagemRequest extends FormRequest
 {
@@ -14,6 +16,7 @@ class ImagemRequest extends FormRequest
     public function authorize()
     {
         return true;
+
     }
 
     /**
@@ -24,7 +27,7 @@ class ImagemRequest extends FormRequest
     public function rules()
     {
         return [
-            'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
         ];
     }
 }
