@@ -33,18 +33,10 @@
 
                         <div class="title fa-image">
                             <h3 class="h3">Galeria de Imagens
-                                <button id="uploadButton" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
+                                <button id="addImage" class="btn btn-sm btn-outline-info">Adicionar Imagens</button>
                             </h3>
-                            <p>
-                                {{
-                                    countMessage($imagens, [
-                                        'zero' => 'Nenhuma imagem encontrada',
-                                        'one' => '1 imagem encontrada',
-                                        'many' => '[X] imagens encontradas'
-                                    ])
-                                }}
-                            </p>
                         </div>
+
 
                         <div class="actions row">
                             <form class="search">
@@ -53,12 +45,16 @@
                             </form>
                         </div>
 
-                        <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="width:100%;" enctype="multipart/form-data">
-                            @csrf
-                            <div class="fallback">
-                                <input id="imagesToUpload" name="images[]" type="file" multiple>
-                            </div>
-                        </form>
+
+                        <div class="row">
+                            <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="display:block;" enctype="multipart/form-data">
+                                @csrf
+                                    <input type="file" name="imagens[]" id="imagesToUpload" multiple>
+                            </form>
+                        </div>
+
+
+
 
                     </div>
                     <!-- Records Header End -->
@@ -106,6 +102,12 @@
                             
                     </div>
                 </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="uploadButton">Salvar</button>
             </div>
         </div>
     </div>
@@ -119,7 +121,6 @@
         function readURL(input) {
             if (input.files) {
                 for (let i = 0; i < input.files.length; i++) {
-                    console.log(i);
                     let reader = new FileReader();
                     reader.onload = function(e) {
                         let img_element = '<div class="col-md-3"><img src="'+e.target.result+'"></div>'
@@ -136,8 +137,38 @@
             readURL(this);
         });
 
+        $('#addImage').on('click', function() {
+            $('#imagesToUpload').click();
 
-        //ajax
+        });
+
+       $('#uploadButton').on('click', function() {
+            //ajax
+            
+            $('#uploadImagesForm').submit();
+        });
+
+       /*$('#uploadImagesForm').on('submit', function(e) {
+            //ajax
+            e.preventDefault();
+
+            $.ajax({
+                url: "{{ route('imagens.upload') }}"
+                type: "POST",
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData:false,
+                success: function(data),
+                {
+                    alert('ok');
+                }
+            });
+
+            $('#uploadImageModal').modal('close'); 
+            //sweetalert
+        });*/
+
     </script>
 
 @endpush
