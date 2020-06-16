@@ -26,7 +26,7 @@ class ImagemController extends Controller
     {
         $request->validated();
 
-        $image_files = $requet->file('images');
+        $image_files = $request->file('images');
 
         $name = time().'.'.request()->image->getClientOriginalExtension();
 
@@ -34,7 +34,7 @@ class ImagemController extends Controller
 
         $image = new Imagem;
 
-        $image->original_name = request()->image->getClientOriginalExtension();
+        $image->original_name = request()->images->getClientOriginalExtension();
         $image->name = $name;
         $image->extension = '.jpg';
         $image->title = 'teste1';
