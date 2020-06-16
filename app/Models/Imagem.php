@@ -9,9 +9,9 @@ class Imagem extends Model
     public $table = 'imagens';
 
     public $fillable = [
-        'orginal_name',
+        'original_name',
         'name',
-        'extensao',
+        'extension',
         'title',
         'alt',
         'size',
