@@ -22,7 +22,7 @@ class ImagemController extends Controller
 
     }
 
-    public function upload(ImagemRequest $requet)
+    public function upload(ImagemRequest $request)
     {
         //$request->validated();
 
@@ -32,15 +32,25 @@ class ImagemController extends Controller
 
         request()->image->move(public_path('imagens'), $name);*/
 
+        $image = new Imagem;
+
+        $image->original_name = 'teste';
+        $image->name = 'teste';
+        $image->extension = 'teste';
+        $image->title = 'teste';
+        $image->alt = 'teste';
+        $image->size = 'teste';
+        $image->save();
+
         return response()->json([
             'status' => '200',
             'message' => 'Lorem ipsum dolor sit amet',
         ]);
     }
 
-    public function store(ImagemRequest $requet)
+    public function store(ImagemRequest $request)
     {
-        $request->validated();
+        //$request->validated();
 
         //criar recorte de imagem
 
