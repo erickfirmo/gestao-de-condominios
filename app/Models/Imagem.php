@@ -11,10 +11,6 @@ class Imagem extends Model
     public $fillable = [
         'original_name',
         'name',
-        'extension',
-        'title',
-        'alt',
-        'size',
     ];
 
     /*
