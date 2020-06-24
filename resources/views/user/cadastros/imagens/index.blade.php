@@ -67,16 +67,9 @@
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
                         <div class="row" id="boxGallery">
-                            <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-2 col-sm-6 col-md-3"><span></span></div>
-                            <div class="imagem imagem-4 col-sm-6 col-md-3"><span></span></div>
+                        @foreach($images as $image)
+                            <div style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3"><span></span></div>
+                        @endforeach
                         </div>
                     </div>
                 </div>
