@@ -26,21 +26,28 @@ class ImagemController extends Controller
     {
         $request->validated();
 
-        $image = new Imagem;
+        $image_links = [];
         $images = $request->file('images');
+        if(!$images) {
+            //return error
+            /*return response()->json([
+                'success' => 'Upload de imagem realizado com sucesso!',
+                'image_links' => $image_links,
+            ], 201);*/
+        } else {
+            foreach($images as $key => $imageFile)
+                $image_links[$key] = $this->store($imageFile);
 
-        foreach($images as $imageFile)
-            $this->store($imageFile);
-        
-        return response()->json([
-            'success' => 'Upload de imagem realizado com sucesso!',
-            'image_url' => '#',
-        ], 201);
+            return response()->json([
+                'success' => 'Upload de imagem realizado com sucesso!',
+                'image_links' => $image_links,
+            ], 201);
+        }
     }
 
     public function store($imageFile)
     {
-        $name =  $imageFile->getClientOriginalName();
+        $name = time() . $imageFile->getClientOriginalName();
         $image = new Imagem;
         $image->original_name = $name;
         $image->name = '';
@@ -48,7 +55,7 @@ class ImagemController extends Controller
 
         $imageFile->move(public_path('upload/images'), $name);
 
-        //return [];
+        return $name;
     }
 
     public function update(ImagemRequest $request, $id)
