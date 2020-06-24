@@ -26,78 +26,28 @@ class ImagemController extends Controller
     {
         $request->validated();
 
-        $image_files = $request->file('images');
-
-        $name = time().'.'.request()->image->getClientOriginalExtension();
-
-        request()->image->move(public_path('imagens'), $name);
-
         $image = new Imagem;
+        //$original_name = $requet->input('original_name');
+        //$name = $requet->input('name');
 
-        $image->original_name = request()->images->getClientOriginalExtension();
-        $image->name = $name;
-        $image->extension = '.jpg';
-        $image->title = 'teste1';
-        $image->alt = 'teste1';
-        $image->size = 200;
-        $image->save();
+        dd($request->file('images'));
+        ///dd($request->file('images')->getClientOriginalExtension());
 
+        //$image->original_name = $original_name;
+        //$image->name = $name;
+        //$image->save();
+
+
+        
         return response()->json([
-            'status' => '200',
-            'message' => 'Lorem ipsum dolor sit amet',
-        ]);
+            'success' => 'Upload de imagem realizado com sucesso!',
+            'image_url' => '#',
+        ], 201);
     }
 
     public function store(ImagemRequest $request)
     {
-        //$request->validated();
-
-        /*$image = new Imagem;
-
-        $image->original_name = 'teste';
-        $image->name = 'teste';
-        $image->extension = 'teste';
-        $image->title = 'teste';
-        $image->alt = 'teste';
-        $image->size = 'teste';
-        $image->save();*/
-
-        dd('asa');
-
-        /*$request->validated();
-
         
-
-
-        //criar recorte de imagem
-
-        echo json_encode(dd($image_files));
-
-        $original_name = $requet->input('original_name');
-        $name = $requet->input('name');
-        $extension = $requet->input('extension');
-        $alt = $requet->input('alt');
-        $title = $requet->input('title');
-        $size = $requet->input('size');
-
-        $name .= time().'.'.request()->image->getClientOriginalExtension();
-
-        request()->image->move(public_path('images'), $name);
-
-        $imagem = new Imagem;
-
-        $imagem->original_name = $original_name;
-        $imagem->name = $name;
-        $imagem->extension = $extension;
-        $imagem->alt = $alt;
-        $imagem->title = $title;
-        $imagem->size = $size;
-        $imagem->save();
-
-        return response()->json([
-            'success' => 'Upload de imagem realizado com sucesso!',
-            'image_url' => '#',
-        ]);*/
     }
 
     public function update(ImagemRequest $request, $id)
