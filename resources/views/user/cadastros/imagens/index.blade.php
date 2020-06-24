@@ -50,7 +50,7 @@
                             <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="display:none;" enctype="multipart/form-data">
                                 @csrf
                                 <div class="fallback">
-                                    <input type="file" name="imagens[]" id="imagesToUpload" multiple>
+                                    <input type="file" name="images[]" id="imagesInput" multiple>
                                 </div>
                             </form>
                         </div>
@@ -118,7 +118,6 @@
 
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
-
     <script>
         function readURL(input) {
             if (input.files) {
@@ -132,48 +131,35 @@
                 }
             }
             $('#uploadImageModal').modal('show'); 
-
         }
         
-        $("#imagesToUpload").change(function() {
+        $("#imagesInput").change(function() {
             readURL(this);
         });
 
         $('#addImage').on('click', function() {
-            $('#imagesToUpload').click();
-
+            $('#imagesInput').click();
         });
 
-       $('#uploadButton').on('click', function() {
-            //ajax
-            
+        $('#uploadButton').on('click', function(e) {
+            //e.preventDefault();
             $('#uploadImagesForm').submit();
-        });
-
-       /*$('#uploadImagesForm').on('submit', function(e) {
-            //ajax
-            e.preventDefault();
-
             $.ajax({
-                url: "{{ route('imagens.upload') }}"
+                url: "{{ route('imagens.upload') }}",
                 type: "POST",
-                data: new FormData(this),
+                data: new FormData(document.getElementById('uploadImagesForm')),
                 contentType: false,
                 cache: false,
-                processData:false,
-                success: function(data),
-                {
-                    alert('ok');
+                processData: false,
+                success: function(response) {
+                    //sweetalert
+                    alert('success');
                 }
-            });
+            }) 
+        });
 
-            $('#uploadImageModal').modal('close'); 
-            //sweetalert
-        });*/
 
     </script>
 
 @endpush
-
 @endsection
-
