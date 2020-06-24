@@ -17,10 +17,6 @@ class CreateImagensTable extends Migration
             $table->bigIncrements('id');
             $table->string('original_name');
             $table->string('name')->nullable();
-            $table->string('alt')->nullable();
-            $table->string('title')->nullable();
-            $table->string('extension');
-            $table->bigInteger('size');
             $table->timestamps();
         });
     }
