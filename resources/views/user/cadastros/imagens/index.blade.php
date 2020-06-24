@@ -142,8 +142,7 @@
         });
 
         $('#uploadButton').on('click', function(e) {
-            //e.preventDefault();
-            $('#uploadImagesForm').submit();
+            e.preventDefault();
             $.ajax({
                 url: "{{ route('imagens.upload') }}",
                 type: "POST",
