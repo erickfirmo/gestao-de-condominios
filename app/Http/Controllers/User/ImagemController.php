@@ -16,9 +16,9 @@ class ImagemController extends Controller
 
     public function index()
     {
-        $imagens = Imagem::all();
+        $images = Imagem::all()->sortByDesc("id");
 
-        return view('user.cadastros.imagens.index', [ 'imagens' => $imagens ]);
+        return view('user.cadastros.imagens.index', [ 'images' => $images ]);
 
     }
 
