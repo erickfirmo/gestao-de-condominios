@@ -66,7 +66,7 @@
 
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
-                            <div class="row">
+                        <div class="row" id="boxGallery">
                             <div class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>
                             <div class="imagem imagem-5 col-sm-6 col-md-3"><span></span></div>
                             <div class="imagem imagem-3 col-sm-6 col-md-3"><span></span></div>
@@ -143,6 +143,7 @@
 
         $('#uploadButton').on('click', function(e) {
             e.preventDefault();
+            //$('#uploadImagesForm').submit();
             $.ajax({
                 url: "{{ route('imagens.upload') }}",
                 type: "POST",
@@ -152,11 +153,17 @@
                 processData: false,
                 success: function(response) {
                     //sweetalert
-                    alert('success');
+                    let new_images = '';
+                    for (let i = 0; i < response.image_links.length; i++) {
+                        new_images = new_images + '<div style="background-image: url('+"'upload/images/" + response.image_links[i] +"'"+')"class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>';
+                    }
+                    let old_images = $('#boxGallery').html();
+                    $('#boxGallery').html(new_images + old_images);
+
+                    console.log(new_images + old_images);
                 }
             }) 
         });
-
 
     </script>
 
