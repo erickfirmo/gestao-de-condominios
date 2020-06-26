@@ -25,9 +25,17 @@ class ImagemController extends Controller
     public function upload(ImagemRequest $request)
     {
         $request->validated();
-
-        $image_links = [];
         $images = $request->file('images');
+        $image_names = [];
+        
+        // array names constructor
+        for ($i = 0; $i < count($images); $i++) {
+            if($request->has('image_name_'.$i)) {
+                $image_names[$key] = $request->input('image_name_'.$i);
+            }
+        }
+
+        $response_images = [];
         if(!$images) {
             //return error
             /*return response()->json([
@@ -35,27 +43,35 @@ class ImagemController extends Controller
                 'image_links' => $image_links,
             ], 201);*/
         } else {
-            foreach($images as $key => $imageFile)
-                $image_links[$key] = $this->store($imageFile);
+            // passing files and fake names
+            foreach($images as $key => $imageFile) {
+                $image_name = array_key_exists($key, $image_names) ? $image_names[$key] : '';
+                    array_push($response_images, $this->store($imageFile, $image_name));
+            }
 
             return response()->json([
                 'success' => 'Upload de imagem realizado com sucesso!',
-                'image_links' => $image_links,
+                'images' => $response_images,
             ], 201);
         }
     }
 
-    public function store($imageFile)
+    public function store($imageFile, $name)
     {
-        $name = time() . $imageFile->getClientOriginalName();
+        $original_name = time() . $imageFile->getClientOriginalName();
         $image = new Imagem;
-        $image->original_name = $name;
-        $image->name = '';
+        $image->original_name = $original_name;
+        $image->name = $name;
         $image->save();
 
-        $imageFile->move(public_path('upload/images'), $name);
+        $imageFile->move(public_path('upload/images'), $original_name);
 
-        return $name;
+        $image_obj = [
+            'url' => 'upload/images/'.$original_name,
+            'name' => $name,
+        ];
+
+        return $image_obj;
     }
 
     public function update(ImagemRequest $request, $id)
