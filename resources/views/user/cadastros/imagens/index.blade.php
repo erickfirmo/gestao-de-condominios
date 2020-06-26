@@ -136,9 +136,10 @@
         });
 
         $('#uploadButton').on('click', function(e) {
-            e.preventDefault();
-            //$('#uploadImagesForm').submit();
-            $.ajax({
+            //e.preventDefault();
+            
+            $('#uploadImagesForm').submit();
+            /*$.ajax({
                 url: "{{ route('imagens.upload') }}",
                 type: "POST",
                 data: new FormData(document.getElementById('uploadImagesForm')),
@@ -148,14 +149,14 @@
                 success: function(response) {
                     let new_images = '';
                     for (let i = 0; i < response.image_links.length; i++) {
-                        new_images = new_images + '<div style="background-image: url('+"'upload/images/" + response.image_links[i] +"'"+')"class="imagem imagem-1 col-sm-6 col-md-3"><span></span></div>';
+                        new_images = new_images + '<div style="background-image: url('+"'" + response.image_links[i] +"'"+')"class="imagem col-sm-6 col-md-3"><span></span></div>';
                     }
                     let old_images = $('#boxGallery').html();
                     $('#boxGallery').html(new_images + old_images);
                     $('#uploadImageModal').modal('hide');
                     $('#previewBox').html('');
                 }
-            }) 
+            }) */
 
             return false;
         });
