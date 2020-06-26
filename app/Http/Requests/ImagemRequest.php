@@ -26,8 +26,12 @@ class ImagemRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            
-        ];
+        $rules = [];
+        // array rules constructor
+        for ($i = 0; $i < count($this->file('images')); $i++)
+            if($this->has('image_name_'.$i))
+                array_push($rules, [$this->input('image_name_'.$i) => 'string|max:30']);
+
+        return $rules;
     }
 }
