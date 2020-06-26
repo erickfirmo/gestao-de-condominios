@@ -34,4 +34,11 @@ class ImagemRequest extends FormRequest
 
         return $rules;
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'nome',
+        ];
+    }
 }
