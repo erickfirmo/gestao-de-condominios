@@ -68,7 +68,10 @@
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
                         <div class="row" id="boxGallery">
                         @foreach($images as $image)
-                            <div style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3"><span></span></div>
+                            <div title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3">
+                                <div class="image-actions"><span><i title="Ações" class="fas fa-ellipsis-v"></i></span></div>
+                                <span class="file-name">{{ $image->original_name }}</span>
+                            </div>
                         @endforeach
                         </div>
                     </div>
@@ -171,8 +174,10 @@
 
 
         /* show images with light box */
-        $('.imagem_thumbnail').hover(function(){
-            //$(this).attr('src');
+        $('.imagem').hover(function(){
+            $(this).find('span').css('display', 'block');
+        }, function(){
+            $(this).find('span').css('display', 'none');
         });
 
     </script>
