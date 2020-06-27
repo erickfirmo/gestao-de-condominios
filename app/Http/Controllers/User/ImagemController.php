@@ -17,7 +17,6 @@ class ImagemController extends Controller
     public function index()
     {
         $images = Imagem::all()->sortByDesc("id");
-
         return view('user.cadastros.imagens.index', [ 'images' => $images ]);
 
     }
@@ -26,14 +25,6 @@ class ImagemController extends Controller
     {
         $request->validated();
         $images = $request->file('images');
-        $image_names = [];
-        
-        // array names constructor
-        for ($i = 0; $i < count($images); $i++) {
-            if($request->has('image_name_'.$i)) {
-                $image_names[$key] = $request->input('image_name_'.$i);
-            }
-        }
 
         $response_images = [];
         if(!$images) {
@@ -43,32 +34,30 @@ class ImagemController extends Controller
                 'image_links' => $image_links,
             ], 201);*/
         } else {
-            // passing files and fake names
+            // passing files
             foreach($images as $key => $imageFile) {
-                $image_name = array_key_exists($key, $image_names) ? $image_names[$key] : '';
-                    array_push($response_images, $this->store($imageFile, $image_name));
+                    array_push($response_images, $this->store($imageFile));
             }
 
             return response()->json([
                 'success' => 'Upload de imagem realizado com sucesso!',
-                'images' => $response_images,
+                'uploaded_images' => $response_images,
             ], 201);
         }
     }
 
-    public function store($imageFile, $name)
+    public function store($imageFile)
     {
         $original_name = time() . $imageFile->getClientOriginalName();
         $image = new Imagem;
         $image->original_name = $original_name;
-        $image->name = $name;
         $image->save();
 
         $imageFile->move(public_path('upload/images'), $original_name);
 
         $image_obj = [
             'url' => 'upload/images/'.$original_name,
-            'name' => $name,
+            'file_name' => $original_name,
         ];
 
         return $image_obj;
@@ -81,12 +70,7 @@ class ImagemController extends Controller
         //criar recorte de imagem
 
         $imagem = Imagem::findOrFail($id)->update([
-            'name' => $request->name,
             'original_name' => $request->original_name,
-            'extension' => $request->extension,
-            'alt' => $request->alt,
-            'title' => $request->title,
-            'size' => $request->size,
         ]);
 
         return redirect()->route('imagens.edit', compact('imagem'))
