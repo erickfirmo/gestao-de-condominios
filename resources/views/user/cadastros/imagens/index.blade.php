@@ -147,10 +147,6 @@
                 cache: false,
                 processData: false,
                 success: function(response) {
-
-                    console.log(response.uploaded_images[0].url);
-
-                    var teste_r = response;
                     let new_images = '';
                     for (let i = 0; i < response.uploaded_images.length; i++) {
                         new_images = new_images + '<div style="background-image: url('+"'" + response.uploaded_images[i].url +"'"+')"class="imagem col-sm-6 col-md-3"><span></span></div>';
@@ -162,13 +158,21 @@
 
                     Swal.fire(
                         'Sucesso!',
-                        'success_response',
+                        response.success,
                         'success'
                     );
                 }
             })
 
             return false;
+        });
+
+
+
+
+        /* show images with light box */
+        $('.imagem_thumbnail').hover(function(){
+            //$(this).attr('src');
         });
 
     </script>
