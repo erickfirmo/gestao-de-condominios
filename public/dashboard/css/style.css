@@ -84,6 +84,25 @@ form.remove-form {
   background-size: auto 100%;
   height: 180px;
   background-repeat: no-repeat;
+  transition-duration: .9s;
+
+}
+
+.galeria-de-imagens div.row div.imagem span {
+  display: none;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 0px 20px;
+  color: #fff;
+  transition-duration: 1s;
+
+}
+
+.galeria-de-imagens div.row div.imagem span.file-name {
+  position: relative;
+  top: 156px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .custom-dropzone {
