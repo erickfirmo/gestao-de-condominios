@@ -113,6 +113,7 @@
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
         function readURL(input) {
+            // showing image files
             if (input.files) {
                 for (let i = 0; i < input.files.length; i++) {
                     let reader = new FileReader();
@@ -136,10 +137,9 @@
         });
 
         $('#uploadButton').on('click', function(e) {
-            //e.preventDefault();
-            
-            $('#uploadImagesForm').submit();
-            /*$.ajax({
+            e.preventDefault();
+            //$('#uploadImagesForm').submit();
+            $.ajax({
                 url: "{{ route('imagens.upload') }}",
                 type: "POST",
                 data: new FormData(document.getElementById('uploadImagesForm')),
@@ -147,16 +147,26 @@
                 cache: false,
                 processData: false,
                 success: function(response) {
+
+                    console.log(response.uploaded_images[0].url);
+
+                    var teste_r = response;
                     let new_images = '';
-                    for (let i = 0; i < response.image_links.length; i++) {
-                        new_images = new_images + '<div style="background-image: url('+"'" + response.image_links[i] +"'"+')"class="imagem col-sm-6 col-md-3"><span></span></div>';
+                    for (let i = 0; i < response.uploaded_images.length; i++) {
+                        new_images = new_images + '<div style="background-image: url('+"'" + response.uploaded_images[i].url +"'"+')"class="imagem col-sm-6 col-md-3"><span></span></div>';
                     }
                     let old_images = $('#boxGallery').html();
                     $('#boxGallery').html(new_images + old_images);
                     $('#uploadImageModal').modal('hide');
                     $('#previewBox').html('');
+
+                    Swal.fire(
+                        'Sucesso!',
+                        'success_response',
+                        'success'
+                    );
                 }
-            }) */
+            })
 
             return false;
         });
