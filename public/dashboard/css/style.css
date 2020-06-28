@@ -88,21 +88,22 @@ form.remove-form {
 
 }
 
-.galeria-de-imagens div.row div.imagem span {
+.galeria-de-imagens div.row div.imagem div {
   display: none;
-  background-color: rgba(0, 0, 0, .8);
-  padding: 0px 20px;
-  color: #fff;
-  transition-duration: 1s;
-
+  background-color: #fff;
 }
 
-.galeria-de-imagens div.row div.imagem span.file-name {
-  position: relative;
-  top: 156px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+.galeria-de-imagens div.row div.imagem div span {
+  color: #000;
+  padding: 5px 8px;
+}
+
+.galeria-de-imagens div.row div.imagem div span i:hover {
+  color: rgb(255, 64, 64);  
+}
+
+.galeria-de-imagens div.row div.imagem div.image-actions {
+  padding: 0px 20px;
 }
 
 .custom-dropzone {
