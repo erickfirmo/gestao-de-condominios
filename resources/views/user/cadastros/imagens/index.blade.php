@@ -37,14 +37,12 @@
                             </h3>
                         </div>
 
-
                         <div class="actions row">
                             <form class="search">
                                 <input type="text" class="form-control d-inline" placeholder="Buscar por nome..." onkeyup="tableFilter('imagens-table', this)">
                                 <button type="submit" class="btn btn-rounded"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
-
 
                         <div class="row">
                             <form action="{{ route('imagens.upload') }}" method="POST" id="uploadImagesForm" style="display:none;" enctype="multipart/form-data">
@@ -53,25 +51,22 @@
                                     <input type="file" name="images[]" id="imagesInput" multiple>
                                 </div>
                             </form>
+                            <form action="#" method="POST" id="deleteImagesForm" style="display:none;">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                            </form>
                         </div>
-
-
-
-
                     </div>
                     <!-- Records Header End -->
                 </div>
-
-                
 
                 <div class="panel">
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
                         <div class="row" id="boxGallery">
                         @foreach($images as $image)
-                            <div data-file="{{ $image->original_name }}" title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3 d-inline">
+                            <div title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3 d-inline">
                                 <div class="image-actions">
-                                    <!-- span class="mr-2"><i title="Editar" class="fa fa-pencil-alt"></i></span-->
-                                    <span><i title="Deletar" class="fa fa-trash"></i></span>
+                                    <span id="delete_image_{{ $image->id }}" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span>
                                 </div>
                             </div>
                         @endforeach
@@ -117,6 +112,8 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
+
+        // STORE IMAGES
         function readURL(input) {
             // showing image files
             if (input.files) {
@@ -160,7 +157,6 @@
                     $('#boxGallery').html(new_images + old_images);
                     $('#uploadImageModal').modal('hide');
                     $('#previewBox').html('');
-
                     Swal.fire(
                         'Sucesso!',
                         response.success,
@@ -168,12 +164,32 @@
                     );
                 }
             })
-
             return false;
         });
+        // END STORE IMAGES
 
-
-
+        // DELETE IMAGES
+        $('.delete-image').on('click', function() {
+            let image_id = $(this).attr('id');
+            image_id = image_id.replace('delete_image_', '');
+            $.ajax({
+                url: location.origin+'/imagens/'+image_id,
+                type: "POST",
+                data: new FormData(document.getElementById('deleteImagesForm')),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(response) {
+                    Swal.fire(
+                        'Sucesso!',
+                        response.success,
+                        'success'
+                    );
+                    zzzz$(this).remove();
+                }
+            });
+        });
+        // END DELETE IMAGES
 
         /* show images with light box */
         $('.imagem').hover(function(){
