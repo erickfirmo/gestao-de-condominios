@@ -80,8 +80,8 @@ form.remove-form {
   padding: 0;
   text-align: right;
   /*border: 1px solid #FFF;*/
-  background-position: top;
-  background-size: auto 100%;
+  background-position: center;
+  background-size: cover;
   height: 180px;
   background-repeat: no-repeat;
   transition-duration: .9s;
@@ -90,12 +90,14 @@ form.remove-form {
 
 .galeria-de-imagens div.row div.imagem div {
   display: none;
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 .galeria-de-imagens div.row div.imagem div span {
-  color: #000;
-  padding: 5px 8px;
+  color: #FFF;
+  padding: 10px 14px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .galeria-de-imagens div.row div.imagem div span i:hover {
@@ -103,7 +105,7 @@ form.remove-form {
 }
 
 .galeria-de-imagens div.row div.imagem div.image-actions {
-  padding: 0px 20px;
+  padding: 14px 15.25px;
 }
 
 .custom-dropzone {
