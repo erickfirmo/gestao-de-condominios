@@ -109,7 +109,8 @@ class ImagemController extends Controller
     {
         Imagem::findOrFail($id)->delete();
 
-        return redirect()->route('imagens.index')
-            ->with('success', 'Imagem removida com sucesso!');
+        return response()->json([
+            'success' => 'Imagem removida com sucesso!',
+        ], 201);
     }
 }
