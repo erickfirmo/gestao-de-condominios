@@ -58,6 +58,7 @@ class ImagemController extends Controller
         $image_obj = [
             'url' => 'upload/images/'.$original_name,
             'file_name' => $original_name,
+            'id' => $image->id
         ];
 
         return $image_obj;
