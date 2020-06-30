@@ -69,6 +69,8 @@
                                     <span id="delete_image_{{ $image->id }}" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span>
                                 </div>
                             </div>
+
+
                         @endforeach
                         </div>
                     </div>
@@ -151,8 +153,30 @@
                 success: function(response) {
                     let new_images = '';
                     for (let i = 0; i < response.uploaded_images.length; i++) {
-                        new_images = new_images + '<div style="background-image: url('+"'" + response.uploaded_images[i].url +"'"+')"class="imagem col-sm-6 col-md-3"><span></span></div>';
+                        new_images = new_images + '<div title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="imagem col-sm-6 col-md-3 d-inline"><div class="image-actions" style="display:none"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span></div></div>';
                     }
+
+                    /*
+
+                    <div title="1593488654cb300r.jpg" style="background-image: url('upload/images/1593488654cb300r.jpg')" class="imagem col-sm-6 col-md-3 d-inline">
+                                <div class="image-actions" style="display: none;">
+                                    <span id="delete_image_36" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span>
+                                </div>
+                            </div>
+                            */
+
+
+
+
+
+
+
+
+
+
+
+
+
                     let old_images = $('#boxGallery').html();
                     $('#boxGallery').html(new_images + old_images);
                     $('#uploadImageModal').modal('hide');
@@ -185,7 +209,7 @@
                         response.success,
                         'success'
                     );
-                    zzzz$(this).remove();
+                    $(this).remove();
                 }
             });
         });
