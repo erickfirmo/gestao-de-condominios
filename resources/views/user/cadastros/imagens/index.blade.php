@@ -152,8 +152,8 @@
                 processData: false,
                 success: function(response) {
                     let new_images = '';
-                    for (let i = response.uploaded_images.length - 1; i < response.uploaded_images.length; i++) {
-                        new_images = new_images + '<div id="image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="imagem col-sm-6 col-md-3 d-inline"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image">666</span></div></div>';
+                    for (let i = 0; i < response.uploaded_images.length; i++) {
+                        new_images = new_images + '<div id="image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="imagem col-sm-6 col-md-3 d-inline"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image"><i class="fa fa-trash"></i></span></div></div>';
                     }
                     let old_images = $('#boxGallery').html();
                     $('#boxGallery').html(new_images + old_images);
@@ -164,6 +164,40 @@
                         response.success,
                         'success'
                     );
+
+
+
+
+
+
+                    $('.delete-image').on('click', function() {
+
+                    let image_id = $(this).attr('id');
+                    image_id = image_id.replace('delete_image_', '');
+                    $.ajax({
+                        url: location.origin+'/imagens/'+image_id,
+                        type: "POST",
+                        data: new FormData(document.getElementById('deleteImagesForm')),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(response) {
+                            Swal.fire(
+                                'Sucesso!',
+                                response.success,
+                                'success'
+                            );
+                            $('#image_'+image_id).removeClass('d-inline');
+                            $('#image_'+image_id).addClass('d-none');
+                        }
+                    });
+                    });
+
+
+
+
+
+
                 }
             })
             return false;
