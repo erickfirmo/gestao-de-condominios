@@ -69,12 +69,10 @@ form.remove-form {
 }
 
 /* galeria de imagens */
-
 .galeria-de-imagens {
   margin: 0px 40px 40px 40px;
   padding: 32px 4px;
 }
-
 
 .galeria-de-imagens div.row div.imagem {
   padding: 0;
@@ -85,7 +83,6 @@ form.remove-form {
   height: 180px;
   background-repeat: no-repeat;
   transition-duration: .9s;
-
 }
 
 .galeria-de-imagens div.row div.imagem div {
@@ -93,14 +90,20 @@ form.remove-form {
   /*background-color: #fff;*/
 }
 
-.galeria-de-imagens div.row div.imagem div span {
+.galeria-de-imagens div.row div.imagem:hover div.image-actions {
+  display: block;
+}
+
+.galeria-de-imagens div.row div.imagem div span.delete-image {
   color: #FFF;
   padding: 8px 11px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, .6);
+  cursor: pointer;
 }
 
-.galeria-de-imagens div.row div.imagem div span i:hover {
+.galeria-de-imagens div.row div.imagem div span i:hover,
+.galeria-de-imagens div.row div.imagem div span:hover i {
   color: rgb(255, 64, 64);  
 }
 
