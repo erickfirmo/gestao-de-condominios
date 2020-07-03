@@ -64,13 +64,13 @@
                     <div class="galeria-de-imagens" data-title="Galeria de Imagens">
                         <div class="row" id="boxGallery">
                         @foreach($images as $image)
-                            <div title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-6 col-md-3 d-inline">
+                            <div id="image_{{ $image->id }}" title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-3 col-md-3 d-inline">
                                 <div class="image-actions">
-                                    <span id="delete_image_{{ $image->id }}" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span>
+                                    <span id="delete_image_{{ $image->id }}" class="delete-image" title="Deletar">
+                                        <i class="fa fa-trash"></i>
+                                    </span>
                                 </div>
                             </div>
-
-
                         @endforeach
                         </div>
                     </div>
@@ -114,7 +114,6 @@
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
-
         // STORE IMAGES
         function readURL(input) {
             // showing image files
@@ -142,6 +141,7 @@
 
         $('#uploadButton').on('click', function(e) {
             e.preventDefault();
+
             //$('#uploadImagesForm').submit();
             $.ajax({
                 url: "{{ route('imagens.upload') }}",
@@ -152,31 +152,9 @@
                 processData: false,
                 success: function(response) {
                     let new_images = '';
-                    for (let i = 0; i < response.uploaded_images.length; i++) {
-                        new_images = new_images + '<div title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="imagem col-sm-6 col-md-3 d-inline"><div class="image-actions" style="display:none"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span></div></div>';
+                    for (let i = response.uploaded_images.length - 1; i < response.uploaded_images.length; i++) {
+                        new_images = new_images + '<div id="image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="imagem col-sm-6 col-md-3 d-inline"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image">666</span></div></div>';
                     }
-
-                    /*
-
-                    <div title="1593488654cb300r.jpg" style="background-image: url('upload/images/1593488654cb300r.jpg')" class="imagem col-sm-6 col-md-3 d-inline">
-                                <div class="image-actions" style="display: none;">
-                                    <span id="delete_image_36" class="delete-image"><i title="Deletar" class="fa fa-trash"></i></span>
-                                </div>
-                            </div>
-                            */
-
-
-
-
-
-
-
-
-
-
-
-
-
                     let old_images = $('#boxGallery').html();
                     $('#boxGallery').html(new_images + old_images);
                     $('#uploadImageModal').modal('hide');
@@ -194,6 +172,7 @@
 
         // DELETE IMAGES
         $('.delete-image').on('click', function() {
+
             let image_id = $(this).attr('id');
             image_id = image_id.replace('delete_image_', '');
             $.ajax({
@@ -209,20 +188,12 @@
                         response.success,
                         'success'
                     );
-                    $(this).remove();
+                    $('#image_'+image_id).removeClass('d-inline');
+                    $('#image_'+image_id).addClass('d-none');
                 }
             });
         });
-        // END DELETE IMAGES
-
-        /* show images with light box */
-        $('.imagem').hover(function(){
-            $(this).find('div').css('display', 'block');
-        }, function(){
-            $(this).find('div').css('display', 'none');
-        });
-
+       
     </script>
-
 @endpush
 @endsection
