@@ -115,13 +115,16 @@
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
         // STORE IMAGES
+
+        // image preview
         function readURL(input) {
             // showing image files
+            $('#previewBox').html('');
             if (input.files) {
                 for (let i = 0; i < input.files.length; i++) {
                     let reader = new FileReader();
                     reader.onload = function(e) {
-                        let img_element = '<div class="col-md-3"><img src="'+e.target.result+'"></div>'
+                        let img_element = '<div class="col-md-4 mb-5"><img src="'+e.target.result+'"></div>'
                         $('#previewBox').html($('#previewBox').html()+img_element);
                     }
                     reader.readAsDataURL(input.files[i]);
@@ -166,10 +169,6 @@
                     );
 
 
-
-
-
-
                     $('.delete-image').on('click', function() {
 
                     let image_id = $(this).attr('id');
@@ -192,11 +191,7 @@
                         }
                     });
                     });
-
-
-
-
-
+                    $('#previewBox').html('');
 
                 }
             })
@@ -206,24 +201,45 @@
 
         // DELETE IMAGES
         $('.delete-image').on('click', function() {
+            Swal.fire({
+                title: 'Tem certeza?',
+                text: 'Você não poderá recuperar essas informaçoes!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sim, deletar!',
+                cancelButtonText: 'Cancelar',
+                confirmButtonColor: '#ff4040'
 
-            let image_id = $(this).attr('id');
-            image_id = image_id.replace('delete_image_', '');
-            $.ajax({
-                url: location.origin+'/imagens/'+image_id,
-                type: "POST",
-                data: new FormData(document.getElementById('deleteImagesForm')),
-                contentType: false,
-                cache: false,
-                processData: false,
-                success: function(response) {
+                }).then((result) => {
+
+                if (result.value) {
+                    let image_id = $(this).attr('id');
+                    image_id = image_id.replace('delete_image_', '');
+                    $.ajax({
+                        url: location.origin+'/imagens/'+image_id,
+                        type: "POST",
+                        data: new FormData(document.getElementById('deleteImagesForm')),
+                        contentType: false,
+                        cache: false,
+                        processData: false,
+                        success: function(response) {
+                            Swal.fire(
+                                'Sucesso!',
+                                response.success,
+                                'success'
+                            );
+                            $('#image_'+image_id).removeClass('d-inline');
+                            $('#image_'+image_id).addClass('d-none');
+                        }
+                    });
+                    
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+
                     Swal.fire(
-                        'Sucesso!',
-                        response.success,
-                        'success'
-                    );
-                    $('#image_'+image_id).removeClass('d-inline');
-                    $('#image_'+image_id).addClass('d-none');
+                    'Cancelado',
+                    'Nada foi alterado!',
+                    'error'
+                    )
                 }
             });
         });
