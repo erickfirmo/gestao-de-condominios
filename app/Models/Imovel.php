@@ -19,7 +19,7 @@ class Imovel extends Model
 
     public function condominio()
     {
-        $this->belongsTo(Condominio::class, 'condominio_id');
+        return $this->belongsTo(Condominio::class, 'condominio_id');
     }
 
     public function moradores()
@@ -29,6 +29,11 @@ class Imovel extends Model
 
     public function relatorios()
     {
-        return $this->hasMany(Relatorio::class, 'parent_id');
+        return $this->hasMany(Relatorio::class, 'parent_id', 'id');
+    }
+
+    public function imagens()
+    {
+        return $this->hasMany(Imagem::class, 'parent_id', 'id');
     }
 }
