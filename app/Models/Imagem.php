@@ -12,6 +12,11 @@ class Imagem extends Model
         'original_name',
     ];
 
+    public function entidades_da_imagem()
+    {
+        return $this->hasMany(ImagemDaEntidade::class, 'imagem_id', 'id');
+    }
+
     /*
     public static function renameFile($file_name, $new_file_name, $instituicao_prefixo)
     {
