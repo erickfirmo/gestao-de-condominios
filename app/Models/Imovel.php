@@ -34,6 +34,6 @@ class Imovel extends Model
 
     public function imagens()
     {
-        return $this->hasMany(Imagem::class, 'parent_id', 'id');
+        return $this->hasMany(ImagemDaEntidade::class, 'parent_id', 'id');
     }
 }
