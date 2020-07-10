@@ -12,14 +12,14 @@ class ImagensTableSeeder extends Seeder
     {
         $imagem = new App\Models\Imagem;
         $imagem->original_name = 'example-1.png';
-        $empresa->save();
+        $imagem->save();
 
         $imagem = new App\Models\Imagem;
         $imagem->original_name = 'example-2.png';
-        $empresa->save();
+        $imagem->save();
 
         $imagem = new App\Models\Imagem;
         $imagem->original_name = 'example-3.png';
-        $empresa->save();
+        $imagem->save();
     }
 }
