@@ -24,7 +24,7 @@ class CreateImagensDasEntidadesTable extends Migration
 
             // entidade_id
             $table->unsignedBigInteger('parent_id');
-            $table->string('parent_table', 30);
+            $table->string('parent_class', 30);
 
             $table->timestamps();
         });
