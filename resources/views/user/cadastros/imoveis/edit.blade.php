@@ -38,9 +38,6 @@
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Imóvel</button></a>
                         </form>
-                        <form action="#" method="GET" class="notification-form mr-2" style="float:right">
-                            <a href="#"><button class="btn btn-rounded btn-warning"><span class="mr-2"><i class="fas fa-bell"></i></span>Enviar Notificação</button></a>
-                        </form>
                     </div>
 
                     <div class="panel-content">
@@ -49,6 +46,17 @@
                         <form action="{{ route('imoveis.update', $imovel->id) }}" method="POST" class="show-onload d-none">
                             @csrf
                             {{ method_field('PUT') }}
+
+                            <!-- Form Group Start -->
+                            <div class="form-group row">
+                                <span class="label-text col-md-2 col-form-label text-md-right">Fotos</span>
+                                <div class="col-md-10">
+                                    @foreach($imovel->imagens()->get() as $imagem)
+                                        <img class="img-fluid" src="/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}">
+                                    @endforeach
+                                </div>
+                            </div>
+                            <!-- Form Group End -->
                             
                             <!-- Form Group Start -->
                             <div class="form-group row">
