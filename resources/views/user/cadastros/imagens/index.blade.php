@@ -65,7 +65,7 @@
                         <div class="row" id="boxGallery">
                         @if(count($images))
                             @foreach($images as $image)
-                                <div id="image_{{ $image->id }}" title="{{ $image->original_name }}" style="background-image: url('upload/images/{{ $image->original_name }}')" class="imagem col-sm-3 col-md-3 d-inline">
+                                <div id="image_{{ $image->id }}" title="{{ $image->original_name }}" style="background-image: url('/upload/images/{{ $image->original_name }}')" class="imagem col-sm-3 col-md-3 d-inline">
                                     <div class="image-actions">
                                         <span id="delete_image_{{ $image->id }}" class="delete-image" title="Deletar">
                                             <i class="fa fa-trash"></i>
