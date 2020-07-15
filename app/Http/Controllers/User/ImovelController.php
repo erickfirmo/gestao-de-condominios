@@ -98,8 +98,10 @@ class ImovelController extends Controller
     public function edit($id)
     {
         $condominios = Condominio::all();
-        $imovel = Imovel::findOrFail($id);
+        $imovel = Imovel::with('imagens')->find($id);
         $ufs = Uf::all();
+
+        //dd($imovel->imagens()->get()[0]);
  
         return view('user.cadastros.imoveis.edit', [
             'imovel' => $imovel,
