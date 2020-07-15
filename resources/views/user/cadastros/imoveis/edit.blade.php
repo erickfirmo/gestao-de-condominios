@@ -48,14 +48,31 @@
                             {{ method_field('PUT') }}
 
                             <!-- Form Group Start -->
-                            <div class="form-group row">
-                                <span class="label-text col-md-2 col-form-label text-md-right">Fotos</span>
-                                <div class="col-md-10">
+                            <div class="galeria-de-imagens" data-title="Galeria de Imagens">
+                                <div class="row" id="boxGallery">
+                                @if(count($imovel->imagens()->get()))
                                     @foreach($imovel->imagens()->get() as $imagem)
-                                        <img class="img-fluid" src="/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}">
+                                    <div id="image_parent_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="imagem col-sm-3 col-md-3 d-inline">
+                                        <div class="image-actions">
+                                            <span id="delete_image_parent_{{ $imagem->imagem()->get()[0]->id }}" class="delete-image" title="Deletar">
+                                                <i class="fa fa-times"></i>
+                                            </span>
+                                        </div>
+                                    </div>
                                     @endforeach
+                                @else
+                                    <div class="col-sm-12 col-md-12 d-inline">
+                                        <p>Nenhuma imagem encontrada</p>
+                                    </div>
+                                @endif
+                                    <div class="col-sm-3 col-md-3 d-inline">
+                                    +
+                                    </div>
                                 </div>
                             </div>
+
+
+
                             <!-- Form Group End -->
                             
                             <!-- Form Group Start -->
