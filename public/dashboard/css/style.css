@@ -85,6 +85,10 @@ form.remove-form {
   transition-duration: .9s;
 }
 
+.galeria-de-imagens div.row div.imagem.image-thumbnail {
+  height: 120px;
+}
+
 .galeria-de-imagens div.row div.imagem div {
   display: none;
   /*background-color: #fff;*/
@@ -101,6 +105,16 @@ form.remove-form {
   background-color: rgba(0, 0, 0, .6);
   cursor: pointer;
 }
+
+
+.galeria-de-imagens div.row div.imagem.image-thumbnail div span.delete-image {
+  color: #FFF;
+  padding: 4px 8px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .6);
+  cursor: pointer;
+}
+
 
 .galeria-de-imagens div.row div.imagem div span i:hover,
 .galeria-de-imagens div.row div.imagem div span:hover i {
