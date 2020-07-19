@@ -93,9 +93,13 @@ Route::resource('reservas', 'ReservaController');
 Route::resource('ocorrencias', 'OcorrenciaController');
 // reservas
 Route::resource('relatorios', 'RelatorioController');
-// images
+// imagens
 Route::resource('imagens', 'ImagemController');
 Route::post('imagens/upload', 'ImagemController@upload')->name('imagens.upload');
+// imagens das entidades
+Route::post('imagens-das-entidades/store', 'ImagemDaEntidadeController@store')->name('imagens-das-entidades.store');
+Route::post('imagens-das-entidades/destroy', 'ImagemDaEntidadeController@destroy')->name('imagens-das-entidades.destroy');
+
     
 Auth::routes();
 
