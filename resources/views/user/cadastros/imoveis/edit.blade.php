@@ -48,26 +48,34 @@
                             {{ method_field('PUT') }}
 
                             <!-- Form Group Start -->
-                            <div class="galeria-de-imagens" data-title="Galeria de Imagens">
-                                <div class="row" id="boxGallery">
-                                @if(count($imovel->imagens()->get()))
-                                    @foreach($imovel->imagens()->get() as $imagem)
-                                    <div id="image_parent_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="imagem col-sm-3 col-md-3 d-inline">
-                                        <div class="image-actions">
-                                            <span id="delete_image_parent_{{ $imagem->imagem()->get()[0]->id }}" class="delete-image" title="Deletar">
-                                                <i class="fa fa-times"></i>
-                                            </span>
+                            <div class="galeria-de-imagens p-0" data-title="Imagens do Imóvel">
+                                <div class="row">
+                                    <span class="label-text col-md-2">Fotos do Imóvel</span>
+                                    <div class="col-md-10 p-0 m-0">
+                                        <div class="row m-0 p-0" id="boxGallery">
+                                            @if(count($imovel->imagens()->get()))
+                                                @foreach($imovel->imagens()->get() as $imagem)
+                                                <div id="parent_image_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="imagem image-thumbnail col-sm-3 col-md-3 d-inline">
+                                                    <div class="image-actions">
+                                                        <span id="remove_parent_image_{{ $imagem->imagem()->get()[0]->id }}" class="delete-image" title="Remover Imagem">
+                                                            <i class="fa fa-times"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            @else
+                                                <div class="col-sm-12 col-md-12 d-inline">
+                                                    <p>Nenhuma imagem encontrada</p>
+                                                </div>
+                                            @endif
+
+                                            
+                                                <div id="parent_image_add" title="Adicionar Imagem" style="background-image: url('')" class="imagem col-sm-3 col-md-3 d-inline">
+                                                    <span><i class=""></i></span>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    @endforeach
-                                @else
-                                    <div class="col-sm-12 col-md-12 d-inline">
-                                        <p>Nenhuma imagem encontrada</p>
-                                    </div>
-                                @endif
-                                    <div class="col-sm-3 col-md-3 d-inline">
-                                    +
-                                    </div>
+                            
                                 </div>
                             </div>
 
@@ -142,7 +150,63 @@
 
     @include('user.partials._footer')
 </main>
-
 <!-- Main Container End -->
+
+@push('js')
+<script>
+
+
+        $('.delete-image').on('click', function() {
+
+            let _token = $('input[name="_token"]').val();
+            //et text_success = 'Imagem do imóvel removida com sucesso!';
+
+            Swal.fire({
+                title: 'Tem certeza?',
+                text: 'Você não poderá recuperar essas informaçoes!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sim, deletar!',
+                cancelButtonText: 'Cancelar',
+                confirmButtonColor: '#ff4040'
+
+                }).then((result) => {
+
+                if (result.value) {
+                    let image_id = $(this).attr('id');
+                    image_id = image_id.replace('remove_parent_image_', '');
+                    
+                    $.ajax({
+                        url: "{{ route('imagens-das-entidades.destroy') }}",
+                        type: "POST",
+                        data: { _token:_token, image_id:image_id },
+                       
+                        success: function(response) {
+                            Swal.fire(
+                                'Sucesso!',
+                                response.success,
+                                'success'
+                            );
+                            $('#parent_image_'+image_id).removeClass('d-inline');
+                            $('#parent_image_'+image_id).addClass('d-none');
+                        }
+                    });
+                    
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+
+                    Swal.fire(
+                    'Cancelado',
+                    'Nada foi alterado!',
+                    'error'
+                    )
+                }
+            });
+        });
+    
+</script>
+
+
+
+@endpush
 @endsection
 
