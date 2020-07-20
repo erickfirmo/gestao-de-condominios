@@ -125,10 +125,10 @@ form.remove-form {
   padding: 14px 8.25px;
 }
 
-.custom-dropzone {
-  margin-top: 32px;
-  width: 100%;
-}
+
+
+
+/* single images */
 
 .flex-container {
   display: flex;
@@ -136,7 +136,7 @@ form.remove-form {
 }
 
 .flex-container > div.image-thumbnail {
-  width: 160px;
+  width: 200px;
   height: 100px;
   margin: 4px;
   line-height: 100px;
@@ -147,11 +147,15 @@ form.remove-form {
 
 }
 
-.flex-container > div.image-thumbnail > div.image-actions {
+.flex-container > div.image-thumbnail > div.image-actions > span {
   position: relative;
-  bottom: 44px;
-  margin: 4px;
+  bottom: 28px;
+  margin: 8px;
   color: #FFF;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .6);
+  padding: 5px 10px;
+  border-radius: 50%;
 }
 
 
