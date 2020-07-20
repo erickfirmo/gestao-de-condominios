@@ -125,10 +125,10 @@ form.remove-form {
   padding: 14px 8.25px;
 }
 
-
-
-
-/* single images */
+.custom-dropzone {
+  margin-top: 32px;
+  width: 100%;
+}
 
 .flex-container {
   display: flex;
@@ -136,8 +136,8 @@ form.remove-form {
 }
 
 .flex-container > div.image-thumbnail {
-  width: 200px;
-  height: 100px;
+  width: 240px;
+  height: 150px;
   margin: 4px;
   line-height: 100px;
   background-position: center;
