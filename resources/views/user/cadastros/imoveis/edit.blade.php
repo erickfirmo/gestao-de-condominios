@@ -50,7 +50,7 @@
                             <!-- Form Group Start -->
                             <div class="p-0" data-title="Imagens do Imóvel">
                                 <div class="row">
-                                    <span class="label-text col-md-2">Fotos do Imóvel</span>
+                                    <span class="label-text col-md-2 text-md-right">Fotos do Imóvel</span>
                                     <div class="col-md-10 m-0">
                                         <div class="flex-container">
                                             @if(count($imovel->imagens()->get()))
