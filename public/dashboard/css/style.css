@@ -129,3 +129,29 @@ form.remove-form {
   margin-top: 32px;
   width: 100%;
 }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div.image-thumbnail {
+  width: 160px;
+  height: 100px;
+  margin: 4px;
+  line-height: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: right;
+
+}
+
+.flex-container > div.image-thumbnail > div.image-actions {
+  position: relative;
+  bottom: 44px;
+  margin: 4px;
+  color: #FFF;
+}
+
+
