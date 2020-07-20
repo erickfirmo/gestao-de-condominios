@@ -55,38 +55,24 @@
                                         <div class="flex-container">
                                             @if(count($imovel->imagens()->get()))
                                                 @foreach($imovel->imagens()->get() as $imagem)
-                                                <div id="parent_image_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
+                                                <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
                                                     <div class="image-actions">
-                                                        <span id="remove_parent_image_{{ $imagem->imagem()->get()[0]->id }}" class="delete-image" title="Remover Imagem">
+                                                        <span id="remove_parent_image_{{ $imagem->id }}" class="delete-image" title="Remover Imagem">
                                                             <i class="fa fa-times"></i>
                                                         </span>
                                                     </div>
                                                 </div>
-
-                                            <div>
-                                                
-                                            </div>
-
-
-
-
-
-
-
                                                 @endforeach
                                             @else
                                                 <div class="col-sm-12 col-md-12 d-inline">
                                                     <p>Nenhuma imagem encontrada</p>
                                                 </div>
                                             @endif
-
-                                            
-                                                <div id="parent_image_add" title="Adicionar Imagem" style="background-image: url('')" class="imagem col-sm-3 col-md-3 d-inline">
-                                                    <span><i class=""></i></span>
-                                                </div>
+                                            <div id="parent_image_add" title="Adicionar Imagem" style="background-image: url('')" class="imagem col-sm-3 col-md-3 d-inline">
+                                                <span><i class=""></i></span>
                                             </div>
                                         </div>
-                            
+                                    </div>
                                 </div>
                             </div>
 
