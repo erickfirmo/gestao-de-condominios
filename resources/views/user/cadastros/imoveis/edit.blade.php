@@ -48,20 +48,31 @@
                             {{ method_field('PUT') }}
 
                             <!-- Form Group Start -->
-                            <div class="galeria-de-imagens p-0" data-title="Imagens do Imóvel">
+                            <div class="p-0" data-title="Imagens do Imóvel">
                                 <div class="row">
                                     <span class="label-text col-md-2">Fotos do Imóvel</span>
-                                    <div class="col-md-10 p-0 m-0">
-                                        <div class="row m-0 p-0" id="boxGallery">
+                                    <div class="col-md-10 m-0">
+                                        <div class="flex-container">
                                             @if(count($imovel->imagens()->get()))
                                                 @foreach($imovel->imagens()->get() as $imagem)
-                                                <div id="parent_image_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="imagem image-thumbnail col-sm-3 col-md-3 d-inline">
+                                                <div id="parent_image_{{ $imagem->imagem()->get()[0]->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
                                                     <div class="image-actions">
                                                         <span id="remove_parent_image_{{ $imagem->imagem()->get()[0]->id }}" class="delete-image" title="Remover Imagem">
                                                             <i class="fa fa-times"></i>
                                                         </span>
                                                     </div>
                                                 </div>
+
+                                            <div>
+                                                
+                                            </div>
+
+
+
+
+
+
+
                                                 @endforeach
                                             @else
                                                 <div class="col-sm-12 col-md-12 d-inline">
