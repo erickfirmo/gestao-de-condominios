@@ -69,79 +69,32 @@ form.remove-form {
 }
 
 /* galeria de imagens */
-.galeria-de-imagens {
-  margin: 0px 40px 40px 40px;
-  padding: 32px 4px;
-}
-
-.galeria-de-imagens div.row div.imagem {
-  padding: 0;
-  text-align: right;
-  /*border: 1px solid #FFF;*/
-  background-position: center;
-  background-size: cover;
-  height: 150px;
-  background-repeat: no-repeat;
-  transition-duration: .9s;
-  margin: 8px;
-}
-
-.galeria-de-imagens div.row div.imagem div {
-  display: none;
-  /*background-color: #fff;*/
-}
-
-.galeria-de-imagens div.row div.imagem:hover div.image-actions {
-  display: block;
-}
-
-.galeria-de-imagens div.row div.imagem div span.delete-image {
-  color: #FFF;
-  padding: 8px 11px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, .6);
-  cursor: pointer;
-}
-
-
-.galeria-de-imagens div.row div.imagem.image-thumbnail div span.delete-image {
-  color: #FFF;
-  padding: 4px 8px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, .6);
-  cursor: pointer;
-}
-
-
-.galeria-de-imagens div.row div.imagem div span i:hover,
-.galeria-de-imagens div.row div.imagem div span:hover i {
-  color: rgb(255, 64, 64);  
-}
-
-.galeria-de-imagens div.row div.imagem div.image-actions {
-  padding: 14px 8.25px;
-}
-
-.custom-dropzone {
-  margin-top: 32px;
-  width: 100%;
-}
-
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: left;
 }
 
-.flex-container > div.image-thumbnail {
-  width: 240px;
-  height: 150px;
-  margin: 4px;
+.full-gallery.flex-container div.row div.imagem, .flex-container > div.image-thumbnail {
+  margin: 2px;
   line-height: 100px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: right;
+  transition-duration: .8s;
+}
 
+div.full-gallery.flex-container > div.image-thumbnail {
+  width: 19.6%;
+  height: 140px;
+}
+
+div.single-gallery.flex-container > div.image-thumbnail {
+  width: 19.5%;
+  height: 100px;
 }
 
 .flex-container > div.image-thumbnail > div.image-actions > span {
@@ -151,8 +104,28 @@ form.remove-form {
   color: #FFF;
   cursor: pointer;
   background-color: rgba(0, 0, 0, .6);
-  padding: 5px 10px;
+  padding: 5px 9px;
   border-radius: 50%;
 }
 
+div.lightbox {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+}
 
+/*
+.galeria-de-imagens {
+  margin: 0px 40px 40px 40px;
+  padding: 32px 4px;
+}
+
+.galeria-de-imagens div.row div.imagem div span i:hover,
+.galeria-de-imagens div.row div.imagem div span:hover i {
+  color: rgb(255, 64, 64);  
+}
+
+.galeria-de-imagens div.row div.imagem div.image-actions {
+  padding: 14px 8.25px;
+}
+*/
