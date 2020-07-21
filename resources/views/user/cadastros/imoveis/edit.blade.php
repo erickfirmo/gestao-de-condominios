@@ -149,6 +149,31 @@
 </main>
 <!-- Main Container End -->
 
+
+
+
+
+<!-- Large Modal Start -->
+<div id="gallery-modal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/upload/images/105286695_2603849679875390_6969611300021367563_o.jpg" alt="Teste">
+        </div>
+    </div>
+</div>
+<!-- Large Modal End -->
+
+
+
+
+
+
+
+
+
+
+
+
 @push('js')
 <script>
 
