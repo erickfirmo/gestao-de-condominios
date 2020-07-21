@@ -54,14 +54,14 @@
                                     <div class="col-md-10 m-0">
                                         <div class="flex-container">
                                             @if(count($imovel->imagens()->get()))
-                                                @foreach($imovel->imagens()->get() as $imagem)
-                                                <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
-                                                    <div class="image-actions">
-                                                        <span id="remove_parent_image_{{ $imagem->id }}" class="delete-image" title="Remover Imagem">
-                                                            <i class="fa fa-times"></i>
-                                                        </span>
+                                                @foreach($imovel->imagens()->get() as $key => $imagem)
+                                                    <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
+                                                        <div class="image-actions">
+                                                            <span id="remove_parent_image_{{ $imagem->id }}" class="delete-image" title="Remover Imagem">
+                                                                <i class="fa fa-times"></i>
+                                                            </span>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 @endforeach
                                             @else
                                                 <div class="col-sm-12 col-md-12 d-inline">
