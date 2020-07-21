@@ -80,13 +80,10 @@ form.remove-form {
   /*border: 1px solid #FFF;*/
   background-position: center;
   background-size: cover;
-  height: 180px;
+  height: 150px;
   background-repeat: no-repeat;
   transition-duration: .9s;
-}
-
-.galeria-de-imagens div.row div.imagem.image-thumbnail {
-  height: 120px;
+  margin: 8px;
 }
 
 .galeria-de-imagens div.row div.imagem div {
