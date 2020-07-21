@@ -97,35 +97,31 @@ div.single-gallery.flex-container > div.image-thumbnail {
   height: 100px;
 }
 
-.flex-container > div.image-thumbnail > div.image-actions > span {
+div.flex-container > div.image-thumbnail > div.image-actions > span {
   position: relative;
-  bottom: 28px;
   margin: 8px;
   color: #FFF;
   cursor: pointer;
   background-color: rgba(0, 0, 0, .6);
-  padding: 5px 9px;
   border-radius: 50%;
 }
 
+div.flex-container > div.image-thumbnail > div.image-actions > span {
+  padding: 5px 8px;
+  font-size: .8em;
+  bottom: 33px;
+}
+
+header {
+  z-index: 10;
+}
+/*
 div.lightbox {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, .6);
-}
-
-/*
-.galeria-de-imagens {
-  margin: 0px 40px 40px 40px;
-  padding: 32px 4px;
-}
-
-.galeria-de-imagens div.row div.imagem div span i:hover,
-.galeria-de-imagens div.row div.imagem div span:hover i {
-  color: rgb(255, 64, 64);  
-}
-
-.galeria-de-imagens div.row div.imagem div.image-actions {
-  padding: 14px 8.25px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 */
