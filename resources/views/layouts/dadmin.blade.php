@@ -64,6 +64,7 @@
     @yield('content')
 </div>
 
+<div class="lightbox"></div>
 
 <!-- Scripts -->
 
