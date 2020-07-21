@@ -52,7 +52,7 @@
                                 <div class="row">
                                     <span class="label-text col-md-2 text-md-right">Fotos do Imóvel</span>
                                     <div class="col-md-10 m-0">
-                                        <div class="flex-container">
+                                        <div class="flex-container single-gallery">
                                             @if(count($imovel->imagens()->get()))
                                                 @foreach($imovel->imagens()->get() as $key => $imagem)
                                                     <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
