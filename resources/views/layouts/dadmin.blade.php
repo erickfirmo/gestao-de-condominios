@@ -98,6 +98,14 @@
 <script src="{{ asset('js/validation.js') }}"></script>
 <script src="{{ asset('js/alerts.js') }}"></script>
 <script src="{{ asset('js/custom-masks.js') }}"></script>
+<script src="{{ asset('js/image-gallery.js') }}"></script>
+
+<script>
+    $('.image-thumbnail').on('click', function() {
+        $('#imageModal').attr('src', $(this).data('image'));
+        $('#galleryModal').modal('show');
+    });
+</script>
 
 
 @stack('js')
