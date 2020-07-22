@@ -55,7 +55,7 @@
                                         <div class="flex-container single-gallery">
                                             @if(count($imovel->imagens()->get()))
                                                 @foreach($imovel->imagens()->get() as $key => $imagem)
-                                                    <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail">
+                                                    <div id="parent_image_{{ $imagem->id }}" title="{{ $imagem->imagem()->get()[0]->original_name }}" style="background-image: url('/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}')" class="image-thumbnail" data-image="/upload/images/{{ $imagem->imagem()->get()[0]->original_name }}">
                                                         <div class="image-actions">
                                                             <span id="remove_parent_image_{{ $imagem->id }}" class="delete-image" title="Remover Imagem">
                                                                 <i class="fa fa-times"></i>
@@ -151,13 +151,11 @@
 
 
 
-
-
 <!-- Large Modal Start -->
-<div id="gallery-modal" class="modal fade">
+<div id="galleryModal" class="modal fade">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <img src="/upload/images/105286695_2603849679875390_6969611300021367563_o.jpg" alt="Teste">
+        <div id="innerModal" class="modal-content">
+            <img id="imageModal" src="#" alt="Teste">
         </div>
     </div>
 </div>
@@ -167,63 +165,53 @@
 
 
 
-
-
-
-
-
-
-
 @push('js')
 <script>
 
+    $('.delete-image').on('click', function() {
+        let _token = $('input[name="_token"]').val();
 
-        $('.delete-image').on('click', function() {
+        Swal.fire({
+            title: 'Tem certeza?',
+            text: 'Você não poderá recuperar essas informaçoes!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sim, deletar!',
+            cancelButtonText: 'Cancelar',
+            confirmButtonColor: '#ff4040'
 
-            let _token = $('input[name="_token"]').val();
-            //et text_success = 'Imagem do imóvel removida com sucesso!';
+            }).then((result) => {
 
-            Swal.fire({
-                title: 'Tem certeza?',
-                text: 'Você não poderá recuperar essas informaçoes!',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Sim, deletar!',
-                cancelButtonText: 'Cancelar',
-                confirmButtonColor: '#ff4040'
-
-                }).then((result) => {
-
-                if (result.value) {
-                    let image_id = $(this).attr('id');
-                    image_id = image_id.replace('remove_parent_image_', '');
+            if (result.value) {
+                let image_id = $(this).attr('id');
+                image_id = image_id.replace('remove_parent_image_', '');
+                
+                $.ajax({
+                    url: "{{ route('imagens-das-entidades.destroy') }}",
+                    type: "POST",
+                    data: { _token:_token, image_id:image_id },
                     
-                    $.ajax({
-                        url: "{{ route('imagens-das-entidades.destroy') }}",
-                        type: "POST",
-                        data: { _token:_token, image_id:image_id },
-                       
-                        success: function(response) {
-                            Swal.fire(
-                                'Sucesso!',
-                                response.success,
-                                'success'
-                            );
-                            $('#parent_image_'+image_id).removeClass('d-inline');
-                            $('#parent_image_'+image_id).addClass('d-none');
-                        }
-                    });
-                    
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    success: function(response) {
+                        Swal.fire(
+                            'Sucesso!',
+                            response.success,
+                            'success'
+                        );
+                        $('#parent_image_'+image_id).removeClass('d-inline');
+                        $('#parent_image_'+image_id).addClass('d-none');
+                    }
+                });
+                
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
 
-                    Swal.fire(
-                    'Cancelado',
-                    'Nada foi alterado!',
-                    'error'
-                    )
-                }
-            });
+                Swal.fire(
+                'Cancelado',
+                'Nada foi alterado!',
+                'error'
+                )
+            }
         });
+    });
     
 </script>
 
