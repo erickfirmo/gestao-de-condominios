@@ -64,7 +64,7 @@
                     <div id="boxGallery" class="flex-container full-gallery" data-title="Galeria de Imagens">
                         @if(count($images))
                             @foreach($images as $image)
-                                <div id="image_{{ $image->id }}" title="{{ $image->original_name }}" style="background-image: url('/upload/images/{{ $image->original_name }}')" class="image-thumbnail">
+                                <div id="image_{{ $image->id }}" title="{{ $image->original_name }}" style="background-image: url('/upload/images/{{ $image->original_name }}')" class="image-thumbnail" data-image="/upload/images/{{ $image->original_name }}">
                                     <div class="image-actions">
                                         <span id="delete_image_{{ $image->id }}" class="delete-image" title="Deletar">
                                             <i class="fa fa-times"></i>
@@ -110,6 +110,17 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-success" id="uploadButton">Salvar</button>
             </div>
+        </div>
+    </div>
+</div>
+<!-- Large Modal End -->
+
+
+<!-- Large Modal Start -->
+<div id="galleryModal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div id="innerModal" class="modal-content">
+            <img id="imageModal" src="#" alt="Teste">
         </div>
     </div>
 </div>
