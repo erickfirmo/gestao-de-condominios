@@ -155,7 +155,7 @@
 <div id="galleryModal" class="modal fade">
     <div class="modal-dialog modal-lg">
         <div id="innerModal" class="modal-content">
-            <img id="imageModal" src="#" alt="Teste">
+            <img id="imageModal" src="#" alt="#" class=" m-5">
         </div>
     </div>
 </div>
