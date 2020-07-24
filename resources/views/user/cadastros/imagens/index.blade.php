@@ -145,7 +145,7 @@
                     reader.readAsDataURL(input.files[i]);
                 }
             }
-            $('#uploadImageModal').modal('show'); 
+            $('#uploadImageModal').custom-modal('show'); 
         }
         
         $("#imagesInput").change(function() {
@@ -178,7 +178,7 @@
                     old_images = old_images == '<div class="col-sm-12 col-md-12 d-inline"><p>Nenhuma imagem encontrada</p></div>' ? old_images : '';
 
                     $('#boxGallery').html(new_images + old_images);
-                    $('#uploadImageModal').modal('hide');
+                    $('#uploadImageModal').custom-modal('hide');
                     $('#previewBox').html('');
                     Swal.fire(
                         'Sucesso!',
