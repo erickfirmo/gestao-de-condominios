@@ -2,7 +2,7 @@
     <span class="close cursor" onclick="closeModal()">&times;</span>
         <div class="modal-content">
 
-        @foreach($images as $image)
+        @foreach($images as $key => $image)
         <div class="mySlides">
             <div class="numbertext">{{ $key+1 }} / {{ count($images) }}</div>
             <img src="/upload/images/{{ $image->original_name }}" style="width:100%">
