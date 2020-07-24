@@ -108,6 +108,8 @@
 </script>
 
 
+@stack('scripts')
+
 @stack('js')
 
 <!-- Page Level Scripts -->
