@@ -16,7 +16,6 @@ class ImagemDaEntidadeController extends Controller
     public function destroy(Request $request)
     {
         $id = $request->input('image_id');
-        $text_success = 'Imagem removida com sucesso!';
         $removed_images = [];
 
         $imagem_da_entidade = ImagemDaEntidade::findOrFail($id);
@@ -24,7 +23,7 @@ class ImagemDaEntidadeController extends Controller
         array_push($removed_images, $id);
 
         return response()->json([
-            'success' => $text_success,
+            'success' => 'Imagem removida com sucesso!',
         ], 201);
     }
 }
