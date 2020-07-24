@@ -100,16 +100,16 @@ div.single-gallery.flex-container > div.image-thumbnail {
 div.flex-container > div.image-thumbnail > div.image-actions > span {
   position: relative;
   margin: 8px;
-  color: #FFF;
+  color: #f00;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, .6);
+  /*background-color: rgba(0, 0, 0, .6);*/
   border-radius: 50%;
 }
 
 div.flex-container > div.image-thumbnail > div.image-actions > span {
-  padding: 5px 8px;
-  font-size: .8em;
-  bottom: 33px;
+  padding: 0px;
+  font-size: 1em;
+  bottom: 38px;
 }
 
 header {
