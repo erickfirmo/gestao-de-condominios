@@ -64,10 +64,6 @@
     @yield('content')
 </div>
 
-<div class="lightbox">
-    <img id="lightboxImage" src="#" alt="#" class="img-fluid mx-auto">
-</div>
-
 <!-- Scripts -->
 
 @include('javascript._vars')
@@ -100,14 +96,6 @@
 <script src="{{ asset('js/validation.js') }}"></script>
 <script src="{{ asset('js/alerts.js') }}"></script>
 <script src="{{ asset('js/custom-masks.js') }}"></script>
-<script src="{{ asset('js/image-gallery.js') }}"></script>
-
-<script>
-    $('.image-thumbnail').on('click', function() {
-       // $('#lightboxImage').attr('src', $(this).data('image'));
-        //$('.lightbox').css('display', 'block');
-    });
-</script>
 
 <!-- Page Level Scripts -->
 
