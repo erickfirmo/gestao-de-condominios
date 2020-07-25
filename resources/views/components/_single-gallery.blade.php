@@ -1,6 +1,6 @@
-<div class="p-0" data-title="Imagens do Imóvel">
+<div class="p-0" data-title="{{ $title }}">
     <div class="row">
-        <span class="label-text col-md-2 text-md-right">Fotos do Imóvel</span>
+        <span class="label-text col-md-2 text-md-right">{{ $title }}</span>
         <div class="col-md-10 m-0">
             <div class="flex-container single-gallery">
                 @if(count($images))
