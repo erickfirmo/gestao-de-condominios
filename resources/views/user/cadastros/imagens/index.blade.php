@@ -126,14 +126,6 @@
 </div>
 <!-- Large Modal End -->
 
-
-@include('components._lightbox', ['images' => $images])
-
-@push('scripts')
-    <script src="{{ asset('js/lightbox.js') }}"></script>
-
-@endpush
-
 @push('js')
     <script src="{{ asset('js/table-filter.js') }}"></script>
     <script>
