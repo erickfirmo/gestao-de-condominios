@@ -168,6 +168,10 @@
 @push('js')
 <script>
 
+$('.delete-image').on('click', function() {
+    alert('oi');
+});
+
     $('.delete-image').on('click', function() {
         let _token = $('input[name="_token"]').val();
 
