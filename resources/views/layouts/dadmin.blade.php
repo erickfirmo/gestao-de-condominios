@@ -64,7 +64,9 @@
     @yield('content')
 </div>
 
-<div class="lightbox"></div>
+<div class="lightbox">
+    <img id="lightboxImage" src="#" alt="#" class="img-fluid mx-auto">
+</div>
 
 <!-- Scripts -->
 
@@ -102,15 +104,10 @@
 
 <script>
     $('.image-thumbnail').on('click', function() {
-        $('#imageModal').attr('src', $(this).data('image'));
-        $('#galleryModal').modal('show');
+        $('#lightboxImage').attr('src', $(this).data('image'));
+        $('.lightbox').css('display', 'block');
     });
 </script>
-
-
-@stack('scripts')
-
-@stack('js')
 
 <!-- Page Level Scripts -->
 
