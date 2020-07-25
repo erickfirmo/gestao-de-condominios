@@ -126,3 +126,7 @@ div.lightbox {
   left: 0;
 }
 */
+
+.pointer {
+  cursor: pointer;
+}
