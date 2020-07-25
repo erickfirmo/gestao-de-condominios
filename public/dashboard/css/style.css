@@ -93,7 +93,6 @@ div.full-gallery.flex-container > div.image-thumbnail {
 }
 
 div.single-gallery.flex-container > div.image-thumbnail {
-  min-width: 180px;
   width: 19.5%;
   height: 100px;
 }
@@ -108,17 +107,17 @@ div.flex-container > div.image-thumbnail > div.image-actions > span {
 }
 
 div.flex-container > div.image-thumbnail > div.image-actions > span {
-  padding: 0;
+  padding: 4px;
   font-size: 1em;
   bottom: 38px;
+  background-color: blue;
 }
 
 header {
   z-index: 10;
 }
-
+/*
 div.lightbox {
-  display: none;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, .6);
@@ -126,7 +125,4 @@ div.lightbox {
   top: 0;
   left: 0;
 }
-
-div.lightbox img {
-  height: 80vh;
-}
+*/
