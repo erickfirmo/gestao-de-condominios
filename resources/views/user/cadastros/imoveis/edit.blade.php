@@ -68,8 +68,12 @@
                                                     <p>Nenhuma imagem encontrada</p>
                                                 </div>
                                             @endif
-                                            <div id="parent_image_add" title="Adicionar Imagem" style="background-image: url('')" class="imagem col-sm-3 col-md-3 d-inline">
-                                                <span><i class=""></i></span>
+                                            <div id="addImage" title="Adicionar Imagem" class="image-thumbnail border border-info rounded pointer">
+                                                <div>
+                                                    <span class="d-block mx-auto text-center text-info" style="font-size: 26px;">
+                                                        <i class="fa fa-plus"></i>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -162,60 +166,53 @@
 <!-- Large Modal End -->
 
 
-
-
-
 @push('js')
 <script>
 
 $('.delete-image').on('click', function() {
-    alert('oi');
-});
+    let _token = $('input[name="_token"]').val();
 
-    $('.delete-image').on('click', function() {
-        let _token = $('input[name="_token"]').val();
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: 'Você não poderá recuperar essas informaçoes!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sim, deletar!',
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#ff4040'
 
-        Swal.fire({
-            title: 'Tem certeza?',
-            text: 'Você não poderá recuperar essas informaçoes!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sim, deletar!',
-            cancelButtonText: 'Cancelar',
-            confirmButtonColor: '#ff4040'
+        }).then((result) => {
 
-            }).then((result) => {
-
-            if (result.value) {
-                let image_id = $(this).attr('id');
-                image_id = image_id.replace('remove_parent_image_', '');
+        if (result.value) {
+            let image_id = $(this).attr('id');
+            image_id = image_id.replace('remove_parent_image_', '');
+            
+            $.ajax({
+                url: "{{ route('imagens-das-entidades.destroy') }}",
+                type: "POST",
+                data: { _token:_token, image_id:image_id },
                 
-                $.ajax({
-                    url: "{{ route('imagens-das-entidades.destroy') }}",
-                    type: "POST",
-                    data: { _token:_token, image_id:image_id },
-                    
-                    success: function(response) {
-                        Swal.fire(
-                            'Sucesso!',
-                            response.success,
-                            'success'
-                        );
-                        $('#parent_image_'+image_id).removeClass('d-inline');
-                        $('#parent_image_'+image_id).addClass('d-none');
-                    }
-                });
-                
-            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                success: function(response) {
+                    Swal.fire(
+                        'Sucesso!',
+                        response.success,
+                        'success'
+                    );
+                    $('#parent_image_'+image_id).removeClass('d-inline');
+                    $('#parent_image_'+image_id).addClass('d-none');
+                }
+            });
+            
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
 
-                Swal.fire(
-                'Cancelado',
-                'Nada foi alterado!',
-                'error'
-                )
-            }
-        });
+            Swal.fire(
+            'Cancelado',
+            'Nada foi alterado!',
+            'error'
+            )
+        }
     });
+});
     
 </script>
 
