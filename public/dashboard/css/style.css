@@ -107,15 +107,15 @@ div.flex-container > div.image-thumbnail > div.image-actions > span {
 }
 
 div.flex-container > div.image-thumbnail > div.image-actions > span {
-  padding: 4px;
+  padding: 0;
   font-size: 1em;
   bottom: 38px;
-  background-color: blue;
 }
 
 header {
   z-index: 10;
 }
+
 /*
 div.lightbox {
   width: 100%;
