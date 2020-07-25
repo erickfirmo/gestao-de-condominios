@@ -137,12 +137,7 @@
 
 
 @push('js')
-<script>
-
-    
-</script>
-
-
+<script src="{{ asset('js/single-gallery.js') }}"></script>
 
 @endpush
 @endsection
