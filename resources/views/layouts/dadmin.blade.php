@@ -104,8 +104,8 @@
 
 <script>
     $('.image-thumbnail').on('click', function() {
-        $('#lightboxImage').attr('src', $(this).data('image'));
-        $('.lightbox').css('display', 'block');
+       // $('#lightboxImage').attr('src', $(this).data('image'));
+        //$('.lightbox').css('display', 'block');
     });
 </script>
 
