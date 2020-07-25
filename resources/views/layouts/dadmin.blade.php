@@ -99,5 +99,7 @@
 
 <!-- Page Level Scripts -->
 
+@stack('js')
+
 </body>
 </html>
