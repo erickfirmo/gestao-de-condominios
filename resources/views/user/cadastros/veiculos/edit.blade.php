@@ -47,6 +47,13 @@
                             @csrf
                             {{ method_field('PUT') }}
 
+                            <!-- Imagens da Entidade Start -->
+                            @include('components._single-gallery', [
+                                'title' => 'Fotos do Veículo',
+                                'images' => $veiculo->imagens()->get()
+                            ])
+                            <!-- Imagens da Entidade End -->
+
 
                              <!-- Form Group Start -->
                              <div class="form-group row">
