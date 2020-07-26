@@ -31,7 +31,7 @@
 
             //$('#uploadImagesForm').submit();
             $.ajax({
-                url: "{{ route('imagens.upload') }}",
+                url: location.origin+'/imagens/upload',
                 type: "POST",
                 data: new FormData(document.getElementById('uploadImagesForm')),
                 contentType: false,
