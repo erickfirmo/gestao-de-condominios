@@ -18,7 +18,7 @@ $('.delete-image').on('click', function() {
             image_id = image_id.replace('remove_parent_image_', '');
             
             $.ajax({
-                url: "{{ route('imagens-das-entidades.destroy') }}",
+                url: location.origin+'/imagens-das-entidades/destroy',
                 type: "POST",
                 data: { _token:_token, image_id:image_id },
                 
