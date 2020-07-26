@@ -48,6 +48,14 @@
                             {{ method_field('PUT') }}
 
 
+                            <!-- Imagens da Entidade Start -->
+                            @include('components._single-gallery', [
+                                'title' => 'Fotos da Área Comum',
+                                'images' => $area_comum->imagens()->get()
+                            ])
+                            <!-- Imagens da Entidade End -->
+
+
                              <!-- Form Group Start -->
                              <div class="form-group row">
                                 <span class="label-text col-md-2 col-form-label text-md-right">Nome</span>
