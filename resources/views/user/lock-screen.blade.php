@@ -16,7 +16,8 @@
                         <h3 class="h3">{{ Auth::user()->name }} <i class="fa fa-unlock"></i></h3>
                     </div>
 
-                    <form action="#" method="post">
+                    <form action="{{ route('unlock-screen') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
