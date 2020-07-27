@@ -35,6 +35,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Entrega</h3>
                         <form action="{{ route('entregas.destroy', $entrega->id) }}" method="POST" class="remove-form" style="float:right">
+                            @csrf
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger"><span class="mr-2"><i class="fas fa-trash"></i></span>Deletar Entrega</button></a>
                         </form>
