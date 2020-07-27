@@ -20,7 +20,20 @@ class LockScreen
 
         if (Auth::check()) {
 
-           
+            if(Session::has('lock_screen'))
+            {
+                $screen_obj = Session::get('lock_screen');
+    
+                if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == true)
+                {
+                    return view('user.lock-screen');
+                }
+    
+            } else {
+                
+                return $next($request);
+
+            }
 
         } else {
             
