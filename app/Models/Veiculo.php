@@ -23,6 +23,6 @@ class Veiculo extends Model
 
     public function imagens()
     {
-        return $this->hasMany(ImagemDaEntidade::class, 'parent_id', 'id');
+        return $this->hasMany(ImagemDaEntidade::class, 'parent_id', 'id')->where('parent_class', self::class);
     }
 }
