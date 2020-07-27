@@ -4,7 +4,7 @@
     <div class="sidebar--profile">
         <div class="profile--img">
             <a href="#" class="logo" style="text-align:center;">
-                <img src="{{ Auth::user()->foto != '' ? Auth::user()->foto : '/images/profile-pic.png' }}" alt="Perfil"  style="border-radius: 50%;">
+                <img src="{{ Auth::user()->foto != '#' ? Auth::user()->foto : '/images/profile-pic.png' }}" alt="Perfil"  style="border-radius: 50%;">
             </a>
         </div>
 
@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" title="Lock Screen">
+                    <a href="{{ route('lock-screen') }}" class="nav-link" title="Lock Screen">
                         <i class="fa fa-lock"></i>
                     </a>
                 </li>
