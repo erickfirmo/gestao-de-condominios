@@ -47,9 +47,10 @@ class PetController extends Controller
     {
         $request->validated();
 
-        $nome = $request->nome_do_entregador;
+        $nome = $request->nome;
         $especie = $request->especie;
         $raca = $request->raca;
+        $cor = $request->cor;
         $descricao = $request->descricao;
         $morador_id = $request->morador_id;
 
@@ -57,6 +58,7 @@ class PetController extends Controller
         $pet->nome = $nome;
         $pet->especie = $especie;
         $pet->raca = $raca;
+        $pet->cor = $cor;
         $pet->descricao = $descricao;
         $pet->morador_id = $morador_id;
         $pet->save();
