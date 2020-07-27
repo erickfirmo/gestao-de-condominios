@@ -30,3 +30,19 @@
         </div>
     </div>
 </div>
+
+
+<div id="vCenteredModal" class="modal fade show" style="display: block; padding-right: 17px;">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title">Modal Title</h5>
+            <button type="button" class="close" data-dismiss="modal">×</button> 
+         </div>
+         <div class="modal-body">
+            <p>Modal Body Content...</p>
+         </div>
+         <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-success">Save</button> </div>
+      </div>
+   </div>
+</div>
