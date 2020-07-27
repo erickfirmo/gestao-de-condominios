@@ -100,10 +100,6 @@ Route::post('imagens/upload', 'ImagemController@upload')->name('imagens.upload')
 Route::post('imagens-das-entidades/store', 'ImagemDaEntidadeController@store')->name('imagens-das-entidades.store');
 Route::post('imagens-das-entidades/destroy', 'ImagemDaEntidadeController@destroy')->name('imagens-das-entidades.destroy');
 
-// lock screen
-Route::get('lock-screen', 'ScreenController@lock')->name('lock-screen');
-// unlock screen
-Route::post('unlock-screen', 'ScreenController@unlock')->name('unlock-screen');
 
 
 Auth::routes();
@@ -111,3 +107,10 @@ Auth::routes();
 Route::get('home', 'HomeController@index')->name('home');
 
 });
+
+
+
+// lock screen
+Route::get('lock-screen', 'User\ScreenController@lock')->name('lock-screen');
+// unlock screen
+Route::post('unlock-screen', 'User\ScreenController@unlock')->name('unlock-screen');
