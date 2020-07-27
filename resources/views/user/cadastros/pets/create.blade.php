@@ -91,7 +91,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Cor</span>
                                 <div class="col-md-10">
                                     <span id="cor-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="cor" class="form-control" id="cor" maxlenght="30" value="{{ $old('cor') }}">
+                                    <input type="text" name="cor" class="form-control" id="cor" maxlenght="30" value="{{ old('cor') }}">
                                 </div>
                             </div>
                             <!-- Form Group End -->
