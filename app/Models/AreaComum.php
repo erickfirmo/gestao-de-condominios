@@ -32,4 +32,9 @@ class AreaComum extends Model
     {
         return $this->hasMany(Relatorio::class, 'parent_id');
     }
+
+    public function imagens()
+    {
+        return $this->hasMany(ImagemDaEntidade::class, 'parent_id', 'id')->where('parent_class', self::class);
+    }
 }
