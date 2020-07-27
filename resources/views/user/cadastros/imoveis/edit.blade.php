@@ -35,6 +35,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Imóvel</h3>
                         <form action="{{ route('imoveis.destroy', $imovel->id) }}" method="POST" class="remove-form" style="float:right">
+                            @csrf
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Imóvel</button></a>
                         </form>
