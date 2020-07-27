@@ -43,7 +43,7 @@ Route::group(['namespace' => 'Admin',  'middleware' => 'role', 'prefix' => 'admi
     
 });
 
-Route::group(['namespace' => 'User',  'middleware' => 'role'], function() {
+Route::group(['namespace' => 'User',  'middleware' => ['role', 'lockscreen']], function() {
 
 
 ##cadastros
