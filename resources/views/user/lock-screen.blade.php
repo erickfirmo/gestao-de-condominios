@@ -11,9 +11,9 @@
             <div class="m-account--form-w">
                 <div class="m-account--form m-account--lock">
                     <div class="m-account--user">
-                        <img src="assets/img/avatars/01_80x80.png" alt="">
+                        <img src="{{ Auth::user()->foto_de_perfil != '' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Foto de Perfil">
 
-                        <h3 class="h3">Érick Firmo <i class="fa fa-unlock"></i></h3>
+                        <h3 class="h3">{{ Auth::user()->name }} <i class="fa fa-unlock"></i></h3>
                     </div>
 
                     <form action="#" method="post">
@@ -23,16 +23,16 @@
                                     <i class="fas fa-key"></i>
                                 </div>
 
-                                <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="off" required>
+                                <input type="password" name="password" placeholder="Digite sua senha..." class="form-control" autocomplete="off" autofocus required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-block btn-rounded btn-info">Unlock</button>
+                            <button type="submit" class="btn btn-block btn-rounded btn-info">Desbloquear</button>
                         </div>
 
                         <div class="m-account--footer">
-                            <p>&copy; 2018 ThemeLooks</p>
+                            <p>&copy; 2020 Gestão de Condomínios</p>
                         </div>
                     </form>
                 </div>
