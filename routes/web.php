@@ -101,6 +101,9 @@ Route::post('imagens-das-entidades/store', 'ImagemDaEntidadeController@store')->
 Route::post('imagens-das-entidades/destroy', 'ImagemDaEntidadeController@destroy')->name('imagens-das-entidades.destroy');
 
     
+// lock screen
+Route::get('lock-screen', 'ScreenController@index')->name('lock-screen');
+
 Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
