@@ -20,10 +20,11 @@ class ScreenController extends Controller
         {
             $screen_obj = Session::get('lock_screen');
 
-            if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == false)
+            //if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == false)
+            if($screen_obj['lock'] == false)
             {
                 $screen_obj = [
-                    'lock' => true,
+                    'encrypt_password' => true,
                     'lock' => md5(Auth::user()->password),
                 ];
                 Session::put('lock_screen', $screen_obj);
@@ -49,17 +50,19 @@ class ScreenController extends Controller
         ]);
 
         $password = $request->password;
-        $encrypt_password = md5($password);
+        //$encrypt_password = md5($password);
 
         if(Session::has('lock_screen'))
         {
             $screen_obj = Session::get('lock_screen');
 
-            if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['encrypt_password'] == $encrypt_password && $screen_obj['lock'] == true)
+            //if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['encrypt_password'] == $encrypt_password && $screen_obj['lock'] == true)
+
+            if($screen_obj['lock'] == true)
             {
                 $screen_obj = [
                     'lock' => false,
-                    'lock' => md5(Auth::user()->password),
+                    'encrypt_password' => md5(Auth::user()->password),
                 ];
                 Session::put('lock_screen', $screen_obj);
             }
@@ -71,10 +74,10 @@ class ScreenController extends Controller
             ];
             Session::put('lock_screen', $screen_obj);
         }
-    }
 
-    // last view 
-    //return view('$last_route');
+        return redirect()->route('home');
+
+    }
 
         
 }
