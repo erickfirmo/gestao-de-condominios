@@ -23,7 +23,7 @@ class ScreenController extends Controller
             if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == false)
             {
                 $screen_obj = [
-                    'access' => true,
+                    'lock' => true,
                     'lock' => md5(Auth::user()->password),
                 ];
                 Session::put('lock_screen', $screen_obj);
@@ -38,5 +38,30 @@ class ScreenController extends Controller
         }
         
     }
+
+    public function unlock(Request $request)
+    {
+        if(Session::has('lock_screen'))
+        {
+            $screen_obj = Session::get('lock_screen');
+
+            if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == true)
+            {
+                $screen_obj = [
+                    'lock' => false,
+                    'lock' => md5(Auth::user()->password),
+                ];
+                Session::put('lock_screen', $screen_obj);
+            }
+
+        } else {
+            $screen_obj = [
+                'lock' => false,
+                'encrypt_password' => md5(Auth::user()->password),
+            ];
+            Session::put('lock_screen', $screen_obj);
+        }
+    }
+        
 
 }
