@@ -36,6 +36,9 @@ class ScreenController extends Controller
             ];
             Session::put('lock_screen', $screen_obj);
         }
+
+
+        return view('user.lock-screen');
         
     }
 
@@ -69,6 +72,9 @@ class ScreenController extends Controller
             Session::put('lock_screen', $screen_obj);
         }
     }
-        
 
+    // last view 
+    //return view('$last_route');
+
+        
 }
