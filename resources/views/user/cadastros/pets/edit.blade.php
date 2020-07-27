@@ -125,7 +125,7 @@
                                 <span class="label-text col-md-2 col-form-label text-md-right">Morador</span>
                                 <div class="col-md-10">
                                     <span id="morador_id-text-error" class="form-text text-error"></span>
-                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ $pet->morador()->nome }}">
+                                    <input type="text" name="morador" class="form-control autocomplete-morador" id="morador" maxlenght="40" value="{{ $pet->morador()->get()[0]->nome }}">
                                     <input type="text" name="morador_id" class="form-control" id="morador_id" maxlenght="8" value="{{ $pet->morador_id }}">
                                 </div>
                             </div>
@@ -151,5 +151,10 @@
 </main>
 
 <!-- Main Container End -->
+
+@push('js')
+<script src="{{ asset('js/single-gallery.js') }}"></script>
+@endpush
+
 @endsection
 
