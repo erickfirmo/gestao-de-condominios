@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AreaComumController extends Controller
 {
+
+    public function __construct()
+    {
+        return $this->middleware('auth:user');
+    }   
+
+    
     /**
      * Display a listing of the resource.
      *
