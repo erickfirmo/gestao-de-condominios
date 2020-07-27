@@ -41,11 +41,18 @@ class ScreenController extends Controller
 
     public function unlock(Request $request)
     {
+        $request->validate([
+            'password' => 'required',
+        ]);
+
+        $password = $request->password;
+        $encrypt_password = md5($password);
+
         if(Session::has('lock_screen'))
         {
             $screen_obj = Session::get('lock_screen');
 
-            if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['lock'] == true)
+            if($screen_obj['encrypt_password'] == md5(Auth::user()->password) && $screen_obj['encrypt_password'] == $encrypt_password && $screen_obj['lock'] == true)
             {
                 $screen_obj = [
                     'lock' => false,
