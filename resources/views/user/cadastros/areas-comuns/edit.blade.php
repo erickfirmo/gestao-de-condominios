@@ -35,6 +35,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Editar Área Comum</h3>
                         <form action="{{ route('areas-comuns.destroy', $area_comum->id) }}" method="POST" class="remove-form" style="float:right">
+                            @csrf
                             {{method_field('DELETE')}}
                             <a href="#"><button class="btn btn-rounded btn-danger">Deletar Área Comum</button></a>
                         </form>
