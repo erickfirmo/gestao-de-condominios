@@ -15,22 +15,22 @@
         <div class="profile--nav">
             <ul class="nav">
                 <li class="nav-item">
-                    <a href="#" class="nav-link" title="User Profile">
+                    <a href="#" class="nav-link" title="Foto de Perfil">
                         <i class="fa fa-user"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('lock-screen') }}" class="nav-link" title="Lock Screen">
+                    <a href="{{ route('lock-screen') }}" class="nav-link" title="Bloquear Tela">
                         <i class="fa fa-lock"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" title="Messages">
+                    <a href="#" class="nav-link" title="Mensagens">
                         <i class="fa fa-envelope"></i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" title="Logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a href="#" class="nav-link" title="Sair" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out-alt"></i>
                     </a>
                 </li>
