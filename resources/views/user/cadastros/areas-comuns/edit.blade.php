@@ -147,5 +147,10 @@
 </main>
 
 <!-- Main Container End -->
+
+@push('js')
+<script src="{{ asset('js/single-gallery.js') }}"></script>
+@endpush
+
 @endsection
 
