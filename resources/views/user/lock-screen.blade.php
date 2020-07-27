@@ -11,7 +11,7 @@
             <div class="m-account--form-w">
                 <div class="m-account--form m-account--lock">
                     <div class="m-account--user">
-                        <img src="{{ Auth::user()->foto_de_perfil != '' ? Auth::user()->foto_de_perfil : '/images/profile-pic.png' }}" alt="Foto de Perfil">
+                        <img src="{{ Auth::user()->foto != '#' ? Auth::user()->foto : '/images/profile-pic.png' }}" alt="Foto de Perfil">
 
                         <h3 class="h3">{{ Auth::user()->name }} <i class="fa fa-unlock"></i></h3>
                     </div>
