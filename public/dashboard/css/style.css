@@ -84,7 +84,6 @@ form.remove-form {
   background-size: cover;
   background-repeat: no-repeat;
   text-align: right;
-  transition-duration: .8s;
 }
 
 div.full-gallery.flex-container > div.image-thumbnail {
@@ -96,6 +95,28 @@ div.single-gallery.flex-container > div.image-thumbnail {
   width: 19%;
   height: 100px;
 }
+
+
+/* modal gallery start */
+div.modal-gallery.flex-container > div.image-thumbnail {
+  width: 98%;
+  height: 150px;
+}
+
+@media(min-width: 417px) {
+  div.modal-gallery.flex-container > div.image-thumbnail {
+    width: 48.5%;
+    height: 150px;
+  }
+}
+
+@media(min-width: 580px) {
+  div.modal-gallery.flex-container > div.image-thumbnail {
+    width: 110px;
+    height: 110px;
+  }
+}
+/* modal gallery end */
 
 div.flex-container > div.image-thumbnail > div.image-actions > span {
   position: relative;
