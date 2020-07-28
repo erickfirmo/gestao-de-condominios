@@ -52,6 +52,7 @@
                             <!-- Imagens da Entidade Start -->
                             @include('components._single-gallery', [
                                 'title' => 'Fotos do Pet',
+                                'all_images' => $images,
                                 'images' => $pet->imagens()->get()
                             ])
                             <!-- Imagens da Entidade End -->
