@@ -9,7 +9,7 @@ use App\Models\Condominio;
 use App\Models\Imovel;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Uf;
-
+use App\Models\Imagem;
 
 class ImovelController extends Controller
 {
@@ -106,6 +106,7 @@ class ImovelController extends Controller
         return view('user.cadastros.imoveis.edit', [
             'imovel' => $imovel,
             'ufs' => $ufs,
+            'images' => Imagem::all()
         ]);
     }
 
