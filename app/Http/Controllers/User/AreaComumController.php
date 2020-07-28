@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AreaComumRequest;
 use App\Models\AreaComum;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Imagem;
 
 class AreaComumController extends Controller
 {
@@ -96,6 +97,7 @@ class AreaComumController extends Controller
     {
         return view('user.cadastros.areas-comuns.edit', [
             'area_comum' => AreaComum::findOrFail($id),
+            'images' => Imagem::all(),
         ]);
     }
 
