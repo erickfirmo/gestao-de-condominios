@@ -51,7 +51,8 @@
                             <!-- Imagens da Entidade Start -->
                             @include('components._single-gallery', [
                                 'title' => 'Fotos do Imóvel',
-                                'images' => $imovel->imagens()->get()
+                                'images' => $imovel->imagens()->get(),
+                                'all_images' => $images,
                             ])
                             <!-- Imagens da Entidade End -->
                             
