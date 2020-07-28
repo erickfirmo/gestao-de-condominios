@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\VeiculoRequest;
 use App\Models\Veiculo;
+use App\Models\Imagem;
 
 class VeiculoController extends Controller
 {
@@ -90,6 +91,8 @@ class VeiculoController extends Controller
     {
         return view('user.cadastros.veiculos.edit', [
             'veiculo' => Veiculo::findOrFail($id),
+            'images' => Imagem::all()
+
         ]);
     }
 
