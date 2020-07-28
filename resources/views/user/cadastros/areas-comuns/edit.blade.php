@@ -52,7 +52,8 @@
                             <!-- Imagens da Entidade Start -->
                             @include('components._single-gallery', [
                                 'title' => 'Fotos da Área Comum',
-                                'images' => $area_comum->imagens()->get()
+                                'images' => $area_comum->imagens()->get(),
+                                'all_images' => $images,
                             ])
                             <!-- Imagens da Entidade End -->
 
