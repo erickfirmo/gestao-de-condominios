@@ -18,7 +18,7 @@
                         <p>Nenhuma imagem encontrada</p>
                     </div>
                 @endif
-                <div id="addImage" title="Adicionar Imagem" class="image-thumbnail border border-info rounded pointer">
+                <div id="addParentImage" title="Adicionar Imagem" class="image-thumbnail border border-info rounded pointer">
                     <div>
                         <span class="d-block mx-auto text-center text-info" style="font-size: 26px;">
                             <i class="fa fa-plus"></i>
@@ -42,7 +42,9 @@
          <div class="modal-body">
             <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-rounded btn-info w-100 mb-4"><i class="fa fa-plus"></i> Carregar foto</button>
+                    <button id="addNewImage" class="btn btn-rounded btn-info w-100 mb-4">
+                        <i class="fa fa-plus"></i> Carregar foto
+                    </button>
                 </div>
                 
             </div>
