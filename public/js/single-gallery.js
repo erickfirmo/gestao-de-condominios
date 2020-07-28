@@ -1,9 +1,8 @@
 
-$("#addImage").on('click', function() {
+$("#addParentImage").on('click', function(e) {
+    e.preventDefault();
     $('#vCenteredModal').modal('show');
-})
-
-
+});
 
 $('.delete-image').on('click', function() {
     let _token = $('input[name="_token"]').val();
