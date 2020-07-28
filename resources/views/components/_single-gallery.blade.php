@@ -32,7 +32,7 @@
 </div>
 
 
-<div id="vCenteredModal" class="modal fade show" style="display: block; padding-right: 17px;">
+<div id="vCenteredModal" class="modal fade">
    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header">
@@ -40,7 +40,23 @@
             <button type="button" class="close" data-dismiss="modal">×</button> 
          </div>
          <div class="modal-body">
-            <p>Modal Body Content...</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-rounded btn-info w-100 mb-4"><i class="fa fa-plus"></i> Carregar foto</button>
+                </div>
+                
+            </div>
+
+            <div class="row">
+                @foreach($all_images as $key => $image)
+                <div class="col-md-3" style="height:150px;background-position: center; background-size: cover; background-image:url('/upload/images/{{ $image->original_name }}')">
+                </div>
+                @endforeach
+            </div>
+
+
+            
+            
          </div>
          <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> <button type="button" class="btn btn-success">Save</button> </div>
       </div>
