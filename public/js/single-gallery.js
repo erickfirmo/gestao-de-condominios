@@ -1,6 +1,11 @@
 
-$("#addParentImage").on('click', function(e) {
+$("#addNewImage").on('click', function(e) {
     e.preventDefault();
+    // get input images
+    $('#vCenteredModal').modal('hide');
+});
+
+$("#addParentImage").on('click', function() {
     $('#vCenteredModal').modal('show');
 });
 
