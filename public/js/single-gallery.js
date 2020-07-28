@@ -1,4 +1,10 @@
 
+$("#addImage").on('click', function() {
+    $('#vCenteredModal').modal('show');
+})
+
+
+
 $('.delete-image').on('click', function() {
     let _token = $('input[name="_token"]').val();
 
