@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PetRequest;
 use App\Models\Pet;
+use App\Models\Imagem;
 use Illuminate\Support\Facades\Auth;
 
 class PetController extends Controller
@@ -24,7 +25,7 @@ class PetController extends Controller
     {
         $pets = Pet::all();
 
-        return view('user.cadastros.pets.index', [ 'pets' => $pets]);
+        return view('user.cadastros.pets.index', [ 'pets' => $pets ]);
     }
 
     /**
@@ -90,6 +91,7 @@ class PetController extends Controller
     {
         return view('user.cadastros.pets.edit', [
             'pet' => Pet::findOrFail($id),
+            'images' => Imagem::all(),
         ]);
     }
 
