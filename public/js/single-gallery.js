@@ -1,4 +1,9 @@
 
+$(".image-thumbnail").on('click', function() {
+    // get input images
+    $(this).toggleClass('selected');
+});
+
 $("#addNewImage").on('click', function(e) {
     e.preventDefault();
     // get input images
