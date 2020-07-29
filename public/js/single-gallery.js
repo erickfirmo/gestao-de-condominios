@@ -1,26 +1,34 @@
 
 var images_to_send = [];
 
-$(".image-thumbnail").on('click', function() {
-    // get input images
-    $(this).toggleClass('selected');
+$(".add-parent-image").on('click', function() {
     let image_id = $(this).attr('id');
     image_id = image_id.replace('gallery_image_', '');
-    //has class
-    //array push
+    if(!images_to_send.includes(image_id) && !$(this).hasClass('selected'))
+        images_to_send.push(image_id);
 
-
-    images_to_send = [
-        '20',
-        '21',
-    ];
-
-
-
+    $(this).toggleClass('selected');
+   
 });
 
 
-//clear images_to_send on close modal
+//clear images_to_send on close modal (clear array)
+// removeClass selected
+
+
+
+$('#saveParentImages').on('click', function(e) {
+    e.preventDefault();
+    // submit
+
+    // get response
+
+    // update parent images grid
+
+    // clear array
+
+    // removeClass selected
+});
 
 
 $("#addNewImage").on('click', function(e) {
