@@ -52,7 +52,9 @@
             <div class="flex-container modal-gallery rounded">
                 @foreach($all_images as $key => $image)
                 <div class="image-thumbnail pointer" style="background-image:url('/upload/images/{{ $image->original_name }}')">
-                    <div class="bg-selected"></div>
+                    <div class="bg-selected">
+                        <i class="far fa-check-circle"></i>
+                    </div>
                 </div>
                 @endforeach
             </div>
