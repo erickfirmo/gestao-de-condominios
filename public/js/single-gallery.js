@@ -2,6 +2,9 @@
 $(".image-thumbnail").on('click', function() {
     // get input images
     $(this).toggleClass('selected');
+    let image_id = $(this).attr('id');
+    image_id = image_id.replace('');
+
 });
 
 $("#addNewImage").on('click', function(e) {
