@@ -1,11 +1,27 @@
 
+var images_to_send = [];
+
 $(".image-thumbnail").on('click', function() {
     // get input images
     $(this).toggleClass('selected');
     let image_id = $(this).attr('id');
-    image_id = image_id.replace('');
+    image_id = image_id.replace('gallery_image_', '');
+    //has class
+    //array push
+
+
+    images_to_send = [
+        '20',
+        '21',
+    ];
+
+
 
 });
+
+
+//clear images_to_send on close modal
+
 
 $("#addNewImage").on('click', function(e) {
     e.preventDefault();
