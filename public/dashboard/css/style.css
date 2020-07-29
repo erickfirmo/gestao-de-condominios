@@ -106,7 +106,6 @@ div.modal-gallery.flex-container > div.image-thumbnail {
 div.modal-gallery.flex-container > div.image-thumbnail:hover div.bg-selected {
   width: 100%;
   height: 110px;
-  /*background-color: rgb(225, 97, 35, 0.7);*/
   border: 6px solid #e16123;
 }
 
@@ -114,6 +113,25 @@ div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selecte
   width: 100%;
   height: 110px;
   background-color: rgb(225, 97, 35, 0.7);
+  border: 6px solid rgba(0, 0, 0, 0);
+}
+
+div.modal-gallery.flex-container > div.image-thumbnail.selected:hover > div.bg-selected {
+  border: 6px solid #e16123;
+}
+
+div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected > i {
+  display: none;
+  position: relative;
+  top: 32px;
+}
+
+div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selected > i {
+  color: #FFF;
+  font-size: 30px;
+  text-align: center;
+  display: block;
+
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected:hover {
