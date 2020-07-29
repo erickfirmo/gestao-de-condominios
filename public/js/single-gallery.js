@@ -19,15 +19,19 @@ $(".add-parent-image").on('click', function() {
 
 $('#saveParentImages').on('click', function(e) {
     e.preventDefault();
-    // submit
 
-    // get response
+    $.ajax({
+        url: location.origin+'/imagens/upload',
+        type: "POST",
+        data: images_to_send,
+        success: function(response) {
+            console.log(response);
+        }
+    })
 
     // update parent images grid
-
-    // clear array
-
-    // removeClass selected
+    images_to_send = [];
+    $('.add-parent-image').removeClass('selected');
 });
 
 
