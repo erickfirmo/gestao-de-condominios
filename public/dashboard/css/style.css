@@ -105,19 +105,22 @@ div.modal-gallery.flex-container > div.image-thumbnail {
 }
 div.modal-gallery.flex-container > div.image-thumbnail:hover div.bg-selected {
   width: 100%;
-  height: 110px;
   border: 6px solid #e16123;
+  height: 110px;
+
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selected {
   width: 100%;
-  height: 110px;
   background-color: rgb(225, 97, 35, 0.7);
   border: 6px solid rgba(0, 0, 0, 0);
+  height: 110px;
+
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail.selected:hover > div.bg-selected {
   border: 6px solid #e16123;
+
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected > i {
@@ -136,21 +139,18 @@ div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selecte
 
 div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected:hover {
   width: 100%;
-  height: 110px;
 }
-
 
 @media(min-width: 417px) {
   div.modal-gallery.flex-container > div.image-thumbnail {
     width: 48.5%;
-    height: 150px;
   }
+
 }
 
 @media(min-width: 580px) {
   div.modal-gallery.flex-container > div.image-thumbnail {
     width: 110px;
-    height: 110px;
   }
 }
 /* modal gallery end */
