@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CondominiosTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(ImoveisTableSeeder::class);
+        $this->call(MoradoresTableSeeder::class);
         $this->call(ImagensTableSeeder::class);
         $this->call(ImagensDasEntidadesTableSeeder::class);
         $this->call(PermissionRoleTableSeeder::class);
