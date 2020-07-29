@@ -102,23 +102,22 @@ div.single-gallery.flex-container > div.image-thumbnail {
 div.modal-gallery.flex-container > div.image-thumbnail {
   width: 98%;
   height: 110px;
-  background-color: rgb(225, 97, 35, 0.7);
 }
 div.modal-gallery.flex-container > div.image-thumbnail:hover div.bg-selected {
   width: 100%;
   height: 110px;
-  background-color: rgb(225, 97, 35, 0.7);
+  /*background-color: rgb(225, 97, 35, 0.7);*/
+  border: 6px solid #e16123;
+  transition-duration: .1s;
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selected:hover {
   width: 100%;
-  background-color: rgb(225, 97, 35, 0.7);
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected:hover {
   width: 100%;
   height: 110px;
-  background-color: rgb(225, 97, 35, 0.7);
 }
 
 
