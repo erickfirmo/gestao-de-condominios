@@ -63,7 +63,10 @@
             
             
          </div>
-         <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> <button type="button" class="btn btn-success">Adicionar</button> </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button id="saveParentImages" type="button" class="btn btn-success">Salvar</button>
+        </div>
       </div>
    </div>
 </div>
