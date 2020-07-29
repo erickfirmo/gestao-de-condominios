@@ -36,7 +36,7 @@
    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title">Modal Title</h5>
+            <h5 class="modal-title">Adicionar Fotos</h5>
             <button type="button" class="close" data-dismiss="modal">×</button> 
          </div>
          <div class="modal-body">
@@ -51,7 +51,8 @@
 
             <div class="flex-container modal-gallery rounded">
                 @foreach($all_images as $key => $image)
-                <div class="image-thumbnail pointer selected" style="background-image:url('/upload/images/{{ $image->original_name }}')">
+                <div class="image-thumbnail pointer" style="background-image:url('/upload/images/{{ $image->original_name }}')">
+                    <div class="bg-selected"></div>
                 </div>
                 @endforeach
             </div>
