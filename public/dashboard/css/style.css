@@ -126,12 +126,12 @@ div.modal-gallery.flex-container > div.image-thumbnail.selected:hover > div.bg-s
 div.modal-gallery.flex-container > div.image-thumbnail > div.bg-selected > i {
   display: none;
   position: relative;
-  top: 32px;
+  top: 30px;
 }
 
 div.modal-gallery.flex-container > div.image-thumbnail.selected > div.bg-selected > i {
   color: #FFF;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
   display: block;
 
