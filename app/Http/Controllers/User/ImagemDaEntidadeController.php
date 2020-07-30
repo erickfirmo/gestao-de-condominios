@@ -15,30 +15,25 @@ class ImagemDaEntidadeController extends Controller
 
     public function upload(Request $request)
     {
-        
-        $this->store();
+        $parent_class = $request->input('parent_class');
+        $parent_id = $request->input('parent_id');        
+        $new_parent_images = json_decode($request->input('new_parent_images'));
+
+        foreach($new_parent_images as $image_obj)
+            $this->store($image_obj);
 
         return response()->json([
             'success' => 'Imagem adicionada com sucesso!',
         ], 200);
     }
 
-    public function store(Request $request)
-    {
-        $new_parent_images = json_decode($request->input('new_parent_images'));
-        $parent_class = $request->input('parent_class');
-        $parent_id = $request->input('parent_id');
-
-        
-
-        foreach($new_parent_images as $image_id)
-        {
-            $imagem_da_entidade = new ImagemDaEntidade;
-            $imagem_da_entidade->parent_id = $parent_id;
-            $imagem_da_entidade->parent_class = 'App\Models\\'.$parent_class;
-            $imagem_da_entidade->imagem_id = $image_id;
-            $imagem_da_entidade->save();
-        }
+    public function store($image_obj)
+    {        
+        $imagem_da_entidade = new ImagemDaEntidade;
+        $imagem_da_entidade->parent_id = $parent_id;
+        $imagem_da_entidade->parent_class = 'App\Models\\'.$parent_class;
+        $imagem_da_entidade->imagem_id = $image_id;
+        $imagem_da_entidade->save();
 
         $image_obj = [
             'url' => 'upload/images/'.$original_name,
