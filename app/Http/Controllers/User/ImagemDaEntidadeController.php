@@ -13,11 +13,23 @@ class ImagemDaEntidadeController extends Controller
         return $this->middleware('auth:user');
     }
 
+    public function upload(Request $request)
+    {
+        
+        $this->store();
+
+        return response()->json([
+            'success' => 'Imagem adicionada com sucesso!',
+        ], 200);
+    }
+
     public function store(Request $request)
     {
         $new_parent_images = json_decode($request->input('new_parent_images'));
         $parent_class = $request->input('parent_class');
         $parent_id = $request->input('parent_id');
+
+        
 
         foreach($new_parent_images as $image_id)
         {
@@ -28,9 +40,12 @@ class ImagemDaEntidadeController extends Controller
             $imagem_da_entidade->save();
         }
 
-        return response()->json([
-            'success' => 'Imagem adicionada com sucesso!',
-        ], 200);
+        $image_obj = [
+            'url' => 'upload/images/'.$original_name,
+            'file_name' => $original_name,
+            'id' => $image->id
+        ];
+
 
     }
 
