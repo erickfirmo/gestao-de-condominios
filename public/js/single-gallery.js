@@ -1,16 +1,22 @@
-
 var images_to_send = [];
 //select parent image
 $(".add-parent-image").on('click', function() {
+
     let image_id = $(this).attr('id');
+    let image_name = $(this).attr('title');
     image_id = image_id.replace('gallery_image_', '');
+
     if(!images_to_send.includes(image_id) && !$(this).hasClass('selected'))
-        images_to_send.push(image_id);
+    {
+        images_to_send.push([
+            image_id,
+            image_name
+        ]);
+    }
 
     $(this).toggleClass('selected');
-   
-});
 
+});
 
 //clear images_to_send on close modal (clear array)
 // removeClass selected
@@ -33,6 +39,11 @@ $('#saveParentImages').on('click', function() {
             new_parent_images:new_parent_images,
         },
         success: function(response) {
+            let new_images = '';
+            for (let i = 0; i < response.uploaded_images.length; i++) {
+                new_images = new_images + '<div id="image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="image-thumbnail" data-image="'+response.uploaded_images[i].url+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image"><i class="fa fa-times"></i></span></div></div>';
+            }
+            
             Swal.fire(
                 'Sucesso!',
                 response.success,
@@ -42,6 +53,7 @@ $('#saveParentImages').on('click', function() {
     });
 
     // update parent images grid
+
     images_to_send = [];
     $('.add-parent-image').removeClass('selected');
 });
@@ -49,7 +61,6 @@ $('#saveParentImages').on('click', function() {
 
 $("#addNewImage").on('click', function(e) {
     e.preventDefault();
-    // get input images
     $('#vCenteredModal').modal('hide');
 });
 
