@@ -16,13 +16,15 @@ $(".add-parent-image").on('click', function() {
 // removeClass selected
 
 var parent_class = 'Imovel';
-var parent_id = $("parent_id").val();
+var parent_id = $("#parent_id").val();
 
 $('#saveParentImages').on('click', function() {
 
-    let new_parent_images = JSON.stringify(images_to_send);
-    console.log(new_parent_images);
+    let new_parent_images = '';
+    images_to_send = JSON.stringify(images_to_send);
+    new_parent_images = '{ '+images_to_send+' }';
     let _token = $('input[name="_token"]').val();
+
 
     $.ajax({
         url: location.origin+'/imagens-das-entidades/store',
@@ -31,8 +33,7 @@ $('#saveParentImages').on('click', function() {
         success: function(response) {
             Swal.fire(
                 'Sucesso!',
-                //response.success,
-                new_parent_images,
+                response.success,
                 'success'
             );
         }
