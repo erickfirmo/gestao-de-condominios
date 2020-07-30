@@ -54,6 +54,7 @@
                                 'title' => 'Fotos da Área Comum',
                                 'images' => $area_comum->imagens()->get(),
                                 'all_images' => $images,
+                                'parent_id' => $area_comum->id
                             ])
                             <!-- Imagens da Entidade End -->
 
