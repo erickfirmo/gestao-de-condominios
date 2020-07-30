@@ -53,6 +53,7 @@
                                 'title' => 'Fotos do Veículo',
                                 'images' => $veiculo->imagens()->get(),
                                 'all_images' => $images,
+                                'parent_id' => $veiculo->id
                             ])
                             <!-- Imagens da Entidade End -->
 
