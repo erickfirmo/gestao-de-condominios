@@ -1,6 +1,6 @@
 
 var images_to_send = [];
-
+//select parent image
 $(".add-parent-image").on('click', function() {
     let image_id = $(this).attr('id');
     image_id = image_id.replace('gallery_image_', '');
@@ -15,19 +15,28 @@ $(".add-parent-image").on('click', function() {
 //clear images_to_send on close modal (clear array)
 // removeClass selected
 
+var parent_class = 'Imovel';
+var parent_id = $("parent_id").val();
 
+$('#saveParentImages').on('click', function() {
 
-$('#saveParentImages').on('click', function(e) {
-    e.preventDefault();
+    let new_parent_images = JSON.stringify(images_to_send);
+    console.log(new_parent_images);
+    let _token = $('input[name="_token"]').val();
 
     $.ajax({
-        url: location.origin+'/imagens/upload',
+        url: location.origin+'/imagens-das-entidades/store',
         type: "POST",
-        data: images_to_send,
+        data: { parent_id:parent_id, parent_class:parent_class, new_parent_images:new_parent_images, _token:_token },
         success: function(response) {
-            console.log(response);
+            Swal.fire(
+                'Sucesso!',
+                //response.success,
+                new_parent_images,
+                'success'
+            );
         }
-    })
+    });
 
     // update parent images grid
     images_to_send = [];
