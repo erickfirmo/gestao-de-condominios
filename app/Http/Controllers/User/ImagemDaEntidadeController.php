@@ -19,36 +19,29 @@ class ImagemDaEntidadeController extends Controller
         $parent_id = $request->input('parent_id');        
         $new_parent_images = json_decode($request->input('new_parent_images'));
 
-        foreach($new_parent_images as $image_obj)
-            $this->store($image_obj);
+        foreach($new_parent_images as $image_id)
+            $this->store($image_id, $parent_class, $parent_id);
+
+        $response_text = count($new_parent_images) == 1 ? 'Imagem adicionada com sucesso!' : 'Imagens adicionadas com sucesso!';
 
         return response()->json([
-            'success' => 'Imagem adicionada com sucesso!',
+            'success' => $response_text,
         ], 200);
     }
 
-    public function store($image_obj)
+    public function store($image_id, $parent_class, $parent_id)
     {        
         $imagem_da_entidade = new ImagemDaEntidade;
         $imagem_da_entidade->parent_id = $parent_id;
         $imagem_da_entidade->parent_class = 'App\Models\\'.$parent_class;
         $imagem_da_entidade->imagem_id = $image_id;
         $imagem_da_entidade->save();
-
-        $image_obj = [
-            'url' => 'upload/images/'.$original_name,
-            'file_name' => $original_name,
-            'id' => $image->id
-        ];
-
-
     }
 
     public function destroy(Request $request)
     {
         $id = $request->input('image_id');
         $removed_images = [];
-
         $imagem_da_entidade = ImagemDaEntidade::findOrFail($id);
         $imagem_da_entidade->delete();    
         array_push($removed_images, $id);
