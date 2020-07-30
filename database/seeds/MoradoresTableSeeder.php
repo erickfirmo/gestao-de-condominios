@@ -11,10 +11,10 @@ class MoradoresTableSeeder extends Seeder
     public function run()
     {
         $morador = new App\Models\Morador;
-        $morador->nome = 'example-1.png';
-        $morador->genero = 'example-1.png';
-        $morador->observacoes = 'example-1.png';
-        $morador->proprietario = 'example-1.png';
+        $morador->nome = 'Érick Firmo';
+        $morador->genero = 'Masculino';
+        $morador->observacoes = 'Lorem ipsum dollor sit amet';
+        $morador->proprietario = 1;
         $morador->imovel_id = 1;
         $morador->save();
     }
