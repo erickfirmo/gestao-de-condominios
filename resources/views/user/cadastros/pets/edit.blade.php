@@ -53,7 +53,8 @@
                             @include('components._single-gallery', [
                                 'title' => 'Fotos do Pet',
                                 'all_images' => $images,
-                                'images' => $pet->imagens()->get()
+                                'images' => $pet->imagens()->get(),
+                                'parent_id' => $pet->id
                             ])
                             <!-- Imagens da Entidade End -->
 
