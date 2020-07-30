@@ -19,17 +19,19 @@ var parent_class = 'Imovel';
 var parent_id = $("#parent_id").val();
 
 $('#saveParentImages').on('click', function() {
-
-    let new_parent_images = '';
-    images_to_send = JSON.stringify(images_to_send);
-    new_parent_images = '{ '+images_to_send+' }';
     let _token = $('input[name="_token"]').val();
-
+    let new_parent_images = '';
+    new_parent_images = JSON.stringify(images_to_send);
 
     $.ajax({
         url: location.origin+'/imagens-das-entidades/store',
         type: "POST",
-        data: { parent_id:parent_id, parent_class:parent_class, new_parent_images:new_parent_images, _token:_token },
+        data: {
+            _token:_token,
+            parent_id:parent_id,
+            parent_class:parent_class,
+            new_parent_images:new_parent_images,
+        },
         success: function(response) {
             Swal.fire(
                 'Sucesso!',
