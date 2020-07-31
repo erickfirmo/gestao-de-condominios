@@ -1,48 +1,47 @@
-var images_to_send = [];
+var parent_images = [];
+var parent_id = $("#parent_id").val();
+var parent_class = $("#parent_id").data('parent');
+
 //select parent image
 $(".add-parent-image").on('click', function() {
-
     let image_id = $(this).attr('id');
-    let image_name = $(this).attr('title');
     image_id = image_id.replace('gallery_image_', '');
-
-    if(!images_to_send.includes(image_id) && !$(this).hasClass('selected'))
-    {
-        images_to_send.push([
-            image_id,
-            image_name
-        ]);
-    }
+    if(!parent_images.includes(image_id) && !$(this).hasClass('selected'))
+        parent_images.push(image_id);
 
     $(this).toggleClass('selected');
-
 });
 
-//clear images_to_send on close modal (clear array)
+//clear new_parent_imagess on close modal (clear array)
 // removeClass selected
 
-var parent_class = 'Imovel';
-var parent_id = $("#parent_id").val();
 
 $('#saveParentImages').on('click', function() {
+
     let _token = $('input[name="_token"]').val();
-    let new_parent_images = '';
-    new_parent_images = JSON.stringify(images_to_send);
+    let new_parent_images = JSON.stringify(parent_images);
 
     $.ajax({
-        url: location.origin+'/imagens-das-entidades/store',
+        url: location.origin+'/imagens-das-entidades/upload',
         type: "POST",
         data: {
             _token:_token,
             parent_id:parent_id,
             parent_class:parent_class,
-            new_parent_images:new_parent_images,
+            new_parent_images:new_parent_images
         },
         success: function(response) {
+
             let new_images = '';
-            for (let i = 0; i < response.uploaded_images.length; i++) {
-                new_images = new_images + '<div id="image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'"+response.uploaded_images[i].url+"'"+')" class="image-thumbnail" data-image="'+response.uploaded_images[i].url+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image"><i class="fa fa-times"></i></span></div></div>';
+            let current_image = '';
+            for (let i = 0; i < parent_images; i++) {
+                current_image = $('#gallery_image_'+1);
+                new_images = new_images + '<div id="image_'+2+'" title="'+current_image.attr('title')+'" style="background-image: url('+"'/upload/images/"+current_image.data('image')+"'"+')" class="image-thumbnail" data-image="'+current_image.data('image')+'"><div class="image-actions"><span id="delete_image_'+2+'" class="delete-image"><i class="fa fa-times"></i></span></div></div>';
             }
+            
+            let old_images = $('.single-gallery').html();
+
+            $('.single-gallery').html(new_images + old_images);
             
             Swal.fire(
                 'Sucesso!',
@@ -54,13 +53,14 @@ $('#saveParentImages').on('click', function() {
 
     // update parent images grid
 
-    images_to_send = [];
+    // remove selected class (not working)
     $('.add-parent-image').removeClass('selected');
 });
 
 
 $("#addNewImage").on('click', function(e) {
     e.preventDefault();
+    // get input images
     $('#vCenteredModal').modal('hide');
 });
 
