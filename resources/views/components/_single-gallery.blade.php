@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<input type="hidden" name="parent_id" value="{{ $parent_id }}" id="parent_id">
+<input type="hidden" name="parent_id" value="{{ $parent_id }}" id="parent_id" data-parent="{{ $parent_class }}">
 
 
 <div id="vCenteredModal" class="modal fade">
