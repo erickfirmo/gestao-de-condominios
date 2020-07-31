@@ -54,7 +54,8 @@
                                 'title' => 'Fotos do Pet',
                                 'all_images' => $images,
                                 'images' => $pet->imagens()->get(),
-                                'parent_id' => $pet->id
+                                'parent_id' => $pet->id,
+                                'parent_class' => 'Pet',
                             ])
                             <!-- Imagens da Entidade End -->
 
