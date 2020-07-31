@@ -53,7 +53,8 @@
                                 'title' => 'Fotos do Imóvel',
                                 'images' => $imovel->imagens()->get(),
                                 'all_images' => $images,
-                                'parent_id' => $imovel->id
+                                'parent_id' => $imovel->id,
+                                'parent_class' => 'Imovel',
                             ])
                             <!-- Imagens da Entidade End -->
                             
