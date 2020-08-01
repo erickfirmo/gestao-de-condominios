@@ -32,14 +32,11 @@ $('#saveParentImages').on('click', function() {
         },
         success: function(response) {
 
-            let new_images = '';
-            let current_image = '';
-            for (let i = 0; i < parent_images; i++) {
-                current_image = $('#gallery_image_'+1);
-                new_images = new_images + '<div id="image_'+2+'" title="'+current_image.attr('title')+'" style="background-image: url('+"'/upload/images/"+current_image.data('image')+"'"+')" class="image-thumbnail" data-image="'+current_image.data('image')+'"><div class="image-actions"><span id="delete_image_'+2+'" class="delete-image"><i class="fa fa-times"></i></span></div></div>';
-            }
-            
             let old_images = $('.single-gallery').html();
+            let new_images = '';
+            for(let i = 0; i < response.uploaded_images.length; i++) {
+                new_images = new_images + '<div id="parent_image_'+response.uploaded_images[i]+'" title="'+$('#gallery_image_'+response.uploaded_images[i]).attr('title')+'" style="background-image: url('+"'/upload/images/"+$('#gallery_image_'+response.uploaded_images[i]).data('image')+"'"+')" class="image-thumbnail" data-image="'+$('#gallery_image_'+parent_images[i]).data('image')+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i]+'" class="delete-image" title="Remover Imagem"><i class="fa fa-times"></i></span></div></div>';
+            }
 
             $('.single-gallery').html(new_images + old_images);
             
