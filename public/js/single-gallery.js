@@ -35,7 +35,7 @@ $('#saveParentImages').on('click', function() {
             let old_images = $('.single-gallery').html();
             let new_images = '';
             for(let i = 0; i < response.uploaded_images.length; i++) {
-                new_images = new_images + '<div id="parent_image_'+response.uploaded_images[i]+'" title="'+$('#gallery_image_'+response.uploaded_images[i]).attr('title')+'" style="background-image: url('+"'/upload/images/"+$('#gallery_image_'+response.uploaded_images[i]).data('image')+"'"+')" class="image-thumbnail" data-image="'+$('#gallery_image_'+parent_images[i]).data('image')+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i]+'" class="delete-image" title="Remover Imagem"><i class="fa fa-times"></i></span></div></div>';
+                new_images = new_images + '<div id="parent_image_'+response.uploaded_images[i].id+'" title="'+response.uploaded_images[i].file_name+'" style="background-image: url('+"'/upload/images/"+response.uploaded_images[i].file_name+"'"+')" class="image-thumbnail" data-image="'+parent_images[i].file_name+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image" title="Remover Imagem"><i class="fa fa-times"></i></span></div></div>';
             }
 
             $('.single-gallery').html(new_images + old_images);
