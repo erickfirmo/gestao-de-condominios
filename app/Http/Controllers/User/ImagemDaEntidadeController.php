@@ -19,16 +19,16 @@ class ImagemDaEntidadeController extends Controller
         $parent_id = $request->input('parent_id');        
         $new_parent_images = json_decode($request->input('new_parent_images'));
 
-        $images_response = [];
+        $response_images = [];
 
         foreach($new_parent_images as $image_id)
-            array_push($images_response, $this->store($image_id, $parent_class, $parent_id));
+            array_push($response_images, $this->store($image_id, $parent_class, $parent_id));
 
         $response_text = count($new_parent_images) == 1 ? 'Imagem adicionada com sucesso!' : 'Imagens adicionadas com sucesso!';
 
         return response()->json([
             'success' => $response_text,
-            'uploaded_images' => $uploaded_images,
+            'uploaded_images' => $response_images,
         ], 200);
     }
 
