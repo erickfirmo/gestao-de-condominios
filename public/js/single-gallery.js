@@ -2,7 +2,6 @@ var parent_images = [];
 var parent_id = $("#parent_id").val();
 var parent_class = $("#parent_id").data('parent');
 
-//select parent image
 $(".add-parent-image").on('click', function() {
     let image_id = $(this).attr('id');
     image_id = image_id.replace('gallery_image_', '');
@@ -12,12 +11,7 @@ $(".add-parent-image").on('click', function() {
     $(this).toggleClass('selected');
 });
 
-//clear new_parent_imagess on close modal (clear array)
-// removeClass selected
-
-
 $('#saveParentImages').on('click', function() {
-
     let _token = $('input[name="_token"]').val();
     let new_parent_images = JSON.stringify(parent_images);
 
@@ -37,28 +31,18 @@ $('#saveParentImages').on('click', function() {
             for(let i = 0; i < response.uploaded_images.length; i++) {
                 new_images = new_images + '<div id="parent_image_'+response.uploaded_images[i].id+'" title="'+$('#gallery_image_'+parent_images[i]).attr('title')+'" style="background-image: url('+"'/upload/images/"+$('#gallery_image_'+parent_images[i]).data('image')+"'"+')" class="image-thumbnail" data-image="'+$('#gallery_image_'+parent_images[i]).data('image')+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image" title="Remover Imagem"><i class="fa fa-times"></i></span></div></div>';
             }
-
             parent_images = [];
-
             // change modal id
             $('#vCenteredModal').modal('hide');
-
             $('.single-gallery').html(new_images + old_images);
-
-
-            
             Swal.fire(
                 'Sucesso!',
                 response.success,
                 'success'
             );
-
-
         }
     });
-
     // remove selected class (not working)
-
     return false;
 });
 
