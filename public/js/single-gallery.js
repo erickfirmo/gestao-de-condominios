@@ -12,11 +12,10 @@ $(".add-parent-image").on('click', function() {
 });
 /* get gallery image end */
 
-/* send images id without new file */
+/* send images id without new file start */
 $('#saveParentImages').on('click', function() {
     let _token = $('input[name="_token"]').val();
     let new_parent_images = JSON.stringify(parent_images);
-
     $.ajax({
         url: location.origin+'/imagens-das-entidades/upload',
         type: "POST",
@@ -27,7 +26,6 @@ $('#saveParentImages').on('click', function() {
             new_parent_images:new_parent_images
         },
         success: function(response) {
-
             let old_images = $('.single-gallery').html();
             let new_images = '';
             for(let i = 0; i < response.uploaded_images.length; i++) {
@@ -36,7 +34,7 @@ $('#saveParentImages').on('click', function() {
             parent_images = [];
             // change modal id
             $('#vCenteredModal').modal('hide');
-            $('.single-gallery').html(new_images + old_images);
+            $('.single-gallery').html(old_images + new_images);
             Swal.fire(
                 'Sucesso!',
                 response.success,
