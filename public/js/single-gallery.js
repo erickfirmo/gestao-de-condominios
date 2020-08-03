@@ -38,22 +38,28 @@ $('#saveParentImages').on('click', function() {
                 new_images = new_images + '<div id="parent_image_'+response.uploaded_images[i].id+'" title="'+$('#gallery_image_'+parent_images[i]).attr('title')+'" style="background-image: url('+"'/upload/images/"+$('#gallery_image_'+parent_images[i]).data('image')+"'"+')" class="image-thumbnail" data-image="'+$('#gallery_image_'+parent_images[i]).data('image')+'"><div class="image-actions"><span id="delete_image_'+response.uploaded_images[i].id+'" class="delete-image" title="Remover Imagem"><i class="fa fa-times"></i></span></div></div>';
             }
 
-            // clear var parent_images here
+            parent_images = [];
+
+            // change modal id
+            $('#vCenteredModal').modal('hide');
 
             $('.single-gallery').html(new_images + old_images);
+
+
             
             Swal.fire(
                 'Sucesso!',
                 response.success,
                 'success'
             );
+
+
         }
     });
 
-    // update parent images grid
-
     // remove selected class (not working)
-    $('.add-parent-image').removeClass('selected');
+
+    return false;
 });
 
 
