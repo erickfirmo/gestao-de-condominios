@@ -39,8 +39,12 @@ class ImagemDaEntidadeController extends Controller
         $imagem_da_entidade->parent_class = 'App\Models\\'.$parent_class;
         $imagem_da_entidade->imagem_id = $image_id;
         $imagem_da_entidade->save();
+
+        $parent_image_obj = [
+            'id' => $imagem_da_entidade->id,
+        ];
         
-        return $imagem_da_entidade->id;
+        return $parent_image_obj;
     }
 
     public function destroy(Request $request)
