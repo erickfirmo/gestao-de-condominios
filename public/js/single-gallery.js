@@ -12,10 +12,13 @@ $(".add-parent-image").on('click', function() {
 });
 /* get gallery image end */
 
+var add_button_html = '<div id="addParentImage" title="Adicionar Imagem" class="image-thumbnail border border-info rounded pointer"><div><span class="d-block mx-auto text-center text-info" style="font-size: 26px;"><i class="fa fa-plus"></i></span></div></div>';
+
 /* send images id without new file start */
 $('#saveParentImages').on('click', function() {
     let _token = $('input[name="_token"]').val();
     let new_parent_images = JSON.stringify(parent_images);
+    
     $.ajax({
         url: location.origin+'/imagens-das-entidades/upload',
         type: "POST",
@@ -33,8 +36,9 @@ $('#saveParentImages').on('click', function() {
             }
             parent_images = [];
             // change modal id
+            let news = old_images.replace(add_button_html, "");
             $('#vCenteredModal').modal('hide');
-            $('.single-gallery').html(new_images + old_images);
+            $('.single-gallery').html(news + new_images + add_button_html);
             Swal.fire(
                 'Sucesso!',
                 response.success,
