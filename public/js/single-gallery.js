@@ -34,7 +34,7 @@ $('#saveParentImages').on('click', function() {
             parent_images = [];
             // change modal id
             $('#vCenteredModal').modal('hide');
-            $('.single-gallery').html(old_images + new_images);
+            $('.single-gallery').html(new_images + old_images);
             Swal.fire(
                 'Sucesso!',
                 response.success,
