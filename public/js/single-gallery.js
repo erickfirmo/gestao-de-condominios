@@ -1,7 +1,7 @@
 var parent_images = [];
 var parent_id = $("#parent_id").val();
 var parent_class = $("#parent_id").data('parent');
-
+/* get gallery image start */
 $(".add-parent-image").on('click', function() {
     let image_id = $(this).attr('id');
     image_id = image_id.replace('gallery_image_', '');
@@ -10,7 +10,9 @@ $(".add-parent-image").on('click', function() {
 
     $(this).toggleClass('selected');
 });
+/* get gallery image end */
 
+/* send images id without new file */
 $('#saveParentImages').on('click', function() {
     let _token = $('input[name="_token"]').val();
     let new_parent_images = JSON.stringify(parent_images);
@@ -45,7 +47,7 @@ $('#saveParentImages').on('click', function() {
     // remove selected class (not working)
     return false;
 });
-
+/* send images id without new file end */
 
 $("#addNewImage").on('click', function(e) {
     e.preventDefault();
